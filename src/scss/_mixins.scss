@@ -1,0 +1,42 @@
+@mixin blockMain($width, $height) {
+  width: $width;
+  height: $height;
+  display: flex;
+  background-color: #ffffff;
+  box-shadow:1px 1px 100px 1px rgba(0,0,0,0.21);
+  -webkit-box-shadow:1px 1px 100px 1px rgba(0,0,0,0.21);
+  -moz-box-shadow:1px 1px 100px 1px rgba(0,0,0,0.21);
+}
+@mixin buttonMain($width, $height, $font) {
+  width: $width;
+  height: $height;
+  font-size: $font;
+  border-radius: 0;
+  background-color: #2196F3;
+  color: #ffffff;
+  padding: 10px 5px;
+}
+@mixin substrate($width, $height){
+  z-index: 1;
+  width: $width;
+  height: $height;
+  position: absolute;
+  text-align: left;
+}
+@mixin substrateText($fontSize, $fontWeight, $opacity){
+  font-size: $fontSize;
+  font-weight: $fontWeight;
+  opacity: $opacity;
+  text-transform: uppercase;
+}
+@mixin headingMinBlock($width, $height){
+  width: $width;
+  height: $height;
+  text-align: left;
+  text-transform: uppercase;
+}
+@mixin headingMin($fontSize, $fontWeight){
+  text-transform: uppercase;
+  font-size: $fontSize;
+  font-weight: $fontWeight;
+}
