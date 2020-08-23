@@ -1,45 +1,39 @@
 <template>
   <section class="portfolio">
+    <a name="portfolio" class="myLink"></a>
   	<div class="portfolio__substrate">
-  		<h6>My Portfolio</h6>
+  		<h6>Моё портфолио</h6>
   	</div>
     <div class="portfolio__info info">
       <div class="info__title">
-        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-trophy info__icon" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-          <path d="M3 1h10c-.495 3.467-.5 10-5 10S3.495 4.467 3 1zm0 15a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1H3zm2-1a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1H5z"/>
-          <path fill-rule="evenodd" d="M12.5 3a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-3 2a3 3 0 1 1 6 0 3 3 0 0 1-6 0zm-6-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-3 2a3 3 0 1 1 6 0 3 3 0 0 1-6 0z"/>
-          <path d="M7 10h2v4H7v-4z"/>
-          <path d="M10 11c0 .552-.895 1-2 1s-2-.448-2-1 .895-1 2-1 2 .448 2 1z"/>
+        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-layers-half info__icon" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" d="M3.188 8L.264 9.559a.5.5 0 0 0 0 .882l7.5 4a.5.5 0 0 0 .47 0l7.5-4a.5.5 0 0 0 0-.882L12.813 8l-4.578 2.441a.5.5 0 0 1-.47 0L3.188 8z"/>
+          <path fill-rule="evenodd" d="M7.765 1.559a.5.5 0 0 1 .47 0l7.5 4a.5.5 0 0 1 0 .882l-7.5 4a.5.5 0 0 1-.47 0l-7.5-4a.5.5 0 0 1 0-.882l7.5-4zM1.563 6L8 9.433 14.438 6 8 2.567 1.562 6z"/>
         </svg>
-        <h2>My Portfolio</h2>
+        <h2>Моё портфолио</h2>
       </div>
       <div class="info__text">
-        <p>В первый раз сцепление на Донфенге накрылось после пробега в 32 тысячи километров! После снятия коробки выяснилось следущее: во-первых сами накладки диска гавно- сажа.</p>
+        <p>Здесь можно посмотреть мои работы. Лендинги, многостроничные сайты и небольшие приложения.</p>
       </div>
     </div>
     <div class="portfolio__menu menu">
       <ul class="menu__wrapper">
-        <li class="menu__item">
-          <div class="menu__link"><span>All</span></div>
+        <li class="menu__item button-activ">
+          <div class="menu__link"><span>Все</span></div>
         </li>
         <li class="menu__item">
           <div class="menu__link">
-            <span>Logos</span>
+            <span>Лендинги</span>
           </div>
         </li>
         <li class="menu__item">
           <div class="menu__link">
-            <span>Websites</span>
+            <span>Сайты</span>
           </div>
         </li>
         <li class="menu__item">
           <div class="menu__link">
-            <span>Apps</span>
-          </div>
-        </li>
-        <li class="menu__item">
-          <div class="menu__link">
-            <span>Softwares</span>
+            <span>Приложения</span>
           </div>
         </li>
       </ul>
@@ -60,37 +54,60 @@
     <div class="portfolio__gallery gallery">
       <div class="gallery__block">
         <a href="" class="gallery__link">
-          <img src="@/assets/portfolio/0_1.png" alt="">
+          <img src="@/assets/portfolio/0_5.png" alt="">
         </a>
+        <div class="gallery__indicator indicator">
+          <div class="indicator__cross"></div>
+        </div>
       </div>
       <div class="gallery__block">
         <a href="" class="gallery__link">
-          <img src="@/assets/portfolio/0_2.png" alt="">
+          <img src="@/assets/portfolio/0_1.png" alt="">
+          <div class="gallery__indicator indicator">
+            <div class="indicator__cross"></div>
+          </div>
         </a>
       </div>
       <div class="gallery__block">
         <a href="" class="gallery__link">
           <img src="@/assets/portfolio/0_3.png" alt="">
         </a>
+        <div class="gallery__indicator indicator">
+          <div class="indicator__cross"></div>
+        </div>
+      </div>
+      <div class="gallery__block">
+        <a href="" class="gallery__link">
+          <img src="@/assets/portfolio/0_2.png" alt="">
+        </a>
+        <div class="gallery__indicator indicator">
+          <div class="indicator__cross"></div>
+        </div>
       </div>
       <div class="gallery__block">
         <a href="" class="gallery__link">
           <img src="@/assets/portfolio/0_4.png" alt="">
         </a>
-      </div>
-      <div class="gallery__block">
-        <a href="" class="gallery__link">
-          <img src="@/assets/portfolio/0_5.png" alt="">
-        </a>
+        <div class="gallery__indicator indicator">
+          <div class="indicator__cross"></div>
+        </div>
       </div>
       <div class="gallery__block">
         <a href="" class="gallery__link">
           <img src="@/assets/portfolio/0_6.png" alt="">
         </a>
+        <div class="gallery__indicator indicator">
+          <div class="indicator__cross"></div>
+        </div>
       </div>
     </div>
     <div class="portfolio__button">
-      <button type='button' class="btn">Load More</button>
+      <button type='button' class="btn">
+      <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-eye-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/>
+      <path fill-rule="evenodd" d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/>
+    </svg>
+    Смотреть больше</button>
     </div>
   </section>
 </template>
@@ -128,31 +145,32 @@ export default {
         justify-content: space-between;
       }
       .menu{
-        height: 10%;
+        height: 9%;
         background-color: #F0F0F0;
         box-shadow:1px 1px 100px 1px rgba(0,0,0,0.21);
         -webkit-box-shadow:1px 1px 100px 1px rgba(0,0,0,0.21);
         -moz-box-shadow:1px 1px 100px 1px rgba(0,0,0,0.21);
 
         .menu__wrapper{
-          width: 60.5%;
+          width: 69.5%;
           height: 100%;
           background-color: #ffffff;
         }
         .menu__search{
-          width: 39.4%;
+          width: 30.4%;
           display: flex;
           background-color: #ffffff;
         }
         .menu__item{
-          width: 14%;
+          width: 20%;
           height: 100%;
           margin: auto;
           cursor: pointer;
         }
-        .menu__item:hover>.menu__link{
-          color: #ffffff;
-          background-color: #2196F3;
+        .menu__item:hover{
+          background-color: #F7F7F7;
+          color: #121212;
+          transform: scale(1.1);
         }
         .menu__link{
           width: 100%;
@@ -163,6 +181,8 @@ export default {
         }
         .menu__link>span{
           margin: auto;
+          font-size: 1rem;
+          text-transform: uppercase;
         }
         .menu__form{
           display: flex;
@@ -188,10 +208,20 @@ export default {
       display: flex;
       width: 100%;
       flex-wrap: wrap;
+      z-index: 9;
       
       .gallery__block{
+        position: relative;
         width: 33.33%;
         height: auto;
+        border: 1px solid #000;
+      }
+      .gallery__block:hover{
+        transform: scale(1.1);
+        z-index: 99999;
+      }
+      .gallery__block:hover .gallery__indicator{
+        display: block;
       }
       .gallery__link{
         display: block;
@@ -201,15 +231,45 @@ export default {
         cursor: pointer;
       }
       .gallery__link>img{
-        width: 140%;
+        width: 100%;
         height: auto;
         margin: auto;
-        transition: 3s;
+      }
+      .gallery__indicator{
+        display: none;
+        position: absolute;
+        background-color: #2196F3;
+        z-index: 9999;
+        width: 12%;
+        height: 9%;
+        top: 70%;
+        right: 0;
+      }
+      .indicator{
+
+        .indicator__cross{
+          background: #ffffff;
+          height: 13px;
+          width: 2px;
+          position: relative;
+          left: 20px;
+          top: 6px;
+        }
+        .indicator__cross:after{
+          content: "";
+          height: 2px;
+          width: 13px;
+          background: #ffffff;
+          position: absolute; 
+          left: -5px; 
+          top: 5px;
+        }
       }
     }
     .portfolio__button{
       width: 100%;
       height: 10%;
+      z-index: 9;
     }
     .portfolio__button>button{
       @include buttonMain(15%, 50%, 1rem);

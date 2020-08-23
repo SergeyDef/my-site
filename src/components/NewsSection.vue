@@ -1,5 +1,6 @@
 <template>
   <section class="news">
+    <a name="news" class="myLink"></a>
   	<div class="news__substrate">
   		<h6>Новостные статьи</h6>
   	</div>

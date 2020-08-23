@@ -41,3 +41,19 @@
 .button-activ>a>span{
   color: #ffffff!important;
 }
+.button-activ>div>span{
+  color: #ffffff;
+}
+.myLink{
+  position: absolute;
+}
+
+.block-animation{
+  /*transform: translate(0px, 100%);*/
+  opacity: 0;
+  transition: all 0.9s ease 0s;
+}
+.block-active{
+ /* transform: translate(0px, 0px);*/
+  opacity: 1;
+}

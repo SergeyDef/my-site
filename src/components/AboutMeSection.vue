@@ -1,14 +1,15 @@
 <template>
   <section class="aboutMe">
+    <a name="aboutMe" class="myLink"></a>
     <div class="aboutMe__substrate">
-      <h6>about me</h6>
+      <h6>Обо мне</h6>
     </div>
     <div class="aboutMe__info info">
       <div class="info__title">
         <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-person info__icon" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
           <path fill-rule="evenodd" d="M13 14s1 0 1-1-1-4-6-4-6 3-6 4 1 1 1 1h10zm-9.995-.944v-.002.002zM3.022 13h9.956a.274.274 0 0 0 .014-.002l.008-.002c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664a1.05 1.05 0 0 0 .022.004zm9.974.056v-.002.002zM8 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
         </svg>
-        <h2>About Me</h2>
+        <h2>Обо мне</h2>
       </div>
       <div class="info__text">
         <p>В первый раз сцепление на Донфенге накрылось после пробега в 32 тысячи километров! После снятия коробки выяснилось следущее: во-первых сами накладки диска гавно- сажа, во вторых поставить какой-то аналог не китай не получится, только если вместе с корзиной сцепления, так как если брать отдельно диск- он подойдёт к маховику, но не подойдёт к корзине.</p>
@@ -70,13 +71,13 @@
         </div>
         <div class="data__block">
           <ul class="data__wrapper">
-            <li class="data__item"><span>Full Name</span><span>:</span></li>
-            <li class="data__item"><span>Father`s Name</span><span>:</span></li>
+            <li class="data__item"><span>Имя</span><span>:</span></li>
+            <li class="data__item"><span>Псевдоним</span><span>:</span></li>
             <li class="data__item"><span>Адрес</span><span>:</span></li>
             <li class="data__item"><span>WhatsApp</span><span>:</span></li>
             <li class="data__item"><span>Телефон</span><span>:</span></li>
             <li class="data__item"><span>Email</span><span>:</span></li>
-            <li class="data__item"><span>Website</span><span>:</span></li>
+            <li class="data__item"><span>Сайт</span><span>:</span></li>
           </ul>
           <ul class="data__wrapper">
             <li class="data__info">Sergey</li>
@@ -121,13 +122,19 @@ export default {
   name: 'AboutMeSection',
   props: {
     msg: String
-  }
+  },
+  data(){},
+  methods: {},
+  mounted(){
+  },
 }
 </script>
 
 <style scoped lang="scss">
 @import '@/scss/_mixins.scss';
+@import '@/scss/style.scss';
 @import '~bootstrap/dist/css/bootstrap.min.css';
+@import url('https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap" rel="stylesheet"');
   .aboutMe{
      @include blockMain(100%, 10%);
      flex-direction: column;
@@ -258,6 +265,7 @@ export default {
         font-weight: 700;
       }
       .data__block{
+        padding-top: 15px;
         display: flex;
         justify-content: space-between;
       }
@@ -268,7 +276,15 @@ export default {
         display: flex;
       }
       .data__item{
+        margin-bottom: 12px;
         justify-content: space-between;
+      }
+      .data__item>span{
+        color: #797979;
+      }
+      .data__info{
+        margin-bottom: 12px;
+        font-family: 'Fugaz One', cursive;
       }
     }
     .aboutMe__emaill{

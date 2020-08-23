@@ -1,20 +1,20 @@
 <template>
   <section class="education">
+  	<a name="education" class="myLink"></a>
   	<div class="education__substrate">
-  		<h6>Education</h6>
+  		<h6>Образование</h6>
   	</div>
   	<div class="education__info info">
       <div class="info__title">
-        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-trophy info__icon" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-				  <path d="M3 1h10c-.495 3.467-.5 10-5 10S3.495 4.467 3 1zm0 15a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1H3zm2-1a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1H5z"/>
-				  <path fill-rule="evenodd" d="M12.5 3a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-3 2a3 3 0 1 1 6 0 3 3 0 0 1-6 0zm-6-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-3 2a3 3 0 1 1 6 0 3 3 0 0 1-6 0z"/>
-				  <path d="M7 10h2v4H7v-4z"/>
-				  <path d="M10 11c0 .552-.895 1-2 1s-2-.448-2-1 .895-1 2-1 2 .448 2 1z"/>
+      	<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-graph-up info__icon" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+				  <path d="M0 0h1v16H0V0zm1 15h15v1H1v-1z"/>
+				  <path fill-rule="evenodd" d="M14.39 4.312L10.041 9.75 7 6.707l-3.646 3.647-.708-.708L7 5.293 9.959 8.25l3.65-4.563.781.624z"/>
+				  <path fill-rule="evenodd" d="M10 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V4h-3.5a.5.5 0 0 1-.5-.5z"/>
 				</svg>
-        <h2>Education</h2>
+        <h2>Образование</h2>
       </div>
       <div class="info__text">
-        <p>В первый раз сцепление на Донфенге накрылось после пробега в 32 тысячи километров! После снятия коробки выяснилось следущее: во-первых сами накладки диска гавно- сажа.</p>
+        <p>В этом разделе представлены мои достижения в сфере официального образования. К сожалению или к счастью они не имеют отношения к тому, чем я сейчас занимаюсь, тоесть к веб разработки.</p>
 			</div>
 		</div>
     <div class="accordion education__list" id="accordionExample">
@@ -40,7 +40,24 @@
 
 			  <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
 					<div class="card-body">
-						Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+						<table class="training">
+							<tr class="training__tr">
+								<td class="training__name"><span>Время обучения</span></td>
+								<td class="training__value"><p>2012-2017 г.</p></td>
+							</tr>
+							<tr class="training__tr">
+								<td class="training__name"><span>Факультет</span></td>
+								<td class="training__value"><p>Психологии, Практическая психология</p></td>
+							</tr>
+							<tr class="training__tr">
+								<td class="training__name"><span>Специальнось</span></td>
+								<td class="training__value"><p>Практическая психология</p></td>
+							</tr>
+							<tr class="training__tr">
+								<td class="training__name"><span>Степень образования</span></td>
+								<td class="training__value"><p>Высшее (бакалавр)</p></td>
+							</tr>
+						</table>
 					</div>
 			  </div>
 			</div>
@@ -65,57 +82,24 @@
 				</div>
 				<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
 					<div class="card-body">
-			      Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-			    </div>
-			  </div>
-			</div>
-			<div class="card">
-			  <div class="card-header education__description" id="headingThree">
-			  	<div class="education__picchu">
-						<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-pen education__icon text__orange" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-							<path fill-rule="evenodd" d="M5.707 13.707a1 1 0 0 1-.39.242l-3 1a1 1 0 0 1-1.266-1.265l1-3a1 1 0 0 1 .242-.391L10.086 2.5a2 2 0 0 1 2.828 0l.586.586a2 2 0 0 1 0 2.828l-7.793 7.793zM3 11l7.793-7.793a1 1 0 0 1 1.414 0l.586.586a1 1 0 0 1 0 1.414L5 13l-3 1 1-3z"/>
-							<path fill-rule="evenodd" d="M9.854 2.56a.5.5 0 0 0-.708 0L5.854 5.855a.5.5 0 0 1-.708-.708L8.44 1.854a1.5 1.5 0 0 1 2.122 0l.293.292a.5.5 0 0 1-.707.708l-.293-.293z"/>
-							<path d="M13.293 1.207a1 1 0 0 1 1.414 0l.03.03a1 1 0 0 1 .03 1.383L13.5 4 12 2.5l1.293-1.293z"/>
-						</svg>
-					</div>
-			    <h5 class="mb-0 education__heading">
-			      <button class="btn btn-link collapsed education__button" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-			      	<div class="education__text">
-				        <span class="education__name">ГОУ СПО Колледж сферы услуг №32</span>
-								<span class="education__profession"> - Технологии продукции общественного питания</span>
-							</div>
-			        <div class="education__plus block__orange"></div>
-			      </button>
-			    </h5>
-			  </div>
-			  <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-			    <div class="card-body">
-			      Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-			    </div>
-			  </div>
-			</div>
-			<div class="card">
-			  <div class="card-header education__description" id="headingFour">
-			  	<div class="education__picchu">
-						<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-pen education__icon text__yellow" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-							<path fill-rule="evenodd" d="M5.707 13.707a1 1 0 0 1-.39.242l-3 1a1 1 0 0 1-1.266-1.265l1-3a1 1 0 0 1 .242-.391L10.086 2.5a2 2 0 0 1 2.828 0l.586.586a2 2 0 0 1 0 2.828l-7.793 7.793zM3 11l7.793-7.793a1 1 0 0 1 1.414 0l.586.586a1 1 0 0 1 0 1.414L5 13l-3 1 1-3z"/>
-							<path fill-rule="evenodd" d="M9.854 2.56a.5.5 0 0 0-.708 0L5.854 5.855a.5.5 0 0 1-.708-.708L8.44 1.854a1.5 1.5 0 0 1 2.122 0l.293.292a.5.5 0 0 1-.707.708l-.293-.293z"/>
-							<path d="M13.293 1.207a1 1 0 0 1 1.414 0l.03.03a1 1 0 0 1 .03 1.383L13.5 4 12 2.5l1.293-1.293z"/>
-						</svg>
-					</div>
-			    <h5 class="mb-0 education__heading">
-			      <button class="btn btn-link collapsed education__button" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-			      	<div class="education__text">
-				        <span class="education__name">ГОУ СПО Колледж сферы услуг №32</span>
-								<span class="education__profession"> - Технологии продукции общественного питания</span>
-							</div>
-			        <div class="education__plus block__yellow"></div>
-			      </button>
-			    </h5>
-			  </div>
-			  <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
-			    <div class="card-body">
-			      Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+						<table class="training">
+							<tr class="training__tr">
+								<td class="training__name"><span>Время обучения</span></td>
+								<td class="training__value"><p>2007-2010 г.</p></td>
+							</tr>
+							<tr class="training__tr">
+								<td class="training__name"><span>Факультет</span></td>
+								<td class="training__value"><p>Технологии продукции общественного питания</p></td>
+							</tr>
+							<tr class="training__tr">
+								<td class="training__name"><span>Специальнось</span></td>
+								<td class="training__value"><p>Технолог общественного питания. Повар 4-го разряда</p></td>
+							</tr>
+							<tr class="training__tr">
+								<td class="training__name"><span>Степень образования</span></td>
+								<td class="training__value"><p>Средне специальное</p></td>
+							</tr>
+						</table>
 			    </div>
 			  </div>
 			</div>
@@ -249,6 +233,33 @@ export default {
 		}
 		.block__yellow:after{
 			background: #FAC12C;
+		}
+		.training{
+			width: 90%;
+			margin: auto;
+			text-align: left;
+
+			.training__tr{
+				border: 2px solid #2c3e50;
+			}
+			.training__name{
+				height: 40px;
+				padding-left: 2%;
+				width: 25%;
+				border-right: 2px solid #2c3e50;
+			}
+			.training__name>span{
+				text-transform: uppercase;
+				font-weight: 600;
+			}
+			.training__value{
+				height: 40px;
+				display: flex;
+				padding-left: 3%;
+			}
+			.training__value>p{
+				margin: auto 0;
+			}
 		}
 	}
 </style>

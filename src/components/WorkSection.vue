@@ -1,5 +1,6 @@
 <template>
   <section class="work">
+  	<a name="workExperience" class="myLink"></a>
   	<div class="work__substrate">
   		<h6>Опыт работы</h6>
   	</div>
@@ -23,33 +24,43 @@
     				<div class="company__color company__color-first"><span></span></div>
     				<div class="company__picchu">
     					<div class="company__title">
-    						<h5>Мерчандайзинг</h5>
+    						<h5>Менеджер отдела маркетинга</h5>
     					</div>
     					<div class="company__date">
-    						<span class="company__text-first">18.08.2020</span>
+    						<span class="company__text-first"> с 01.12.2019 по 01.06.2020</span>
     					</div>
     					<div class="company__text">
-    						<p>В первый раз сцепление на Донфенге накрылось после пробега в 32 тысячи километров! </p>
+    						<p>Разработка, внедрение и контроль за соблюдением стандартов и общих принципов выкладки в торговом зале. Обучение персонала основам мерчандайзинга, контроль работы мерчандайзеров торгового центра. Работа с ТСД (перемещение, закрепление товара на местах хранения). Разработка планограмм торгового зала. Визуализация торговых помещений в 3D и 2D форматах, отрисовка пожар-ных планов помещения. Работа с выкладкой непосредственно в торговом зале, размещение на витринах нового ассортимента.</p>
     					</div>
-    					<div class="company__site">
-    						<a href="http://sergeydef.fun" class="company__text-first">http://sergeydef.fun</a>
+    					<div class="company__info">
+	    					<div class="company__site">
+	    						<a href="http://sergeydef.fun" class="company__text-first">http://sergeydef.fun</a>
+	    					</div>
+	    					<div class="company__text-show">
+	    						<a href="">читать полностью</a>
+	    					</div>
     					</div>
     				</div>
     			</div>
     			<div class="company__block">
     				<div class="company__color company__color-second"><span></span></div>
     				<div class="company__picchu">
-							<div class="company__title">
-    						<h5>Мерчандайзинг</h5>
+    					<div class="company__title">
+    						<h5>Мерчандайзер</h5>
     					</div>
     					<div class="company__date">
-    						<span class="company__text-second">18.08.2020</span>
+    						<span class="company__text-second"> с 01.12.2019 по 01.06.2020</span>
     					</div>
     					<div class="company__text">
-    						<p>В первый раз сцепление на Донфенге накрылось после пробега в 32 тысячи километров! </p>
+    						<p>Разработка, внедрение и контроль за соблюдением стандартов и общих принципов выкладки в торговом зале. Обучение персонала основам мерчандайзинга, контроль работы мерчандайзеров торгового центра. Работа с ТСД (перемещение, закрепление товара на местах хранения). Разработка планограмм торгового зала. Визуализация торговых помещений в 3D и 2D форматах, отрисовка пожар-ных планов помещения. Работа с выкладкой непосредственно в торговом зале, размещение на витринах нового ассортимента.</p>
     					</div>
-    					<div class="company__site">
-    						<a href="http://sergeydef.fun" class="company__text-second">http://sergeydef.fun</a>
+    					<div class="company__info">
+	    					<div class="company__site">
+	    						<a href="http://sergeydef.fun" class="company__text-second">http://sergeydef.fun</a>
+	    					</div>
+	    					<div class="company__text-show">
+	    						<a href="">читать полностью</a>
+	    					</div>
     					</div>
     				</div>
     			</div>
@@ -60,12 +71,19 @@
     						<h5>Мерчандайзинг</h5>
     					</div>
     					<div class="company__date">
-    						<span class="company__text-third">18.08.2020</span>
+    						<span class="company__text-third"> с 01.12.2019 по 01.06.2020</span>
     					</div>
     					<div class="company__text">
-    						<p>В первый раз сцепление на Донфенге накрылось после пробега в 32 тысячи километров! </p>
+    						<p>Разработка планограмм торгового зала. Визуализация торговых помещений в 3D и 2D форматах, отрисовка пожарных планов помещения. Разработка, заказ и размещение торгового оборудования и POS материалов на торговых точках. Работа с выкладкой непосредственно в торговом зале, размещение на витринах нового ассортимента. Контроль за проведением акций. Разработка, внедрение и контроль за соблюдением стандартов и общих принципов выкладки в торговом зале. Зонирование торгового зала по номенклатурными группам. Расчёт площади занимаемой номенклатурными группами и товарными категориями в торговом зале.</p>
     					</div>
-    					<div class="company__site"><a href="http://sergeydef.fun" class="company__text-third">http://sergeydef.fun</a></div>
+    					<div class="company__info">
+	    					<div class="company__site">
+	    						<a href="http://sergeydef.fun" class="company__text-third">http://sergeydef.fun</a>
+	    					</div>
+	    					<div class="company__text-show">
+	    						<a href="">читать полностью</a>
+	    					</div>
+    					</div>
     				</div>
     			</div>
     			<div class="company__block">
@@ -75,12 +93,19 @@
     						<h5>Мерчандайзинг</h5>
     					</div>
     					<div class="company__date">
-    						<span class="company__text-fourth">18.08.2020</span>
+    						<span class="company__text-fourth"> с 01.12.2019 по 01.06.2020</span>
     					</div>
     					<div class="company__text">
-    						<p>В первый раз сцепление на Донфенге накрылось после пробега в 32 тысячи километров! </p>
+    						<p>Разработка, внедрение и контроль за соблюдением стандартов и общих принципов выкладки в торговом зале. Обучение персонала основам мерчандайзинга, контроль работы мерчандайзеров торгового центра. Работа с ТСД (перемещение, закрепление товара на местах хранения). Разработка планограмм торгового зала. Визуализация торговых помещений в 3D и 2D форматах, отрисовка пожар-ных планов помещения. Работа с выкладкой непосредственно в торговом зале, размещение на витринах нового ассортимента.</p>
     					</div>
-    					<div class="company__site"><a href="http://sergeydef.fun" class="company__text-fourth">http://sergeydef.fun</a></div>
+    					<div class="company__info">
+	    					<div class="company__site">
+	    						<a href="http://sergeydef.fun" class="company__text-fourth">http://sergeydef.fun</a>
+	    					</div>
+	    					<div class="company__text-show">
+	    						<a href="">читать полностью</a>
+	    					</div>
+    					</div>
     				</div>
     			</div>
     		</div>
@@ -157,6 +182,30 @@ export default {
 			justify-content: space-between;
 			height: 80%;
 			z-index: 9;
+			::-webkit-scrollbar { 
+				width: 5px; 
+				height: 2px;
+			}
+			::-webkit-scrollbar-button {  
+				background-color: #ffffff; 
+			}
+			::-webkit-scrollbar-track {  
+				background-color: #2493EF;
+			}
+			::-webkit-scrollbar-track-piece { 
+				background-color: #ffffff;
+			}
+			::-webkit-scrollbar-thumb { 
+				height: 20px; 
+				background-color: #2493EF; 
+				border-radius: 5px;
+			}
+			::-webkit-scrollbar-corner { 
+				background-color: #2493EF;
+			}
+			::-webkit-resizer { 
+				background-color: #2493EF;
+			}
 		}
 		.work__company{
 			width: 66%;
@@ -172,25 +221,33 @@ export default {
 			z-index: 2;
 
 			.company__wrapper{
-				overflow: auto;
+				position: relative;
 				height: 100%;
-				border-left: 2px solid #F0F0F0;
 			}
 			.company__block{
 				position: relative;
 				text-align: left;
 				padding-left: 7%;
 				width: 100%;
-				height: 34%;
+				height: 40%;
+				border-left: 2px solid #F0F0F0;
 			}
 			.company__title{
-				@include headingMinBlock(100%, auto);
+				@include headingMinBlock(100%, 10%);
 			}
 			.company__title>h5{
 				@include headingMin(1rem, 700);
 			}
+			.company__date{
+				width: 100%;
+				height: 10%;
+			}
 			.company__picchu{
+				display: flex;
+    		flex-direction: column;
+    		justify-content: space-between;
 				position: relative;
+				height: 100%;
 			}
 			.company__color{
 				border-radius: 50%;
@@ -212,6 +269,31 @@ export default {
 			}
 			.company__color-first>span{
 				background-color: #2196F3;
+			}
+			.company__text{
+				width: 90%;
+				height: 30%;
+				overflow: hidden;
+			}
+			.company__info{
+				width: 100%;
+				height: 20%;
+				display: flex;
+			}
+			.company__site{
+				width: 50%;
+				height: 100%;
+			}
+			.company__text-show{
+				width: 50%;
+				height: 100%;
+			}
+			.company__text-show>a{
+				width: 44%;
+				height: 100%;
+				font-size: 0.894rem;
+				margin-left: 30%;
+				text-decoration: none;
 			}
 			.company__text-first{
 				color: #2196F3;

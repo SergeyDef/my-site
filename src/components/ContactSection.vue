@@ -1,5 +1,6 @@
 <template>
   <section class="contact">
+    <a name="feedback" class="myLink"></a>
   	<div class="contact__substrate">
   		<h6>Написать мне</h6>
   	</div>

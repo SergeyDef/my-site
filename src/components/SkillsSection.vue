@@ -1,87 +1,160 @@
 <template>
   <section class="skills">
+    <a name="skills" class="myLink"></a>
   	<div class="skills__substrate">
-  		<h6>My Skills</h6>
+  		<h6>Мои навыки</h6>
   	</div>
   	<div class="skills__info info">
       <div class="info__title">
         <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-exclamation-diamond-fill info__icon" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
 				  <path fill-rule="evenodd" d="M9.05.435c-.58-.58-1.52-.58-2.1 0L.436 6.95c-.58.58-.58 1.519 0 2.098l6.516 6.516c.58.58 1.519.58 2.098 0l6.516-6.516c.58-.58.58-1.519 0-2.098L9.05.435zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
 				</svg>
-        <h2>My Skills</h2>
+        <h2>Мои навыки</h2>
       </div>
       <div class="info__text">
-        <p>В первый раз сцепление на Донфенге накрылось после пробега в 32 тысячи километров! После снятия коробки выяснилось следущее: во-первых сами накладки диска гавно- сажа.</p>
+        <p>В данном разделе представленны мои проффесиональные навыки. Для удобства представления использованны графические прогрессбары и диаграммы.</p>
       </div>
     </div>
-    <div class="skills__menu menu">
-    	<ul class="menu__wrapper">
-    		<li class="menu__item"><span>webdevelopment</span></li>
-    		<li class="menu__item"><span>webdevelopment</span></li>
-    		<li class="menu__item"><span>webdevelopment</span></li>
-    		<li class="menu__item"><span>webdevelopment</span></li>
-    		<li class="menu__item"><span>webdevelopment</span></li>
-    	</ul>
-    </div>
-    <div class="skills__professional professional">
-    	<div class="professional__title">
-    		<h5>Проффесиональные навыки</h5>
-    	</div>
-    	<div class="professional__wrapper">
-				<div class="professional__block">
-					<div class="professional__item">
-						<div class="professional__name"><span>HTML5</span></div>
-						<div class="progress professional__progress">
-						  <div class="progress-bar html__line" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">90%</div>
-						</div>
-	    		</div>
-	    		<div class="professional__item">
-	    			<div class="professional__name"><span>CSS3</span></div>
-						<div class="progress professional__progress">
-						  <div class="progress-bar css__line" role="progressbar" style="width: 60%;" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">60%</div>
-						</div>
-					</div>
-					<div class="professional__item">
-	    			<div class="professional__name"><span>bootstrap-4</span></div>
-						<div class="progress professional__progress">
-							<div class="progress-bar bootstrap__line" role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">75%</div>
-						</div>
-					</div>
-	    	</div>
-				<div class="professional__block">
-	    		<div class="professional__item">
-	    			<div class="professional__name"><span>javaScript</span></div>
-						<div class="progress professional__progress">
-							<div class="progress-bar javascript__line" role="progressbar" style="width: 45%;" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100">45%</div>
-						</div>
-					</div>
-					<div class="professional__item">
-	    			<div class="professional__name"><span>React.js</span></div>
-						<div class="progress professional__progress">
-							<div class="progress-bar react__line" role="progressbar" style="width: 65%;" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100">65%</div>
-						</div>
-					</div>
-					<div class="professional__item">
-	    			<div class="professional__name"><span>Vue.js</span></div>
-						<div class="progress professional__progress">
-						  <div class="progress-bar vue__line" role="progressbar" style="width: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">80%</div>
-						</div>
-					</div>
-	    	</div>
-    	</div>
+      <div class="skills__menu menu">
+        <ul class="nav nav-tabs menu__wrapper" id="myTab" role="tablist">
+          <li class="nav-item menu__item" role="presentation">
+            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Веб разработка</a>
+          </li>
+          <li class="nav-item menu__item" role="presentation">
+            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Графические редакторы</a>
+          </li>
+          <li class="nav-item menu__item" role="presentation">
+            <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Другие навыки</a>
+          </li>
+        </ul>
+      </div>
+      <div class="tab-content skills__professional" id="myTabContent">
+        <div class="tab-pane fade show active professional" id="home" role="tabpanel" aria-labelledby="home-tab">
+          <div class="professional__title">
+            <h5>Проффесиональные навыки</h5>
+          </div>
+          <div class="professional__wrapper">
+            <div class="professional__block">
+              <div class="professional__item">
+                <div class="professional__name"><span>HTML5</span></div>
+                <div class="progress professional__progress">
+                  <div class="progress-bar green__line" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">90%</div>
+                </div>
+              </div>
+              <div class="professional__item">
+                <div class="professional__name"><span>bootstrap-4</span></div>
+                <div class="progress professional__progress">
+                  <div class="progress-bar red__line" role="progressbar" style="width: 60%;" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">60%</div>
+                </div>
+              </div>
+              <div class="professional__item">
+                <div class="professional__name"><span>CSS3</span></div>
+                <div class="progress professional__progress">
+                  <div class="progress-bar bootstrap__line" role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">75%</div>
+                </div>
+              </div>
+            </div>
+            <div class="professional__block">
+              <div class="professional__item">
+                <div class="professional__name"><span>React.js</span></div>
+                <div class="progress professional__progress">
+                  <div class="progress-bar blue__line" role="progressbar" style="width: 45%;" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100">45%</div>
+                </div>
+              </div>
+              <div class="professional__item">
+                <div class="professional__name"><span>Vue.js</span></div>
+                <div class="progress professional__progress">
+                  <div class="progress-bar react__line" role="progressbar" style="width: 65%;" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100">65%</div>
+                </div>
+              </div>
+              <div class="professional__item">
+              <div class="professional__name"><span>javaScript</span></div>
+                <div class="progress professional__progress">
+                  <div class="progress-bar purple__line" role="progressbar" style="width: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">80%</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      <div class="tab-pane fade professional" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+        <div class="professional__title">
+          <h5>Проффесиональные навыки</h5>
+        </div>
+        <div class="professional__wrapper">
+          <div class="professional__block graphic">
+            <div class="professional__item">
+              <div class="professional__name"><span>Figma</span></div>
+              <div class="progress professional__progress">
+                <div class="progress-bar red__line" role="progressbar" style="width: 35%;" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100">35%</div>
+              </div>
+            </div>
+            <div class="professional__item">
+              <div class="professional__name"><span>Adobe Photoshop</span></div>
+              <div class="progress professional__progress">
+                <div class="progress-bar react__line" role="progressbar" style="width: 60%;" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">60%</div>
+              </div>
+            </div>
+            <div class="professional__item">
+              <div class="professional__name"><span>CorelDRAW</span></div>
+              <div class="progress professional__progress">
+                <div class="progress-bar bootstrap__line" role="progressbar" style="width: 85%;" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">85%</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane fade professional" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+        <div class="professional__title">
+          <h5>Проффесиональные навыки</h5>
+        </div>
+        <div class="professional__wrapper">
+          <div class="professional__block graphic">
+            <div class="professional__item">
+              <div class="professional__name"><span>Sweet Home 3D</span></div>
+              <div class="progress professional__progress">
+                <div class="progress-bar blue__line" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">90%</div>
+              </div>
+            </div>
+            <div class="professional__item">
+              <div class="professional__name"><span>Adobe Photoshop</span></div>
+              <div class="progress professional__progress">
+                <div class="progress-bar react__line" role="progressbar" style="width: 60%;" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">60%</div>
+              </div>
+            </div>
+            <div class="professional__item">
+              <div class="professional__name"><span>CorelDRAW</span></div>
+              <div class="progress professional__progress">
+                <div class="progress-bar purple__line" role="progressbar" style="width: 85%;" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">85%</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="language">
     	<div class="language__title">
-    		<h5>Languages skills</h5>
+    		<h5>Языковые навыки</h5>
     	</div>
     	<div class="language__wrapper">
 	    	<div class="language__text">
-	    		<p>В первый раз сцепление на Донфенге накрылось после пробега в 32 тысячи километров! После снятия коробки выяснилось следущее: во-первых сами накладки диска гавно- сажа.</p>
+	    		<p>Моим жизненным "кредом" является постоянное и не прерывное саморазвитие. Знание иностранных языков не мой основной профиль но основной, необходимый минимум присутствует.</p>
 	    	</div>
 	    	<div class="language__chart">
-	    		<div class="language__block">Русский</div>
-	    		<div class="language__block">Английский</div>
-	    		<div class="language__block">Немецкий</div>
+	    		<div class="language__block">
+            <div class="language__russian">
+              <span>Русский</span>
+            </div>
+          </div>
+	    		<div class="language__block">
+            <div class="language__english">
+              <span>Английский</span>
+            </div>
+          </div>
+	    		<div class="language__block">
+            <div class="language__german">
+              <span>Немецкий</span>
+            </div>
+          </div>
 	    	</div>
 	    </div>
     </div>
@@ -106,6 +179,7 @@ export default {
     position: relative;
     padding: 4% 6%;
     flex-direction: column;
+    z-index: 9;
 
     .skills__substrate{
      	@include substrate(90%, 90%);
@@ -122,39 +196,49 @@ export default {
     		width: 100%;
     		height: 100%;
     		display: flex;
+        padding-top: 1.5%;
     	}
     	.menu__item{
     		display: flex;
     		padding: 6px 16px;
-    		height: 50%;
+    		height: 70%;
     	}
     	.menu__item:hover{
-    		background-color: #ffffff;
-    		cursor: pointer;
-    		z-index: 9;
-    		box-shadow:1px 1px 100px 1px rgba(0,0,0,0.21);
-			  -webkit-box-shadow:1px 1px 100px 1px rgba(0,0,0,0.21);
-			 	-moz-box-shadow:1px 1px 100px 1px rgba(0,0,0,0.21);
+    		
     	}
-    	.menu__item>span{
-    		margin: auto;
+    	.menu__item>a{
+        width: 100%;
+        height: 100%;
+        color: #111111;
+        font-weight: 700;
     	}
+      .menu__item>a.active{
+        border: none;
+        background-color: #ffffff;
+        cursor: pointer;
+        z-index: 9;
+        box-shadow:1px 1px 100px 1px rgba(0,0,0,0.21);
+        -webkit-box-shadow:1px 1px 100px 1px rgba(0,0,0,0.21);
+        -moz-box-shadow:1px 1px 100px 1px rgba(0,0,0,0.21);
+        color: #1F96F2;
+      }
     }
     .skills__professional{
-    	display: flex;
-    	padding: 4%;
-    	flex-direction: column;
-    	width: 100%;
     	height: 40%;
-    	background-color: #ffffff;
-    	box-shadow:1px 1px 100px 1px rgba(0,0,0,0.21);
-		  -webkit-box-shadow:1px 1px 100px 1px rgba(0,0,0,0.21);
-			-moz-box-shadow:1px 1px 100px 1px rgba(0,0,0,0.21);
+      z-index: 9;
+      background-color: #ffffff;
+      box-shadow:1px 1px 100px 1px rgba(0,0,0,0.21);
+      -webkit-box-shadow:1px 1px 100px 1px rgba(0,0,0,0.21);
+      -moz-box-shadow:1px 1px 100px 1px rgba(0,0,0,0.21);
     }
     .professional{
+      padding: 3%;
+      width: 100%;
+      height: 100%;
+      z-index: 9;
 
     	.professional__title{
-    		@include headingMinBlock(100%, 30%);
+    		@include headingMinBlock(100%, 22%);
     	}
     	.professional__title>h5{
     		@include headingMin(1rem, 700);
@@ -187,51 +271,89 @@ export default {
     	.professional__progress{
     		width: 70%;
     	}
-    	.html__line{
+    	.green__line{
     		background-color: #2196F3;
     	}
     	.bootstrap__line{
     		background-color: #26A59A;
     	}
-    	.css__line{
+    	.red__line{
     		background-color: #EE534F;
     	}
-    	.javascript__line{
+    	.blue__line{
     		background-color: #3F51B5;
     	}
     	.react__line{
     		background-color: #FCC02C;
     	}
-    	.vue__line{
+    	.purple__line{
     		background-color: #AB46BC;
     	}
+      .graphic{
+        width: 80%;
+        margin: auto;
+      }
     }
     .language{
+      z-index: 9;
     	width: 100%;
-    	height: 30%;
-    	padding-top: 5%;
+    	height: 35%;
+    	padding-top: 2%;
 
     	.language__title{
-    		@include headingMinBlock(100%, 30%);
+    		@include headingMinBlock(100%, 20%);
+        display: flex;
     	}
     	.language__title>h5{
     		@include headingMin(1rem, 700);
+        margin: auto 0;
     	}
     	.language__wrapper{
     		width: 100%;
     		display: flex;
     	}
     	.language__text{
-    		width: 40%;
+    		width: 50%;
+        padding-right: 5%;
     		text-align: left;
     	}
     	.language__chart{
-    		width: 60%;
+    		width: 50%;
     		display: flex;
     	}
-    	.language__block{
-    		width: 33.33%;
+      .language__block{
+        width: 33.33%;
+      }
+    	.language__russian{
+        background: #ffffff;
+        width: 150px; 
+        height: 150px;
+        text-align: center;
+        font: 16px/100px Times, serif;
+        border: 24px solid #2196F3;
+        border-right: 24px solid #2196F3;
+        border-radius: 100px;
     	}
+      .language__english{
+        background: #ffffff;
+        width: 150px; 
+        height: 150px;
+        text-align: center;
+        font: 16px/100px Times, serif;
+        border: 24px solid #26A59A;
+        border-right: 24px solid #F0F0F0;
+        border-radius: 100px;
+      }
+      .language__german{
+        background: #ffffff;
+        width: 150px; 
+        height: 150px;
+        text-align: center;
+        font: 16px/100px Times, serif;
+        border: 24px solid #F0F0F0;
+        border-right: 24px solid #EE534F;
+        border-radius: 100px;
+      }
     }
   }
 </style>

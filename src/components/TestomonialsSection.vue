@@ -1,20 +1,18 @@
 <template>
   <section class="reviews">
+  	<a name="reviews" class="myLink"></a>
   	<div class="reviews__substrate">
   		<h6>Отзывы</h6>
   	</div>
   	<div class="reviews__info info">
       <div class="info__title">
-        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-trophy info__icon" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-          <path d="M3 1h10c-.495 3.467-.5 10-5 10S3.495 4.467 3 1zm0 15a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1H3zm2-1a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1H5z"/>
-          <path fill-rule="evenodd" d="M12.5 3a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-3 2a3 3 0 1 1 6 0 3 3 0 0 1-6 0zm-6-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-3 2a3 3 0 1 1 6 0 3 3 0 0 1-6 0z"/>
-          <path d="M7 10h2v4H7v-4z"/>
-          <path d="M10 11c0 .552-.895 1-2 1s-2-.448-2-1 .895-1 2-1 2 .448 2 1z"/>
-        </svg>
+        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-people info__icon" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+		  <path fill-rule="evenodd" d="M15 14s1 0 1-1-1-4-5-4-5 3-5 4 1 1 1 1h8zm-7.995-.944v-.002.002zM7.022 13h7.956a.274.274 0 0 0 .014-.002l.008-.002c-.002-.264-.167-1.03-.76-1.72C13.688 10.629 12.718 10 11 10c-1.717 0-2.687.63-3.24 1.276-.593.69-.759 1.457-.76 1.72a1.05 1.05 0 0 0 .022.004zm7.973.056v-.002.002zM11 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0zM6.936 9.28a5.88 5.88 0 0 0-1.23-.247A7.35 7.35 0 0 0 5 9c-4 0-5 3-5 4 0 .667.333 1 1 1h4.216A2.238 2.238 0 0 1 5 13c0-1.01.377-2.042 1.09-2.904.243-.294.526-.569.846-.816zM4.92 10c-1.668.02-2.615.64-3.16 1.276C1.163 11.97 1 12.739 1 13h3c0-1.045.323-2.086.92-3zM1.5 5.5a3 3 0 1 1 6 0 3 3 0 0 1-6 0zm3-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4z"/>
+		</svg>
         <h2>Отзывы</h2>
       </div>
       <div class="info__text">
-        <p>В первый раз сцепление на Донфенге накрылось после пробега в 32 тысячи километров! После снятия коробки выяснилось следущее: во-первых сами накладки диска гавно- сажа.</p>
+        <p>В данном разделе можно почитать отзывы о моей работе. Также вы можите отавить свой отзыв.</p>
       </div>
     </div>
     <div class="reviews__client client">
@@ -91,8 +89,13 @@
 					<div class="customer__img"><img src="@/assets/reviews/ava.jpg" alt="photo"></div>
 					<div class="customer__name"><span>Ваш отзыв</span></div>
 				</li>
-				<li class="customer__item customer__buttom">
-					<div class="customer__name"><span>оставить отзыв</span></div>
+				<li class="customer__item">
+					<button type="button" class="customer__buttom">
+						<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-pencil" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+					  <path fill-rule="evenodd" d="M11.293 1.293a1 1 0 0 1 1.414 0l2 2a1 1 0 0 1 0 1.414l-9 9a1 1 0 0 1-.39.242l-3 1a1 1 0 0 1-1.266-1.265l1-3a1 1 0 0 1 .242-.391l9-9zM12 2l2 2-9 9-3 1 1-3 9-9z"/>
+					  <path fill-rule="evenodd" d="M12.146 6.354l-2.5-2.5.708-.708 2.5 2.5-.707.708zM3 10v.5a.5.5 0 0 0 .5.5H4v.5a.5.5 0 0 0 .5.5H5v.5a.5.5 0 0 0 .5.5H6v-1.5a.5.5 0 0 0-.5-.5H5v-.5a.5.5 0 0 0-.5-.5H3z"/>
+					</svg>
+					Оставить отзыв</button>
 				</li>
 			</ul>
 		</div>
@@ -141,7 +144,7 @@ export default {
 				-moz-box-shadow:1px 1px 100px 1px rgba(0,0,0,0.21);
 			}
 			.client__ava{
-				width: 25%;
+				width: 15%;
 				height: auto;
 				position: relative;
 			}
@@ -149,7 +152,7 @@ export default {
 				position: absolute;
 				width: 100%;
 				height: 100%;
-				top: -60px;
+				top: -10px;
 				box-shadow:1px 1px 100px 1px rgba(0,0,0,0.21);
 				-webkit-box-shadow:1px 1px 100px 1px rgba(0,0,0,0.21);
 				-moz-box-shadow:1px 1px 100px 1px rgba(0,0,0,0.21);
@@ -162,7 +165,7 @@ export default {
 				text-align: left;
 				margin: auto;
 				height: 100%;
-				padding-left: 30%;
+				padding: 0 2% 0 15%;
 				width: 90%;
 				display: flex;
 				justify-content: space-evenly;
@@ -231,12 +234,10 @@ export default {
 			font-weight: 700;
 		}
 		.customer__buttom{
-			background-color: #2196F3;
+			@include buttonMain(100%, 100%, 1rem);
 		}
-		.customer__buttom>div>span{
-			font-size: 1rem;
-			color: #ffffff;
-			text-transform: uppercase;
+		.customer__buttom:focus{
+			border-radius: 0;
 		}
 	}
 </style>
