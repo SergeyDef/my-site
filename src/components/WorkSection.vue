@@ -26,6 +26,9 @@
     					<div class="company__title">
     						<h5>Менеджер отдела маркетинга</h5>
     					</div>
+    					<div class="company__name">
+    						<h6><span>Организация:</span> ООО Консул (ТЦ Планета железяка)</h6>
+    					</div>
     					<div class="company__date">
     						<span class="company__text-first"> с 01.12.2019 по 01.06.2020</span>
     					</div>
@@ -48,6 +51,9 @@
     					<div class="company__title">
     						<h5>Мерчандайзер</h5>
     					</div>
+    					<div class="company__name">
+    						<h6><span>Организация:</span>ООО Строймаркт</h6>
+    					</div>
     					<div class="company__date">
     						<span class="company__text-second"> с 01.12.2019 по 01.06.2020</span>
     					</div>
@@ -68,13 +74,16 @@
     				<div class="company__color company__color-third"><span></span></div>
     				<div class="company__picchu">
     					<div class="company__title">
-    						<h5>Мерчандайзинг</h5>
+    						<h5>Менеджер отдела продаж</h5>
+    					</div>
+    					<div class="company__name">
+    						<h6><span>Организация:</span> ООО ТД Лабораторное оснащение</h6>
     					</div>
     					<div class="company__date">
-    						<span class="company__text-third"> с 01.12.2019 по 01.06.2020</span>
+    						<span class="company__text-third"> с с 01.07.2014 по 01.12.2014</span>
     					</div>
     					<div class="company__text">
-    						<p>Разработка планограмм торгового зала. Визуализация торговых помещений в 3D и 2D форматах, отрисовка пожарных планов помещения. Разработка, заказ и размещение торгового оборудования и POS материалов на торговых точках. Работа с выкладкой непосредственно в торговом зале, размещение на витринах нового ассортимента. Контроль за проведением акций. Разработка, внедрение и контроль за соблюдением стандартов и общих принципов выкладки в торговом зале. Зонирование торгового зала по номенклатурными группам. Расчёт площади занимаемой номенклатурными группами и товарными категориями в торговом зале.</p>
+    						<p>Приём входящих звонков, работа с аукционной документацией, электронными площадками: Росэлторг, Сбербанк-АСТ, ЭТП Сбербанк-АСТ. Составление и проверка готовящихся к подписанию договоров. Отслеживание на zakupki.gov и учет предстоящих аукционов и котировочных заявок. Составление коммерческих предложений, информационных писем и т. д.</p>
     					</div>
     					<div class="company__info">
 	    					<div class="company__site">
@@ -90,13 +99,16 @@
     				<div class="company__color company__color-fourth"><span></span></div>
     				<div class="company__picchu">
     					<div class="company__title">
-    						<h5>Мерчандайзинг</h5>
+    						<h5>Специалист по учету товара</h5>
+    					</div>
+    					<div class="company__name">
+    						<h6><span>Организация:</span> ООО Вайлдберриз</h6>
     					</div>
     					<div class="company__date">
-    						<span class="company__text-fourth"> с 01.12.2019 по 01.06.2020</span>
+    						<span class="company__text-fourth">с 07.05.2013 по 14.05.2014</span>
     					</div>
     					<div class="company__text">
-    						<p>Разработка, внедрение и контроль за соблюдением стандартов и общих принципов выкладки в торговом зале. Обучение персонала основам мерчандайзинга, контроль работы мерчандайзеров торгового центра. Работа с ТСД (перемещение, закрепление товара на местах хранения). Разработка планограмм торгового зала. Визуализация торговых помещений в 3D и 2D форматах, отрисовка пожар-ных планов помещения. Работа с выкладкой непосредственно в торговом зале, размещение на витринах нового ассортимента.</p>
+    						<p>Учёт и подготовка к отгрузке неликвида, обезличенного товара (товара не принятого по причине несоответствия штрихкода, либо арти́кула со складской базой данных), товара, пришедшего на склад с производственным браком, проведение перемещений, возвратов в базе 1С, подготовка отгрузочных документов, встреча представителей поставщиков и отгрузка товара.</p>
     					</div>
     					<div class="company__info">
 	    					<div class="company__site">
@@ -119,13 +131,13 @@
     				<h5>adard wins</h5>
     			</div>
     		</div>
-    		<div class="progres__block">
+    		<div class="progres__block progres__block-activ">
     			<div class="progres__substrate">
     				<h6>01</h6>
     			</div>
     			<div class="progres__title"><span>css awwwards</span></div>
     			<div class="progres__text">
-    				<span>В первый раз сцепление на Донфенге накрылось после пробега в 32 тысячи километров!</span>
+    				<span>В первый раз сцепление на Донфенге накрылось после пробега в 32!</span>
     			</div>
     		</div>
     		<div class="progres__block">
@@ -134,7 +146,7 @@
     			</div>
     			<div class="progres__title"><span>css awwwards</span></div>
     			<div class="progres__text">
-    				<p>В первый раз сцепление на Донфенге накрылось после пробега в 32 тысячи километров!</p>
+    				<p>В первый раз сцепление на Донфенге накрылось после пробега в 32!</p>
     			</div>
     		</div>
     		<div class="progres__block">
@@ -143,7 +155,7 @@
     			</div>
     			<div class="progres__title"><span>css awwwards</span></div>
     			<div class="progres__text">
-	    			<p>В первый раз сцепление на Донфенге накрылось после пробега в 32 тысячи километров!</p>
+	    			<p>В первый раз сцепление на Донфенге накрылось после пробега в 32!</p>
 					</div>
     		</div>
     	</div>
@@ -236,7 +248,20 @@ export default {
 				@include headingMinBlock(100%, 10%);
 			}
 			.company__title>h5{
-				@include headingMin(1rem, 700);
+				@include headingMin(1.2rem, 700);
+			}
+			.company__name{
+				width: 100%;
+				height: 5%;
+			}
+			.company__name>h6{
+				color: #797979;
+				font-size: 0.776rem;
+			}
+			.company__name>h6>span{
+				color: #000;
+				font-weight: 800;
+				text-transform: uppercase;
 			}
 			.company__date{
 				width: 100%;
@@ -376,7 +401,7 @@ export default {
 				@include substrate(90%, 90%);
 			}
 			.progres__substrate>h6{
-				@include substrateText(4rem, 800, 0.2)
+				@include substrateText(4rem, 800, 0.2);
 			}
 			.progres__title{
 				@include headingMin(1rem, 700);
@@ -389,6 +414,309 @@ export default {
 			.progres__text>p{
 				width: 100%;
 				height: 100%;
+			}
+		}
+	}
+	@media (max-width: 1140px){
+		.work{
+
+			.work__substrate{
+
+			}
+			.work__substrate>h6{
+
+			}
+			.work__wrapper{
+				flex-direction: column;
+			}
+			.work__company{
+				width: 100%;
+				height: 69%;
+			}
+			.company{
+
+				.company__wrapper{
+					
+				}
+				.company__block{
+					
+				}
+				.company__title{
+					
+				}
+				.company__title>h5{
+					
+				}
+				.company__name{
+					
+				}
+				.company__name>h6{
+					
+				}
+				.company__name>h6>span{
+					
+				}
+				.company__date{
+					
+				}
+				.company__picchu{
+					
+				}
+				.company__color{
+					
+				}
+				.company__color>span{
+					
+				}
+				.company__color-first{
+					
+				}
+				.company__color-first>span{
+					
+				}
+				.company__text{
+					
+				}
+				.company__info{
+					
+				}
+				.company__site{
+					
+				}
+				.company__text-show{
+					
+				}
+				.company__text-show>a{
+					
+				}
+				.company__text-first{
+					
+				}
+				.company__color-second{
+
+				}
+				.company__color-second>span{
+
+				}
+				.company__text-second{
+
+				}
+				.company__color-third{
+
+				}
+				.company__color-third>span{
+
+				}
+				.company__text-third{
+
+				}
+				.company__color-fourth{
+
+				}
+				.company__color-fourth>span{
+
+				}
+				.company__text-fourth{
+				}
+			}
+			.work__progres{
+				width: 100%;
+				height: 26%;
+				flex-direction: row;
+			}
+			.progres{
+
+				.progres__heade{
+					width: 18%;
+					height: 100%;
+				}
+				.progres__heading{
+					width: 100%;
+					height: 60%;
+					flex-direction: column;
+				}
+				.progres__heading>svg{
+					width: 60%;
+					height: 80%;
+				}
+				.progres__heading>h5{
+				
+				}
+				.progres__block{
+					padding: 0;
+					width: 25%;
+					height: 100%;
+				}
+				.progres__substrate{
+					width: 100%;
+					height: 100%;
+				}
+				.progres__substrate>h6{
+					
+				}
+				.progres__title{
+
+				}
+				.progres__text{
+
+				}
+				.progres__text>p{
+
+				}
+			}
+		}
+	}
+	@media (max-width: 667px){
+		.work{
+
+			.work__substrate{
+
+			}
+			.work__substrate>h6{
+				font-size: 1.5rem;
+			}
+			.work__wrapper{
+			}
+			.work__company{
+			}
+			.company{
+
+				.company__wrapper{
+						
+				}
+				.company__block{
+					height: 60%;
+				}
+				.company__title{
+					height: 12%;
+					display: flex;
+					text-align: center;
+				}
+				.company__title>h5{
+					font-size: 1rem;
+					padding: 0;
+					margin: auto;
+				}
+				.company__name{
+						
+				}
+				.company__name>h6{
+						
+				}
+				.company__name>h6>span{
+						
+				}
+				.company__date{
+						
+				}
+				.company__picchu{
+						
+				}
+				.company__color{
+					left: -6%;
+				}
+				.company__color>span{
+						
+				}
+				.company__color-first{
+						
+				}
+				.company__color-first>span{
+						
+				}
+				.company__text{
+						
+				}
+				.company__info{
+						
+				}
+				.company__site{
+						
+				}
+				.company__site>a{
+					font-size: 0.634rem;
+				}
+				.company__text-show{
+						
+				}
+				.company__text-show>a{
+					margin-left: 0;
+				}
+				.company__text-first{
+						
+				}
+				.company__color-second{
+
+				}
+				.company__color-second>span{
+
+				}
+				.company__text-second{
+
+				}
+				.company__color-third{
+
+				}
+				.company__color-third>span{
+
+				}
+				.company__text-third{
+
+				}
+				.company__color-fourth{
+
+				}
+				.company__color-fourth>span{
+
+				}
+				.company__text-fourth{
+				}
+			}
+			.work__progres{
+				flex-direction: column;
+			}
+			.progres{
+
+				.progres__heade{
+					width: 100%;
+					height: 19%;
+				}
+				.progres__heading{
+					flex-direction: row;
+					justify-content: center;
+					height: 100%;
+				}
+				.progres__heading>svg{
+					width: 10%;
+					height: 100%;
+					margin: auto 0;
+				}
+				.progres__heading>h5{
+					margin: auto 0;
+				}
+				.progres__block{
+					width: 100%;
+					height: 79%;
+					padding-left: 5%;
+					display: none;
+				}
+				.progres__block-activ{
+					display: flex;
+				}
+				.progres__substrate{
+				}
+				.progres__substrate>h6{
+						
+				}
+				.progres__title{
+
+				}
+				.progres__text{
+
+				}
+				.progres__text>p{
+
+				}
 			}
 		}
 	}

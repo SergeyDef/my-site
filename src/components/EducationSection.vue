@@ -50,7 +50,7 @@
 								<td class="training__value"><p>Психологии, Практическая психология</p></td>
 							</tr>
 							<tr class="training__tr">
-								<td class="training__name"><span>Специальнось</span></td>
+								<td class="training__name"><span>Специальность</span></td>
 								<td class="training__value"><p>Практическая психология</p></td>
 							</tr>
 							<tr class="training__tr">
@@ -92,7 +92,7 @@
 								<td class="training__value"><p>Технологии продукции общественного питания</p></td>
 							</tr>
 							<tr class="training__tr">
-								<td class="training__name"><span>Специальнось</span></td>
+								<td class="training__name"><span>Специальность</span></td>
 								<td class="training__value"><p>Технолог общественного питания. Повар 4-го разряда</p></td>
 							</tr>
 							<tr class="training__tr">
@@ -261,5 +261,97 @@ export default {
 				margin: auto 0;
 			}
 		}
+	}
+	@media (max-width: 667px){
+		  .education{
+		  	height: 7%;
+		  	justify-content: space-between;
+				.education__substrate{
+				}
+				.education__substrate>h6{
+					font-size: 1.5rem;;
+				}
+		    .education__list{
+		    	margin: 0;
+		    }
+		    .education__description{
+		    }
+		    .education__picchu{
+		    	width: 50px;
+		    }
+		    .education__icon{
+		    }
+		    .education__button{
+		    }
+		    .education__button:focus {
+				}
+				.education__heading{
+				}
+				.education__text{
+				}
+				.education__name{
+					font-size: 0.8rem;
+				}
+				.education__profession{
+					display: none;
+				}
+				.education__plus{
+					height: 15px;
+					left: 0;
+					top: 0;
+				}
+				.education__plus:after {
+					width: 15px;
+					left: -6px;
+					top: 6px;
+				}
+				.text__blue{
+				}
+				.block__blue{
+				}
+				.block__blue:after{
+				}
+				.text__green{
+				}
+				.block__green{
+				}
+				.block__green:after{
+				}
+				.text__orange{
+				}
+				.block__orange{
+				}
+				.block__orange:after{
+				}
+				.text__yellow{
+				}
+				.block__yellow{
+				}
+				.block__yellow:after{
+				}
+				.card-body{
+					padding: 0;
+				}
+				.training{
+					width: 100%;
+					.training__tr{
+					}
+					.training__name{
+						padding-left: 1%;
+						font-size: 0.7rem;
+					}
+					.training__name>span{
+				}
+					.training__value{
+						height: 60px;
+						padding-left: 1%;
+					}
+					.training__value>p{
+						font-size: 0.8rem;
+						text-align: center;
+						margin: auto;
+					}
+				}
+			}
 	}
 </style>

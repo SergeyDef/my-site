@@ -37,6 +37,19 @@
           </div>
         </li>
       </ul>
+      <ul class="menu__adaptiv" v-if="showMenuAdaptiv">
+        <li class="item" v-for="portfolioMenuList in portfolioMenuLists"><span>{{ portfolioMenuList.title }}</span></li>
+      </ul>
+      <div class="sandwich" id="sandwich">
+        <transition>
+          <div class="sandwich__block" v-if="!sandwichShow" @click="showMenu" key="menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="sandwich__clear" v-else @click="hideMenu" key="clear"></div>
+        </transition>
+      </div>
       <div class="menu__search">
         <div class="menu__form">
           <div class="menu__input">
@@ -117,6 +130,28 @@ export default {
   name: 'PortfolioSection',
   props: {
     msg: String
+  },
+  data() {
+    return {
+      portfolioMenuLists: [
+      {id: 1, title: 'Все', value: ''},
+      {id: 2, title: 'Лендинги', value: ''},
+      {id: 3, title: 'Сайты', value: ''},
+      {id: 4, title: 'Приложения', value: ''},
+      ],
+      sandwichShow: false,
+      showMenuAdaptiv: false,
+    };
+  },
+  methods: {
+    showMenu: function () {
+      this.sandwichShow = true;
+      this.showMenuAdaptiv = true;
+    },
+    hideMenu: function () {
+      this.sandwichShow = false;
+      this.showMenuAdaptiv = false;
+    }
   }
 }
 </script>
@@ -203,6 +238,9 @@ export default {
           width: 100%;
           border: 0;
         }
+        .sandwich{
+          display: none;
+        }
       }
     .gallery{
       display: flex;
@@ -275,5 +313,106 @@ export default {
       @include buttonMain(15%, 50%, 1rem);
       margin: auto;
     }
+  }
+  @media (max-width: 667px){
+      .portfolio{
+        height: 9%;
+
+          .portfolio__substrate{
+          }
+          .portfolio__substrate>h6{
+            font-size: 1.5rem;
+          }
+          .portfolio__menu{
+          }
+          .menu{
+            position: relative;
+            z-index: 999;
+            height: 6%;
+
+            .menu__wrapper{
+              display: none;
+            }
+            .menu__search{
+              width: 79%;
+            }
+            .menu__item{
+            }
+            .menu__item:hover{
+            }
+            .menu__link{
+            }
+            .menu__link>span{
+            }
+            .menu__form{
+            }
+            .menu__form>button{
+            }
+            .menu__input{
+            }
+            .menu__input>input{
+            }
+            .sandwich{
+              background-color: #ffffff;
+              display: flex;
+              width: 19%;
+            }
+            .menu__adaptiv{
+              z-index: 9999;
+              position: absolute;
+              background-color: #ffffff;
+              width: 100%;
+              height: 200px;
+              bottom: -220px;
+
+              .item{
+                display: block;
+                width: 100%;
+                height: 45px;
+                display: flex;
+                border-bottom: 1px solid #000;
+              }
+              .item>span{
+                margin: auto;
+                font-size: 1rem;
+                font-weight: 700;
+                text-transform: uppercase;
+              }
+              .item:hover{
+                background-color: #F7F7F7;
+              }
+            }
+          }
+        .gallery{
+          
+          .gallery__block{
+            width: 50%;
+          }
+          .gallery__block:hover{
+          }
+          .gallery__block:hover .gallery__indicator{
+          }
+          .gallery__link{
+            height: 130px;
+          }
+          .gallery__link>img{
+          }
+          .gallery__indicator{
+          }
+          .indicator{
+
+            .indicator__cross{
+            }
+            .indicator__cross:after{
+            }
+          }
+        }
+        .portfolio__button{
+        }
+        .portfolio__button>button{
+          width: 60%;
+          height: 70%;
+        }
+      }
   }
 </style>

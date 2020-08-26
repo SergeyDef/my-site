@@ -51,8 +51,16 @@
                 </svg>
               Посмотреть отзывы</button>
             </div>
-            <div class="about__img d-block w-100">
-              <img src="@/assets/aboutSection/photo_01.png" alt="photo">
+            <div class="about__block">
+              <div class="about__picchu">
+                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chat-right-dots" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" d="M2 1h12a1 1 0 0 1 1 1v11.586l-2-2A2 2 0 0 0 11.586 11H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zm12-1a2 2 0 0 1 2 2v12.793a.5.5 0 0 1-.854.353l-2.853-2.853a1 1 0 0 0-.707-.293H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h12z"/>
+                  <path d="M5 6a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
+                </svg>
+              </div>
+              <div class="about__img d-block w-100">
+                <img src="@/assets/aboutSection/photo_01.png" alt="photo">
+              </div>
             </div>
           </div>
         </div>
@@ -72,8 +80,16 @@
               </svg>
               Включить звук</button>
             </div>
-            <div class="about__img d-block w-100">
-              <img src="@/assets/aboutSection/photo.png" alt="photo">
+            <div class="about__block">
+              <div class="about__picchu">
+                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chat-right-dots" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" d="M2 1h12a1 1 0 0 1 1 1v11.586l-2-2A2 2 0 0 0 11.586 11H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zm12-1a2 2 0 0 1 2 2v12.793a.5.5 0 0 1-.854.353l-2.853-2.853a1 1 0 0 0-.707-.293H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h12z"/>
+                  <path d="M5 6a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
+                </svg>
+              </div>
+              <div class="about__img d-block w-100">
+                <img src="@/assets/aboutSection/photo.png" alt="photo">
+              </div>
             </div>
           </div>
         </div>
@@ -193,4 +209,123 @@ export default {
       background-color: #CDCDCD;
      }
   }
+  @media (max-width: 967px){
+      .about{
+       height: 4%;
+
+       .about__slide{
+       
+       }
+       .about__block{
+        
+       }
+       .about__img{
+        width: 200px!important;
+        height: 200px;
+       }
+       .about__img>img{
+        
+       }
+       .about__picchu{
+        
+       }
+       .about__picchu>svg{
+       
+       }
+       .slideshow{
+        
+
+        .slideshow__dlock{
+          width: 100%;
+         }
+        .slideshow__content{
+          width: 70%;
+        }
+        .slideshow__title{
+          font-size: 2.5rem;
+          font-weight: 800;
+         }
+         .slideshow__title-min{
+         }
+         .slideshow__text{
+         }
+         .slideshow__text>p{
+            font-size: 1.1rem;
+         }
+         .slideshow__btn{
+          width: 40%;
+          padding: 10px 2px;
+         }
+       }
+       .slideshow__indicator{
+        left: 0;
+        bottom: 0;
+        flex-direction: row;
+
+        .active{
+        }
+       }
+       .slideshow__indicator>li{
+       }
+    }
+  }
+  @media (max-width: 667px){
+  .about{
+    height: 6%;
+
+    .about__slide{
+       
+    }
+    .about__block{
+      order: -1;
+    }
+    .about__img{
+    }
+    .about__img>img{
+        
+    }
+    .about__picchu{
+        
+    }
+    .about__picchu>svg{
+       
+    }
+    .slideshow{
+
+      .slideshow__dlock{
+        display: flex;
+        flex-direction: column;
+        }
+      .slideshow__content{
+        order: 0;
+        width: 100%;
+        margin: auto;
+        border-right: none;
+        border-top: 2px solid #F0F0F0;
+      }
+      .slideshow__title{
+        font-size: 2rem;
+      }
+      .slideshow__title-min{
+      }
+      .slideshow__text{
+      }
+      .slideshow__text>p{
+        font-size: 1rem;
+      }
+      .slideshow__btn{
+        width: 70%;
+        margin: auto;
+        display: block;
+      }
+    }
+    .slideshow__indicator{
+
+      .active{
+      }
+    }
+    .slideshow__indicator>li{
+    }
+  }
+}
 </style>

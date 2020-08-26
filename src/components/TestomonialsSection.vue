@@ -240,4 +240,81 @@ export default {
 			border-radius: 0;
 		}
 	}
+	@media (max-width: 667px){
+		.reviews{
+			height: 11.5%;
+			.reviews__substrate{
+			}
+			.reviews__substrate>h6{
+				font-size: 1.5rem;
+			}
+			.client{
+				height: 60%;
+				flex-direction: column;
+
+				.client__feedback{
+					order: 0;
+					width: 100%;
+					height: 90%;
+				}
+				.client__wrapper{
+				}
+				.client__ava{
+					float: right;
+					width: 45%;
+				}
+				.client__img{
+					position: static;
+				}
+				.client__img>img{
+				}
+				.client__block{
+					padding: 0;
+					height: 60%;
+				}
+			}
+			.menu{
+				order: -1;
+				width: 100%;
+				height: 10%;
+
+				.menu__block{
+					flex-direction: row;
+				}
+				.menu__item{
+					width: 50%;
+					height: 100%;
+				}
+				.menu__item>svg{
+					width: 30px;
+					height: 30px;
+				}
+			}
+			.customer{
+				height: 25%;
+			}
+			.customer__wrapper{
+				flex-direction: column;
+			}
+			.customer__item{
+				width: 90%;
+				height: 20%;
+				margin: 0 auto;
+			}
+			.customer__img{
+				width: 40px;
+				height: 40px;
+			}
+			.customer__img>img{
+			}
+			.customer__name{
+			}
+			.customer__name>span{
+			}
+			.customer__buttom{
+			}
+			.customer__buttom:focus{
+			}
+		}
+	}
 </style>

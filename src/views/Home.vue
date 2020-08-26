@@ -1,7 +1,12 @@
 <template>
 	<div class="wrapper">
-		<LateralFace />
+		<LateralFace id="lateral" />
 		<div class="content">
+      <MenuAdditional 
+      class="menu-additional"
+      id="menuAdditional"
+      @show="showEl"
+      @hide="hideEl"/>
 			<MenuHeader/>
 			<AboutSection/>
 			<AboutMeSection/>
@@ -30,6 +35,7 @@ import WorkSection from '@/components/WorkSection.vue'
 import NewsSection from '@/components/NewsSection.vue'
 import ContactSection from '@/components/ContactSection.vue'
 import FooterSection from '@/components/FooterSection.vue'
+import MenuAdditional from '@/components/MenuAdditional.vue'
 
 export default {
   name: 'Home',
@@ -46,6 +52,19 @@ export default {
     NewsSection,
     ContactSection,
     FooterSection,
+    MenuAdditional,
+  },
+  methods: {
+    showEl: function () {
+      let menuAdditional = document.getElementById('menuAdditional');
+
+      menuAdditional.classList.remove('menu-additional');
+      menuAdditional.classList.add('menu-additional_activ');
+    },
+    hideEl: function () {
+      menuAdditional.classList.add('menu-additional');
+      menuAdditional.classList.remove('menu-additional_activ');
+    }
   },
   mounted() {
 	const animItems = document.querySelectorAll('.block-animation');
@@ -99,5 +118,85 @@ export default {
 		justify-content: space-around;
 		min-height: 8700px;
 	}
+  .menu-additional_activ{
+    position: fixed;
+    width: 77%;
+    height: 100px;
+    top: 10px;
+    z-index: 9999999;
+  }
+  .menu-additional{
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    right: 1%;
+    z-index: 9999999;
+    top: 20px;
+    border-radius: 20%;
+    background-color: #F05251;
+    box-shadow:1px 1px 100px 1px rgba(0,0,0,0.21);
+   -webkit-box-shadow:1px 1px 100px 1px rgba(0,0,0,0.21);
+   -moz-box-shadow:1px 1px 100px 1px rgba(0,0,0,0.21);
+  }
+}
+
+@media (max-width: 1678px){
+	.wrapper{
+
+		.content{
+			width: 90%;
+		}
+    .menu-additional_activ{
+      width: 90%;
+    }
+    .menu-additional{
+      right: 5%;
+    }
+		#lateral{
+			display: none;
+		}
+	}
+}
+@media (max-width: 1140px){
+  .wrapper{
+
+    .content{
+    }
+    .menu-additional_activ{
+
+    }
+    .menu-additional{
+      display: none;
+    }
+  }
+}
+@media (max-width: 967px){
+  .wrapper{
+
+    .content{
+      width: 94%;
+
+      min-height: 10700px;
+    }
+    .menu-additional_activ{
+
+    }
+    .menu-additional{
+    }
+  }
+}
+@media (max-width: 667px){
+  .wrapper{
+
+    .content{
+
+      min-height: 8700px;
+    }
+    .menu-additional_activ{
+
+    }
+    .menu-additional{
+    }
+  }
 }
 </style>

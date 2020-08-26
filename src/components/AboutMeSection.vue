@@ -12,7 +12,7 @@
         <h2>Обо мне</h2>
       </div>
       <div class="info__text">
-        <p>В первый раз сцепление на Донфенге накрылось после пробега в 32 тысячи километров! После снятия коробки выяснилось следущее: во-первых сами накладки диска гавно- сажа, во вторых поставить какой-то аналог не китай не получится, только если вместе с корзиной сцепления, так как если брать отдельно диск- он подойдёт к маховику, но не подойдёт к корзине.</p>
+        <p>Занимаюсь разработкой сайтов, опыт работы более 3 лет. Занимаюсь созданием интернет-ресурсов, как с использованием готовых шаблонов, так и воплощая уникальный и оригинальный дизайн с индивидуальным подходом к кажому клиенту. Строго придерживаюсь сроков исполнения, гарантия на сайт по договору.</p>
       </div>
     </div>
     <div class="aboutMe__data">
@@ -27,7 +27,7 @@
             </div>
             <div class="scheme__indicator"></div>
           </div>
-          <div class="scheme__text"><span>Logo Design</span></div>
+          <div class="scheme__text"><span>Адаптивная вёрстка</span></div>
         </div>
         <div class="scheme__block websites">
           <div class="scheme__wrapper">
@@ -38,7 +38,7 @@
             </div>
             <div class="scheme__indicator"></div>
           </div>
-          <div class="scheme__text"><span>Websites</span></div>
+          <div class="scheme__text"><span>Поддержка ресурса</span></div>
         </div>
         <div class="scheme__block softwares">
           <div class="scheme__wrapper">
@@ -70,21 +70,21 @@
           <h5>Персональные данные</h5>
         </div>
         <div class="data__block">
-          <ul class="data__wrapper">
+          <ul class="data__wrapper data__wrapper-name">
             <li class="data__item"><span>Имя</span><span>:</span></li>
             <li class="data__item"><span>Псевдоним</span><span>:</span></li>
             <li class="data__item"><span>Адрес</span><span>:</span></li>
-            <li class="data__item"><span>WhatsApp</span><span>:</span></li>
             <li class="data__item"><span>Телефон</span><span>:</span></li>
+            <li class="data__item"><span>WhatsApp</span><span>:</span></li>
             <li class="data__item"><span>Email</span><span>:</span></li>
             <li class="data__item"><span>Сайт</span><span>:</span></li>
           </ul>
-          <ul class="data__wrapper">
+          <ul class="data__wrapper data__wrapper-info">
             <li class="data__info">Sergey</li>
             <li class="data__info">Def</li>
             <li class="data__info">г.Москва</li>
             <li class="data__info">8 (977) 350-67-84</li>
-            <li class="data__info">8 (977) 350-67-84</li>
+            <li class="data__info">8 (977) 301-37-97</li>
             <li class="data__info">pas.sergei2014@yandex.ru</li>
             <li class="data__info">http://sergeydef.fun</li>
           </ul>
@@ -150,35 +150,14 @@ export default {
      .info{
       width: 100%;
       height: 30%;
-
-      .info__title{
-        display: flex;
-        justify-content: space-between;
-        width: 16%;
-        padding-top: 2%;
-      }
-      .info__title>h2{
-        font-size: 2rem;
-        font-weight: 700;
-      }
-      .info__icon{
-        color: #2196F3;
-      }
-      .info__text{
-        width: 100%;
-        text-align: left;
-        padding-top: 2%;
-      }
-      .info__text>p{
-        color: #797979;
-        font-size: 0.954rem;
-      }
     }
     .aboutMe__data{
       display: flex;
       height: 50%;
+      z-index: 9;
     }
     .scheme{
+      z-index: 9;
       width: 50%;
       display: flex;
       flex-wrap: wrap;
@@ -288,9 +267,10 @@ export default {
       }
     }
     .aboutMe__emaill{
+      z-index: 9;
       display: flex;
       width: 100%;
-      height: 20%;
+      height: 15%;
       background-color: #2196F3;
     }
     .emaill__info{
@@ -334,5 +314,209 @@ export default {
       cursor: pointer;
       background-color: #ffffff;
     }
+  }
+  @media (max-width: 967px){
+      .aboutMe{
+       justify-content: space-between;
+       height: 11.5%;
+
+       .aboutMe__substrate{
+
+       }
+       .aboutMe__substrate>h6{
+       }
+       .info{
+        height: 20%;
+      }
+      .aboutMe__data{
+        flex-direction: column;
+        height: 60%;
+        justify-content: space-around;
+      }
+      .scheme{
+        width: 80%;
+        height: 50%;
+        margin: auto;
+
+        .scheme__block{
+          width: 46%;
+          height: 46%;
+
+        }
+        .design{
+
+          .design__icon{
+          }
+        }
+        .websites{
+
+          .websites__icon{
+          }
+        }
+        .softwares{
+
+          .softwares__icon{
+          }
+        }
+        .application{
+
+          .application__icon{
+          }
+        }
+        .scheme__wrapper{
+        }
+        .scheme__text{
+          
+        }
+        .scheme__text>span{
+          font-size: 1.5rem;
+        }
+        .scheme__img{
+
+        }
+      }
+      .data{
+        width: 80%;
+        height: 40%;
+        margin: auto;
+
+        .data__title{
+        }
+        .data__title>h5{
+        }
+        .data__block{
+        }
+        .data__wrapper{
+        }
+        .data__wrapper>li{
+        }
+        .data__item{
+          margin-bottom: 5px;
+        }
+        .data__item>span{
+        }
+        .data__info{
+          margin-bottom: 5px;
+        }
+      }
+      .aboutMe__emaill{
+        height: 10%;
+      }
+      .emaill__info{
+      }
+      .emaill__img{
+      }
+      .emaill__icon{
+      }
+      .emaill__text{
+      }
+      .emaill__text>span{
+      }
+      .emaill__button{
+      }
+      .emaill__button>button{
+        width: 60%;
+        height: 50%;
+      }
+    }
+  }
+  @media (max-width: 667px){
+      .aboutMe{
+
+       .aboutMe__substrate{
+
+       }
+       .aboutMe__substrate>h6{
+         font-size: 1.5rem;
+       }
+       .info{
+      }
+      .aboutMe__data{
+      }
+      .scheme{
+        width: 100%;
+      
+        .scheme__block{
+          padding-left: 0;
+        }
+        .design{
+
+          .design__icon{
+          }
+        }
+        .websites{
+
+          .websites__icon{
+          }
+        }
+        .softwares{
+
+          .softwares__icon{
+          }
+        }
+        .application{
+
+          .application__icon{
+          }
+        }
+        .scheme__wrapper{
+        }
+        .scheme__text{
+          text-align: center;
+        }
+        .scheme__text>span{
+          font-size: 0.9rem;
+        }
+        .scheme__img{
+          margin: auto;
+          width: 50%;
+          height: 70%;
+        }
+      }
+      .data{
+        width: 100%;
+
+        .data__title{
+          text-align: center;
+        }
+        .data__title>h5{
+        }
+        .data__block{
+        }
+        .data__wrapper-name{
+          width: 30%;
+        }.data__wrapper-info{
+          width: 60%;
+        }
+        .data__wrapper>li{
+        }
+        .data__item{
+        }
+        .data__item>span{
+        }
+        .data__info{
+        }
+      }
+      .aboutMe__emaill{
+      }
+      .emaill__info{
+      }
+      .emaill__img{
+      }
+      .emaill__icon{
+      }
+      .emaill__text{
+      }
+      .emaill__text>span{
+        font-size: 0.7rem;
+      }
+      .emaill__button{
+      }
+      .emaill__button>button{
+        width: 80%;
+        font-size: 0.8rem;
+      }
+    }
+
   }
 </style>

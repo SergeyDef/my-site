@@ -2,7 +2,7 @@
   <section class="news">
     <a name="news" class="myLink"></a>
   	<div class="news__substrate">
-  		<h6>Новостные статьи</h6>
+  		<h6>Статьи</h6>
   	</div>
   	<div class="info">
       <div class="info__title">
@@ -11,7 +11,7 @@
           <path d="M9 4.5V1l5 5h-3.5A1.5 1.5 0 0 1 9 4.5z"/>
           <path fill-rule="evenodd" d="M5 11.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5zm0-2a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm0-2a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5z"/>
         </svg>
-        <h2>Новостные статьи</h2>
+        <h2>Статьи</h2>
       </div>
       <div class="info__text">
         <p>Здесь можно ознакомиться с моими статьями на тему новинок в ваб разработки.</p>
@@ -23,14 +23,21 @@
           <div class="news__info">
             <div class="news__line"></div>
             <div class="news__block">
-              <div class="news__title">
-                <h5>Тренды веб разработки: PHP 7</h5>
+              <div class="news__container">
+                <div class="news__heading">
+                  <div class="news__title">
+                    <h5>Тренды веб разработки: PHP 7</h5>
+                  </div>
+                  <ul class="news__menu">
+                    <li><a href="">Спросить меня</a></li>
+                    <li class="news__menu-line">17.08.2020</li>
+                    <li class="news__menu-right">Коментарии</li>
+                  </ul>
+                </div>
+                <div class="news__img-adaptiv">
+                  <img src="@/assets/news/news_php.jpg" alt="news">
+                </div>
               </div>
-              <ul class="news__menu">
-              <li><a href="">Спросить меня</a></li>
-              <li class="news__menu-line">17.08.2020</li>
-              <li class="news__menu-right">Коментарии</li>
-              </ul>
               <div class="news__text">
                 <p>В первый раз сцепление на Донфенге накрылось после пробега в 32 тысячи километров! После снятия коробки выяснилось следущее: во-первых сами накладки </p>
               </div>
@@ -50,14 +57,21 @@
         <div class="news__info">
           <div class="news__line news__line-left"></div>
           <div class="news__block news__block-left">
-            <div class="news__title">
-              <h5>WordPress 5.3.2 новыя версия</h5>
+            <div class="news__container">
+              <div class="news__img-adaptiv">
+                <img src="@/assets/news/news_wordpress.jpg" alt="news">
+              </div>
+              <div class="news__heading">
+                <div class="news__title">
+                  <h5>WordPress 5.3.2 новыя версия</h5>
+                </div>
+                <ul class="news__menu">
+                  <li class="news__menu-right"><a href="" class="news__menu-left">Спросить меня</a></li>
+                  <li class="news__menu-line">17.08.2020</li>
+                  <li class="news__menu-left">Коментарии</li>
+                </ul>
+              </div>
             </div>
-            <ul class="news__menu">
-              <li class="news__menu-right"><a href="">Спросить меня</a></li>
-              <li class="news__menu-line">17.08.2020</li>
-              <li class="news__menu-left">Коментарии</li>
-            </ul>
             <div class="news__text">
               <p>В первый раз сцепление на Донфенге накрылось после пробега в 32 тысячи километров! После снятия коробки выяснилось следущее: во-первых сами накладки </p>
             </div>
@@ -79,14 +93,21 @@
         <div class="news__info">
           <div class="news__line"></div>
           <div class="news__block">
-            <div class="news__title">
-              <h5>Зачем делать свой сайт для бизнеса?</h5>
+            <div class="news__container">
+              <div class="news__heading">
+                <div class="news__title">
+                  <h5>Зачем делать свой сайт для бизнеса?</h5>
+                </div>
+                <ul class="news__menu">
+                  <li><a href="">Спросить меня</a></li>
+                  <li class="news__menu-line">17.08.2020</li>
+                  <li class="news__menu-right">Коментарии</li>
+                </ul>
+              </div>
+              <div class="news__img-adaptiv">
+                <img src="@/assets/news/news_sait.jpg" alt="news">
+              </div>
             </div>
-            <ul class="news__menu">
-              <li><a href="">Спросить меня</a></li>
-              <li class="news__menu-line">17.08.2020</li>
-              <li class="news__menu-right">Коментарии</li>
-            </ul>
             <div class="news__text">
               <p>В первый раз сцепление на Донфенге накрылось после пробега в 32 тысячи километров! После снятия коробки выяснилось следущее: во-первых сами накладки </p>
             </div>
@@ -182,11 +203,17 @@ export default {
     }
     .news__menu{
       width: 100%;
+      padding-top: 5%;
       display: flex;
     }
     .news__menu>li{
       width: 32%;
       color: #797979;
+    }
+    .news__menu>li>a{
+      width: 100%;
+      display: block;
+      text-align: left;
     }
     .news__menu-line{
       text-align: center;
@@ -194,7 +221,7 @@ export default {
       border-right: 1px solid #797979;
     }
     .news__menu-right{
-       text-align: left;
+       text-align: right;
     }
     .news__menu-left>a{
       text-align: left;
@@ -268,6 +295,12 @@ export default {
       flex-direction: column;
       justify-content: space-between;
     }
+    .news__container{
+      width: 100%;
+    }
+    .news__heading{
+      width: 100%;
+    }
     .news__block-left{
       text-align: right;
       padding-left: 0;
@@ -291,5 +324,221 @@ export default {
     .news__button>button{
       @include buttonMain(40%, 100%, 1pem);
     }
+    .news__img-adaptiv{
+      display: none;
+    }
 	}
+  @media (max-width: 967px){
+    .news{
+
+      .news__substrate{
+      }
+      .news__substrate>h6{
+      }
+      .news__wrapper{
+      }
+      .news__item{
+        flex-direction: column;
+      }
+      .news__img{
+        display: none;
+      }
+      .news__img>img{
+      }
+      .news__menu{
+        width: 100%;
+      }
+      .news__menu>li{
+        font-size: 0.8rem;
+      }
+      .news__menu-line{
+      }
+      .news__menu-right{
+      }
+      .news__menu-left>a{
+        text-align: right;
+      }
+      .news__navigation{
+      }
+      .navigation{
+
+        .navigation__wrapper{
+        }
+        .navigation__block{
+        }
+        .navigation__button{
+          padding: 10px;
+        }
+        .navigation__button:hover{
+        }
+        .navigation-left{
+        }
+        .navigation-right{
+        }
+        .navigation-left>svg{
+        }
+        .navigation-right>svg{
+        }
+      }
+      .news__info{
+        width: 100%;
+      }
+      .news__line{
+        width: 100%;
+        height: 3px;
+        margin-left: 0;
+      }
+      .news__line-left{
+      }
+      .news__block{
+        padding: 0;
+        display: flex;
+        height: 100%;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      .news__container{
+        display: flex;
+        justify-content: space-between;
+        height: 50%;
+      }
+      .news__heading{
+        padding-top: 5%;
+        width: 50%;
+        height: 100%;
+      }
+      .news__text{
+        height: 25%;
+      }
+      .news__block-left{
+      }
+      .news__title{
+      }
+      .news__title>h5{
+      }
+      .news__text>p{
+      }
+      .news__button{
+        height: 15%;
+
+      }
+      .news__button>button{
+        width: 30%;
+      }
+      .news__img-adaptiv{
+        display: block;
+        width: 40%;
+        height: 100%;
+      }
+      .news__img-adaptiv>img{
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+  @media (max-width: 667px){
+    .news{
+      .info{
+        height: 10%;
+      }
+      .news__substrate{
+      }
+      .news__substrate>h6{
+        font-size: 1.5rem;
+      }
+      .news__wrapper{
+        height: 80%;
+      }
+      .news__item{
+      }
+      .news__img{
+      }
+      .news__img>img{
+      }
+      .news__menu{
+      }
+      .news__menu>li{
+      }
+      .news__menu-line{
+      }
+      .news__menu-right{
+      }
+      .news__menu-left>a{
+      }
+      .news__navigation{
+        height: 5%;
+      }
+      .navigation{
+
+        .navigation__wrapper{
+        }
+        .navigation__block{
+        }
+        .navigation__button{
+          padding: 8px;
+          font-size: 0.7rem;
+        }
+        .navigation__button:hover{
+        }
+        .navigation-left{
+        }
+        .navigation-right{
+        }
+        .navigation-left>svg{
+          width: 20px;
+          height: 20px;
+        }
+        .navigation-right>svg{
+          width: 20px;
+          height: 20px;
+        }
+      }
+      .news__info{
+      }
+      .news__line{
+      }
+      .news__line-left{
+      }
+      .news__block{
+      }
+      .news__container{
+        flex-direction: column;
+      }
+      .news__heading{
+        width: 100%;
+      }
+      .news__text{
+      }
+      .news__block-left{
+      }
+      .news__title{
+      }
+      .news__title>h5{
+        font-size: 1rem;
+        text-align: center;
+      }
+      .news__text>p{
+        text-align: left;
+      }
+      .news__button{
+
+      }
+      .news__button>button{
+        width: 50%;
+        margin: auto;
+        display: block;
+      }
+      .news__img-adaptiv{
+        display: block;
+        width: 100%;
+        height: 40%;
+      }
+      .news__img-adaptiv>img{
+        width: 60%;
+        height: 100%;
+        margin: auto;
+        display: block;
+      }
+    }
+  }
 </style>

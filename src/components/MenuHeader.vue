@@ -31,6 +31,15 @@
         </li>
       </ul>
     </nav>
+    <nav class="menu__adantiv" v-if="showMenu">
+        <transition>
+          <ul class="menu__wrapper">
+            <li 
+            class="menu__item"
+            v-for="headerMenuList in headerMenuLists"><a v-bind:href="headerMenuList.href"><span>{{ headerMenuList.title }}</span></a></li>
+          </ul>
+        </transition>
+      </nav>
     <div class="menu__block">
       <div class="search">
         <button type="button" class="btn search__button">
@@ -42,18 +51,13 @@
       </div>
       <div class="sandwich" id="sandwich">
         <transition>
-          <div class="sandwich__block" v-if="!show" @cliche="show = !show" key="menu">
+          <div class="sandwich__block" v-if="!showMenuIcon" @click="showAdantiv" key="menu">
             <span></span>
             <span></span>
             <span></span>
           </div>
-          <div class="sandwich__clear" v-else @click="show =!show" key="clear"></div>
-      </transition>
-      <transition>
-        <ul v-if="show">
-          <li v-for="item in items">{{ item }}</li>
-        </ul>
-      </transition>
+          <div class="sandwich__clear" v-else @click="hideAdantiv" key="clear"></div>
+        </transition>
       </div>
     </div>
   </header>
@@ -67,25 +71,23 @@ export default {
   },
   data(){
     return {
-      headerMenuLists: [
-      {id: 1, title: 'Главная'},
-      {id: 2, title: 'О бо мне'},
-      {id: 3, title: 'Навыки'},
-      {id: 4, title: 'Образование'},
-      {id: 5, title: 'Портфолио'},
-      {id: 6, title: 'Отзывы'},
-      {id: 7, title: 'Опыт работы'},
-      {id: 8, title: 'Новости'},
-      {id: 9, title: 'Обратная связь'},
+      adantivMenuLists: [
+      {id: 1, title: 'Главная', href: '#main'},
+      {id: 2, title: 'Обо мне', href: '#aboutMe'},
+      {id: 3, title: 'Навыки', href: '#skills'},
+      {id: 4, title: 'Образование', href: '#education'},
+      {id: 5, title: 'Портфолио', href: '#portfolio'},
+      {id: 6, title: 'Отзывы', href: '#reviews'},
+      {id: 7, title: 'Опыт работы', href: '#workExperience'},
+      {id: 8, title: 'Новости', href: '#news'},
+      {id: 9, title: 'Обратная связь', href: '#feedback'},
       ],
-      show: false,
+      showMenu: false,
+      showMenuIcon: false,
     };
   },
   methods: {
-    show: function (){
-      alert("AboutMeSection.vue");
-    }
-  }
+  },
 }
 </script>
 
@@ -101,6 +103,91 @@ export default {
       display: flex;
       width: 83%;
       height: 100%;
+
+      .menu__wrapper{
+        width: 100%;
+        height: 100%;
+
+        .menu__item{
+          width: 11%;
+          height: 100%;
+          margin: auto;
+          cursor: pointer;
+        }
+        .menu__item:hover{
+          background-color: #F7F7F7;
+          transform: scale(1.1);
+        }
+        .menu__item>a{
+          width: 100%;
+          height: 100%;
+          display: flex;
+          text-decoration: none;
+        }
+        .menu__item>a>span{
+          margin: auto;
+          color: #121212;
+        }
+      }
+    }
+    .menu__block{
+      display: flex;
+      cursor: pointer;
+      justify-content: space-evenly;
+      width: 12%;
+    }
+    .search{
+      width: 50%;
+      height: 100%;
+      margin: 0 auto;
+      display: flex;
+
+      .search__button{
+        margin: auto;
+        width: 100%;
+        height: 70%;
+        opacity: 0.5;
+        color: #121212;
+      }
+      .search__button>svg{
+        width: 60%;
+        height: 60%;
+      }
+      .search__button:hover{
+        opacity: 0.9;
+      }
+    }
+    .sandwich{
+      display: none;
+    }
+  }
+@media (max-width: 1440px){
+  .header{
+    .menu{
+      width: 100%;
+    }
+  }
+}
+@media (max-width: 1340px){
+  .header{
+    .menu{
+       
+       .menu__wrapper{
+        
+        .menu__item>a>span{
+          font-size: 0.85rem;
+        }
+      }  
+    }
+  }
+}
+@media (max-width: 1140px){
+    .header{
+    @include blockMain(100%, 1%);
+    justify-content: flex-end;
+
+    .menu{
+     display: none;
 
       .menu__wrapper{
         width: 100%;
@@ -179,24 +266,41 @@ export default {
       .sandwich__block:hover{
         opacity: 0.9;
       }
-      .sandwich__clear{
-        position: relative;
-        width: 32px;
-        height: 32px;
-      }
-      .sandwich__clear:after, .sandwich__clear:before{
-        position: absolute;
-        left: 15px;
-        height: 33px;
-        width: 2px;
-        background-color: #121212;
-      }
-      .sandwich__clear:after{
-        transform: rotate(-45deg);
-      }
-      .sandwich__clear:before{
-        transform: rotate(45deg);
-      }
     }
   }
+}
+@media (max-width: 967px){
+    .header{
+      height: 0.7%;
+      .menu{
+
+        .menu__wrapper{
+
+          .menu__item{
+          }
+          .menu__item:hover{
+          }
+          .menu__item>a{
+          }
+          .menu__item>a>span{
+          }
+        }
+      }
+    .menu__block{
+    }
+    .search{
+
+      .search__button{
+
+      }
+      .search__button>svg{
+
+      }
+      .search__button:hover{
+      }
+    }
+    .sandwich{
+    }
+  }
+}
 </style>
