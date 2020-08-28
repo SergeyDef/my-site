@@ -1,5 +1,6 @@
 <template>
   <header class="header">
+    <a name="upward"></a>
     <nav class="menu">
       <ul class="menu__wrapper">
         <li class="menu__item button-activ">
@@ -31,15 +32,17 @@
         </li>
       </ul>
     </nav>
-    <nav class="menu__adantiv" v-if="showMenu">
+    <nav class="menu__adantiv" v-if="showMenuAdantiv">
         <transition>
           <ul class="menu__wrapper">
             <li 
             class="menu__item"
-            v-for="headerMenuList in headerMenuLists"><a v-bind:href="headerMenuList.href"><span>{{ headerMenuList.title }}</span></a></li>
-          </ul>
-        </transition>
-      </nav>
+            v-for="adantivMenuList in adantivMenuLists">
+            <a v-bind:href="adantivMenuList.href" @click="hideMenuList"><span>{{ adantivMenuList.title }}</span></a>
+          </li>
+        </ul>
+      </transition>
+    </nav>
     <div class="menu__block">
       <div class="search">
         <button type="button" class="btn search__button">
@@ -51,12 +54,12 @@
       </div>
       <div class="sandwich" id="sandwich">
         <transition>
-          <div class="sandwich__block" v-if="!showMenuIcon" @click="showAdantiv" key="menu">
+          <div class="sandwich__block" v-if="!showMenuSandwich" @click="showMenuList" key="menu">
             <span></span>
             <span></span>
             <span></span>
           </div>
-          <div class="sandwich__clear" v-else @click="hideAdantiv" key="clear"></div>
+          <div class="sandwich__clear" v-else @click="hideMenuList" key="clear"></div>
         </transition>
       </div>
     </div>
@@ -82,11 +85,19 @@ export default {
       {id: 8, title: 'Новости', href: '#news'},
       {id: 9, title: 'Обратная связь', href: '#feedback'},
       ],
-      showMenu: false,
-      showMenuIcon: false,
+      showMenuAdantiv: false,
+      showMenuSandwich: false,
     };
   },
   methods: {
+    showMenuList: function () {
+      this.showMenuAdantiv = true;
+      this.showMenuSandwich = true;
+    },
+    hideMenuList: function () {
+      this.showMenuAdantiv = false;
+      this.showMenuSandwich = false;
+    }
   },
 }
 </script>
@@ -221,6 +232,37 @@ export default {
       justify-content: space-evenly;
       width: 12%;
     }
+    .menu__adantiv{
+      z-index: 9999;
+      background-color: #ffffff;
+      width: 100%;
+      height: 410px;
+      top: 10%;
+      right: 5%;
+      box-shadow:1px 1px 100px 1px rgba(0,0,0,0.21);
+      -webkit-box-shadow:1px 1px 100px 1px rgba(0,0,0,0.21);
+      -moz-box-shadow:1px 1px 100px 1px rgba(0,0,0,0.21);
+
+      .menu__item{
+        display: block;
+        width: 100%;
+        height: 45px;
+        display: flex;
+        border-bottom: 1px solid #000;
+      }
+      .menu__item>a{
+        margin: auto;
+        width: 100%;
+        color: #2c3e50;
+        font-size: 1rem;
+        font-weight: 700;
+        text-decoration: none;
+        text-transform: uppercase;
+      }
+      .menu__item:hover{
+        background-color: #F7F7F7;
+      }
+    }
     .search{
       width: 50%;
       height: 100%;
@@ -287,6 +329,55 @@ export default {
         }
       }
     .menu__block{
+      width: 30%;
+    }
+    .menu__adantiv{}
+    .search{
+
+      .search__button{
+
+      }
+      .search__button>svg{
+        width: 100%;
+        height: 100%;
+      }
+      .search__button:hover{
+      }
+    }
+    .sandwich{
+    }
+  }
+}
+@media (max-width: 667px){
+    .header{
+      height: 0.7%;
+      position: relative;
+
+      .menu{
+
+        .menu__wrapper{
+
+          .menu__item{
+          }
+          .menu__item:hover{
+          }
+          .menu__item>a{
+          }
+          .menu__item>a>span{
+          }
+        }
+      }
+    .menu__block{
+      width: 30%;
+    }
+    .menu__adantiv{
+
+      .menu__item{
+      }
+      .menu__item>a{
+      }
+      .menu__item:hover{
+      }
     }
     .search{
 
@@ -294,7 +385,8 @@ export default {
 
       }
       .search__button>svg{
-
+        width: 100%;
+        height: 100%;
       }
       .search__button:hover{
       }

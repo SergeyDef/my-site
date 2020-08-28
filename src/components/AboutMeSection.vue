@@ -50,7 +50,7 @@
             </div>
             <div class="scheme__indicator"></div>
           </div>
-          <div class="scheme__text"><span>Softwares</span></div>
+          <div class="scheme__text"><span>Модификация </span><span>существующего сайта</span></div>
         </div>
         <div class="scheme__block application">
           <div class="scheme__wrapper">
@@ -62,7 +62,7 @@
             </div>
             <div class="scheme__indicator"></div>
           </div>
-          <div class="scheme__text"><span>Application</span></div>
+          <div class="scheme__text"><span>Строгое соблюдение </span><span>техзадания</span></div>
         </div>
       </div>
       <div class="data">
@@ -94,24 +94,21 @@
     <div class="aboutMe__emaill emaill">
       <div class="emaill__info">
         <div class="emaill__img">
-          <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-image emaill__icon" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd" d="M14.002 2h-12a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1zm-12-1a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2h-12z"/>
-            <path d="M10.648 7.646a.5.5 0 0 1 .577-.093L15.002 9.5V14h-14v-2l2.646-2.354a.5.5 0 0 1 .63-.062l2.66 1.773 3.71-3.71z"/>
-            <path fill-rule="evenodd" d="M4.502 7a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/>
+          <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-person-lines-fill emaill__icon" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm7 1.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5zm2 9a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5z"/>
           </svg>
         </div>
         <div class="emaill__text">
-          <span>Over Ten Year in The Game</span>
-          <span>With 550+ Projects Successfuly Done</span>
+          <span>Бесплатная консультация</span>
+          <span>Также можно написать мне на почту</span>
         </div>
       </div>
       <div class="emaill__button">
         <button type="button" class="btn">
-          <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-credit-card-2-back" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd" d="M14 3H2a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1zM2 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H2z"/>
-            <path d="M11 5.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-1zM1 9h14v2H1V9z"/>
+          <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-envelope-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555zM0 4.697v7.104l5.803-3.558L0 4.697zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757zm3.436-.586L16 11.801V4.697l-5.803 3.546z"/>
           </svg>
-      Hire Me</button>
+      Написать</button>
       </div>
     </div>
   </section>
@@ -369,7 +366,7 @@ export default {
           
         }
         .scheme__text>span{
-          font-size: 1.5rem;
+          font-size: 1rem;
         }
         .scheme__img{
 
@@ -418,6 +415,9 @@ export default {
         width: 60%;
         height: 50%;
       }
+      .emaill__button>button>svg{
+        height: auto;
+      }
     }
   }
   @media (max-width: 667px){
@@ -463,6 +463,8 @@ export default {
         }
         .scheme__text{
           text-align: center;
+          display: flex;
+          flex-direction: column;
         }
         .scheme__text>span{
           font-size: 0.9rem;
@@ -500,6 +502,106 @@ export default {
       .aboutMe__emaill{
       }
       .emaill__info{
+        padding: 0;
+      }
+      .emaill__img{
+        width: 18%;
+      }
+      .emaill__icon{
+        width: 80%;
+      }
+      .emaill__text{
+        width: 80%;
+      }
+      .emaill__text>span{
+        font-size: 0.7rem;
+      }
+      .emaill__button{
+        width: 40%;
+      }
+      .emaill__button>button{
+        width: 90%;
+        height: 40%;
+        font-size: 0.8rem;
+      }
+      .emaill__button>button>svg{
+        height: 90%;
+        vertical-align: text-bottom;
+      }
+    }
+  }
+  @media (max-width: 400px){
+      .aboutMe{
+
+       .aboutMe__substrate{
+
+       }
+       .aboutMe__substrate>h6{
+       }
+       .info{
+      }
+      .aboutMe__data{
+      }
+      .scheme{
+      
+        .scheme__block{
+          width: 48%;
+          height: 46%;
+        }
+        .design{
+          margin-right: 2%;
+          .design__icon{
+          }
+        }
+        .websites{
+          margin-left: 2%;
+          .websites__icon{
+          }
+        }
+        .softwares{
+          margin-right: 2%;
+          .softwares__icon{
+          }
+        }
+        .application{
+          margin-left: 2%;
+          .application__icon{
+          }
+        }
+        .scheme__wrapper{
+        }
+        .scheme__text{
+        }
+        .scheme__text>span{
+          font-size: 0.8rem;
+        }
+        .scheme__img{
+        }
+      }
+      .data{
+
+        .data__title{
+        }
+        .data__title>h5{
+        }
+        .data__block{
+        }
+        .data__wrapper-name{
+        }
+        .data__wrapper-info{
+        }
+        .data__wrapper>li{
+        }
+        .data__item{
+        }
+        .data__item>span{
+        }
+        .data__info{
+        }
+      }
+      .aboutMe__emaill{
+      }
+      .emaill__info{
       }
       .emaill__img{
       }
@@ -508,15 +610,11 @@ export default {
       .emaill__text{
       }
       .emaill__text>span{
-        font-size: 0.7rem;
       }
       .emaill__button{
       }
       .emaill__button>button{
-        width: 80%;
-        font-size: 0.8rem;
       }
     }
-
   }
 </style>

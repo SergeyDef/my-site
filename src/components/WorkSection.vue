@@ -14,7 +14,7 @@
         <h2>Опыт работы</h2>
       </div>
       <div class="info__text">
-        <p>В первый раз сцепление на Донфенге накрылось после пробега в 32 тысячи километров! После снятия коробки выяснилось следущее: во-первых сами накладки диска гавно- сажа.</p>
+        <p>Опыт в веб разработки болле трёх лет. Тем немения ниже приведенны компании в которых я работал по другим специальностям, в других сферах.</p>
       </div>
     </div>
     <div class="work__wrapper">
@@ -52,7 +52,7 @@
     						<h5>Мерчандайзер</h5>
     					</div>
     					<div class="company__name">
-    						<h6><span>Организация:</span>ООО Строймаркт</h6>
+    						<h6><span>Организация:</span> ООО Строймаркт</h6>
     					</div>
     					<div class="company__date">
     						<span class="company__text-second"> с 01.12.2019 по 01.06.2020</span>
@@ -128,34 +128,34 @@
 	    			<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-star" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
 						  <path fill-rule="evenodd" d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.523-3.356c.329-.314.158-.888-.283-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767l-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288l1.847-3.658 1.846 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.564.564 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"/>
 						</svg>
-    				<h5>adard wins</h5>
+    				<h5>Веб разработка</h5>
     			</div>
     		</div>
     		<div class="progres__block progres__block-activ">
     			<div class="progres__substrate">
     				<h6>01</h6>
     			</div>
-    			<div class="progres__title"><span>css awwwards</span></div>
+    			<div class="progres__title"><span>Проект под ключ</span></div>
     			<div class="progres__text">
-    				<span>В первый раз сцепление на Донфенге накрылось после пробега в 32!</span>
+    				<span>Разработка сайта с нуля от идеи до полноценного интернет ресурса</span>
     			</div>
     		</div>
     		<div class="progres__block">
     			<div class="progres__substrate">
     				<h6>02</h6>
     			</div>
-    			<div class="progres__title"><span>css awwwards</span></div>
+    			<div class="progres__title"><span>Работа в команде</span></div>
     			<div class="progres__text">
-    				<p>В первый раз сцепление на Донфенге накрылось после пробега в 32!</p>
+    				<p>Опыт работы в небольших группах или паре с истользованием системы контроля версии Git</p>
     			</div>
     		</div>
     		<div class="progres__block">
     			<div class="progres__substrate">
     				<h6>03</h6>
     			</div>
-    			<div class="progres__title"><span>css awwwards</span></div>
+    			<div class="progres__title"><span>Доработка чужих проектов</span></div>
     			<div class="progres__text">
-	    			<p>В первый раз сцепление на Донфенге накрылось после пробега в 32!</p>
+	    			<p>Опыт работы с чужим кодом. Внесение изменений или улучшений в готовые или недоработанные проекты</p>
 					</div>
     		</div>
     	</div>

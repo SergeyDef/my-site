@@ -314,9 +314,14 @@ export default {
     	}
     	.language__text{
     		width: 50%;
+        display: flex;
         padding-right: 5%;
     		text-align: left;
     	}
+      .language__text>p{
+        margin: auto 0;
+        height: 60%;
+      }
     	.language__chart{
     		width: 50%;
     		display: flex;
@@ -524,6 +529,10 @@ export default {
           margin: auto;
           padding: 0;
         }
+        .language__text{
+          height: auto;
+          margin: 0;
+        }
         .language__chart{
           width: 90%;
           margin: auto;
@@ -549,4 +558,85 @@ export default {
       }
     }
   }
+   @media (max-width: 400px){
+      .skills{
+        .skills__substrate{
+        }
+        .skills__substrate>h6{
+        }
+        .menu{
+          .menu__wrapper{
+          }
+          .menu__item{
+          }
+          .menu__item:hover{
+            
+          }
+          .menu__item>a{
+          }
+          .menu__item>a.active{
+          }
+        }
+        .skills__professional{
+        }
+        .professional{
+          .professional__title{
+          }
+          .professional__title>h5{
+          }
+          .professional__wrapper{
+          }
+          .professional__block{
+          }
+          .professional__item{
+          }
+          .professional__name{
+          }
+          .professional__name>span{
+          }
+          .professional__progress{
+          }
+          .green__line{
+          }
+          .bootstrap__line{
+          }
+          .red__line{
+          }
+          .blue__line{
+
+          }
+          .react__line{
+          }
+          .purple__line{
+          }
+          .graphic{
+           }
+        }
+         .language{
+
+          .language__title{
+          }
+          .language__title>h5{
+          }
+          .language__wrapper{
+          }
+          .language__text{
+            width: 100%;
+          }
+          .language__text{
+          }
+          .language__chart{
+            width: 100%;
+          }
+          .language__block{
+          }
+          .language__russian{
+          }
+          .language__english{
+          }
+          .language__german{
+          }
+        }
+      }
+   }
 </style>
