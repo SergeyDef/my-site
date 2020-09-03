@@ -5,7 +5,7 @@
       <ol class="carousel-indicators slideshow__indicator">
         <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
         <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
-        <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+       <!--  <li data-target="#carouselExampleCaptions" data-slide-to="2"></li> -->
       </ol>
       <div class="carousel-inner slideshow">
         <div class="carousel-item active">
@@ -16,12 +16,14 @@
               <div class="slideshow__text">
                 <p>И я занимаюсь созданием сайтов и веб-преложений</p>
               </div>
-              <button type="button" class="btn slideshow__btn">
+              <a href="#portfolio">
+                <button type="button" class="btn slideshow__btn">
               <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-eye-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                 <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/>
                 <path fill-rule="evenodd" d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/>
               </svg>
               Просмотр портфолио</button>
+              </a>
             </div>
             <div class="about__block">
               <div class="about__picchu">
@@ -44,18 +46,19 @@
               <div class="slideshow__text">
                 <p>По этому я качественно и в сроки выполняю свою работу</p>
               </div>
-              <button type="button" class="btn slideshow__btn">
-                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-eye" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                  <path fill-rule="evenodd" d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.134 13.134 0 0 0 1.66 2.043C4.12 11.332 5.88 12.5 8 12.5c2.12 0 3.879-1.168 5.168-2.457A13.134 13.134 0 0 0 14.828 8a13.133 13.133 0 0 0-1.66-2.043C11.879 4.668 10.119 3.5 8 3.5c-2.12 0-3.879 1.168-5.168 2.457A13.133 13.133 0 0 0 1.172 8z"/>
-                  <path fill-rule="evenodd" d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z"/>
-                </svg>
-              Посмотреть отзывы</button>
+              <a href="#reviews">
+                <button type="button" class="btn slideshow__btn">
+                  <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-eye" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.134 13.134 0 0 0 1.66 2.043C4.12 11.332 5.88 12.5 8 12.5c2.12 0 3.879-1.168 5.168-2.457A13.134 13.134 0 0 0 14.828 8a13.133 13.133 0 0 0-1.66-2.043C11.879 4.668 10.119 3.5 8 3.5c-2.12 0-3.879 1.168-5.168 2.457A13.133 13.133 0 0 0 1.172 8z"/>
+                    <path fill-rule="evenodd" d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z"/>
+                  </svg>
+                Посмотреть отзывы</button>
+              </a>
             </div>
             <div class="about__block">
-              <div class="about__picchu">
-                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chat-right-dots" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                  <path fill-rule="evenodd" d="M2 1h12a1 1 0 0 1 1 1v11.586l-2-2A2 2 0 0 0 11.586 11H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zm12-1a2 2 0 0 1 2 2v12.793a.5.5 0 0 1-.854.353l-2.853-2.853a1 1 0 0 0-.707-.293H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h12z"/>
-                  <path d="M5 6a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
+              <div class="about__picchu_second">
+                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-wrench" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" d="M.102 2.223A3.004 3.004 0 0 0 3.78 5.897l6.341 6.252A3.003 3.003 0 0 0 13 16a3 3 0 1 0-.851-5.878L5.897 3.781A3.004 3.004 0 0 0 2.223.1l2.141 2.142L4 4l-1.757.364L.102 2.223zm13.37 9.019L13 11l-.471.242-.529.026-.287.445-.445.287-.026.529L11 13l.242.471.026.529.445.287.287.445.529.026L13 15l.471-.242.529-.026.287-.445.445-.287.026-.529L15 13l-.242-.471-.026-.529-.445-.287-.287-.445-.529-.026z"/>
                 </svg>
               </div>
               <div class="about__img d-block w-100">
@@ -64,7 +67,7 @@
             </div>
           </div>
         </div>
-        <div class="carousel-item">
+        <!-- <div class="carousel-item">
           <div class="slideshow__dlock">
             <div class="slideshow__content">
               <h5 class="slideshow__title">Видео</h5>
@@ -92,7 +95,7 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
   </section>
@@ -156,6 +159,23 @@ export default {
       margin: auto;
       color: #ffffff;
      }
+     .about__picchu_second{
+      position: absolute;
+      width: 60px;
+      z-index: 99;
+      height: 60px;
+      left: 4%;
+      top: 5%;
+      display: flex;
+      background-color: #AA47BC;
+      border-radius: 50%;
+     }
+     .about__picchu_second>svg{
+      width: 30px;
+      height: 30px;
+      margin: auto;
+      color: #ffffff;
+     }
      .slideshow{
       height: 100%;
 
@@ -209,6 +229,55 @@ export default {
       background-color: #CDCDCD;
      }
   }
+  @media (max-width:  1140px){
+    .about{
+
+       .about__slide{
+       
+       }
+       .about__block{
+        
+       }
+       .about__img{
+       }
+       .about__img>img{
+        
+       }
+       .about__picchu{
+        
+       }
+       .about__picchu>svg{
+       
+       }
+       .slideshow{
+        
+        .slideshow__dlock{
+        }
+        .slideshow__content{
+        }
+        .slideshow__title{
+          font-size: 2.2rem;
+        }
+        .slideshow__title-min{
+        }
+        .slideshow__text{
+        }
+        .slideshow__text>p{
+        }
+        .slideshow__btn{
+          width: 55%;
+        }
+      }
+      .slideshow__indicator{
+
+        .active{
+        }
+      }
+      .slideshow__indicator>li{
+      }
+    }
+  }
+
   @media (max-width: 967px){
       .about{
        height: 4%;

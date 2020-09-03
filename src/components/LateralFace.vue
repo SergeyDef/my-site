@@ -137,7 +137,7 @@
       <div class="sidebar__myself">
         <div class="myself">
           <div class="myself__title">
-            <h4>what`s in my mind</h4>
+            <h4>Для работодателей</h4>
           </div>
           <div class="myself__text">
             <p>В первый раз сцепление на Донфенге накрылось после пробега в 32 тысячи километров! После снятия коробки выяснилось следущее.</p>
@@ -332,8 +332,83 @@ export default {
     display: flex;
 
     .summary__button{
-      @include buttonMain(46%, 40%, 1rem);
+      @include buttonMain(50%, 40%, 1rem);
       margin: auto;
+    }
+  }
+}
+@media (max-width: 1140px){
+  .sidebar{
+    width: 310px;
+    height: 100%;
+
+    .logo{
+      height: 300px;
+      .logo__img{
+      }
+      .logo__img>img{
+      }
+      .logo__content{
+      }
+      .logo__title>h2{
+      }
+      .logo__text{
+      }
+      .logo__text>span{
+      }
+      .logo__text>a{
+      }
+    }
+    .sidebar__bottom{
+      height: 58%;
+    }
+    .sidebar__network{
+      height: 12%;
+    }
+    .network{
+
+      .network__block{
+      }
+      .network__img{
+      }
+      .network__img>svg{
+      }
+      /*#2196F3*/
+      .network__facebook{
+      }
+      .network__Instagram{
+      }
+      .network__twitter{
+      }
+      .network__wk{
+      }
+      .network__img:hover{
+        }
+        .network__Instagram{
+        }
+      }
+      .sidebar__myself{
+        height: 40%;
+      }
+    .myself{
+
+      .myself__title{
+      }
+      .myself__title>h4{
+      }
+      .myself__text{
+      }
+    }
+    .sidebar__summary{
+      height: 52%;
+    }
+    .summary{
+      height: 50%;
+      
+      .summary__button{
+        width: 60%;
+        height: 42%;
+      }
     }
   }
 }

@@ -35,6 +35,12 @@ input:focus{
 textarea:focus{
   outline:none;
 }
+button:focus{
+  outline: none;
+}
+.btn:focus{
+  box-shadow: none;
+}
 
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;

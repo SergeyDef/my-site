@@ -312,8 +312,93 @@ export default {
       background-color: #ffffff;
     }
   }
+  @media (max-width: 1140px){
+    .aboutMe{
+      .aboutMe__substrate{
+
+      }
+      .aboutMe__substrate>h6{
+      }
+       .info{
+      }
+      .aboutMe__data{
+      }
+      .scheme{
+        .scheme__block{
+          padding-left: 0;
+        }
+        .design{
+
+          .design__icon{
+          }
+        }
+        .websites{
+
+          .websites__icon{
+          }
+        }
+        .softwares{
+
+          .softwares__icon{
+          }
+        }
+        .application{
+
+          .application__icon{
+          }
+        }
+        .scheme__wrapper{
+        }
+        .scheme__text{
+          text-align: center;
+        }
+        .scheme__text>span{
+        }
+        .scheme__img{
+          margin: auto;
+        }
+      }
+      .data{
+
+        .data__title{
+        }
+        .data__title>h5{
+        }
+        .data__block{
+        }
+        .data__wrapper{
+        }
+        .data__wrapper>li{
+        }
+        .data__item{
+        }
+        .data__item>span{
+        }
+        .data__info{
+        }
+      }
+      .aboutMe__emaill{
+      }
+      .emaill__info{
+      }
+      .emaill__img{
+      }
+      .emaill__icon{
+      }
+      .emaill__text{
+      }
+      .emaill__text>span{
+      }
+      .emaill__button{
+      }
+      .emaill__button>button{
+      }
+      .emaill__button>button>svg{
+      }
+    }
+  }
   @media (max-width: 967px){
-      .aboutMe{
+    .aboutMe{
        justify-content: space-between;
        height: 11.5%;
 

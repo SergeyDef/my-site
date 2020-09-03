@@ -31,7 +31,12 @@
           <a href="#feedback"><span>Обратная связь</span></a>
         </li>
       </ul>
-    </nav>
+    </nav>    
+    <div class="menu__call">
+      <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-telephone-forward-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" d="M2.267.98a1.636 1.636 0 0 1 2.448.152l1.681 2.162c.309.396.418.913.296 1.4l-.513 2.053a.636.636 0 0 0 .167.604L8.65 9.654a.636.636 0 0 0 .604.167l2.052-.513a1.636 1.636 0 0 1 1.401.296l2.162 1.681c.777.604.849 1.753.153 2.448l-.97.97c-.693.693-1.73.998-2.697.658a17.471 17.471 0 0 1-6.571-4.144A17.47 17.47 0 0 1 .639 4.646c-.34-.967-.035-2.004.658-2.698l.97-.969zM12.646.646a.5.5 0 0 1 .708 0l2.5 2.5a.5.5 0 0 1 0 .708l-2.5 2.5a.5.5 0 0 1-.708-.708L14.293 4H9.5a.5.5 0 0 1 0-1h4.793l-1.647-1.646a.5.5 0 0 1 0-.708z"/>
+      </svg>
+    </div>
     <nav class="menu__adantiv" v-if="showMenuAdantiv">
         <transition>
           <ul class="menu__wrapper">
@@ -45,12 +50,24 @@
     </nav>
     <div class="menu__block">
       <div class="search">
-        <button type="button" class="btn search__button">
+        <div class='search__form' v-if="serchField">
+          <form>
+            <button type="button" class="btn search__btn search__button">
+              <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-search" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z"/>
+                <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/>
+              </svg>
+            </button>
+            <input type="text" name="search" class="search__input">
+          </form>
+        </div>
+        <button type="button" v-if="!searchForm" @click="showSearch" key="showSearch" class="btn search__button">
           <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-zoom-out" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
             <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/>
             <path d="M10.344 11.742c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1 6.538 6.538 0 0 1-1.398 1.4z"/>
           </svg>
         </button>
+        <div class="search__clear" v-else @click="hideSearch" key="clearSearch"></div>
       </div>
       <div class="sandwich" id="sandwich">
         <transition>
@@ -87,6 +104,8 @@ export default {
       ],
       showMenuAdantiv: false,
       showMenuSandwich: false,
+      searchForm: false,
+      serchField: false,
     };
   },
   methods: {
@@ -97,6 +116,14 @@ export default {
     hideMenuList: function () {
       this.showMenuAdantiv = false;
       this.showMenuSandwich = false;
+    },
+    showSearch: function (){
+      this.searchForm = true;
+      this.serchField = true;
+    },
+    hideSearch: function (){
+      this.searchForm = false;
+      this.serchField = false;
     }
   },
 }
@@ -147,11 +174,15 @@ export default {
       justify-content: space-evenly;
       width: 12%;
     }
+    .menu__call{
+      display: none;
+    }
     .search{
       width: 50%;
       height: 100%;
       margin: 0 auto;
       display: flex;
+      position: relative;
 
       .search__button{
         margin: auto;
@@ -166,6 +197,72 @@ export default {
       }
       .search__button:hover{
         opacity: 0.9;
+      }
+      .search__form{
+        position: absolute;
+        top: 0;
+        right: 100%;
+        width: 300px;
+        height: 100%;
+      }
+      .search__form>form{
+        display: flex;
+        width: 100%;
+        height: 50%;
+        border-radius: 2%;
+        margin-top: 7.5%;
+        border: 1px solid #2196F3;
+      }
+      .search__input{
+        width: 80%;
+        height: 100%;
+        z-index: 99999;
+        border: none;
+      }
+      .search__btn{
+        width: 20%;
+        height: 100%;
+        opacity: 1;
+        background-color: #ffffff;
+      }
+      .search__btn>svg{
+        width: 100%;
+        height: 100%;
+      }
+      .search__btn:hover{
+        opacity: 1;
+      }
+      .search__clear{
+        width: 30px;
+        height: 30px;
+        border-radius: 6px;
+        margin: auto;
+        position: relative;
+        display: block;
+        z-index: 200;
+        text-indent: -9999px;
+        cursor: pointer;
+      }
+      .search__clear:before,
+      .search__clear:after {
+          content: '';
+          width: 80%;
+          height: 6px;
+          background: #000;
+          position: absolute;
+          top: 48%;
+          left: 10%;
+          transform: rotate(45deg);
+          transition: all 0.3s ease-out;
+      }
+      .search__clear:after {
+          transform: rotate(-45deg);
+          transition: all 0.3s ease-out;
+      }
+      .search__clear:hover:before,
+      .search__clear:hover:after {
+          transform: rotate(180deg);
+          background: #000;
       }
     }
     .sandwich{
@@ -232,8 +329,20 @@ export default {
       justify-content: space-evenly;
       width: 12%;
     }
+    .menu__call{
+      display: flex;
+      width: 10%;
+      height: 100%;
+    }
+    .menu__call>svg{
+      color: #26A59A;
+      width: 60%;
+      height: 50%;
+      margin: auto;
+      cursor: pointer;
+    }
     .menu__adantiv{
-      z-index: 9999;
+      z-index: 99999999;
       background-color: #ffffff;
       width: 100%;
       height: 410px;
@@ -275,6 +384,7 @@ export default {
         height: 70%;
         opacity: 0.5;
         color: #121212;
+        padding: 0;
       }
       .search__button>svg{
         width: 60%;
@@ -282,6 +392,16 @@ export default {
       }
       .search__button:hover{
         opacity: 0.9;
+      }
+      .search__btn{
+        width: 20%;
+        padding: 0;
+        background-color: #fff;
+        opacity: 1;
+      }
+      .search__btn>svg{
+        width: 100%;
+        height: 100%;
       }
     }
     .sandwich{
@@ -343,6 +463,16 @@ export default {
       }
       .search__button:hover{
       }
+       .search__btn{
+        width: 20%;
+        padding: 0;
+        background-color: #fff;
+        opacity: 1;
+      }
+      .search__btn>svg{
+        width: 100%;
+        height: 100%;
+      }
     }
     .sandwich{
     }
@@ -389,6 +519,82 @@ export default {
         height: 100%;
       }
       .search__button:hover{
+      }
+      .search__form{
+        width: 250px;
+      }
+      .search__form>form{
+      }
+      .search__input{
+      }
+      .search__btn{
+        width: 20%;
+        padding: 0;
+        background-color: #fff;
+        opacity: 1;
+      }
+      .search__btn>svg{
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .sandwich{
+    }
+  }
+}
+@media (max-width: 400px){
+    .header{
+
+      .menu{
+
+        .menu__wrapper{
+
+          .menu__item{
+          }
+          .menu__item:hover{
+          }
+          .menu__item>a{
+          }
+          .menu__item>a>span{
+          }
+        }
+      }
+    .menu__block{
+    }
+    .menu__adantiv{
+
+      .menu__item{
+      }
+      .menu__item>a{
+      }
+      .menu__item:hover{
+      }
+    }
+    .search{
+
+      .search__button{
+
+      }
+      .search__button>svg{
+      }
+      .search__button:hover{
+      }
+      .search__form{
+        width: 200px;
+      }
+      .search__form>form{
+      }
+      .search__input{
+      }
+      .search__btn{
+        width: 20%;
+        padding: 0;
+        background-color: #fff;
+        opacity: 1;
+      }
+      .search__btn>svg{
+        width: 100%;
+        height: 100%;
       }
     }
     .sandwich{

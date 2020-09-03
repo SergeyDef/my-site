@@ -314,6 +314,85 @@ export default {
       margin: auto;
     }
   }
+  @media (max-width: 1140px){
+    .portfolio{
+      .portfolio__substrate{
+      }
+      .portfolio__substrate>h6{
+
+      }
+      .portfolio__menu{
+      }
+      .menu{
+        .menu__wrapper{
+
+        }
+        .menu__search{
+
+            }
+            .menu__item{
+            }
+            .menu__item:hover{
+            }
+            .menu__link{
+            }
+            .menu__link>span{
+            }
+            .menu__form{
+            }
+            .menu__form>button{
+            }
+            .menu__input{
+            }
+            .menu__input>input{
+            }
+            .sandwich{
+
+            }
+            .menu__adaptiv{
+
+
+              .item{
+
+              }
+              .item>span{
+
+              }
+              .item:hover{
+
+              }
+            }
+          }
+        .gallery{
+          
+          .gallery__block{
+
+          }
+          .gallery__block:hover{
+          }
+          .gallery__block:hover .gallery__indicator{
+          }
+          .gallery__link{
+          }
+          .gallery__link>img{
+          }
+          .gallery__indicator{
+          }
+          .indicator{
+
+            .indicator__cross{
+            }
+            .indicator__cross:after{
+            }
+          }
+        }
+        .portfolio__button{
+        }
+        .portfolio__button>button{
+          width: 30%;
+      }
+    }
+  }
   @media (max-width: 667px){
       .portfolio{
         height: 9%;
