@@ -21,17 +21,18 @@
       id="menuAdditional"
       @show="showEl"
       @hide="hideEl"/>
-			<MenuHeader/>
-			<AboutSection/>
-			<AboutMeSection/>
-			<SkillsSection/>
-			<EducationSection/>
-			<PortfolioSection/>
-			<TestomonialsSection/>
-			<WorkSection/>
-			<NewsSection/>
-			<ContactSection/>
-			<FooterSection/>
+			<MenuHeader class="block-animation block-anim-no"/>
+			<AboutSection class="block-animation block-anim-no"/>
+			<AboutMeSection class="block-animation block-anim-no"/>
+			<SkillsSection class="block-animation block-anim-no"/>
+			<EducationSection class="block-animation block-anim-no"/>
+			<PortfolioSection class="block-animation block-anim-no"/>
+			<TestomonialsSection class="block-animation block-anim-no"/>
+			<WorkSection class="block-animation block-anim-no"/>
+			<NewsSection class="block-animation block-anim-no"/>
+			<ContactSection class="block-animation block-anim-no"/>
+			<FooterSection class="block-animation block-anim-no"/>
+      <WriteMe v-if="sendEmail"/>
 		</div>
 	</div>
 </template>
@@ -50,6 +51,7 @@ import NewsSection from '@/components/NewsSection.vue'
 import ContactSection from '@/components/ContactSection.vue'
 import FooterSection from '@/components/FooterSection.vue'
 import MenuAdditional from '@/components/MenuAdditional.vue'
+import WriteMe from '@/components/WriteMe.vue'
 
 export default {
   name: 'Home',
@@ -67,9 +69,11 @@ export default {
     ContactSection,
     FooterSection,
     MenuAdditional,
+    WriteMe,
   },
   data(){
     return {
+      sendEmail: false,
     }
   },
   methods: {
@@ -114,7 +118,7 @@ export default {
     if (animItems.length > 0) {
       window.addEventListener('scroll', animOnScroll);
       function animOnScroll() {
-        for (var i = 0; i <= animItems.length; i++) {
+        for (var i = 0; i < animItems.length; i++) {
           const animItem = animItems[i];
           const animItemHeight = animItem.offsetHeight;
           const animItemOffset =offset(animItem).top;
@@ -128,7 +132,9 @@ export default {
           if ((pageYOffset > animItemOffset - animItemPoint) && pageYOffset < (animItemOffset + animItemHeight)) {
             animItem.classList.add('block-active');
           } else {
-            animItem.classList.remove('block-active');
+            if (!animItem.classList.contains('block-anim-no')) {
+              animItem.classList.remove('block-active');
+            }
           }
         }
       }

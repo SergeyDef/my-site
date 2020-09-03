@@ -52,13 +52,18 @@
       <div class="search">
         <div class='search__form' v-if="serchField">
           <form>
-            <button type="button" class="btn search__btn search__button">
+            <button type="button" class="btn search__btn search__button" @click="foundText">
               <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-search" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z"/>
                 <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/>
               </svg>
             </button>
-            <input type="text" name="search" class="search__input">
+            <input type="text" name="search" class="search__input" v-model="searchText">
+            <div class="search__clear_form clear" @click="clearText">
+              <div class="clear__bloc">
+                <div class="clear__plus"></div>
+              </div>
+            </div>
           </form>
         </div>
         <button type="button" v-if="!searchForm" @click="showSearch" key="showSearch" class="btn search__button">
@@ -106,6 +111,7 @@ export default {
       showMenuSandwich: false,
       searchForm: false,
       serchField: false,
+      searchText: "",
     };
   },
   methods: {
@@ -124,6 +130,15 @@ export default {
     hideSearch: function (){
       this.searchForm = false;
       this.serchField = false;
+    },
+    foundText: function (){
+      let contentText = document.body.innerHTML;
+      console.log(contentText);
+
+      alert(this.searchText);
+    },
+    clearText: function (){
+      this.searchText = '';
     }
   },
 }
@@ -136,6 +151,7 @@ export default {
   .header{
     @include blockMain(100%, 1%);
     justify-content: flex-end;
+    z-index: 9;
 
     .menu{
       display: flex;
@@ -214,7 +230,7 @@ export default {
         border: 1px solid #2196F3;
       }
       .search__input{
-        width: 80%;
+        width: 70%;
         height: 100%;
         z-index: 99999;
         border: none;
@@ -263,6 +279,38 @@ export default {
       .search__clear:hover:after {
           transform: rotate(180deg);
           background: #000;
+      }
+      .search__clear_form{
+        width: 10%;
+        display: flex;
+        background-color: #ffffff;
+      }
+      .clear{
+        .clear__bloc{
+          margin: auto;
+          width: 19px;
+          height: 19px;
+          border-radius: 40%;
+          background-color: #CFCFCF;
+        }
+        .clear__plus{
+          transform: rotate(45deg);
+          width: 14px;
+          height: 2px;
+          background: #808080;
+          position: relative;
+          left: 3px;
+          top: 8px;
+        }
+        .clear__plus:after{
+          content: "";
+          width: 3px;
+          height: 14px;
+          background: #808080;
+          position: absolute;
+          left: 5px;
+          top: -6px;
+        }
       }
     }
     .sandwich{
@@ -455,7 +503,7 @@ export default {
     .search{
 
       .search__button{
-
+        padding: 5px;
       }
       .search__button>svg{
         width: 100%;
@@ -560,6 +608,10 @@ export default {
         }
       }
     .menu__block{
+    }
+    .menu__call>svg{
+      width: 100%;
+      height: 100%;
     }
     .menu__adantiv{
 

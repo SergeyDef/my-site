@@ -118,7 +118,6 @@
 export default {
   name: 'AboutMeSection',
   props: {
-    msg: String
   },
   data(){},
   methods: {},
@@ -310,6 +309,89 @@ export default {
       cursor: pointer;
       cursor: pointer;
       background-color: #ffffff;
+    }
+  }
+  @media (max-width: 1280px){
+    .aboutMe{
+      .aboutMe__substrate{
+
+      }
+      .aboutMe__substrate>h6{
+      }
+       .info{
+      }
+      .aboutMe__data{
+      }
+      .scheme{
+        .scheme__block{
+        }
+        .design{
+
+          .design__icon{
+          }
+        }
+        .websites{
+
+          .websites__icon{
+          }
+        }
+        .softwares{
+
+          .softwares__icon{
+          }
+        }
+        .application{
+
+          .application__icon{
+          }
+        }
+        .scheme__wrapper{
+        }
+        .scheme__text{
+          font-size: 0.9rem;
+        }
+        .scheme__text>span{
+        }
+        .scheme__img{
+        }
+      }
+      .data{
+
+        .data__title{
+        }
+        .data__title>h5{
+        }
+        .data__block{
+        }
+        .data__wrapper{
+        }
+        .data__wrapper>li{
+        }
+        .data__item{
+        }
+        .data__item>span{
+        }
+        .data__info{
+        }
+      }
+      .aboutMe__emaill{
+      }
+      .emaill__info{
+      }
+      .emaill__img{
+      }
+      .emaill__icon{
+      }
+      .emaill__text{
+      }
+      .emaill__text>span{
+      }
+      .emaill__button{
+      }
+      .emaill__button>button{
+      }
+      .emaill__button>button>svg{
+      }
     }
   }
   @media (max-width: 1140px){
