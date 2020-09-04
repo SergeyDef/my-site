@@ -104,7 +104,7 @@
         </div>
       </div>
       <div class="emaill__button">
-        <button type="button" class="btn">
+        <button type="button" class="btn" @click="showWindowMail">
           <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-envelope-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
             <path fill-rule="evenodd" d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555zM0 4.697v7.104l5.803-3.558L0 4.697zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757zm3.436-.586L16 11.801V4.697l-5.803 3.546z"/>
           </svg>
@@ -119,8 +119,14 @@ export default {
   name: 'AboutMeSection',
   props: {
   },
-  data(){},
-  methods: {},
+  data(){
+    return{}
+  },
+  methods: {
+    showWindowMail: function (){
+      this.$emit('showWindowMail');
+    },
+  },
   mounted(){
   },
 }
@@ -762,13 +768,20 @@ export default {
         .data__item{
         }
         .data__item>span{
+          font-size: 0.9rem;
         }
         .data__info{
+          font-size: 0.9rem;
         }
       }
       .aboutMe__emaill{
+        height: 15%;
+        flex-direction: column;
       }
       .emaill__info{
+        width: 90%;
+        height: 50%;
+        margin: 0 auto;
       }
       .emaill__img{
       }
@@ -779,8 +792,13 @@ export default {
       .emaill__text>span{
       }
       .emaill__button{
+        width: 100%;
+        height: 50%;
       }
       .emaill__button>button{
+        width: 50%;
+        height: 56%;
+        margin: auto;
       }
     }
   }

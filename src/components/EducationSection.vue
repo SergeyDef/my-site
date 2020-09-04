@@ -19,7 +19,7 @@
 		</div>
     <div class="accordion education__list" id="accordionExample">
 			<div class="card">
-				<div class="card-header education__description" id="headingOne">
+				<div class="card-header education__description" id="headingOne" @click="plusDelete">
 					<div class="education__picchu">
 						<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-pen education__icon text__blue" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
 							<path fill-rule="evenodd" d="M5.707 13.707a1 1 0 0 1-.39.242l-3 1a1 1 0 0 1-1.266-1.265l1-3a1 1 0 0 1 .242-.391L10.086 2.5a2 2 0 0 1 2.828 0l.586.586a2 2 0 0 1 0 2.828l-7.793 7.793zM3 11l7.793-7.793a1 1 0 0 1 1.414 0l.586.586a1 1 0 0 1 0 1.414L5 13l-3 1 1-3z"/>
@@ -62,7 +62,7 @@
 			  </div>
 			</div>
 			<div class="card">
-				<div class="card-header education__description" id="headingTwo">
+				<div class="card-header education__description" id="headingTwo" @click="plusDelete">
 					<div class="education__picchu">
 						<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-pen education__icon text__green" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
 							<path fill-rule="evenodd" d="M5.707 13.707a1 1 0 0 1-.39.242l-3 1a1 1 0 0 1-1.266-1.265l1-3a1 1 0 0 1 .242-.391L10.086 2.5a2 2 0 0 1 2.828 0l.586.586a2 2 0 0 1 0 2.828l-7.793 7.793zM3 11l7.793-7.793a1 1 0 0 1 1.414 0l.586.586a1 1 0 0 1 0 1.414L5 13l-3 1 1-3z"/>
@@ -112,6 +112,24 @@ export default {
   name: 'EducationSection',
   props: {
     msg: String
+  },
+  methods: {
+  	plusDelete: function() {
+  		let block = document.querySelectorAll('.card');
+
+	  	for (var i = 0; i < block.length; i++) {
+	  		let collapse = block[i].querySelector('.collapse');
+	  		let educationPlus = block[i].querySelector('.education__plus');
+	  		
+	  		if (collapse.matches('.show')) {
+	  			educationPlus.classList.add('education-active');
+	  		} else {
+	  			educationPlus.classList.remove('education-active');
+	  		}
+	  	}
+  	},
+  },
+  mounted(){
   }
 }
 </script>
@@ -197,6 +215,9 @@ export default {
 			position: absolute; 
 			left: -7px; 
 			top: 7px;
+		}
+		.education-active{
+			background: #fff!important;
 		}
 		.text__blue{
 			color: #2095F2;

@@ -23,7 +23,7 @@
       @hide="hideEl"/>
 			<MenuHeader class="block-animation block-anim-no"/>
 			<AboutSection class="block-animation block-anim-no"/>
-			<AboutMeSection class="block-animation block-anim-no"/>
+			<AboutMeSection class="block-animation block-anim-no" @showWindowMail="showMail"/>
 			<SkillsSection class="block-animation block-anim-no"/>
 			<EducationSection class="block-animation block-anim-no"/>
 			<PortfolioSection class="block-animation block-anim-no"/>
@@ -32,7 +32,7 @@
 			<NewsSection class="block-animation block-anim-no"/>
 			<ContactSection class="block-animation block-anim-no"/>
 			<FooterSection class="block-animation block-anim-no"/>
-      <WriteMe v-if="sendEmail"/>
+      <WriteMe v-if="sendEmail" @closeWindowMail="closeMail"/>
 		</div>
 	</div>
 </template>
@@ -111,6 +111,14 @@ export default {
         arrow.classList.remove('side__arrow-left');
         arrow.classList.add('side__arrow-right');
       }
+    },
+    showMail: function (){
+      this.sendEmail = true;
+      console.log(this.sendEmail);
+    },
+    closeMail: function (){
+      this.sendEmail = false;
+      console.log(this.sendEmail);
     },
   },
   mounted() {

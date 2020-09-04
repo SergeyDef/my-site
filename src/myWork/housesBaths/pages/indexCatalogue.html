@@ -1,0 +1,528 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+
+    <link rel='stylesheet' href='../style/style.css'>
+
+<!-- FONT -->
+
+    <link href="https://fonts.googleapis.com/css?family=PT+Serif+Caption" rel="stylesheet"> <!-- body -->
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:600" rel="stylesheet"> <!-- numb -->
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:600" rel="stylesheet"> <!-- progress -->
+
+    <link href="https://fonts.googleapis.com/css?family=Gothic+A1" rel="stylesheet"> <!-- > Указатели для слыйдера < -->
+    
+
+    <!-- Galeri -->
+    <link rel="stylesheet" href="../style/lightbox.css" type="text/css" media="screen" />
+    <!-- Galeri -->
+    
+<title>Каталог</title>
+
+<body>
+<a id="menuSayt"></a>
+<header class='container' id='content'>
+    <div class='row'>
+        <div class='col-md-2 logoImg' id='menuS'>
+            <p><a href='../index.html'>
+                    <img src='../img/Logonext.png' alt='Website logo'>
+                </a></p>
+        </div>
+        <nav class='col-md-8 menuHed'>
+            <div id="nav">
+                <div class="menuIcon" id="menuIcon" onclick="menuOpen()">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <div id="deleteMenu">
+                                <img src="../img/delete.png" id="dagger" width="30px" height="30px" onclick="deletMen()">
+                        </div>
+                        <ul class='mmenuu' id="mmen">
+                            <li><a href='../index.html'><p class="siteMenu">Компания</p></a>
+                                <ul class='ssubmenuu sub1'>
+                                    <li><a href="indexHistory.html">О компании</a></li>
+                                    <li><a href="indexComments.html">Отзывы</a></li>
+                                    <li><a href="indexArticles.html">Интересные статьи</a></li>
+                                </ul>
+                            </li>
+                            <li><a href='indexCatalogue.html'><p class="siteMenu">Каталог проектов</p></a>
+                                <ul class='ssubmenuu sub2'>
+                                    <li><a href="indexBath.html">Бани - беседки</a></li>
+                                </ul>
+                            </li>
+                            <li><a href='indexBuildingMaterials.html'><p class="siteMenu">Услуги</p></a>
+                                <ul class='ssubmenuu sub2'>
+                                    <li><a href="indexBuildingMaterials1.html">Стоимость материалов</a></li>
+                                    <li><a href="indexBuildingMaterials2.html">Проектирование</a></li>
+                                    <li><a href="indexBuildingMaterials3.html">Дизайн</a></li>
+                                    <li><a href="indexBuildingMaterials4.html">Покраска и отделка</a></li>
+                                    <li><a href="indexBuildingMaterials5.html">Коммуникации</a></li>
+                                </ul>
+                            </li>
+                            <li><a href='indexPortfolio.html'><p class="siteMenu">Портфолио</p></a></li>
+                            <li><a href='indexContacts.html'><p class="siteMenu">Контакты</p></a></li>
+                        </ul>
+        </nav>
+        <div class="col-md-2 contact">
+            <p class="contactPhone">+7(915)390-99-15</p>
+            <p class="contactText"><a href="../index.html#call">Заказать обратный звонок</a></p>
+        </div>
+</div>
+</header>
+
+<div class='container'>
+    <div class='row'>
+        <div class="col-md-12">
+            
+            <div class="ourHistory">
+                <h1>Готовые проекты.</h1>
+                <p>При желание Вы можете создать собственный проект дома из бруса, каркаса или кирпича. Проектирование будет осуществляться с учетом всех Ваших пожеланий. Для внутренней и наружной отделки мы используем самые разные материалы.</p>
+                <ul>
+                    <li>Деревянная обшивка (вагонка, имитация бруса, блокхаус);</li>
+                    <li>Виниловая обшивка (различные виды сайдинга, фасадные панели VinyTherm);</li>
+                    <li>Обшивка гипсокартоном (производится внутри помещений по желанию заказчика);</li>
+                    <li>Наружная обшивка термопанелями с поверхностью из природного камня или кирпича различных цветов;</li>
+                    <li>Кровельные материалы (металлочерепица, мягкая кровля различных цветов).</li>
+                </ul>
+                <p>Узнать более подробно о разработке индивидуальных проектов можно в разделе - <a href="indexBuildingMaterials2.html">"Проектирование"</a>.</p>
+                <p>Мы тщательно просчитываем все, начиная от выбора фундамента, материалов, размера, планировки, заканчивая инженерными коммуникациями и благоустройством участка.</p>
+                
+                <div class="projectDirectory">
+                    <h2>Готовые проекты домов</h2>
+
+                <div class="proposals minS_maxS">
+                    <h5>Поиск по стоимости</h5>
+                    <p>Минимальная стоимость 
+                    <input type="range" id="rtl" min="1000000" max="5500000" value="0" oninput="fun()">
+                    <input type="text" id="minCost" value="0"></p>
+                    <p>Максимальная стоимость
+                    <input type="range" id="rtr" min="1000000" max="5500000" value="0" oninput="fun()">
+                    <input type="text" id="manCost" value="0"></p>
+                    <br>
+                    <button onclick="sortHoum()">Показать варианты</button>
+                </div>
+
+                <a id="1-0L"></a>
+                <a id="Oaklet"></a>
+                <div class="projDi sortHoum" value='1009630'>
+                        <a href="../img/Project/2/006-1.jpg"" rel="lightbox[2]"><div><img src="../img/Project/2/006-1.jpg"></div></a>
+                        <div class="prD">
+                            <div class="nameProj"><h3>Дубок</h3></div>
+                            <div class="nameProj"><p>225 м</p></div>
+                            <div class="nameProj"><p>1 009 630 руб.</p></div>
+                            
+                        </div>
+                    </div> 
+                    <a href="../img/Project/2/006-2.jpg" rel="lightbox[2]"></a>
+                    <a href="../img/Project/2/006-3.jpg" rel="lightbox[2]"></a>
+                    <a href="../img/Project/2/006-4.jpg" rel="lightbox[2]"></a>
+                    <a href="../img/Project/2/006-5.jpg" rel="lightbox[2]"></a>
+
+                    <a id="Frost"></a>
+                    <div class="projDi sortHoum" value='1022820'>
+                        <a href="../img/Project/11/0016-1.jpg"" rel="lightbox[10]"><div><img src="../img/Project/11/0016-1.jpg"></div></a>
+                        <div class="prD">
+                            <div class="nameProj"><h3>Морозко</h3></div>
+                            <div class="nameProj"><p>150 м</p></div>
+                            <div class="nameProj"><p>1 022 820 руб.</p></div>
+                            
+                        </div>
+                    </div> 
+                    <a href="../img/Project/11/0016-2.jpg" rel="lightbox[10]"></a>
+                    <a href="../img/Project/11/0016-3.jpg" rel="lightbox[10]"></a>
+
+                    <a id="Cottage"></a>
+                    <div class="projDi sortHoum" value='1340100'>
+                        <a href="../img/Project/7/0012-1.jpg"" rel="lightbox[6]"><div><img src="../img/Project/7/0012-1.jpg"></div></a>
+                        <div class="prD">
+                            <div class="nameProj"><h3>Изба</h3></div>
+                            <div class="nameProj"><p>170 м</p></div>
+                            <div class="nameProj"><p>1 340 100 руб.</p></div>
+                            
+                        </div>
+                    </div> 
+                    <a href="../img/Project/7/0012-2.jpg" rel="lightbox[6]"></a>
+                    <a href="../img/Project/7/0012-3.jpg" rel="lightbox[6]"></a>
+                    <a href="../img/Project/7/0012-4.jpg" rel="lightbox[6]"></a>
+                    <a href="../img/Project/7/0012-5.jpg" rel="lightbox[6]"></a>
+
+                    <a id="Birch"></a>
+                    <a id="1-5L"></a>
+                    <div class="projDi sortHoum" value='1402650'>
+                        <a href="../img/Project/4/009-1.jpg" rel="lightbox[3]"><div><img src="../img/Project/4/009-1.jpg"></div></a>
+                        <div class="prD">
+                            <div class="nameProj"><h3>Берёзка</h3></div>
+                            <div class="nameProj"><p>180 м</p></div>
+                            <div class="nameProj"><p>1 402 650 руб.</p></div>
+                            
+                        </div>
+                    </div> 
+                    <a href="../img/Project/4/009-2.jpg" rel="lightbox[3]"></a>
+                    <a href="../img/Project/4/009-3.jpg" rel="lightbox[3]"></a>
+                    <a href="../img/Project/4/009-4.jpg" rel="lightbox[3]"></a>
+                    <a href="../img/Project/4/009-5.jpg" rel="lightbox[3]"></a>
+                    
+                    <a id="2-0L"></a>
+
+                    <a id="Brownie"></a>
+                    <div class="projDi sortHoum" value='2010300'>
+                        <a href="../img/Project/41/010-1.jpg" rel="lightbox[41]"><div><img src="../img/Project/41/0010-1.jpg"></div></a>
+                        <div class="prD">
+                            <div class="nameProj"><h3>Домовой</h3></div>
+                            <div class="nameProj"><p>210 м</p></div>
+                            <div class="nameProj"><p>2 010 300 руб.</p></div>
+                            
+                        </div>
+                    </div> 
+                    <a href="../img/Project/41/0010-2.jpg" rel="lightbox[41]"></a>
+                    <a href="../img/Project/41/0010-3.jpg" rel="lightbox[41]"></a>
+                    <a href="../img/Project/41/0010-4.jpg" rel="lightbox[41]"></a>
+                    <a href="../img/Project/41/0010-5.jpg" rel="lightbox[41]"></a>
+
+                    <a id="Ash"></a>
+                    <div class="projDi sortHoum" value='2515700'>
+                        <a href="../img/Project/42/0010-1.jpg" rel="lightbox[42]"><div><img src="../img/Project/42/0010-1.jpg"></div></a>
+                        <div class="prD">
+                            <div class="nameProj"><h3>Ясень</h3></div>
+                            <div class="nameProj"><p>205 м</p></div>
+                            <div class="nameProj"><p>2 515 700 руб.</p></div>
+                            
+                        </div>
+                    </div> 
+                    <a href="../img/Project/42/0010-2.jpg" rel="lightbox[42]"></a>
+                    <a href="../img/Project/42/0010-3.jpg" rel="lightbox[42]"></a>
+                    <a href="../img/Project/42/0010-4.jpg" rel="lightbox[42]"></a>
+                    <a href="../img/Project/42/0010-5.jpg" rel="lightbox[42]"></a>
+
+                    <a id="2-5L"></a>
+
+                    <a id="Harmony"></a>
+                    <div class="projDi sortHoum" value='2752000'>
+                        <a href="../img/Project/43/0010-1.jpg" rel="lightbox[43]"><div><img src="../img/Project/43/0010-1.jpg"></div></a>
+                        <div class="prD">
+                            <div class="nameProj"><h3>Гармония</h3></div>
+                            <div class="nameProj"><p>242 м</p></div>
+                            <div class="nameProj"><p>2 752 000 руб.</p></div>
+                            
+                        </div>
+                    </div> 
+                    <a href="../img/Project/43/0010-2.jpg" rel="lightbox[43]"></a>
+                    <a href="../img/Project/43/0010-3.jpg" rel="lightbox[43]"></a>
+                    <a href="../img/Project/43/0010-4.jpg" rel="lightbox[43]"></a>
+                    <a href="../img/Project/43/0010-5.jpg" rel="lightbox[43]"></a>
+
+                    <a id="Crow"></a>
+                    <a id="3-0L"></a>
+                    <div class="projDi sortHoum" value='3013100'>
+                        <a href="../img/Project/12/0017-1.jpg"" rel="lightbox[11]"><div><img src="../img/Project/12/0017-1.jpg"></div></a>
+                        <div class="prD">
+                            <div class="nameProj"><h3>Ворон</h3></div>
+                            <div class="nameProj"><p>265 м</p></div>
+                            <div class="nameProj"><p>3 013 100 руб.</p></div>
+                            
+                        </div>
+                    </div> 
+                    <a href="../img/Project/12/0017-2.jpg" rel="lightbox[11]"></a>
+                    <a href="../img/Project/12/0017-3.jpg" rel="lightbox[11]"></a>
+
+                    <a id="3-5L"></a>
+                    <a id="Svyatogor"></a>
+                    <div class="projDi sortHoum" value='3504600'>
+                        <a href="../img/Project/9/0014-1.jpg"" rel="lightbox[8]"><div><img src="../img/Project/9/0014-1.jpg"></div></a>
+                        <div class="prD">
+                            <div class="nameProj"><h3>Святогор</h3></div>
+                            <div class="nameProj"><p>280 м</p></div>
+                            <div class="nameProj"><p>3 504 600 руб.</p></div>
+                            
+                        </div>
+                    </div> 
+                    <a href="../img/Project/9/0014-2.jpg" rel="lightbox[8]"></a>
+                    <a href="../img/Project/9/0014-3.jpg" rel="lightbox[8]"></a>
+                    <a href="../img/Project/9/0014-4.jpg" rel="lightbox[8]"></a>
+                    <a href="../img/Project/9/0014-5.jpg" rel="lightbox[8]"></a>
+
+                    <a id="Taiga"></a>
+                    <div class="projDi sortHoum" value='3523470'>
+                        <a href="../img/Project/5/0010-1.jpg"" rel="lightbox[4]"><div><img src="../img/Project/5/0010-1.jpg"></div></a>
+                        <div class="prD">
+                            <div class="nameProj"><h3>Тайга</h3></div>
+                            <div class="nameProj"><p>305 м</p></div>
+                            <div class="nameProj"><p>3 523 470 руб.</p></div>
+                            
+                        </div>
+                    </div> 
+                    <a href="../img/Project/5/0010-2.jpg" rel="lightbox[4]"></a>
+                    <a href="../img/Project/5/0010-3.jpg" rel="lightbox[4]"></a>
+                    <a href="../img/Project/5/0010-4.jpg" rel="lightbox[4]"></a>
+                    <a href="../img/Project/5/0010-5.jpg" rel="lightbox[4]"></a>
+
+                    <a id="Ear"></a>
+                    <div class="projDi sortHoum" value='4100120'>
+                        <a href="../img/Project/6/0011-1.jpg"" rel="lightbox[5]"><div><img src="../img/Project/6/0011-1.jpg"></div></a>
+                        <div class="prD">
+                            <div class="nameProj"><h3>Колос</h3></div>
+                            <div class="nameProj"><p>355 м</p></div>
+                            <div class="nameProj"><p>4 100 120 руб.</p></div>
+                            
+                        </div>
+                    </div> 
+                    <a href="../img/Project/6/0011-2.jpg" rel="lightbox[5]"></a>
+                    <a href="../img/Project/6/0011-3.jpg" rel="lightbox[5]"></a>
+                    <a href="../img/Project/6/0011-5.jpg" rel="lightbox[5]"></a>
+                    <a href="../img/Project/6/0011-4.jpg" rel="lightbox[5]"></a>
+                    <a href="../img/Project/6/0011-6.jpg" rel="lightbox[5]"></a>
+
+                    <a id="4-0L"></a>
+                    <a id="Yanked"></a>
+                    <div class="projDi sortHoum" value='4205100'>
+                        <a href="../img/Project/1/008-1.jpg" rel="lightbox[1]"><div><img src="../img/Project/1/008-1.jpg"></div></a>
+                        <div class="prD">
+                            <div class="nameProj"><h3>Флот</h3></div>
+                            <div class="nameProj"><p>405 м</p></div>
+                            <div class="nameProj"><p>4 205 100 руб.</p></div>
+                            
+                        </div>
+                    </div>
+                    <a href="../img/Project/1/008-2.jpg" rel="lightbox[1]"></a>
+                    <a href="../img/Project/1/008-3.jpg" rel="lightbox[1]"></a>
+                    <a href="../img/Project/1/008-4.jpg" rel="lightbox[1]"></a>
+                    <a href="../img/Project/1/008-5.jpg" rel="lightbox[1]"></a>
+
+                    <a id="Fantasy"></a>
+                    <div class="projDi sortHoum" value='4223500'>
+                        <a href="../img/Project/8/0013-1.jpg" rel="lightbox[7]"><div><img src="../img/Project/8/0013-1.jpg"></div></a>
+                        <div class="prD" value='4223500'>
+                            <div class="nameProj"><h3>Фантазия</h3></div>
+                            <div class="nameProj"><p>420 м</p></div>
+                            <div class="nameProj"><p>4 223 500 руб.</p></div>
+                            
+                        </div>
+                    </div> 
+                    <a href="../img/Project/8/0013-2.jpg" rel="lightbox[7]"></a>
+                    <a href="../img/Project/8/0013-3.jpg" rel="lightbox[7]"></a>
+                    <a href="../img/Project/8/0013-4.jpg" rel="lightbox[7]"></a>
+                    <a href="../img/Project/8/0013-5.jpg" rel="lightbox[7]"></a>
+
+                    <a id="Oakery"></a>
+                    <div class="projDi sortHoum" value='4205100'>
+                        <a href="../img/Project/10/0015-1.jpg"" rel="lightbox[9]"><div><img src="../img/Project/10/0015-1.jpg"></div></a>
+                        <div class="prD">
+                            <div class="nameProj"><h3>Дубрава</h3></div>
+                            <div class="nameProj"><p>340 м</p></div>
+                            <div class="nameProj"><p>4 895 750 руб.</p></div>
+                            
+                        </div>
+                    </div> 
+                    <a href="../img/Project/10/0015-2.jpg" rel="lightbox[9]"></a>
+                    <a href="../img/Project/10/0015-3.jpg" rel="lightbox[9]"></a>
+                    <a href="../img/Project/10/0015-4.jpg" rel="lightbox[9]"></a>
+                    <a href="../img/Project/10/0015-5.jpg" rel="lightbox[9]"></a>
+
+                    <a id="Harmony"></a>
+                    <div class="projDi sortHoum" value='4504200'>
+                        <a href="../img/Project/44/0010-1.jpg" rel="lightbox[44]"><div><img src="../img/Project/44/0010-1.jpg"></div></a>
+                        <div class="prD">
+                            <div class="nameProj"><h3>Гармония</h3></div>
+                            <div class="nameProj"><p>500 м</p></div>
+                            <div class="nameProj"><p>4 504 200 руб.</p></div>
+                            
+                        </div>
+                    </div> 
+                    <a href="../img/Project/44/0010-2.jpg" rel="lightbox[44]"></a>
+                    <a href="../img/Project/44/0010-3.jpg" rel="lightbox[44]"></a>
+                    <a href="../img/Project/44/0010-4.jpg" rel="lightbox[44]"></a>
+                    <a href="../img/Project/44/0010-5.jpg" rel="lightbox[44]"></a>
+                    <a id="5-0L"></a>
+            
+                    <a id="Babylon"></a>
+			<div class="projDi sortHoum" value='4855100'>
+                        <a href="../img/Project/13/0018-1.jpg" rel="lightbox[12]"><div><img src="../img/Project/13/0018-1.jpg"></div></a>
+                        <div class="prD">
+                            <div class="nameProj"><h3>Вавилон</h3></div>
+                            <div class="nameProj"><p>455 м</p></div>
+                            <div class="nameProj"><p>4 855 100 руб.</p></div>
+                            
+                        </div>
+                    </div>
+                    <a href="../img/Project/13/0018-2.jpg" rel="lightbox[12]"></a>
+                    <a href="../img/Project/13/0018-3.jpg" rel="lightbox[12]"></a>
+                    <a href="../img/Project/13/0018-4.jpg" rel="lightbox[12]"></a>
+                    <a href="../img/Project/13/0018-5.jpg" rel="lightbox[12]"></a>
+
+                    <a id="Novodvorskaya"></a>
+                    <div class="projDi sortHoum" value='5004200'>
+                        <a href="../img/Project/45/0010-1.jpg" rel="lightbox[45]"><div><img src="../img/Project/45/0010-1.jpg"></div></a>
+                        <div class="prD">
+                            <div class="nameProj"><h3>Новодвор</h3></div>
+                            <div class="nameProj"><p>505 м</p></div>
+                            <div class="nameProj"><p>5 004 200 руб.</p></div>
+                            
+                        </div>
+                    </div> 
+                    <a href="../img/Project/45/0010-2.jpg" rel="lightbox[45]"></a>
+                    <a href="../img/Project/45/0010-3.jpg" rel="lightbox[45]"></a>
+                    <a href="../img/Project/45/0010-4.jpg" rel="lightbox[45]"></a>
+                    <a href="../img/Project/45/0010-5.jpg" rel="lightbox[45]"></a>
+
+                    <a id="5-5L"></a>
+                    <a id="Yar"></a>
+                    <div class="projDi sortHoum" value='5404200'>
+                        <a href="../img/Project/46/0010-1.jpg" rel="lightbox[46]"><div><img src="../img/Project/46/0010-1.jpg"></div></a>
+                        <div class="prD">
+                            <div class="nameProj"><h3>Яр</h3></div>
+                            <div class="nameProj"><p>600 м</p></div>
+                            <div class="nameProj"><p>5 404 200 руб.</p></div>
+                            
+                        </div>
+                    </div> 
+                    <a href="../img/Project/46/0010-2.jpg" rel="lightbox[46]"></a>
+                    <a href="../img/Project/46/0010-3.jpg" rel="lightbox[46]"></a>
+                    <a href="../img/Project/46/0010-4.jpg" rel="lightbox[46]"></a>
+                    <a href="../img/Project/46/0010-5.jpg" rel="lightbox[46]"></a>
+                </div>
+                <div class="VIPprojects">
+                    <h2>Вип проекты</h2>
+                    <div class="imgDop">
+                        <img src="../img/1b.png">
+                    </div>
+                    <p>Проект реализован в полном соответствии с морфологией участка и с использованием местного камня в фундаменте для того, чтобы добиться максимального сочетания дизайна и местных традиций.</p>
+                    <a id="Project1"></a>
+                    <ul>
+                        <li>Место: г.Красногорск</li>
+                        <li>Дата: 2014</li>
+                        <li>Площадь: 150 кв.м.</li>
+                        <li>Количество комнат: 12 шт.</li>
+                        <li>Материал: Кленовый брус, цельный.</li>
+                    </ul>
+                    <div class="imgDop">
+                        <img src="../img/2b.PNG">
+                    </div>
+                    <p>Важный проект, реализованный в лесу недалеко от Москвы. Он основан на контрасте между большой скатной крышей и горизонтальными корпусами из стекла и дерева, которые отходят от нее в разных направлениях. Главным является центральный объём выше 10 метров, в котором пересекаются разные пути с различными необычными визуальными эффектами.</p>
+                    <a id="Project2"></a>
+                    <ul>
+                        <li>Место: г.Санкт-Петербург</li>
+                        <li>Дата: 2016</li>
+                        <li>Площадь: 200 кв.м.</li>
+                        <li>Количество комнат: 15 шт.</li>
+                        <li>Материал: Бук - цельный брус.</li>
+                    </ul>
+                    <div class="imgDop">
+                        <img src="../img/3b.PNG">
+                    </div>
+                    <p>Проект дома, выстроенной на участке с уклоном. Внешние пространства все покрыты таким образом, чтобы создать единое целое между внутренним и внешним пространством.</p>
+                    <a id="Project3"></a>
+                    <ul>
+                        <li>Место: г.Красногорск</li>
+                        <li>Дата: 2011</li>
+                        <li>Площадь: 250 кв.м.</li>
+                        <li>Количество комнат: 21 шт.</li>
+                        <li>Материал: Дуб - цельный брус.</li>
+                    </ul>
+                </div>
+                
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<a id="Project3"></a>
+<footer class="foote">
+    <div class="touchFoot">
+        <h4>Контакты</h4>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 addr">
+                <p><span>Адрес:</span> Москва. Улица Краснобогатырская д.6с8</p>
+                <p><span>Телефон:</span> 8(915) 390-99-15</p>
+                <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A63db601fa9442d21466af9dd44b5d113538c21b7685668748dc1bf1112d09d3b&amp;source=constructor" max-width="500" height="270" frameborder="0"></iframe>
+            </div>
+            <div class="col-md-6">
+                <div class="formСonnection">
+                    <h5>Оставить заявку</h5>
+                    <p>Оставте заявку и мы свяжемся с Вами</p>
+                    <p>В течение 20 минут.</p>
+                    <form class="formFooter">
+                        <p class="formNe">Ваше имя</p>
+                        <input type="text" name="">
+                        <p class="formOur">Ваш телефон</p>
+                        <input type="text" name="">
+                        <br>
+                        <button>Отправить</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</footer>
+<div class="foot">
+    <p>ООО "Дома и бани" все права защищенны.<a href="privacyPolicy.html">Политика конфиденциальности персональных данных</a>.</p>
+</div>
+
+<div class="network">
+    <div>
+        <a href="https://vk.com/public166827477"><img src="../img/network/1.PNG"></a>
+    </div>
+    <div>
+        <a href="https://www.facebook.com/%D0%94%D0%BE%D0%BC%D0%B0-%D0%B8-%D0%B1%D0%B0%D0%BD%D0%B8-188547881809406/?modal=admin_todo_tour%E4%EE%E1%E0%E2%FC"><img src="../img/network/2.PNG"></a>
+    </div>
+    <div>
+        <a href="https://www.ok.ru/group/55303010320613"><img src="../img/network/3.PNG"></a>
+    </div>
+    <div>
+        <a href="https://www.instagram.com/houses.and.baths"><img src="../img/network/4.PNG"></a>
+    </div>
+</div>
+<div id="ap">
+    <a href="#menuSayt"><img src='../img/s1.png'></a>
+</div>
+<script>
+   function formFoot(form) {
+ 
+      var name = form.name.value;
+      var n = name.match(/^[A-Za-zА-Яа-я ]*[A-Za-zА-Яа-я ]+$/);
+      if (!n) {
+         alert("Имя введено неверно, пожалуйста исправьте ошибку");
+         return false;
+      }
+ 
+      var phone = form.phone.value;
+      var p = phone.match(/^[0-9+][0-9- ]*[0-9- ]+$/);
+      if (!p) {
+         alert("Телефон введен неверно");
+         return false;
+      }
+      return true;
+   }
+</script>
+</body>
+<link rel="stylesheet" type="text/css" href="/plugins/colorbox/example5/colorbox.css">
+<script src="/plugins/jquery.min.js"></script>
+<script src="/plugins/jquery.lazyload.mini.js"></script>
+<script src="/plugins/colorbox/jquery.colorbox-min.js"></script>
+
+<script type="text/javascript" src="../js/js.js"></script>
+
+<!-- Galeri -->
+<script src="../js/prototype.js" type="text/javascript"></script>
+<script src="../js/scriptaculous.js?load=effects,builder" type="text/javascript"></script>
+<script src="../js/lightbox.js" type="text/javascript"></script>
+<!-- Galeri -->
+</head>
+</html>
+
+
+
+
+

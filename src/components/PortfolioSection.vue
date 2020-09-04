@@ -17,24 +17,18 @@
       </div>
     </div>
     <div class="portfolio__menu menu">
-      <ul class="menu__wrapper">
+      <ul class="menu__wrapper" @click="searchType">
         <li class="menu__item button-activ">
-          <div class="menu__link"><span>Все</span></div>
+          <span class="menu__link">Все</span>
         </li>
         <li class="menu__item">
-          <div class="menu__link">
-            <span>Лендинги</span>
-          </div>
+          <span class="menu__link">Лендинги</span>
         </li>
         <li class="menu__item">
-          <div class="menu__link">
-            <span>Сайты</span>
-          </div>
+          <span class="menu__link">Сайты</span>
         </li>
         <li class="menu__item">
-          <div class="menu__link">
-            <span>Приложения</span>
-          </div>
+          <span class="menu__link">Приложения</span>
         </li>
       </ul>
       <ul class="menu__adaptiv" v-if="showMenuAdaptiv">
@@ -65,53 +59,53 @@
       </div>
     </div>
     <div class="portfolio__gallery gallery">
-      <div class="gallery__block">
-        <a href="" class="gallery__link">
-          <img src="@/assets/portfolio/0_5.png" alt="">
+      <div class="gallery__block website">
+        <a href="@/myWork/housesBaths/index.html" class="gallery__link">
+          <img src="@/assets/portfolio/0_5.png" alt="houses baths">
         </a>
         <div class="gallery__indicator indicator">
           <div class="indicator__cross"></div>
         </div>
       </div>
-      <div class="gallery__block">
-        <a href="" class="gallery__link">
+      <div class="gallery__block website">
+        <a href="@/myWork/drummers/index.php" class="gallery__link">
+          <img src="@/assets/portfolio/0_3.png" alt="drummers">
+        </a>
+        <div class="gallery__indicator indicator">
+          <div class="indicator__cross"></div>
+        </div>
+      </div>
+      <div class="gallery__block landing">
+        <a href="@/myWork/BREDLI/index.html" class="gallery__link">
+          <img src="@/assets/portfolio/0_2.png" alt="bredli">
+        </a>
+        <div class="gallery__indicator indicator">
+          <div class="indicator__cross"></div>
+        </div>
+      </div>
+      <div class="gallery__block website">
+        <a href="@/myWork/tatuNataley/index.html" class="gallery__link">
+          <img src="@/assets/portfolio/0_4.png" alt="tatu nataley">
+        </a>
+        <div class="gallery__indicator indicator">
+          <div class="indicator__cross"></div>
+        </div>
+      </div>
+      <div class="gallery__block landing">
+        <a href="@/myWork/quiz/index.html" class="gallery__link">
+          <img src="@/assets/portfolio/0_6.png" alt="quiz">
+        </a>
+        <div class="gallery__indicator indicator">
+          <div class="indicator__cross"></div>
+        </div>
+      </div>
+      <div class="gallery__block website">
+        <a href="@/myWork/housesBaths/index.html" class="gallery__link">
           <img src="@/assets/portfolio/0_1.png" alt="">
           <div class="gallery__indicator indicator">
             <div class="indicator__cross"></div>
           </div>
         </a>
-      </div>
-      <div class="gallery__block">
-        <a href="" class="gallery__link">
-          <img src="@/assets/portfolio/0_3.png" alt="">
-        </a>
-        <div class="gallery__indicator indicator">
-          <div class="indicator__cross"></div>
-        </div>
-      </div>
-      <div class="gallery__block">
-        <a href="" class="gallery__link">
-          <img src="@/assets/portfolio/0_2.png" alt="">
-        </a>
-        <div class="gallery__indicator indicator">
-          <div class="indicator__cross"></div>
-        </div>
-      </div>
-      <div class="gallery__block">
-        <a href="" class="gallery__link">
-          <img src="@/assets/portfolio/0_4.png" alt="">
-        </a>
-        <div class="gallery__indicator indicator">
-          <div class="indicator__cross"></div>
-        </div>
-      </div>
-      <div class="gallery__block">
-        <a href="" class="gallery__link">
-          <img src="@/assets/portfolio/0_6.png" alt="">
-        </a>
-        <div class="gallery__indicator indicator">
-          <div class="indicator__cross"></div>
-        </div>
       </div>
     </div>
     <div class="portfolio__button">
@@ -144,13 +138,31 @@ export default {
     };
   },
   methods: {
-    showMenu: function () {
+    showMenu: function (){
       this.sandwichShow = true;
       this.showMenuAdaptiv = true;
     },
-    hideMenu: function () {
+    hideMenu: function (){
       this.sandwichShow = false;
       this.showMenuAdaptiv = false;
+    },
+    searchType: function (event){
+      let elem = event.target;
+      let elems = document.querySelectorAll('.menu__item');
+      let gallery = document.querySelectorAll('.gallery__block');
+
+      for (var i = 0; i < elems.length; i++) {
+        elems[i].classList.remove('button-activ');
+      }
+
+      if (elem.matches('.menu__item')) {
+        elem.classList.add('button-activ');
+      } else if (elem.parentNode.matches('.menu__item')) {
+        elem.parentNode.classList.add('button-activ');
+      }
+
+      for (var i = 0; i < gallery.length; i++) {
+      }
     }
   }
 }
@@ -189,6 +201,7 @@ export default {
         .menu__wrapper{
           width: 69.5%;
           height: 100%;
+          display: flex;
           background-color: #ffffff;
         }
         .menu__search{
@@ -201,6 +214,7 @@ export default {
           height: 100%;
           margin: auto;
           cursor: pointer;
+          display: flex;
         }
         .menu__item:hover{
           background-color: #F7F7F7;
@@ -208,16 +222,10 @@ export default {
           transform: scale(1.1);
         }
         .menu__link{
-          width: 100%;
-          height: 100%;
-          display: flex;
-          color: #121212;
-          text-decoration: none;
-        }
-        .menu__link>span{
           margin: auto;
           font-size: 1rem;
           text-transform: uppercase;
+          color: #121212;
         }
         .menu__form{
           display: flex;
@@ -305,12 +313,13 @@ export default {
       }
     }
     .portfolio__button{
+      display: flex;
       width: 100%;
       height: 10%;
       z-index: 9;
     }
     .portfolio__button>button{
-      @include buttonMain(15%, 50%, 1rem);
+      @include buttonMain(20%, 60%, 1rem);
       margin: auto;
     }
   }

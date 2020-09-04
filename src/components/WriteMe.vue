@@ -4,22 +4,48 @@
       <form>
         <div class="window__title">
           <span>Написать на почту</span>
-          <div class="window__close">
+          <div class="window__close" @click="closeWindowMail">
             <div class="window__plus"></div>
           </div>
         </div>
         <div class="window__block">
-          <label><span>Кому</span>
-            <input type="text" name="" value="pas.sergei2014@yandex.ru" class="window__input">
+          <label for="whom"><span>Кому</span>
+            <input 
+            type="text" 
+            name="whom" 
+            value="pas.sergei2014@yandex.ru" 
+            class="window__input"
+            v-model="post.whom">
           </label>
         </div>
         <div class="window__block">
-          <label><span>Тема</span>
-            <input type="text" name="" class="window__input">
+          <label for="theme"><span>Тема</span>
+            <input 
+            type="text" 
+            name="theme" 
+            class="window__input"
+            v-model="post.theme">
           </label>
         </div>
         <div class="window__textarea">
-          <textarea rows="10" cols="45" name="text" placeholder="Напишите что-нибудь"></textarea>
+          <textarea 
+          rows="10" 
+          cols="45" 
+          name="content" 
+          placeholder="Напишите что-нибудь"
+          v-model="post.content"></textarea>
+        </div>
+        <div class="window__buttons">
+          <div class="window__consent">
+            <label for="consent">
+              <input type="checkbox" name="consent" value="false" v-model="consent">
+               согласие на обработку персональных данных
+            </label>
+          </div>
+          <button 
+          type="button" 
+          class="btn window__button"
+          @click="sendEmail">Отправить</button>
         </div>
       </form>
     </div>
@@ -30,7 +56,34 @@
 export default {
   name: 'WriteMe',
   props: {
-  }
+  },
+  data(){
+    return{
+      post: {
+        whom: "pas.sergei2014@yandex.ru",
+        theme: "",
+        content: "",
+      },
+      consent: true,
+    }
+  },
+  methods: {
+    closeWindowMail: function (){
+     this.$emit('closeWindowMail');
+    },
+    sendEmail: function (){
+      console.log()
+      let myMail = this.post.whom;
+      let themeMail = this.post.theme;
+      let mesege = this.post.content;
+
+      if (this.consent) {
+        console.log(myMail + " " + themeMail + " " + mesege);
+      } else{
+        console.log("Нет согласия на обработку данных");
+      }
+    }
+  },
 }
 </script>
 
@@ -120,14 +173,78 @@ export default {
     }
     .window__textarea{
       width: 90%;
-      height: 70%;
+      height: 50%;
       margin: auto;
     }
     .window__textarea>textarea{
       width: 100%;
       height: 100%;
       border: none;
+      resize: none;
     }
+    .window__buttons{
+      width: 90%;
+      height: 12%;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+    }
+    .window__consent{
+      width: 65%;
+      height: 100%;
+      display: flex;
+    }
+    .window__consent>label{
+      font-size: 0.8rem;
+      margin: auto;
+      width: 100%;
+      text-align: left;
+    }
+    .window__button{
+      @include buttonMain(30%, 100%, 1rem);
+    }
+  }
+  @media (max-width: 1967px){
+  .window{
+
+    .window__wrapper{
+      width: 40%;
+    }
+    .window__wrapper>form{
+    }
+    .window__title{
+    }
+    .window__title>span{
+    }
+    .window__close{
+    }
+    .window__plus{
+    }
+    .window__plus:after{
+    }
+    .window__block{
+    }
+    .window__block>label{
+    }
+    .window__block>label>span{
+    }
+    .window__input{
+    }
+    .window__textarea{
+    }
+    .window__textarea>textarea{
+    }
+    .window__buttons{
+    }
+    .window__consent{
+    }
+    .window__consent>label{
+    }
+    .window__button{
+    }
+  }
+}
+  @media (max-width: 967px){
   }
   @media (max-width: 967px){
   }
