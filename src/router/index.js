@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
+import Gallery from '../views/Gallery.vue'
+import Article from '../views/Article.vue'
 
 Vue.use(VueRouter)
 
@@ -11,7 +13,7 @@ Vue.use(VueRouter)
     component: Home
   },
   {
-    path: '/Gallery',
+    path: '/gallery',
     name: 'Gallery',
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
@@ -19,9 +21,13 @@ Vue.use(VueRouter)
     component: () => import(/* webpackChunkName: "about" */ '../views/Gallery.vue')
   },
   {
-    path: '/Article',
+    path: '/article/:id',
     name: 'Article',
     component: () => import('../views/Article.vue')
+  },
+  {
+    path: '*',
+    component: Home
   }
 ]
 

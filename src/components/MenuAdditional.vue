@@ -93,8 +93,7 @@ export default {
 @import '@/scss/_mixins.scss';
 
   .menu__additional{
-    @include blockMain(100%, 1%);
-    justify-content: flex-end;
+    padding: 10px 5px;
 
     .menu{
       display: flex;

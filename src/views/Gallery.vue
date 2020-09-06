@@ -1,5 +1,14 @@
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
+  <div class="gallery">
   </div>
 </template>
+
+<style lang="scss" scoped>
+	.gallery{
+		width: 77%;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+		/*min-height: 8700px;*/
+	} 
+</style>

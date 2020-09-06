@@ -109,12 +109,14 @@
       </div>
     </div>
     <div class="portfolio__button">
-      <button type='button' class="btn">
-      <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-eye-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-      <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/>
-      <path fill-rule="evenodd" d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/>
-    </svg>
-    Смотреть больше</button>
+      <router-link to="/gallery" class="portfolio__button__link">
+        <button type='button' class="btn portfolio__button-button">
+          <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-eye-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/>
+          <path fill-rule="evenodd" d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/>
+        </svg>
+      Смотреть больше</button>
+    </router-link>
     </div>
   </section>
 </template>
@@ -319,9 +321,13 @@ export default {
       height: 10%;
       z-index: 9;
     }
-    .portfolio__button>button{
-      @include buttonMain(20%, 60%, 1rem);
+    .portfolio__button__link{
+      width: 20%;
+      height: 60%;
       margin: auto;
+    }
+    .portfolio__button-button{
+      @include buttonMain(100%, 100%, 1rem);
     }
   }
   @media (max-width: 1140px){
@@ -399,8 +405,10 @@ export default {
         }
         .portfolio__button{
         }
-        .portfolio__button>button{
+        .portfolio__button__link{
           width: 30%;
+        }
+        .portfolio__button-button{
       }
     }
   }
@@ -479,7 +487,7 @@ export default {
         }
         .portfolio__button{
         }
-        .portfolio__button>button{
+        .portfolio__button-button{
       }
     }
   }
@@ -579,9 +587,11 @@ export default {
         }
         .portfolio__button{
         }
-        .portfolio__button>button{
+        .portfolio__button__link{
           width: 60%;
           height: 70%;
+        }
+        .portfolio__button-button{
         }
       }
   }

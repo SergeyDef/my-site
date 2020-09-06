@@ -177,7 +177,7 @@ export default {
 
   .logo{
     width: 100%;
-    height: 4%;
+    height: 360px;
 
     .logo__img{
       width: 100%;
@@ -222,8 +222,7 @@ export default {
   }
   .sidebar__network{
     width: 100%;
-    height: 1%;
-    display: flex;
+    height: 60px;
     background-color: #ffffff;
   }
   .network{
@@ -293,7 +292,7 @@ export default {
   }
   .sidebar__myself{
     width: 100%;
-    height: 2.5%;
+    height: 190px;
     margin-top: 3px;
     display: flex;
     background-color: #ffffff;
@@ -328,7 +327,7 @@ export default {
   }
   .summary{
     width: 99%;
-    height: 2%;
+    height: 140px;
     display: flex;
 
     .summary__button{
