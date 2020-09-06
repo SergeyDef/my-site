@@ -18,16 +18,16 @@
     </div>
     <div class="portfolio__menu menu">
       <ul class="menu__wrapper" @click="searchType">
-        <li class="menu__item button-activ">
+        <li class="menu__item button-activ all">
           <span class="menu__link">Все</span>
         </li>
-        <li class="menu__item">
+        <li class="menu__item landing">
           <span class="menu__link">Лендинги</span>
         </li>
-        <li class="menu__item">
+        <li class="menu__item website">
           <span class="menu__link">Сайты</span>
         </li>
-        <li class="menu__item">
+        <li class="menu__item applications">
           <span class="menu__link">Приложения</span>
         </li>
       </ul>
@@ -162,6 +162,7 @@ export default {
       }
 
       for (var i = 0; i < gallery.length; i++) {
+        if (gallery[i].matches('')) {}
       }
     }
   }
@@ -325,6 +326,7 @@ export default {
   }
   @media (max-width: 1140px){
     .portfolio{
+      height: 8%;
       .portfolio__substrate{
       }
       .portfolio__substrate>h6{
@@ -402,6 +404,85 @@ export default {
       }
     }
   }
+    @media (max-width: 967px){
+    .portfolio{
+      .portfolio__substrate{
+      }
+      .portfolio__substrate>h6{
+
+      }
+      .portfolio__menu{
+      }
+      .menu{
+        .menu__wrapper{
+
+        }
+        .menu__search{
+
+            }
+            .menu__item{
+            }
+            .menu__item:hover{
+            }
+            .menu__link{
+            }
+            .menu__link>span{
+            }
+            .menu__form{
+            }
+            .menu__form>button{
+            }
+            .menu__input{
+            }
+            .menu__input>input{
+            }
+            .sandwich{
+
+            }
+            .menu__adaptiv{
+
+
+              .item{
+
+              }
+              .item>span{
+
+              }
+              .item:hover{
+
+              }
+            }
+          }
+        .gallery{
+          
+          .gallery__block{
+            height: 200px;
+            overflow: hidden;
+          }
+          .gallery__block:hover{
+          }
+          .gallery__block:hover .gallery__indicator{
+          }
+          .gallery__link{
+          }
+          .gallery__link>img{
+          }
+          .gallery__indicator{
+          }
+          .indicator{
+
+            .indicator__cross{
+            }
+            .indicator__cross:after{
+            }
+          }
+        }
+        .portfolio__button{
+        }
+        .portfolio__button>button{
+      }
+    }
+  }
   @media (max-width: 667px){
       .portfolio{
         height: 9%;
@@ -475,6 +556,7 @@ export default {
           
           .gallery__block{
             width: 50%;
+            height: auto;
           }
           .gallery__block:hover{
           }

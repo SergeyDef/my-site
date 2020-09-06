@@ -566,9 +566,160 @@ export default {
 			}
 		}
 	}
+	@media (max-width: 967px){
+		.work{
+			height: 16%;
+
+			.reviews__info{
+				height: 10%;
+			}
+			.work__substrate{
+
+			}
+			.work__substrate>h6{
+
+			}
+			.work__wrapper{
+				height: 90%;
+			}
+			.work__company{
+				height: 55%;
+			}
+			.company{
+
+				.company__wrapper{
+					
+				}
+				.company__block{
+					
+				}
+				.company__title{
+					
+				}
+				.company__title>h5{
+					
+				}
+				.company__name{
+					
+				}
+				.company__name>h6{
+					
+				}
+				.company__name>h6>span{
+					
+				}
+				.company__date{
+					
+				}
+				.company__picchu{
+					
+				}
+				.company__color{
+					
+				}
+				.company__color>span{
+					
+				}
+				.company__color-first{
+					
+				}
+				.company__color-first>span{
+					
+				}
+				.company__text{
+					
+				}
+				.company__info{
+					
+				}
+				.company__site{
+					
+				}
+				.company__text-show{
+					
+				}
+				.company__text-show>a{
+					
+				}
+				.company__text-first{
+					
+				}
+				.company__color-second{
+
+				}
+				.company__color-second>span{
+
+				}
+				.company__text-second{
+
+				}
+				.company__color-third{
+
+				}
+				.company__color-third>span{
+
+				}
+				.company__text-third{
+
+				}
+				.company__color-fourth{
+
+				}
+				.company__color-fourth>span{
+
+				}
+				.company__text-fourth{
+				}
+			}
+			.work__progres{
+				height: 40%;
+				flex-direction: column;
+			}
+			.progres{
+
+				.progres__heade{
+					width: 90%;
+					height: 18%;
+					margin: 0 auto;
+				}
+				.progres__heading{
+					height: 80%;
+				}
+				.progres__heading>svg{
+				}
+				.progres__heading>h5{
+				
+				}
+				.progres__block{
+					width: 90%;
+					height: 26%;
+					margin: 0 auto;
+					padding: 3%;
+				}
+				.progres__substrate{
+				}
+				.progres__substrate>h6{
+					
+				}
+				.progres__title{
+
+				}
+				.progres__text{
+
+				}
+				.progres__text>p{
+
+				}
+			}
+		}
+	}
 	@media (max-width: 667px){
 		.work{
+			height: 11%;
 
+			.reviews__info{
+				height: 20%;
+			}
 			.work__substrate{
 
 			}
@@ -576,8 +727,10 @@ export default {
 				font-size: 1.5rem;
 			}
 			.work__wrapper{
+				height: 80%;
 			}
 			.work__company{
+				height: 69%;
 			}
 			.company{
 
@@ -674,12 +827,14 @@ export default {
 			}
 			.work__progres{
 				flex-direction: column;
+				height: 26%;
 			}
 			.progres{
 
 				.progres__heade{
 					width: 100%;
 					height: 19%;
+					margin: 0;
 				}
 				.progres__heading{
 					flex-direction: row;
@@ -697,8 +852,9 @@ export default {
 				.progres__block{
 					width: 100%;
 					height: 79%;
-					padding-left: 5%;
+					padding: 0 0 0 5%;
 					display: none;
+					margin: 0;
 				}
 				.progres__block-activ{
 					display: flex;
