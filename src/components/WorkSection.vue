@@ -20,7 +20,7 @@
     <div class="work__wrapper">
     	<div class="work__company company">
     		<div class="company__wrapper">
-    			<div class="company__block">
+    			<div class="company__block" id="first">
     				<div class="company__color company__color-first"><span></span></div>
     				<div class="company__picchu">
     					<div class="company__title">
@@ -40,12 +40,19 @@
 	    						<a href="http://sergeydef.fun" class="company__text-first">http://sergeydef.fun</a>
 	    					</div>
 	    					<div class="company__text-show">
-	    						<a href="">читать полностью</a>
+	    						<button 
+	    						type="button" 
+	    						class="btn first company__read" 
+	    						v-on:click="readMore">читать полностью</button>
+	    						<button 
+	    						type="button" 
+	    						class="btn company__rea_hide read-none" 
+	    						v-on:click="hideReadMore">скрыть</button>
 	    					</div>
     					</div>
     				</div>
     			</div>
-    			<div class="company__block">
+    			<div class="company__block" id="second">
     				<div class="company__color company__color-second"><span></span></div>
     				<div class="company__picchu">
     					<div class="company__title">
@@ -65,12 +72,19 @@
 	    						<a href="http://sergeydef.fun" class="company__text-second">http://sergeydef.fun</a>
 	    					</div>
 	    					<div class="company__text-show">
-	    						<a href="">читать полностью</a>
+	    						<button 
+	    						type="button" 
+	    						class="btn second company__read" 
+	    						v-on:click="readMore">читать полностью</button>
+	    						<button 
+	    						type="button" 
+	    						class="btn company__rea_hide read-none" 
+	    						v-on:click="hideReadMore">скрыть</button>
 	    					</div>
     					</div>
     				</div>
     			</div>
-    			<div class="company__block">
+    			<div class="company__block" id="third">
     				<div class="company__color company__color-third"><span></span></div>
     				<div class="company__picchu">
     					<div class="company__title">
@@ -90,12 +104,19 @@
 	    						<a href="http://sergeydef.fun" class="company__text-third">http://sergeydef.fun</a>
 	    					</div>
 	    					<div class="company__text-show">
-	    						<a href="">читать полностью</a>
+	    						<button 
+	    						type="button" 
+	    						class="btn third company__read" 
+	    						v-on:click="readMore">читать полностью</button>
+	    						<button 
+	    						type="button" 
+	    						class="btn company__rea_hide read-none" 
+	    						v-on:click="hideReadMore">скрыть</button>
 	    					</div>
     					</div>
     				</div>
     			</div>
-    			<div class="company__block">
+    			<div class="company__block" id="fourth">
     				<div class="company__color company__color-fourth"><span></span></div>
     				<div class="company__picchu">
     					<div class="company__title">
@@ -115,7 +136,14 @@
 	    						<a href="http://sergeydef.fun" class="company__text-fourth">http://sergeydef.fun</a>
 	    					</div>
 	    					<div class="company__text-show">
-	    						<a href="">читать полностью</a>
+	    						<button 
+	    						type="button" 
+	    						class="btn fourth company__read" 
+	    						v-on:click="readMore">читать полностью</button>
+	    						<button 
+	    						type="button" 
+	    						class="btn company__rea_hide read-none" 
+	    						v-on:click="hideReadMore">скрыть</button>
 	    					</div>
     					</div>
     				</div>
@@ -168,6 +196,38 @@ export default {
   name: 'WorkSection',
   props: {
     msg: String
+  },
+  data(){
+  	return {
+  	}
+  },
+  methods: {
+  	readMore: function () {
+  		let key = event.target;
+  		let block = document.querySelectorAll('.company__block');
+  		let read = document.querySelectorAll('.company__read');
+  		let hideRead = document.querySelectorAll('.company__rea_hide');
+
+  		for (var i = 0; i < hideRead.length; i++) {
+  			hideRead[i].classList.add('read-none');
+  		}
+  		key.nextElementSibling.classList.remove('read-none');
+
+  		for (var i = 0; i < read.length; i++) {
+  			read[i].classList.remove('read-none');
+  		}
+
+  		key.classList.add('read-none');
+  		for (var i = 0; i < block.length; i++) {
+  			if (block[i].matches('.company__block-activ')) {
+  				block[i].classList.remove('company__block-activ');
+  			}
+  			if (key.classList.contains(block[i].getAttribute('id'))) {
+  				block[i].classList.add('company__block-activ');
+  			}
+  		}	
+  	},
+  	hideReadMore: function (){},
   }
 }
 </script>
@@ -244,6 +304,9 @@ export default {
 				height: 40%;
 				border-left: 2px solid #F0F0F0;
 			}
+			.company__block-activ{
+				height: 60%;
+			}
 			.company__title{
 				@include headingMinBlock(100%, 10%);
 			}
@@ -300,6 +363,8 @@ export default {
 				height: 30%;
 				overflow: hidden;
 			}
+			.company__text-active{
+			}
 			.company__info{
 				width: 100%;
 				height: 20%;
@@ -313,12 +378,16 @@ export default {
 				width: 50%;
 				height: 100%;
 			}
-			.company__text-show>a{
-				width: 44%;
-				height: 100%;
+			.company__text-show>button{
+				width: 50%;
+				height: 86%;
+				color: #26A59E;
 				font-size: 0.894rem;
 				margin-left: 30%;
 				text-decoration: none;
+			}
+			.read-none{
+				display: none;
 			}
 			.company__text-first{
 				color: #2196F3;
@@ -486,7 +555,7 @@ export default {
 				.company__text-show{
 					
 				}
-				.company__text-show>a{
+				.company__text-show>button{
 					
 				}
 				.company__text-first{
@@ -638,7 +707,7 @@ export default {
 				.company__text-show{
 					
 				}
-				.company__text-show>a{
+				.company__text-show>button{
 					
 				}
 				.company__text-first{
@@ -792,7 +861,7 @@ export default {
 				.company__text-show{
 						
 				}
-				.company__text-show>a{
+				.company__text-show>button{
 					margin-left: 0;
 				}
 				.company__text-first{

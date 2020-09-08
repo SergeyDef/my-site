@@ -29,7 +29,8 @@
       LateralFace,
     },
     data(){
-      return {}
+      return {
+      }
     },
     methods: {
       sideShow: function (){

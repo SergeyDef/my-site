@@ -101,7 +101,7 @@
       </div>
       <div class="gallery__block website">
         <a href="@/myWork/housesBaths/index.html" class="gallery__link">
-          <img src="@/assets/portfolio/0_1.png" alt="">
+          <img src="@/assets/portfolio/0_1.png" alt="web studio">
           <div class="gallery__indicator indicator">
             <div class="indicator__cross"></div>
           </div>

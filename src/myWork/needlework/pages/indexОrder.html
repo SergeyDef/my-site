@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+
+    <link rel='stylesheet' href='../style/style.css'>
+    
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"> 
+
+    <link href="https://fonts.googleapis.com/css?family=Pangolin" rel="stylesheet"> 
+
+    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Anton" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Ceviche+One" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/plugins/colorbox/example5/colorbox.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Sedgwick+Ave+Display" rel="stylesheet"> <!-- FONT_SIDEBAR -->
+<title>форма заказа</title>
+<body>
+<header class='container' id='header'>
+    <div class='row'>
+        <div class='col-md-2 logo'>
+            <p><a href='index.html'>
+            <img src='../img/Log2.png' alt='Website logo'></a></p>
+        </div>
+        <div class='col-md-10 caption'>
+            <div class="capt"><h1>Вяжем на заказ</h1></div>
+            <div class="bk">
+                <a href="https://vk.com/club101169255"><img src="../img/w.jpg"></a>
+            </div>
+        </div>
+    </div>
+</header>
+<a id="menuSayt"></a>
+<nav class='container'> <!-- HORIZON_MENU -->
+    <div class="row" id='menu'>
+        <nav align='left' class='col-md-2 leftSpace'>
+            
+        </nav>
+        <div id="spac" class="col-md-1">
+            <img src="../img/Log3.png" height='50px' width="50px">
+        </div>
+        <div class='col-md-9 cart'>
+            <ul class='carte'>
+                <li><a href="../index.html">вернуться на главную</a></li>
+                <li><a href="../pages/HowOrder.html">как снять мерки</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class='container' id='content'> <!-- SIDEBAR -->
+    <div class='row'>
+        <div class='col-md-3'>
+ <ul class='mmenuu'>
+            <li><a href=''><p class="siteMenu">меню сайта</a>
+                <ul class='ssubmenuu'>
+                    <li><a href="../index.html">главная</a></li>
+                    <li><a href="indexWomen.html">женские модели</a></li>
+                    <li><a href="indexMen.html">мужские модели</a></li>
+                    <li><a href="indexChild.html">детские модели</a></li>
+                    <li><a href="indexHet.html">головные уборы</a></li>
+                    <li><a href="indexToys.html">игрушки</a></li>
+                </ul>
+            </li>
+        </ul>
+        </div>
+
+<div id='field' class="col-md-8">
+    <h3>Наши контакты</h3>
+    <br>
+    <nav class="connection">
+        <p><b>Номер телефона:</b> 8 (977) 301-37-97</p>
+        <p><b>email:</b> KnitToOrder@yandex.ru</p>
+    <br>
+    </nav>
+    <div id='model'>
+        <form id='form' action="/php/handler.php">
+            <h4 class=''>Обратная связь</h4>
+            <br>   
+            <input type="hidden" name="project_name" value="Site Name">
+             <input type="hidden" name="admin_email" value="KnitToOrder@yandex.ru">
+             <input type="hidden" name="form_subject" value="Заказ вещи, заявка с сайта">
+
+             <input name='name' tipe='text'  placeholder='Ваше имя' reqired id='userName'>
+             <br>
+             <input name='phone' tipe='text' placeholder='Телефон' reqired id='userName'>
+             <br>
+             <input name='e-mail' tipe='text' placeholder='Почта' reqired id='userName'>
+             <br>
+             <div style='display:none; color:#00FF00' id='yesTrue'>Верно
+             </div>
+             <div style='display:none; color:#D14152' id='notTrue'>
+             Почта указанна неверно
+         </div>
+             <textarea name='notes' rows='8' cols='28' placeholder='Примечания' id='userName'></textarea><br><br>
+             <button onclick='f()'>отправить</button>
+             <br>
+         </form>
+     </div>
+ </div>
+
+<div class='col-md-1'></div>
+    </div>
+</content>
+</div>
+
+
+<footer class='container' id='footer'>
+    <div class='row footerText'>
+        <section class='col-md-10'>
+         <p>Все материалы представленные на этом сайте не имеют ограничений по возрасту. Все права защищены. Полное или частичное копирование без согласия автора и/или без прямой индексируемой ссылки на сайт <a href="вязание.ru.com">вязание.ru.com</a> запрещено.</p>
+        </section>
+        <div class="col-md-2">
+        <!-- Yandex.Metrika informer -->
+        <a href="https://metrika.yandex.ru/stat/?id=47618767&amp;from=informer"
+        target="_blank" rel="nofollow"><img src="https://informer.yandex.ru/informer/47618767/3_0_B99AADFF_997A8DFF_0_pageviews"
+        style="width:88px; height:31px; border:0;" alt="Яндекс.Метрика" title="Яндекс.Метрика: данные за сегодня (просмотры, визиты и уникальные посетители)" class="ym-advanced-informer" data-cid="47618767" data-lang="ru" /></a>
+        <!-- /Yandex.Metrika informer -->
+    </div>
+</div>
+    <div id="ap">
+    <a href="#menuSayt"><img src='../img/s1.png'>НАВЕРХ</a>
+</div>
+</footer>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+    (function (d, w, c) {
+        (w[c] = w[c] || []).push(function() {
+            try {
+                w.yaCounter47618767 = new Ya.Metrika({
+                    id:47618767,
+                    clickmap:true,
+                    trackLinks:true,
+                    accurateTrackBounce:true,
+                    webvisor:true
+                });
+            } catch(e) { }
+        });
+
+        var n = d.getElementsByTagName("script")[0],
+            s = d.createElement("script"),
+            f = function () { n.parentNode.insertBefore(s, n); };
+        s.type = "text/javascript";
+        s.async = true;
+        s.src = "https://mc.yandex.ru/metrika/watch.js";
+
+        if (w.opera == "[object Opera]") {
+            d.addEventListener("DOMContentLoaded", f, false);
+        } else { f(); }
+    })(document, window, "yandex_metrika_callbacks");
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/47618767" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+</body>
+</head>
+</html>

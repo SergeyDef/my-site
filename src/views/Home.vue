@@ -5,7 +5,7 @@
     id="menuAdditional"
     @show="showEl"
     @hide="hideEl"/>
-		<MenuHeader class="block-animation block-anim-no"/>
+		<MenuHeader class="block-animation block-anim-no" :menuHeaderLists="menuHeaderLists" />
 		<AboutSection class="block-animation block-anim-no"/>
 		<AboutMeSection class="block-animation block-anim-no" @showWindowMail="showMail"/>
 		<SkillsSection class="block-animation block-anim-no"/>
@@ -55,6 +55,17 @@ export default {
   data(){
     return {
       sendEmail: false,
+      menuHeaderLists: [
+        {id: 1, title: 'Главная', href: '#main'},
+        {id: 2, title: 'Обо мне', href: '#aboutMe'},
+        {id: 3, title: 'Навыки', href: '#skills'},
+        {id: 4, title: 'Образование', href: '#education'},
+        {id: 5, title: 'Портфолио', href: '#portfolio'},
+        {id: 6, title: 'Отзывы', href: '#reviews'},
+        {id: 7, title: 'Опыт работы', href: '#workExperience'},
+        {id: 8, title: 'Новости', href: '#news'},
+        {id: 9, title: 'Обратная связь', href: '#feedback'},
+      ],
     }
   },
   methods: {
@@ -113,6 +124,16 @@ export default {
       	animOnScroll();
       }, 300);
     }
+    window.addEventListener('scroll', sandwichShow);
+    function sandwichShow(){
+      let menu = document.getElementById('menuAdditional');
+
+      if (window.pageYOffset >= 100) {
+        menu.classList.remove('menu-additional_none');
+      } else if (window.pageYOffset < 100) {
+        menu.classList.add('menu-additional_none');
+      }
+    }
 	}
 }
 </script>
@@ -130,8 +151,10 @@ export default {
     position: fixed;
     width: 77%;
     height: 100px;
+    display: flex;
     top: 10px;
     z-index: 9999999;
+    background-color: #fff;
   }
   .menu-additional{
     position: fixed;

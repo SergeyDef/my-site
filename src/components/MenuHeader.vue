@@ -3,32 +3,11 @@
     <a name="upward"></a>
     <nav class="menu">
       <ul class="menu__wrapper">
-        <li class="menu__item button-activ">
-          <a href="#main"><span>Главная</span></a>
-        </li>
-        <li class="menu__item">
-          <a href="#aboutMe"><span>Обо мне</span></a>
-        </li>
-        <li class="menu__item">
-          <a href="#skills"><span>Навыки</span></a>
-        </li>
-        <li class="menu__item">
-          <a href="#education"><span>Образование</span></a>
-        </li>
-        <li class="menu__item">
-          <a href="#portfolio"><span>Портфолио</span></a>
-        </li>
-        <li class="menu__item">
-          <a href="#reviews"><span>Отзывы</span></a>
-        </li>
-        <li class="menu__item">
-          <a href="#workExperience"><span>Опыт работы</span></a>
-        </li>
-        <li class="menu__item">
-          <a href="#news"><span>Новости</span></a>
-        </li>
-        <li class="menu__item">
-          <a href="#feedback"><span>Обратная связь</span></a>
+        <li 
+        class="menu__item" 
+        v-for="menuList in menuHeaderLists"
+        v-bind:id="menuList.id" >
+          <a :href="menuList.href"><span>{{ menuList.title }}</span></a>
         </li>
       </ul>
     </nav>    
@@ -92,7 +71,10 @@
 export default {
   name: 'LateralFace',
   props: {
-    msg: String
+    menuHeaderLists: {
+      type: Array,
+      required: false
+    }
   },
   data(){
     return {
