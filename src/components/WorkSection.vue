@@ -37,7 +37,7 @@
     					</div>
     					<div class="company__info">
 	    					<div class="company__site">
-	    						<a href="http://sergeydef.fun" class="company__text-first">http://sergeydef.fun</a>
+	    						<a href="https://www.xn--80aaasbafk1acftx0c6n.xn--p1ai/" class="company__text-first">www.планетажелезяка.рф</a>
 	    					</div>
 	    					<div class="company__text-show">
 	    						<button 
@@ -46,7 +46,7 @@
 	    						v-on:click="readMore">читать полностью</button>
 	    						<button 
 	    						type="button" 
-	    						class="btn company__rea_hide read-none" 
+	    						class="btn company__rea_hide first read-none" 
 	    						v-on:click="hideReadMore">скрыть</button>
 	    					</div>
     					</div>
@@ -65,11 +65,11 @@
     						<span class="company__text-second"> с 01.12.2019 по 01.06.2020</span>
     					</div>
     					<div class="company__text">
-    						<p>Разработка, внедрение и контроль за соблюдением стандартов и общих принципов выкладки в торговом зале. Обучение персонала основам мерчандайзинга, контроль работы мерчандайзеров торгового центра. Работа с ТСД (перемещение, закрепление товара на местах хранения). Разработка планограмм торгового зала. Визуализация торговых помещений в 3D и 2D форматах, отрисовка пожар-ных планов помещения. Работа с выкладкой непосредственно в торговом зале, размещение на витринах нового ассортимента.</p>
+    						<p>Разработка планограмм торгового зала. Визуализация торговых помещений в 3D и 2D форматах, отрисовка пожарных планов помещения. Разработка, заказ и размещение торгового оборудования и POS материалов на торговых точках. Работа с выкладкой непосредственно в торговом зале, размещение на витринах нового ассортимента. Контроль за проведением акций. Разработка, внедрение и контроль за соблюдением стандартов и общих принципов выкладки в торговом зале. Зонирование торгового зала по номенклатурными группам. Расчёт площади занимаемой номенклатурными группами и товарными категориями в торговом зале.</p>
     					</div>
     					<div class="company__info">
 	    					<div class="company__site">
-	    						<a href="http://sergeydef.fun" class="company__text-second">http://sergeydef.fun</a>
+	    						<a href="https://stroymarkt.ru/" class="company__text-second">stroymarkt.ru</a>
 	    					</div>
 	    					<div class="company__text-show">
 	    						<button 
@@ -78,7 +78,7 @@
 	    						v-on:click="readMore">читать полностью</button>
 	    						<button 
 	    						type="button" 
-	    						class="btn company__rea_hide read-none" 
+	    						class="btn company__rea_hide second read-none" 
 	    						v-on:click="hideReadMore">скрыть</button>
 	    					</div>
     					</div>
@@ -101,7 +101,7 @@
     					</div>
     					<div class="company__info">
 	    					<div class="company__site">
-	    						<a href="http://sergeydef.fun" class="company__text-third">http://sergeydef.fun</a>
+	    						<a href="https://www.moslabo.ru/about/" class="company__text-third">www.moslabo.ru</a>
 	    					</div>
 	    					<div class="company__text-show">
 	    						<button 
@@ -110,7 +110,7 @@
 	    						v-on:click="readMore">читать полностью</button>
 	    						<button 
 	    						type="button" 
-	    						class="btn company__rea_hide read-none" 
+	    						class="btn company__rea_hide third read-none" 
 	    						v-on:click="hideReadMore">скрыть</button>
 	    					</div>
     					</div>
@@ -133,7 +133,7 @@
     					</div>
     					<div class="company__info">
 	    					<div class="company__site">
-	    						<a href="http://sergeydef.fun" class="company__text-fourth">http://sergeydef.fun</a>
+	    						<a href="https://www.wildberries.ru/" class="company__text-fourth">www.wildberries.ru</a>
 	    					</div>
 	    					<div class="company__text-show">
 	    						<button 
@@ -142,7 +142,7 @@
 	    						v-on:click="readMore">читать полностью</button>
 	    						<button 
 	    						type="button" 
-	    						class="btn company__rea_hide read-none" 
+	    						class="btn company__rea_hide fourth read-none" 
 	    						v-on:click="hideReadMore">скрыть</button>
 	    					</div>
     					</div>
@@ -211,6 +211,7 @@ export default {
   		for (var i = 0; i < hideRead.length; i++) {
   			hideRead[i].classList.add('read-none');
   		}
+
   		key.nextElementSibling.classList.remove('read-none');
 
   		for (var i = 0; i < read.length; i++) {
@@ -227,7 +228,21 @@ export default {
   			}
   		}	
   	},
-  	hideReadMore: function (){},
+  	hideReadMore: function (){
+  		let key = event.target;
+  		let block = document.querySelectorAll('.company__block');
+  		let read = document.querySelectorAll('.company__read');
+
+  		key.classList.add('read-none');
+
+  		for (var i = 0; i < block.length; i++) {
+  			if (key.classList.contains(block[i].getAttribute('id'))) {
+  				block[i].classList.remove('company__block-activ');
+  			}
+  		}
+
+  		key.previousElementSibling.classList.remove('read-none');
+  	},
   }
 }
 </script>
