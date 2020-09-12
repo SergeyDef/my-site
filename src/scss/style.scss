@@ -60,7 +60,17 @@
  transform: translate(0px, 0px);
   opacity: 1;
 }
-
+.wrapper{
+  display: flex;
+  padding-top: 1%;
+  width: 100%;
+  justify-content: space-evenly;
+}
+@media (max-width: 1140px){
+  .wrapper{
+    position: relative;
+  }
+}
 .sandwich{
   width: 50%;
   height: 100%;

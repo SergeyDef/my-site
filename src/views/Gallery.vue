@@ -1,30 +1,38 @@
 <template>
-  <div class="gallery">
-  	<MenuHeader class="menuHeader" :menuHeaderLists="menuHeaderLists" />
-  	<div class="gallery__wrapper">
-	  	<ul class="gallery__block">
-	  		<li v-for="myJob in myJobs" v-bind:id="myJob.id" class="gallery__item">
-	  			<div class="gallery__title">
-	  				<h3>{{ myJob.jobName }}</h3>
-	  			</div>
-	  			<a v-bind:href="myJob.jobLink" class="gallery__link">
-	  				<img :src="myJob.jobImg" v-dind:alt="myJob.jobAlt" class="gallery__img">
-	  				<div class="gallery__description">
-	  					<span>{{ myJob.jobDescription }}</span>
-	  				</div>
-	  			</a>
-	  		</li>
-	  	</ul>
-  	</div>
-  </div>
+	<div class="wrapper">
+		<LateralFace/>
+		<ButtonLateralFace />
+	  <div class="gallery">
+	  	<MenuHeader class="menuHeader" :menuHeaderLists="menuHeaderLists" />
+	  	<div class="gallery__wrapper">
+		  	<ul class="gallery__block">
+		  		<li v-for="myJob in myJobs" v-bind:id="myJob.id" class="gallery__item">
+		  			<div class="gallery__title">
+		  				<h3>{{ myJob.jobName }}</h3>
+		  			</div>
+		  			<a v-bind:href="myJob.jobLink" class="gallery__link">
+		  				<img :src="myJob.jobImg" v-dind:alt="myJob.jobAlt" class="gallery__img">
+		  				<div class="gallery__description">
+		  					<span>{{ myJob.jobDescription }}</span>
+		  				</div>
+		  			</a>
+		  		</li>
+		  	</ul>
+	  	</div>
+	  </div>
+	</div>
 </template>
 
 <script>
 	import MenuHeader from '@/components/MenuHeader.vue'
+	import LateralFace from '@/components/LateralFace.vue'
+	import ButtonLateralFace from '@/components/ButtonLateralFace.vue'
 	export default{
 		name: 'gallery',
 		components: {
 			MenuHeader,
+			LateralFace,
+			ButtonLateralFace,
 		},
 		data(){
 			return{
@@ -112,6 +120,16 @@
 <style lang="scss" scoped>
 @import '@/scss/style.scss';
 @import '@/scss/_mixins.scss';
+.wrapper{
+  display: flex;
+  padding-top: 1%;
+  width: 100%;
+  justify-content: space-evenly;
+
+  .side{
+    display: none;
+  }
+}
 	.gallery{
 		width: 77%;
 		display: flex;
