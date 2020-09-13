@@ -20,6 +20,7 @@
   		<ContactSection class="block-animation block-anim-no"/>
   		<FooterSection class="block-animation block-anim-no"/>
       <WriteMe v-if="sendEmail" @closeWindowMail="closeMail"/>
+      <ModalWindow v-if="commentWindow"/>
   	</div>
   </div>
 </template>
@@ -40,6 +41,7 @@ import MenuAdditional from '@/components/MenuAdditional.vue'
 import WriteMe from '@/components/WriteMe.vue'
 import LateralFace from '@/components/LateralFace.vue'
 import ButtonLateralFace from '@/components/ButtonLateralFace.vue'
+import ModalWindow from '@/components/ModalWindow.vue'
 
 export default {
   name: 'Home',
@@ -59,10 +61,12 @@ export default {
     WriteMe,
     LateralFace,
     ButtonLateralFace,
+    ModalWindow,
   },
   data(){
     return {
       sendEmail: false,
+      commentWindow: false,
       menuHeaderLists: [
         {id: 1, title: 'Главная', href: '#main'},
         {id: 2, title: 'Обо мне', href: '#aboutMe'},

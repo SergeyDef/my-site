@@ -115,4 +115,30 @@ export default {
   }
   @media (max-width: 667px){
   }
+  @media (max-width: 410px){
+    .side{
+    }
+    .side:hover{
+    }
+    .side-pasiv{
+    }
+    .side-activ{
+      left: 300px;
+    }
+    .side__text{
+    }
+    .side__text>span{
+    }
+    .side__arrow{
+    }
+    .side__arrow-left{
+    }
+    .side__arrow-right{
+    }
+  }
+  @media (max-width: 360px){
+    .side-activ{
+      left: 270px;
+    }
+  }
 </style>

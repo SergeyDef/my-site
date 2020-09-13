@@ -30,6 +30,7 @@
 	  				<div class="comment__ava"><img src="" alt=""></div>
 	  			</div>
 	  			</div>
+	  			<FooterSection class="footerSection" />
 	  		</div>
 	  	</div>
 	  </div>
@@ -40,6 +41,7 @@
 	import LateralFace from '@/components/LateralFace.vue'
 	import ButtonLateralFace from '@/components/ButtonLateralFace.vue'
 	import MenuHeader from '@/components/MenuHeader.vue'
+	import FooterSection from '@/components/FooterSection.vue'
 
 	export default{
 		name: 'article',
@@ -47,6 +49,7 @@
 			LateralFace,
 			ButtonLateralFace,
 			MenuHeader,
+			FooterSection,
 		},
 		data(){
 			return{
@@ -157,6 +160,11 @@
 				@include buttonMain(60%, 80%, 1rem);
 				margin: auto;
 			}
+		}
+		.footerSection{
+			height: 100px;
+			margin-top: 1%;
+			margin-bottom: 1%;
 		}
 	}
 }

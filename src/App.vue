@@ -66,5 +66,9 @@ button:focus{
   display: flex;
   background-color: #F6F6F6;
 }
-
+@media (max-width: 360px){
+  p{
+    font-size: 0.8rem;
+  }
+}
 </style>

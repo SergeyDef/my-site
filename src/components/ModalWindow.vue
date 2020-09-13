@@ -3,7 +3,7 @@
     <div class="window__wrapper">
       <form>
         <div class="window__title">
-          <span>Написать на почту</span>
+          <span>Оставить коментарий</span>
           <div class="window__close" @click="closeWindowMail">
             <div class="window__plus"></div>
           </div>

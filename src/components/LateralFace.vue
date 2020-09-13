@@ -416,4 +416,86 @@ export default {
     }
   }
 }
+@media (max-width: 410px){
+    .sidebar{
+    width: 300px;
+
+    .logo{
+      .logo__img{
+      }
+      .logo__img>img{
+      }
+      .logo__content{
+      }
+      .logo__title>h2{
+      }
+      .logo__text{
+      }
+      .logo__text>span{
+      }
+      .logo__text>a{
+      }
+    }
+    .sidebar__bottom{
+    }
+    .sidebar__network{
+    }
+    .network{
+
+      .network__block{
+      }
+      .network__img{
+      }
+      .network__img>svg{
+      }
+      /*#2196F3*/
+      .network__facebook{
+      }
+      .network__Instagram{
+      }
+      .network__twitter{
+      }
+      .network__wk{
+      }
+      .network__img:hover{
+        }
+        .network__Instagram{
+        }
+      }
+      .sidebar__myself{
+      }
+    .myself{
+
+      .myself__title{
+      }
+      .myself__title>h4{
+      }
+      .myself__text{
+      }
+    }
+    .sidebar__summary{
+    }
+    .summary{
+      
+      .summary__button{
+      }
+    }
+  }
+}
+@media (max-width: 360px){
+  .sidebar{
+    width: 270px;
+    .summary{
+      .summary__button{
+        width: 70%;
+        height: 56%;
+      }
+    } 
+  }
+  .myself{
+    .myself__text>p{
+      font-size: 0.8rem;
+    }
+  }
+}
 </style>

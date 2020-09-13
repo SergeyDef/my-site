@@ -30,7 +30,7 @@
                   </div>
                   <ul class="news__menu">
                     <li><a href="">Спросить меня</a></li>
-                    <li class="news__menu-line">17.08.2020</li>
+                    <li class="news__menu-line">13.09.2020</li>
                     <li class="news__menu-right">Коментарии</li>
                   </ul>
                 </div>
@@ -39,7 +39,7 @@
                 </div>
               </div>
               <div class="news__text">
-                <p>В первый раз сцепление на Донфенге накрылось после пробега в 32 тысячи километров! После снятия коробки выяснилось следущее: во-первых сами накладки </p>
+                <p>Для размещения изображений на интернет ресурсах, возможно использовать как растровые так и векторные изображения. Оба типа картинок имеют так сказать свою сферу применения...</p>
               </div>
               <div class="news__button">
                 <button class="btn" @click="readArticle" id="1">
@@ -127,7 +127,7 @@
     <div class="news__navigation navigation">
       <div class="btn-toolbar navigation__wrapper" role="toolbar" aria-label="Toolbar with button groups">
         <div class="btn-group mr-2 navigation__block" role="group" aria-label="First group">
-          <button type="button" class="btn btn-secondary navigation__button navigation-left">
+          <!-- <button type="button" class="btn btn-secondary navigation__button navigation-left">
             <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-left" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
               <path fill-rule="evenodd" d="M5.854 4.646a.5.5 0 0 1 0 .708L3.207 8l2.647 2.646a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 0 1 .708 0z"/>
               <path fill-rule="evenodd" d="M2.5 8a.5.5 0 0 1 .5-.5h10.5a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
@@ -140,7 +140,7 @@
             <path fill-rule="evenodd" d="M10.146 4.646a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L12.793 8l-2.647-2.646a.5.5 0 0 1 0-.708z"/>
             <path fill-rule="evenodd" d="M2 8a.5.5 0 0 1 .5-.5H13a.5.5 0 0 1 0 1H2.5A.5.5 0 0 1 2 8z"/>
           </svg>
-          </button>
+          </button> -->
         </div>
       </div>
     </div>
