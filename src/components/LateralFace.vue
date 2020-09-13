@@ -218,6 +218,11 @@ export default {
   }
   .sidebar__bottom{
     width: 100%;
+    height: auto;
+  }
+  .sidebar__bottom-article{}
+  .sidebar__bottom-gallery{}
+  .sidebar__bottom-home{
     height: 96%;
   }
   .sidebar__network{

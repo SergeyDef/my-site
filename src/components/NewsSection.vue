@@ -160,7 +160,6 @@ export default {
     readArticle: function () {
       let button = event.target;
       let id = button.getAttribute('id');
-      console.log(id);
       this.$router.push('/article/' + id);
     }
   }
