@@ -125,10 +125,6 @@
   padding-top: 1%;
   width: 100%;
   justify-content: space-evenly;
-
-  .side{
-    display: none;
-  }
 }
 	.gallery{
 		width: 77%;

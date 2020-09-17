@@ -32,7 +32,7 @@
     					<div class="company__date">
     						<span class="company__text-first"> с 01.12.2019 по 01.06.2020</span>
     					</div>
-    					<div class="company__text">
+    					<div class="company__text first">
     						<p>Разработка, внедрение и контроль за соблюдением стандартов и общих принципов выкладки в торговом зале. Обучение персонала основам мерчандайзинга, контроль работы мерчандайзеров торгового центра. Работа с ТСД (перемещение, закрепление товара на местах хранения). Разработка планограмм торгового зала. Визуализация торговых помещений в 3D и 2D форматах, отрисовка пожар-ных планов помещения. Работа с выкладкой непосредственно в торговом зале, размещение на витринах нового ассортимента.</p>
     					</div>
     					<div class="company__info">
@@ -42,11 +42,11 @@
 	    					<div class="company__text-show">
 	    						<button 
 	    						type="button" 
-	    						class="btn first company__read" 
+	    						class="first btn company__read" 
 	    						v-on:click="readMore">читать полностью</button>
 	    						<button 
 	    						type="button" 
-	    						class="btn company__rea_hide first read-none" 
+	    						class="first btn company__rea_hide read-none" 
 	    						v-on:click="hideReadMore">скрыть</button>
 	    					</div>
     					</div>
@@ -64,7 +64,7 @@
     					<div class="company__date">
     						<span class="company__text-second"> с 01.12.2019 по 01.06.2020</span>
     					</div>
-    					<div class="company__text">
+    					<div class="company__text second">
     						<p>Разработка планограмм торгового зала. Визуализация торговых помещений в 3D и 2D форматах, отрисовка пожарных планов помещения. Разработка, заказ и размещение торгового оборудования и POS материалов на торговых точках. Работа с выкладкой непосредственно в торговом зале, размещение на витринах нового ассортимента. Контроль за проведением акций. Разработка, внедрение и контроль за соблюдением стандартов и общих принципов выкладки в торговом зале. Зонирование торгового зала по номенклатурными группам. Расчёт площади занимаемой номенклатурными группами и товарными категориями в торговом зале.</p>
     					</div>
     					<div class="company__info">
@@ -74,11 +74,11 @@
 	    					<div class="company__text-show">
 	    						<button 
 	    						type="button" 
-	    						class="btn second company__read" 
+	    						class="second btn company__read" 
 	    						v-on:click="readMore">читать полностью</button>
 	    						<button 
 	    						type="button" 
-	    						class="btn company__rea_hide second read-none" 
+	    						class="second btn company__rea_hide read-none" 
 	    						v-on:click="hideReadMore">скрыть</button>
 	    					</div>
     					</div>
@@ -96,7 +96,7 @@
     					<div class="company__date">
     						<span class="company__text-third"> с с 01.07.2014 по 01.12.2014</span>
     					</div>
-    					<div class="company__text">
+    					<div class="company__text third">
     						<p>Приём входящих звонков, работа с аукционной документацией, электронными площадками: Росэлторг, Сбербанк-АСТ, ЭТП Сбербанк-АСТ. Составление и проверка готовящихся к подписанию договоров. Отслеживание на zakupki.gov и учет предстоящих аукционов и котировочных заявок. Составление коммерческих предложений, информационных писем и т. д.</p>
     					</div>
     					<div class="company__info">
@@ -106,11 +106,11 @@
 	    					<div class="company__text-show">
 	    						<button 
 	    						type="button" 
-	    						class="btn third company__read" 
+	    						class="third btn company__read" 
 	    						v-on:click="readMore">читать полностью</button>
 	    						<button 
 	    						type="button" 
-	    						class="btn company__rea_hide third read-none" 
+	    						class="third btn company__rea_hide read-none" 
 	    						v-on:click="hideReadMore">скрыть</button>
 	    					</div>
     					</div>
@@ -128,7 +128,7 @@
     					<div class="company__date">
     						<span class="company__text-fourth">с 07.05.2013 по 14.05.2014</span>
     					</div>
-    					<div class="company__text">
+    					<div class="company__text fourth">
     						<p>Учёт и подготовка к отгрузке неликвида, обезличенного товара (товара не принятого по причине несоответствия штрихкода, либо арти́кула со складской базой данных), товара, пришедшего на склад с производственным браком, проведение перемещений, возвратов в базе 1С, подготовка отгрузочных документов, встреча представителей поставщиков и отгрузка товара.</p>
     					</div>
     					<div class="company__info">
@@ -138,11 +138,11 @@
 	    					<div class="company__text-show">
 	    						<button 
 	    						type="button" 
-	    						class="btn fourth company__read" 
+	    						class="fourth btn company__read" 
 	    						v-on:click="readMore">читать полностью</button>
 	    						<button 
 	    						type="button" 
-	    						class="btn company__rea_hide fourth read-none" 
+	    						class="fourth btn company__rea_hide read-none" 
 	    						v-on:click="hideReadMore">скрыть</button>
 	    					</div>
     					</div>
@@ -204,7 +204,9 @@ export default {
   methods: {
   	readMore: function () {
   		let key = event.target;
+  		let keyClassArray = key.className.split(' ');
   		let block = document.querySelectorAll('.company__block');
+  		let text = document.querySelectorAll('.company__text');
   		let read = document.querySelectorAll('.company__read');
   		let hideRead = document.querySelectorAll('.company__rea_hide');
 
@@ -226,18 +228,37 @@ export default {
   			if (key.classList.contains(block[i].getAttribute('id'))) {
   				block[i].classList.add('company__block-activ');
   			}
+  		}
+
+  		// console.log(keyClassArray.forEach(elem => console.log(`.${elem}`)));
+
+  		for (var i = 0; i < text.length; i++) {
+  			// debugger;
+  			// console.log(text[i].classList.contains(keyClassArray[1]));
+  			//console.log(keyClassArray.forEach(elem => text[i].classList.contains(elem)));
+  			if (text[i].classList.contains(keyClassArray[0])) {
+  		 		text[i].classList.add('company__text-activ');
+  		 	}
   		}	
   	},
   	hideReadMore: function (){
   		let key = event.target;
+  		let keyClassArray = key.className.split(' ');
   		let block = document.querySelectorAll('.company__block');
   		let read = document.querySelectorAll('.company__read');
+  		let text = document.querySelectorAll('.company__text');
 
   		key.classList.add('read-none');
 
   		for (var i = 0; i < block.length; i++) {
   			if (key.classList.contains(block[i].getAttribute('id'))) {
   				block[i].classList.remove('company__block-activ');
+  			}
+  		}
+
+  		for (var i = 0; i < text.length; i++) {
+  			if (text[i].classList.contains(keyClassArray[0])) {
+  				text[i].classList.remove('company__text-activ');
   			}
   		}
 
@@ -321,6 +342,9 @@ export default {
 			}
 			.company__block-activ{
 				height: 60%;
+			}
+			.company__text-activ{
+				height: 50%;
 			}
 			.company__title{
 				@include headingMinBlock(100%, 10%);
@@ -498,6 +522,140 @@ export default {
 			.progres__text>p{
 				width: 100%;
 				height: 100%;
+			}
+		}
+	}
+	@media (max-width: 1600px){
+		.work{
+
+			.work__substrate{
+
+			}
+			.work__substrate>h6{
+
+			}
+			.work__wrapper{
+			}
+			.work__company{
+			}
+			.company{
+
+				.company__wrapper{
+					
+				}
+				.company__block{
+					
+				}
+				.company__block-activ{
+					height: 60%;
+				}
+				.company__title{
+					
+				}
+				.company__title>h5{
+					
+				}
+				.company__name{
+					
+				}
+				.company__name>h6{
+					
+				}
+				.company__name>h6>span{
+					
+				}
+				.company__date{
+					
+				}
+				.company__picchu{
+					
+				}
+				.company__color{
+					
+				}
+				.company__color>span{
+					
+				}
+				.company__color-first{
+					
+				}
+				.company__color-first>span{
+					
+				}
+				.company__text{
+					
+				}
+				.company__info{
+					
+				}
+				.company__site{
+					
+				}
+				.company__text-show{
+					
+				}
+				.company__text-show>button{
+					
+				}
+				.company__text-first{
+					
+				}
+				.company__color-second{
+
+				}
+				.company__color-second>span{
+
+				}
+				.company__text-second{
+
+				}
+				.company__color-third{
+
+				}
+				.company__color-third>span{
+
+				}
+				.company__text-third{
+
+				}
+				.company__color-fourth{
+
+				}
+				.company__color-fourth>span{
+
+				}
+				.company__text-fourth{
+				}
+			}
+			.work__progres{
+			}
+			.progres{
+
+				.progres__heade{
+				}
+				.progres__heading{
+				}
+				.progres__heading>svg{
+				}
+				.progres__heading>h5{
+				
+				}
+				.progres__block{
+				}
+				.progres__substrate{
+				}
+				.progres__substrate>h6{
+					
+				}
+				.progres__title{
+
+				}
+				.progres__text{
+
+				}
+				.progres__text>p{
+
+				}
 			}
 		}
 	}
