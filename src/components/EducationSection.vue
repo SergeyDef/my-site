@@ -10,16 +10,16 @@
 				  <path d="M0 0h1v16H0V0zm1 15h15v1H1v-1z"/>
 				  <path fill-rule="evenodd" d="M14.39 4.312L10.041 9.75 7 6.707l-3.646 3.647-.708-.708L7 5.293 9.959 8.25l3.65-4.563.781.624z"/>
 				  <path fill-rule="evenodd" d="M10 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V4h-3.5a.5.5 0 0 1-.5-.5z"/>
-				</svg>
+			</svg>
         <h2>Образование</h2>
       </div>
       <div class="info__text">
         <p>В этом разделе представлены мои достижения в сфере официального образования. К сожалению или к счастью они не имеют отношения к тому, чем я сейчас занимаюсь, тоесть к веб разработки.</p>
-			</div>
 		</div>
+	</div>
     <div class="accordion education__list" id="accordionExample">
 			<div class="card">
-				<div class="card-header education__description" id="headingOne" @click="plusDelete">
+				<div class="card-header education__description" id="headingOne">
 					<div class="education__picchu">
 						<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-pen education__icon text__blue" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
 							<path fill-rule="evenodd" d="M5.707 13.707a1 1 0 0 1-.39.242l-3 1a1 1 0 0 1-1.266-1.265l1-3a1 1 0 0 1 .242-.391L10.086 2.5a2 2 0 0 1 2.828 0l.586.586a2 2 0 0 1 0 2.828l-7.793 7.793zM3 11l7.793-7.793a1 1 0 0 1 1.414 0l.586.586a1 1 0 0 1 0 1.414L5 13l-3 1 1-3z"/>
@@ -28,13 +28,13 @@
 						</svg>
 					</div>
 			    <h5 class="mb-0  education__heading">
-			      <button class="btn btn-link education__button" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+			      <button class="btn btn-link education__button" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" @click="plusDelete">
 			      	<div class="education__text">
 			      		<span class="education__name">НОУ ВПО Московский институт психологии</span>
 			      		<span class="education__profession"> - Психологии, Практическая психология</span>
-							</div>
-							<div class="education__plus block__blue"></div>
-						</button>
+						</div>
+							<div class="education__plus block__blue education-active"></div>
+					</button>
 					</h5>
 			  </div>
 
@@ -62,7 +62,7 @@
 			  </div>
 			</div>
 			<div class="card">
-				<div class="card-header education__description" id="headingTwo" @click="plusDelete">
+				<div class="card-header education__description" id="headingTwo">
 					<div class="education__picchu">
 						<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-pen education__icon text__green" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
 							<path fill-rule="evenodd" d="M5.707 13.707a1 1 0 0 1-.39.242l-3 1a1 1 0 0 1-1.266-1.265l1-3a1 1 0 0 1 .242-.391L10.086 2.5a2 2 0 0 1 2.828 0l.586.586a2 2 0 0 1 0 2.828l-7.793 7.793zM3 11l7.793-7.793a1 1 0 0 1 1.414 0l.586.586a1 1 0 0 1 0 1.414L5 13l-3 1 1-3z"/>
@@ -71,11 +71,12 @@
 						</svg>
 					</div>
 					<h5 class="mb-0 education__heading">
-			      <button class="btn btn-link collapsed education__button" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+			      <button 
+			      class="btn btn-link collapsed education__button" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" @click="plusDelete">
 			      	<div class="education__text">
-								<span class="education__name">ГОУ СПО Колледж сферы услуг №32</span>
-								<span class="education__profession"> - Технологии продукции общественного питания</span>
-							</div>
+							<span class="education__name">ГОУ СПО Колледж сферы услуг №32</span>
+							<span class="education__profession"> - Технологии продукции общественного питания</span>
+						</div>
 							<div class="education__plus block__green"></div>
 			      </button>
 					</h5>
@@ -115,18 +116,28 @@ export default {
   },
   methods: {
   	plusDelete: function() {
-  		let block = document.querySelectorAll('.card');
+  		let block = event.currentTarget;
+  		let blocks = document.querySelectorAll('.education__plus');
 
-	  	for (var i = 0; i < block.length; i++) {
-	  		let collapse = block[i].querySelector('.collapse');
-	  		let educationPlus = block[i].querySelector('.education__plus');
+  		// for (var i = 0; i < blocks.length; i++) {
+  		// 	if (blocks[i].querySelector('.education__plus')) {}
+  		// }
+  		block.querySelector('.education__plus').classList.toggle('education-active');
+  		// console.log(block.querySelector('.education__plus'));
+
+  		// for (const elem of block){
+  		// 	if (elem.classList.contains('education__plus')) {
+
+  		// 		console.log(elem);
+  		// 	}
+  		// }
+	  	// for (var i = 0; i < block.length; i++) {
 	  		
-	  		if (collapse.matches('.show')) {
-	  			educationPlus.classList.add('education-active');
-	  		} else {
-	  			educationPlus.classList.remove('education-active');
-	  		}
-	  	}
+	  	// 	console.log(block[i].children);
+	  	// 	// if (collapse.matches('.show')) {
+	  			
+	  	// 	// }
+	  	// }
   	},
   },
   mounted(){

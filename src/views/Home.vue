@@ -14,13 +14,13 @@
   		<SkillsSection class="block-animation block-anim-no"/>
   		<EducationSection class="block-animation block-anim-no"/>
   		<PortfolioSection class="block-animation block-anim-no"/>
-  		<TestomonialsSection class="block-animation block-anim-no"/>
+  		<TestomonialsSection class="block-animation block-anim-no" @showWindowFeedback="showFeedback"/>
   		<WorkSection class="block-animation block-anim-no"/>
   		<NewsSection class="block-animation block-anim-no"/>
   		<ContactSection class="block-animation block-anim-no"/>
   		<FooterSection class="block-animation block-anim-no"/>
       <WriteMe v-if="sendEmail" @closeWindowMail="closeMail"/>
-      <ModalWindow v-if="commentWindow"/>
+      <ModalWindow v-if="commentWindow" @closeWindowFeedback="closeFeedback"/>
   	</div>
   </div>
 </template>
@@ -93,12 +93,16 @@ export default {
     },
     showMail: function (){
       this.sendEmail = true;
-      console.log(this.sendEmail);
     },
     closeMail: function (){
       this.sendEmail = false;
-      console.log(this.sendEmail);
     },
+    showFeedback: function (){
+      this.commentWindow = true;
+    },
+    closeFeedback: function (){
+      this.commentWindow = false;
+    }
   },
   mounted() {
 	const animItems = document.querySelectorAll('.block-animation');

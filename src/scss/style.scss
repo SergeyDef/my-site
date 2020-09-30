@@ -28,6 +28,22 @@
     font-size: 0.954rem;
   }
 }
+@media (max-width: 440px){
+    .info{
+
+    .info__title{
+    }
+    .info__title>h2{
+    }
+    .info__icon{
+    }
+    .info__text{
+    }
+    .info__text>p{
+      font-size: 0.8rem;
+    }
+  }
+}
 .button-activ{
   position: relative;
   z-index: 99999;

@@ -344,7 +344,11 @@ export default {
 				height: 60%;
 			}
 			.company__text-activ{
-				height: 50%;
+				display: flex;
+				height: 60%!important;
+			}
+			.company__text-activ>p{
+				margin: auto 0;
 			}
 			.company__title{
 				@include headingMinBlock(100%, 10%);
@@ -410,8 +414,12 @@ export default {
 				display: flex;
 			}
 			.company__site{
+				display: flex;
 				width: 50%;
 				height: 100%;
+			}
+			.company__site>a{
+				margin: auto 0;
 			}
 			.company__text-show{
 				width: 50%;
@@ -525,7 +533,7 @@ export default {
 			}
 		}
 	}
-	@media (max-width: 1600px){
+	@media (max-width: 1360px){
 		.work{
 
 			.work__substrate{
@@ -547,7 +555,7 @@ export default {
 					
 				}
 				.company__block-activ{
-					height: 60%;
+					height: 75%;
 				}
 				.company__title{
 					
@@ -595,7 +603,7 @@ export default {
 					
 				}
 				.company__text-show>button{
-					
+					width: 60%;
 				}
 				.company__text-first{
 					
@@ -835,6 +843,9 @@ export default {
 				.company__block{
 					
 				}
+				.company__block-activ{
+					height: 60%;
+				}
 				.company__title{
 					
 				}
@@ -870,6 +881,12 @@ export default {
 				}
 				.company__text{
 					
+				}
+				.company__text>p{
+					font-size: 0.86rem;
+				}
+				.company__text-activ{
+					height: 50%!important;
 				}
 				.company__info{
 					
@@ -980,7 +997,9 @@ export default {
 						
 				}
 				.company__block{
-					height: 60%;
+				}
+				.company__block-activ{
+					height: 90%;
 				}
 				.company__title{
 					height: 12%;
@@ -1022,6 +1041,11 @@ export default {
 				.company__text{
 						
 				}
+				.company__text>p{
+				}
+				.company__text-activ{
+					height: 65%!important;
+				}
 				.company__info{
 						
 				}
@@ -1029,13 +1053,15 @@ export default {
 						
 				}
 				.company__site>a{
-					font-size: 0.634rem;
+					font-size: 0.734rem;
 				}
 				.company__text-show{
 						
 				}
 				.company__text-show>button{
+					width: 80%;
 					margin-left: 0;
+					font-size: 0.734rem;
 				}
 				.company__text-first{
 						
@@ -1100,6 +1126,288 @@ export default {
 				}
 				.progres__block-activ{
 					display: flex;
+				}
+				.progres__substrate{
+				}
+				.progres__substrate>h6{
+						
+				}
+				.progres__title{
+
+				}
+				.progres__text{
+
+				}
+				.progres__text>p{
+
+				}
+			}
+		}
+	}
+	@media (max-width: 540px){
+		.work{
+			height: 11%;
+
+			.reviews__info{
+				height: 20%;
+			}
+			.work__substrate{
+
+			}
+			.work__substrate>h6{
+				font-size: 1.5rem;
+			}
+			.work__wrapper{
+				height: 80%;
+			}
+			.work__company{
+				height: 69%;
+			}
+			.company{
+
+				.company__wrapper{
+						
+				}
+				.company__block{
+				}
+				.company__block-activ{
+				}
+				.company__title{
+				}
+				.company__title>h5{
+				}
+				.company__name{
+					height: 10%;	
+				}
+				.company__name>h6{
+					font-size: 0.7rem;
+				}
+				.company__name>h6>span{
+						
+				}
+				.company__date>span{
+					font-size: 0.734rem;
+				}
+				.company__picchu{
+						
+				}
+				.company__color{
+				}
+				.company__color>span{
+						
+				}
+				.company__color-first{
+						
+				}
+				.company__color-first>span{
+						
+				}
+				.company__text{
+						
+				}
+				.company__text>p{
+					font-size: 0.768rem;
+				}
+				.company__text-activ{
+				}
+				.company__info{
+						
+				}
+				.company__site{
+						
+				}
+				.company__site>a{
+				}
+				.company__text-show{
+						
+				}
+				.company__text-show>button{
+				}
+				.company__text-first{
+						
+				}
+				.company__color-second{
+
+				}
+				.company__color-second>span{
+
+				}
+				.company__text-second{
+
+				}
+				.company__color-third{
+
+				}
+				.company__color-third>span{
+
+				}
+				.company__text-third{
+
+				}
+				.company__color-fourth{
+
+				}
+				.company__color-fourth>span{
+
+				}
+				.company__text-fourth{
+				}
+			}
+			.work__progres{
+			}
+			.progres{
+
+				.progres__heade{
+				}
+				.progres__heading{
+				}
+				.progres__heading>svg{
+				}
+				.progres__heading>h5{
+				}
+				.progres__block{
+				}
+				.progres__block-activ{
+				}
+				.progres__substrate{
+				}
+				.progres__substrate>h6{
+						
+				}
+				.progres__title{
+
+				}
+				.progres__text{
+
+				}
+				.progres__text>p{
+
+				}
+			}
+		}
+	}
+	@media (max-width: 440px){
+		.work{
+
+			.reviews__info{
+			}
+			.work__substrate{
+
+			}
+			.work__substrate>h6{
+			}
+			.work__wrapper{
+			}
+			.work__company{
+			}
+			.company{
+
+				.company__wrapper{
+						
+				}
+				.company__block{
+					height: 45%;
+				}
+				.company__block-activ{
+					height: 110%;
+				}
+				.company__title{
+				}
+				.company__title>h5{
+					font-size: 0.8rem;
+				}
+				.company__name{
+				}
+				.company__name>h6{
+				}
+				.company__name>h6>span{
+						
+				}
+				.company__date>span{
+				}
+				.company__picchu{
+						
+				}
+				.company__color{
+					width: 30px;
+					height: 30px;
+				}
+				.company__color>span{
+					width: 13px;
+					height: 13px;
+				}
+				.company__color-first{
+						
+				}
+				.company__color-first>span{
+						
+				}
+				.company__text{
+						
+				}
+				.company__text>p{
+				}
+				.company__text-activ{
+				}
+				.company__info{
+					flex-direction: column;
+				}
+				.company__site{
+						order: 0;
+				}
+				.company__site>a{
+				}
+				.company__text-show{
+					order: -1;
+					width: 100%;
+				}
+				.company__text-show>button{
+				}
+				.company__text-first{
+						
+				}
+				.company__color-second{
+
+				}
+				.company__color-second>span{
+
+				}
+				.company__text-second{
+
+				}
+				.company__color-third{
+
+				}
+				.company__color-third>span{
+
+				}
+				.company__text-third{
+
+				}
+				.company__color-fourth{
+
+				}
+				.company__color-fourth>span{
+
+				}
+				.company__text-fourth{
+				}
+			}
+			.work__progres{
+			}
+			.progres{
+
+				.progres__heade{
+				}
+				.progres__heading{
+				}
+				.progres__heading>svg{
+				}
+				.progres__heading>h5{
+				}
+				.progres__block{
+				}
+				.progres__block-activ{
 				}
 				.progres__substrate{
 				}

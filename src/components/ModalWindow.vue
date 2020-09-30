@@ -4,48 +4,56 @@
       <form>
         <div class="window__title">
           <span>Оставить коментарий</span>
-          <div class="window__close" @click="closeWindowMail">
+          <div class="window__close" @click="closeWindow">
             <div class="window__plus"></div>
           </div>
         </div>
         <div class="window__block">
-          <label for="whom"><span>Кому</span>
-            <input 
-            type="text" 
-            name="whom" 
-            value="pas.sergei2014@yandex.ru" 
-            class="window__input"
-            v-model="post.whom">
-          </label>
-        </div>
-        <div class="window__block">
-          <label for="theme"><span>Тема</span>
-            <input 
-            type="text" 
-            name="theme" 
-            class="window__input"
-            v-model="post.theme">
-          </label>
-        </div>
-        <div class="window__textarea">
-          <textarea 
-          rows="10" 
-          cols="45" 
-          name="content" 
-          placeholder="Напишите что-нибудь"
-          v-model="post.content"></textarea>
-        </div>
-        <div class="window__buttons">
-          <div class="window__consent">
-            <label for="consent">
-              <input type="checkbox" name="consent" value="false" v-model="consent">
-               согласие на обработку персональных данных
-            </label>
+          <div class="window__photo photo">
+            <div class="photo__img">
+              <img v-bind:src="photoPreview" class="photo__user" v-show="showPreview">
+              <video autoplay="autoplay" id="video" class="camera_stream" v-show="showVideo">
+                <img src="" class="photo__user">
+              </video>
+              <canvas></canvas>
+            </div>
+            <div class="photo__buttons">
+              <div class="photo__button photo__download">
+                <label>Загрузить
+                  <input type="file" name="myFile" ref="file" accept="image/*" @change="photoDownload">
+                </label>
+              </div>
+              <div class="photo__button photo__take">
+                <button @click="photoTake" >Фото</button>
+              </div>
+            </div>
           </div>
-          <button 
-          type="button" 
-          class="btn window__button"
-          @click="sendEmail">Отправить</button>
+          <div class="window__findings findings">
+            <div class="findings__name">
+              <label for="theme" class="findings__input"><span>Имя:</span>
+                <input 
+                type="text" 
+                name="theme" 
+                class="findings__input"
+                placeholder="Иван"
+                v-model="post.theme">
+              </label>
+            </div>
+            <div class="findings__textarea">
+              <textarea 
+              rows="10" 
+              cols="45" 
+              name="content" 
+              placeholder="Напишите что-нибудь"
+              v-model="post.content"></textarea>
+            </div>
+            <div class="findings__buttons">
+              <button 
+              type="button" 
+              class="btn findings__button"
+              @click="sendEmail">Отправить</button>
+            </div>
+          </div>
         </div>
       </form>
     </div>
@@ -68,11 +76,18 @@ export default {
         content: "",
       },
       consent: true,
+      showVideo: false,
+      showPreview: false,
+      photoPreview: "",
+      file: {
+        fileText: "",
+        fileImage: "",
+      },
     }
   },
   methods: {
-    closeWindowMail: function (){
-     this.$emit('closeWindowMail');
+    closeWindow: function (){
+     this.$emit('closeWindowFeedback');
     },
     sendEmail: function (){
       console.log()
@@ -85,7 +100,62 @@ export default {
       } else{
         console.log("Нет согласия на обработку данных");
       }
-    }
+    },
+    photoTake: function (){
+      navigator.getUserMedia(
+        {
+          video: true
+        },
+        function(straem){
+          video.src = window.URL.createObjectURL(stream);
+          video.play();
+        },
+        function(err){
+          console.error(err);
+        }
+      );
+    },
+    takePicture: function(){
+      let hidden_canvas = document.querySelector('canvas');
+      let video = document.querySelector('video.camera_stream');
+      let image = document.querySelector('img.photo');
+
+      let width = video.videoWidth;
+      let height = video.videoHeight;
+      let context = hidden_canvas.getContext('2d');
+
+      hidden_canvas.width = width;
+      hidden_canvas.height = height;
+
+      context.drawImage(video, 0, 0, width, height);
+
+      var imageDataURL = hidden_canvas.toDataURL('image/png');
+
+      image.setAttribute('src', imageDataURL);
+    },
+    photoDownload: function (){
+
+      let photoBlock = document.querySelector('.photo__img');
+
+      this.file.fileImage = this.$refs.file.files[0];
+
+      console.log(this.file.fileImage);
+
+      let reader = new FileReader();
+
+      reader.addEventListener("load", function(){
+        this.showPreview = true;
+        this.photoPreview = reader.result;
+        photoBlock.classList.add('photo__img-activ');
+      }.bind(this), false);
+
+      if ( this.file ) {
+        if ( /\.(jpe?g|png|gif)$/i.test( this.file.fileImage.name ) ) {
+          reader.readAsDataURL( this.file.fileImage );
+        }
+      }
+      // console.log(e.target.files[0]);
+    },
   },
 }
 </script>
@@ -118,7 +188,7 @@ export default {
     }
     .window__title{
       width: 90%;
-      height: 10%;
+      height: 13%;
       padding-top: 2%;
       display: flex;
       justify-content: space-between;
@@ -153,9 +223,106 @@ export default {
       top: -6px;
     }
     .window__block{
+      display: flex;
+      justify-content: space-around;
       width: 90%;
-      height: 10%;
+      height: 84%;
       margin: auto;
+    }
+    .photo{
+      width: 46%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+
+      .photo__img{
+        width: 100%;
+        height: 80%;
+        background-image: url('../assets/modalWindow/unnamed.jpg');
+        background-size: 100%;
+        background-repeat: no-repeat;
+      }
+      .photo__img-activ{
+        background: none;
+      }
+      .photo__buttons{
+        width: 100%;
+
+        display: flex;
+      }
+      .photo__button{
+        width: 50%;
+      }
+      .photo__button>button{
+        @include buttonMain(100%, 100%, 1rem);
+        border-right: none;
+      }
+      .photo__button>label{
+        @include buttonMain(100%, 100%, 1rem);
+        border-right: none;
+        position: relative;
+        cursor: pointer;
+      }
+      .photo__button>label>input{
+        opacity: 0;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+      }
+      .photo__download{
+        border-right: 1px solid #ffffff;
+      }
+      .photo__take{
+        border-left: 1px solid #ffffff;
+      }
+      .photo__user{
+        width: 100%;
+        height: auto;
+      }
+    }
+    .findings{
+      width: 46%;
+      height: 99%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      .findings__name{
+        display: flex;
+        width: 100%;
+        height: 15%;
+      }
+      .findings__input{
+        display: flex;
+        width: 100%;
+        margin: auto;
+      }
+      .findings__input>input{
+        width: 80%;
+        border: none;
+      }
+      .findings__textarea{
+        width: 100%;
+        height: 60%;
+        margin: auto;
+      }
+      .findings__textarea>textarea{
+        width: 100%;
+        height: 100%;
+        border: none;
+        resize: none;
+      }
+      .findings__buttons{
+        width: 100%;
+        height: 13%;
+        margin: 0 auto;
+        display: flex;
+      }
+      .findings__button{
+        @include buttonMain(50%, 100%, 1rem);
+        margin: 0 auto;
+      }
     }
     .window__block>label{
       display: flex;
@@ -169,29 +336,6 @@ export default {
       font-size: 0.9rem;
       color: rgba(45,55,79,0.60);
     }
-    .window__input{
-      width: 80%;
-      height: 100%;
-      border: none;
-    }
-    .window__textarea{
-      width: 90%;
-      height: 50%;
-      margin: auto;
-    }
-    .window__textarea>textarea{
-      width: 100%;
-      height: 100%;
-      border: none;
-      resize: none;
-    }
-    .window__buttons{
-      width: 90%;
-      height: 12%;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-    }
     .window__consent{
       width: 65%;
       height: 100%;
@@ -202,9 +346,6 @@ export default {
       margin: auto;
       width: 100%;
       text-align: left;
-    }
-    .window__button{
-      @include buttonMain(30%, 100%, 1rem);
     }
   }
   @media (max-width: 2600px){
