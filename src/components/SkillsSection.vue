@@ -116,13 +116,13 @@
               </div>
             </div>
             <div class="professional__item">
-              <div class="professional__name"><span>Adobe Photoshop</span></div>
+              <div class="professional__name"><span>Git</span></div>
               <div class="progress professional__progress">
                 <div class="progress-bar react__line" role="progressbar" style="width: 60%;" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">60%</div>
               </div>
             </div>
             <div class="professional__item">
-              <div class="professional__name"><span>CorelDRAW</span></div>
+              <div class="professional__name"><span>MS Office (Word, Excel)</span></div>
               <div class="progress professional__progress">
                 <div class="progress-bar purple__line" role="progressbar" style="width: 85%;" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">85%</div>
               </div>

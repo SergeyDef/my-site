@@ -12,19 +12,20 @@
           <div class="window__photo photo">
             <div class="photo__img">
               <img v-bind:src="photoPreview" class="photo__user" v-show="showPreview">
-              <video autoplay="autoplay" id="video" class="camera_stream" v-show="showVideo">
+              <video autoplay="autoplay" id="video" class="camera_stream" v-show="showVideo" src="">
                 <img src="" class="photo__user">
               </video>
               <canvas></canvas>
             </div>
             <div class="photo__buttons">
               <div class="photo__button photo__download">
-                <label>Загрузить
+                <label>
+                  <span class="photo__text">Загрузить</span>
                   <input type="file" name="myFile" ref="file" accept="image/*" @change="photoDownload">
                 </label>
               </div>
               <div class="photo__button photo__take">
-                <button @click="photoTake" >Фото</button>
+                <button @click="photoTake">Фото</button>
               </div>
             </div>
           </div>
@@ -36,7 +37,7 @@
                 name="theme" 
                 class="findings__input"
                 placeholder="Иван"
-                v-model="post.theme">
+                v-model="file.fileName">
               </label>
             </div>
             <div class="findings__textarea">
@@ -45,7 +46,7 @@
               cols="45" 
               name="content" 
               placeholder="Напишите что-нибудь"
-              v-model="post.content"></textarea>
+              v-model="file.fileText"></textarea>
             </div>
             <div class="findings__buttons">
               <button 
@@ -80,6 +81,7 @@ export default {
       showPreview: false,
       photoPreview: "",
       file: {
+        fileName: "",
         fileText: "",
         fileImage: "",
       },
@@ -90,34 +92,38 @@ export default {
      this.$emit('closeWindowFeedback');
     },
     sendEmail: function (){
-      console.log()
-      let myMail = this.post.whom;
-      let themeMail = this.post.theme;
-      let mesege = this.post.content;
 
-      if (this.consent) {
-        console.log(myMail + " " + themeMail + " " + mesege);
-      } else{
-        console.log("Нет согласия на обработку данных");
-      }
+      let name = this.file.fileName;
+      let text = this.file.fileText;
+      let photo = this.file.fileImage;
+
+      console.log(name + " " + text + " " + photo);
     },
     photoTake: function (){
+      this.showVideo = true;
+
+      let video = document.querySelector('video.camera_stream');
+
+      console.log(video.src);
+
+      navigator.getUserMedia = (navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia);
+
       navigator.getUserMedia(
         {
           video: true
         },
-        function(straem){
+        function(){
           video.src = window.URL.createObjectURL(stream);
-          video.play();
+          // video.src = window.URL.createObjectURL();
+          // console.log(window.URL.createObjectURL(blob));
         },
         function(err){
           console.error(err);
         }
       );
-    },
-    takePicture: function(){
+
       let hidden_canvas = document.querySelector('canvas');
-      let video = document.querySelector('video.camera_stream');
+      // let video = document.querySelector('video.camera_stream');
       let image = document.querySelector('img.photo');
 
       let width = video.videoWidth;
@@ -131,15 +137,13 @@ export default {
 
       var imageDataURL = hidden_canvas.toDataURL('image/png');
 
-      image.setAttribute('src', imageDataURL);
+      // image.setAttribute('src', imageDataURL);
     },
     photoDownload: function (){
 
       let photoBlock = document.querySelector('.photo__img');
 
       this.file.fileImage = this.$refs.file.files[0];
-
-      console.log(this.file.fileImage);
 
       let reader = new FileReader();
 
@@ -239,6 +243,8 @@ export default {
       .photo__img{
         width: 100%;
         height: 80%;
+        text-align: center;
+        overflow: hidden;
         background-image: url('../assets/modalWindow/unnamed.jpg');
         background-size: 100%;
         background-repeat: no-repeat;
@@ -257,18 +263,28 @@ export default {
       .photo__button>button{
         @include buttonMain(100%, 100%, 1rem);
         border-right: none;
+        border-top: none;
+        border-bottom: none;
       }
       .photo__button>label{
         @include buttonMain(100%, 100%, 1rem);
         border-right: none;
         position: relative;
         cursor: pointer;
+        display: flex;
       }
       .photo__button>label>input{
+        left: 0;
+        top: 0;
         opacity: 0;
         width: 100%;
         height: 100%;
         position: absolute;
+      }
+      .photo__text{
+        color: #ffffff;
+        font-size: 1rem;
+        margin: auto;
       }
       .photo__download{
         border-right: 1px solid #ffffff;
@@ -277,8 +293,13 @@ export default {
         border-left: 1px solid #ffffff;
       }
       .photo__user{
+        width: auto;
+        height: 100%;
+      }
+      .camera_stream{
         width: 100%;
-        height: auto;
+        height: 100%;
+        background-color: #000;
       }
     }
     .findings{
@@ -482,7 +503,7 @@ export default {
 
     .window__wrapper{
       width: 50%;
-      height: 50%;
+      height: 42%;
     }
     .window__wrapper>form{
     }

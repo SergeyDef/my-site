@@ -7,7 +7,7 @@
         class="menu__item" 
         v-for="menuList in menuHeaderLists"
         v-bind:id="menuList.id" >
-          <a :href="menuList.href"><span>{{ menuList.title }}</span></a>
+          <button v-bind:id="menuList.href" @click="followLink" type="button" class="btn menu__btn">{{ menuList.title }}</button>
         </li>
       </ul>
     </nav>    
@@ -121,6 +121,12 @@ export default {
     },
     clearText: function (){
       this.searchText = '';
+    },
+    followLink: function () {
+      let link = event.target;
+      let id = link.getAttribute('id');
+      this.$router.push("/" + id);
+      console.log(link);
     }
   },
 }
@@ -163,6 +169,14 @@ export default {
         .menu__item>a>span{
           margin: auto;
           color: #121212;
+        }
+        .menu__btn{
+          width: 100%;
+          height: 100%;
+          color: #121212;
+          margin: 0;
+          padding: 0;
+          font-size: 0.9rem;
         }
       }
     }

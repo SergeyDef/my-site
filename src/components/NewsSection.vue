@@ -59,15 +59,15 @@
           <div class="news__block news__block-left">
             <div class="news__container">
               <div class="news__img-adaptiv">
-                <img src="@/assets/news/news_wordpress.jpg" alt="news">
+                <img src="@/assets/news/news_sait.jpg" alt="news">
               </div>
               <div class="news__heading">
                 <div class="news__title">
-                  <h5>WordPress 5.3.2 новыя версия</h5>
+                  <h5>Зачем делать свой сайт для бизнеса?</h5>
                 </div>
                 <ul class="news__menu">
                   <li class="news__menu-right"><a href="" class="news__menu-left">Спросить меня</a></li>
-                  <li class="news__menu-line">17.08.2020</li>
+                  <li class="news__menu-line">01.10.2020</li>
                   <li class="news__menu-left">Коментарии</li>
                 </ul>
               </div>
@@ -86,17 +86,17 @@
             </div>
           </div>
         </div>
-        <div class="news__img"><img src="@/assets/news/news_wordpress.jpg" alt="news"></div>
+        <div class="news__img"><img src="@/assets/news/news_sait.jpg" alt="news"></div>
       </div>
       <div class="news__item">
-        <div class="news__img"><img src="@/assets/news/news_sait.jpg" alt="news"></div>
+        <div class="news__img"><img src="@/assets/news/news_wordpress.jpg" alt="news"></div>
         <div class="news__info">
           <div class="news__line"></div>
           <div class="news__block">
             <div class="news__container">
               <div class="news__heading">
                 <div class="news__title">
-                  <h5>Зачем делать свой сайт для бизнеса?</h5>
+                  <h5>WordPress 5.3.2 новыя версия</h5>
                 </div>
                 <ul class="news__menu">
                   <li><a href="">Спросить меня</a></li>
@@ -105,7 +105,7 @@
                 </ul>
               </div>
               <div class="news__img-adaptiv">
-                <img src="@/assets/news/news_sait.jpg" alt="news">
+                <img src="@/assets/news/news_wordpress.jpg" alt="news">
               </div>
             </div>
             <div class="news__text">
