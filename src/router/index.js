@@ -5,8 +5,8 @@ import Gallery from '../views/Gallery.vue'
 import Article from '../views/Article.vue'
 
 Vue.use(VueRouter)
-
-  const routes = [
+const router = new VueRouter({
+  routes: [
   {
     path: '/',
     name: 'Home',
@@ -29,21 +29,17 @@ Vue.use(VueRouter)
     path: '*',
     component: Home
   },
-  // scrollBehavior (to, from, savedPosition){
-  //   if (to.hash) {
-  //     return { selector: to.hash }
-  //   } else if (savedPosition) {
-  //     return savedPosition;
-  //   } else {
-  //     return { x: 0, y: 0 }
-  //   }
-  // }
-]
-
-const router = new VueRouter({
+],
   mode: 'history',
   base: process.env.BASE_URL,
-  routes
+ scrollBehavior (to, from, savedPosition){
+    if (to.hash) {
+      return { selector: to.hash }
+    } else if (savedPosition) {
+      return savedPosition;
+    } else {
+      return { x: 0, y: 0 }
+    }
+  },
 })
-
 export default router

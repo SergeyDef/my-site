@@ -1,5 +1,5 @@
 <template>
-  <header class="header">
+  <header class="header" id="main">
     <a name="upward"></a>
     <nav class="menu">
       <ul class="menu__wrapper">
@@ -125,8 +125,10 @@ export default {
     followLink: function () {
       let link = event.target;
       let id = link.getAttribute('id');
-      this.$router.push("/" + id);
+      this.$router.push({name: 'Home', hash: id});
       console.log(link);
+
+      
     }
   },
 }
@@ -543,6 +545,9 @@ export default {
       }
     .menu__block{
       width: 30%;
+    }
+    .menu__call{
+      width: 20%;
     }
     .menu__adantiv{
 

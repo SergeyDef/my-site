@@ -1,5 +1,5 @@
 <template>
-  <section class="aboutMe">
+  <section class="aboutMe" id="aboutMe">
     <a name="aboutMe" class="myLink"></a>
     <div class="aboutMe__substrate">
       <h6>Обо мне</h6>

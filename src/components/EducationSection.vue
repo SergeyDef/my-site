@@ -1,5 +1,5 @@
 <template>
-  <section class="education">
+  <section class="education" id="education">
   	<a name="education" class="myLink"></a>
   	<div class="education__substrate">
   		<h6>Образование</h6>

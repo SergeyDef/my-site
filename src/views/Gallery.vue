@@ -1,6 +1,6 @@
 <template>
 	<div class="wrapper">
-		<LateralFace/>
+		<LateralFace class="lateral" id="lateral"/>
 		<ButtonLateralFace />
 	  <div class="gallery">
 	  	<MenuHeader class="menuHeader" :menuHeaderLists="menuHeaderLists" />
@@ -19,6 +19,7 @@
 		  		</li>
 		  	</ul>
 	  	</div>
+	  	<FooterSection class="footerSection" />
 	  </div>
 	</div>
 </template>
@@ -27,11 +28,13 @@
 	import MenuHeader from '@/components/MenuHeader.vue'
 	import LateralFace from '@/components/LateralFace.vue'
 	import ButtonLateralFace from '@/components/ButtonLateralFace.vue'
+	import FooterSection from '@/components/FooterSection.vue'
 	export default{
 		name: 'gallery',
 		components: {
 			MenuHeader,
 			LateralFace,
+			FooterSection,
 			ButtonLateralFace,
 		},
 		data(){
@@ -43,7 +46,7 @@
 						jobDescription: 'интернет магазин - дипломная работа для колледжа',
 						jobLink: '@/myWork/housesBaths/index.html', 
 						jobIndicator: 'website', 
-						jobImg: '../assets/portfolio/0_5.png', 
+						jobImg: '@/assets/portfolio/0_5.png', 
 						jobAlt: 'houses baths', 
 					},
 					{ 
@@ -166,7 +169,7 @@
 		.gallery__link{
 			display: block;
 			width: 100%;
-			height: 300px;
+			height: 240px;
 			overflow: hidden;
 		}
 		.gallery__img{
@@ -176,6 +179,11 @@
 		.gallery__description{
 			display: none;
 		}
+		.footerSection{
+			height: 100px;
+			margin-top: 1%;
+			margin-bottom: 1%;
+		}
 	} 
 	.sidebar{
 		.sidebar__bottom {
@@ -183,5 +191,37 @@
     	height: 73%;
 		}
 	} 
-    
+@media (max-width: 960px){
+	.wrapper{
+	}
+	.gallery{
+		width: 96%;
+
+		.menuHeader{
+		}
+
+		.gallery__block{
+		}
+		.gallery__item{
+			width: 90%;
+			height: 260px;
+		}
+		.gallery__item:hover{}
+		.gallery__title{
+		}
+		.gallery__title>h3{
+		}
+		.gallery__link{
+			height: 200px;
+		}
+		.gallery__img{
+		}
+		.gallery__description{
+		}
+	} 
+	.sidebar{
+		.sidebar__bottom {
+		}
+	} 
+}
 </style>

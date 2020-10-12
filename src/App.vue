@@ -101,6 +101,11 @@ button:focus{
     font-size: 1.4rem;
     font-weight: 650;
   }
+  .articles__title>h6{
+    margin: auto 0;
+    font-size: 1.4rem;
+    font-weight: 650;
+  }
   .articles__list>li{
     list-style: disc;
     display: block;
@@ -140,6 +145,99 @@ button:focus{
   }
   .articles__show_result>button{
     @include buttonMain( 20%, 100%, 1rem);
+  }
+}
+@media (max-width: 960px){
+  .articles{
+
+    .articles__text>p{
+      font-size: 0.8rem;
+    }
+    .articles__subtitle{
+    }
+    .articles__subtitle>h6{
+    }
+    .articles__title{
+
+    }
+    .articles__title>h3{
+      font-size: 1rem;
+    }
+    .articles__title>h5{
+      font-size: 1rem;
+    }
+    .articles__title>h6{
+      font-size: 1rem;
+    }
+    .articles__list>li{
+      font-size: 0.8rem;
+    }
+    .articles__heading{
+    }
+    .articles__heading>h3{
+      font-size: 1.2rem;
+    }
+    .articles__subheading{
+    }
+    .articles__subheading>h5{
+    }
+    .articles__cod{
+    }
+    .articles__cod_svg{
+    }
+    .articles__show_result{
+      margin: 40px 0;
+    }
+    .articles__show_result>button{
+      margin: auto;
+      width: 50%;
+    }
+  }
+}
+@media (max-width: 460px){
+  .articles{
+
+    .articles__text>p{
+      font-size: 0.8rem;
+    }
+    .articles__subtitle{
+    }
+    .articles__subtitle>h6{
+    }
+    .articles__title{
+
+    }
+    .articles__title>h3{
+      font-size: 1rem;
+    }
+    .articles__title>h5{
+      font-size: 1rem;
+    }
+    .articles__title>h6{
+      font-size: 1rem;
+    }
+    .articles__list>li{
+      font-size: 0.8rem;
+    }
+    .articles__heading{
+    }
+    .articles__heading>h3{
+      font-size: 1.2rem;
+    }
+    .articles__subheading{
+    }
+    .articles__subheading>h5{
+    }
+    .articles__cod{
+    }
+    .articles__cod_svg{
+    }
+    .articles__show_result{
+      margin: 40px 0;
+    }
+    .articles__show_result>button{
+      width: 100%;
+    }
   }
 }
 </style>

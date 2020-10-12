@@ -1,5 +1,5 @@
 <template>
-  <section class="work">
+  <section class="work" id="workExperience">
   	<a name="workExperience" class="myLink"></a>
   	<div class="work__substrate">
   		<h6>Опыт работы</h6>

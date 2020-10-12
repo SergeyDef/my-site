@@ -1,5 +1,5 @@
 <template>
-  <section class="skills">
+  <section class="skills" id="skills">
     <a name="skills" class="myLink"></a>
   	<div class="skills__substrate">
   		<h6>Мои навыки</h6>

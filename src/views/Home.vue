@@ -9,7 +9,7 @@
       @show="showEl"
       @hide="hideEl"/>
   		<MenuHeader class="block-animation block-anim-no" :menuHeaderLists="menuHeaderLists" />
-  		<AboutSection class="block-animation block-anim-no" id="aboutMe"/>
+  		<AboutSection class="block-animation block-anim-no"/>
   		<AboutMeSection class="block-animation block-anim-no" @showWindowMail="showMail"/>
   		<SkillsSection class="block-animation block-anim-no"/>
   		<EducationSection class="block-animation block-anim-no"/>

@@ -1,5 +1,5 @@
 <template>
-  <section class="news">
+  <section class="news" id="news">
     <a name="news" class="myLink"></a>
   	<div class="news__substrate">
   		<h6>Статьи</h6>
@@ -26,7 +26,7 @@
               <div class="news__container">
                 <div class="news__heading">
                   <div class="news__title">
-                    <h5>Тренды веб разработки: PHP 7</h5>
+                    <h5>Векторная графика в веб разработке (svg)</h5>
                   </div>
                   <ul class="news__menu">
                     <li><a href="">Спросить меня</a></li>

@@ -1,5 +1,5 @@
 <template>
-  <section class="reviews">
+  <section class="reviews" id="reviews">
   	<a name="reviews" class="myLink"></a>
   	<div class="reviews__substrate">
   		<h6>Отзывы</h6>
