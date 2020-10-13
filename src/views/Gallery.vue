@@ -11,7 +11,8 @@
 		  				<h3>{{ myJob.jobName }}</h3>
 		  			</div>
 		  			<a v-bind:href="myJob.jobLink" class="gallery__link">
-		  				<img :src="myJob.jobImg" v-dind:alt="myJob.jobAlt" class="gallery__img">
+		  				<div class="gallery__img" :id="myJob.jobImgId"></div>
+		  				<!-- <img :src="myJob.jobImg" v-dind:alt="myJob.jobAlt"> -->
 		  				<div class="gallery__description">
 		  					<span>{{ myJob.jobDescription }}</span>
 		  				</div>
@@ -46,7 +47,7 @@
 						jobDescription: 'интернет магазин - дипломная работа для колледжа',
 						jobLink: '@/myWork/housesBaths/index.html', 
 						jobIndicator: 'website', 
-						jobImg: '@/assets/portfolio/0_5.png', 
+						jobImgId: 'housesBaths', 
 						jobAlt: 'houses baths', 
 					},
 					{ 
@@ -55,7 +56,7 @@
 						jobDescription: 'Многостраничный сайт для музыкального ансамбля', 
 						jobLink: '@/myWork/drummers/index.php', 
 						jobIndicator: 'website', 
-						jobImg: '@/assets/portfolio/0_3.png', 
+						jobImgId: 'drummers', 
 						jobAlt: 'drummers', 
 					},
 					{ 
@@ -64,7 +65,7 @@
 						jobDescription: 'Одностраничный лендинг', 
 						jobLink: '@/myWork/BREDLI/index.html', 
 						jobIndicator: 'landing',
-						jobImg: '@/assets/portfolio/0_2.png', 
+						jobImgId: 'bredli', 
 						jobAlt: 'bredli', 
 					},
 					{ 
@@ -73,7 +74,7 @@
 						jobDescription: 'Многостраничный сайт для тату мастера', 
 						jobLink: '@/myWork/tatuNataley/index.html', 
 						jobIndicator: 'website', 
-						jobImg: '@/assets/portfolio/0_4.png', 
+						jobImgId: 'tatuNataley', 
 						jobAlt: 'tatu nataley', 
 					},
 					{ 
@@ -82,7 +83,7 @@
 						jobDescription: 'Лендинг для заказа интернет опросников', 
 						jobLink: '@/myWork/quiz/index.html', 
 						jobIndicator: 'landing', 
-						jobImg: '@/assets/portfolio/0_6.png', 
+						jobImgId: 'quiz', 
 						jobAlt: 'quiz', 
 					},
 					{ 
@@ -91,7 +92,7 @@
 						jobDescription: 'Многостраничный сайт', 
 						jobLink: '@/myWork/housesBaths/index.html', 
 						jobIndicator: 'website', 
-						jobImg: '@/assets/portfolio/0_1.png', 
+						jobImgId: 'webStudio', 
 						jobAlt: 'web studio', 
 					},
 					{ 
@@ -100,7 +101,7 @@
 						jobDescription: 'Многостраничныйсайт (моя первая работа)', 
 						jobLink: '@/myWork/needlework/index.html', 
 						jobIndicator: 'website', 
-						jobImg: '@/assets/portfolio/0_7.png', 
+						jobImgId: 'needlework', 
 						jobAlt: 'needlework', 
 					},
 				],
@@ -115,6 +116,30 @@
 	        {id: 8, title: 'Новости', href: '#news'},
 	        {id: 9, title: 'Обратная связь', href: '#feedback'},
 				],
+			}
+		},
+		mounted(){
+			let jobImg = document.querySelectorAll('.gallery__img');
+			for (var i = 0; i < jobImg.length; i++) {
+
+				console.log(jobImg[i].getAttribute('id') == "housesBaths");
+
+				if (jobImg[i].getAttribute('id') == "housesBaths") {
+					jobImg[i].classList.add('gallery__img-housesBaths');
+				} else if (jobImg[i].getAttribute('id') == "drummers") {
+					jobImg[i].classList.add('gellery__img-drummers');
+				} else if (jobImg[i].getAttribute('id') == "bredli") {
+					jobImg[i].classList.add('gellery__img-bredli');
+				} else if (jobImg[i].getAttribute('id') == "tatuNataley") {
+					jobImg[i].classList.add('gallery__img-tatuNataley');
+				} else if (jobImg[i].getAttribute('id') == "quiz") {
+					jobImg[i].classList.add('gallery__img-quiz');
+				} else if (jobImg[i].getAttribute('id') == "webStudio") {
+					jobImg[i].classList.add('gallery__img-webStudio');
+				} else if (jobImg[i].getAttribute('id') == "needlework") {
+					jobImg[i].classList.add('gallery__img-needlework');
+				}
+
 			}
 		},
 	}
@@ -154,7 +179,7 @@
 		.gallery__item:hover{}
 		.gallery__title{
 			width: 100%;
-			height: 60px;
+			height: 15%;
 			display: flex;
 			background-color: #2196F3;
 		}
@@ -164,17 +189,39 @@
 			margin: auto;
 			color: #ffffff;
 			text-align: center;
-			text-shadow: 700;
+			font-weight: 700;
 		}
 		.gallery__link{
 			display: block;
 			width: 100%;
-			height: 240px;
+			height: 85%;
 			overflow: hidden;
 		}
 		.gallery__img{
-			width: 120%;
-			height: auto;
+			width: 100%;
+			height: 100%;
+			background-size: cover;
+		}
+		.gallery__img-housesBaths{
+			background-image: url(../assets/portfolio/0_5.png);
+		}
+		.gellery__img-drummers{
+			background-image: url(../assets/portfolio/0_3.png);
+		}
+		.gellery__img-bredli{
+			background-image: url(../assets/portfolio/0_2.png);
+		}
+		.gallery__img-tatuNataley{
+			background-image: url(../assets/portfolio/0_4.png);
+		}
+		.gallery__img-quiz{
+			background-image: url(../assets/portfolio/0_6.png);
+		}
+		.gallery__img-webStudio{
+			background-image: url(../assets/portfolio/0_1.png);
+		}
+		.gallery__img-needlework{
+			background-image: url(../assets/portfolio/0_7.png);
 		}
 		.gallery__description{
 			display: none;

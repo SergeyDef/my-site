@@ -73,7 +73,7 @@
               </div>
             </div>
             <div class="news__text">
-              <p>Каждый предпринимателей, не зависимо от рода предоставляемых им услуг, рано или поздно задумывается о пазиционированние своей...</p>
+              <p>Каждый предприниматель, не зависимо от рода предоставляемых им услуг, рано или поздно задумывается о позиционировании своей...</p>
             </div>
             <div class="news__button">
               <button class="btn" @click="readArticle" id="2">
@@ -89,14 +89,14 @@
         <div class="news__img"><img src="@/assets/news/news_sait.jpg" alt="news"></div>
       </div>
       <div class="news__item">
-        <div class="news__img"><img src="@/assets/news/news_wordpress.jpg" alt="news"></div>
+        <div class="news__img"><img src="@/assets/news/news_routing.jpg" alt="news"></div>
         <div class="news__info">
           <div class="news__line"></div>
           <div class="news__block">
             <div class="news__container">
               <div class="news__heading">
                 <div class="news__title">
-                  <h5>WordPress 5.3.2 новыя версия</h5>
+                  <h5>Использование роутинга во Vue js</h5>
                 </div>
                 <ul class="news__menu">
                   <li><a href="">Спросить меня</a></li>
@@ -105,7 +105,7 @@
                 </ul>
               </div>
               <div class="news__img-adaptiv">
-                <img src="@/assets/news/news_wordpress.jpg" alt="news">
+                <img src="@/assets/news/news_routing.jpg" alt="news">
               </div>
             </div>
             <div class="news__text">

@@ -22,7 +22,7 @@
             <li 
             class="menu__item"
             v-for="adantivMenuList in adantivMenuLists">
-            <a v-bind:href="adantivMenuList.href" @click="hideMenuList"><span>{{ adantivMenuList.title }}</span></a>
+            <a v-bind:href="adantivMenuList.href" @click="followLink"><span>{{ adantivMenuList.title }}</span></a>
           </li>
         </ul>
       </transition>
@@ -191,6 +191,9 @@ export default {
     .menu__call{
       display: none;
     }
+    .menu__adantiv{
+      display: none;
+    }
     .search{
       width: 50%;
       height: 100%;
@@ -336,7 +339,7 @@ export default {
   }
 }
 @media (max-width: 1140px){
-    .header{
+  .header{
     @include blockMain(100%, 1%);
     justify-content: flex-end;
 
@@ -388,6 +391,7 @@ export default {
       cursor: pointer;
     }
     .menu__adantiv{
+      display: block;
       z-index: 99999999;
       background-color: #ffffff;
       width: 100%;
@@ -591,7 +595,7 @@ export default {
     }
   }
 }
-@media (max-width: 400px){
+@media (max-width: 460px){
     .header{
 
       .menu{
@@ -609,6 +613,9 @@ export default {
         }
       }
     .menu__block{
+    }
+    .menu__call{
+      width: 14%;
     }
     .menu__call>svg{
       width: 100%;
