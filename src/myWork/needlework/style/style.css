@@ -33,19 +33,19 @@ ul.ssubmenuu {
     text-align: center;
 }
 @media only screen and (max-width: 1200px) and (min-width: 960px){ 
-.ssubmenuu ul li a{    
-    width: 100%;
-    margin: auto;
-    height: 5%;
-    display: inline-block; 
-}
+	.ssubmenuu ul li a{    
+	    width: 100%;
+	    margin: auto;
+	    height: 5%;
+	    display: inline-block; 
+	}
 }
 
 @media only screen and (max-width: 960px) and (min-width: 760px){ 
-.ssubmenuu ul li a{    
-    width: 100%;
-    margin: auto;
-}
+	.ssubmenuu ul li a{    
+	    width: 100%;
+	    margin: auto;
+	}
 }
 
 @media only screen and (max-width: 760px) and (min-width: 480px){ 

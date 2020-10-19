@@ -40,3 +40,8 @@
   font-size: $fontSize;
   font-weight: $fontWeight;
 }
+@mixin cod($color, $fontWeight, $fontSize){
+  color: $color;
+  font-weight: $fontWeight;
+  font-size: $fontSize;
+}
