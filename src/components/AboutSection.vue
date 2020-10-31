@@ -14,7 +14,7 @@
               <h5 class="slideshow__title">Привет!</h5>
               <h6 class="slideshow__title-min">Меня зовут Сергей</h6>
               <div class="slideshow__text">
-                <p>И я занимаюсь созданием сайтов и веб-преложений</p>
+                <p>И я занимаюсь созданием сайтов и веб-приложений</p>
               </div>
               <a href="#portfolio">
                 <button type="button" class="btn slideshow__btn">
@@ -44,7 +44,7 @@
               <h5 class="slideshow__title">Профессионализм</h5>
               <h6 class="slideshow__title-min">Мне нравится делать сайты</h6>
               <div class="slideshow__text">
-                <p>По этому я качественно и в сроки выполняю свою работу</p>
+                <p>Поэтому я качественно и в сроки выполняю свою работу</p>
               </div>
               <a href="#reviews">
                 <button type="button" class="btn slideshow__btn">

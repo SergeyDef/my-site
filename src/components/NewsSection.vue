@@ -14,7 +14,7 @@
         <h2>Статьи</h2>
       </div>
       <div class="info__text">
-        <p>Здесь можно ознакомиться с моими статьями на тему новинок в ваб разработки.</p>
+        <p>Здесь можно ознакомиться с моими статьями на тему новинок в веб-разработке.</p>
       </div>
     </div>
     <div class="news__wrapper">
@@ -26,12 +26,12 @@
               <div class="news__container">
                 <div class="news__heading">
                   <div class="news__title">
-                    <h5>Векторная графика в веб разработке (svg)</h5>
+                    <h5>Векторная графика в веб-разработке (svg)</h5>
                   </div>
                   <ul class="news__menu">
                     <li><a href="">Спросить меня</a></li>
                     <li class="news__menu-line">13.09.2020</li>
-                    <li class="news__menu-right">Коментарии</li>
+                    <li class="news__menu-right">Комментарии</li>
                   </ul>
                 </div>
                 <div class="news__img-adaptiv">
@@ -39,7 +39,7 @@
                 </div>
               </div>
               <div class="news__text">
-                <p>Для размещения изображений на интернет ресурсах, возможно использовать как растровые так и векторные изображения. Оба типа картинок имеют так сказать свою сферу применения...</p>
+                <p>Для размещения изображений на интернет-ресурсах, возможно использовать как растровые, так и векторные изображения. Оба типа картинок имеют, так сказать, свою сферу применения...</p>
               </div>
               <div class="news__button">
                 <button class="btn" @click="readArticle" id="1">
@@ -68,7 +68,7 @@
                 <ul class="news__menu">
                   <li class="news__menu-right"><a href="" class="news__menu-left">Спросить меня</a></li>
                   <li class="news__menu-line">01.10.2020</li>
-                  <li class="news__menu-left">Коментарии</li>
+                  <li class="news__menu-left">Комментарии</li>
                 </ul>
               </div>
             </div>
@@ -101,7 +101,7 @@
                 <ul class="news__menu">
                   <li><a href="">Спросить меня</a></li>
                   <li class="news__menu-line">17.08.2020</li>
-                  <li class="news__menu-right">Коментарии</li>
+                  <li class="news__menu-right">Комментарии</li>
                 </ul>
               </div>
               <div class="news__img-adaptiv">
@@ -109,16 +109,22 @@
               </div>
             </div>
             <div class="news__text">
-              <p>В первый раз сцепление на Донфенге накрылось после пробега в 32 тысячи километров! После снятия коробки выяснилось следущее: во-первых сами накладки </p>
+              <p>Роутинг или маршрутизация в веб-приложениях представляет из себя организацию маршрутов внутри самого приложения...</p>
             </div>
-            <div class="news__button">
-              <button class="btn" @click="readArticle" id="3">
+            <div class="news__button news__buttonBlock">
+              <button class="btn" @mouseover="blockMessageShow" @mouseout="blockMessageHide" @click="blockMessage" id="3">
                 <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-book-half" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                   <path fill-rule="evenodd" d="M12.786 1.072C11.188.752 9.084.71 7.646 2.146A.5.5 0 0 0 7.5 2.5v11a.5.5 0 0 0 .854.354c.843-.844 2.115-1.059 3.47-.92 1.344.14 2.66.617 3.452 1.013A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.276-.447L15.5 2.5l.224-.447-.002-.001-.004-.002-.013-.006-.047-.023a12.582 12.582 0 0 0-.799-.34 12.96 12.96 0 0 0-2.073-.609zM15 2.82v9.908c-.846-.343-1.944-.672-3.074-.788-1.143-.118-2.387-.023-3.426.56V2.718c1.063-.929 2.631-.956 4.09-.664A11.956 11.956 0 0 1 15 2.82z"/>
                   <path fill-rule="evenodd" d="M3.214 1.072C4.813.752 6.916.71 8.354 2.146A.5.5 0 0 1 8.5 2.5v11a.5.5 0 0 1-.854.354c-.843-.844-2.115-1.059-3.47-.92-1.344.14-2.66.617-3.452 1.013A.5.5 0 0 1 0 13.5v-11a.5.5 0 0 1 .276-.447L.5 2.5l-.224-.447.002-.001.004-.002.013-.006a5.017 5.017 0 0 1 .22-.103 12.958 12.958 0 0 1 2.7-.869z"/>
                 </svg>
               Читать статью
-            </button>
+              </button>
+              <div class="blocking" v-if="block">
+                <div class="blocking__text">
+                  <span>Статья не дописана</span>
+                </div>
+                <div class="blocking__triangle"></div>
+              </div>
             </div>
           </div>
         </div>
@@ -154,13 +160,33 @@ export default {
     msg: String
   },
   data(){
-    return {}
+    return {
+      block: false,
+    }
   },
   methods: {
     readArticle: function () {
       let button = event.target;
       let id = button.getAttribute('id');
       this.$router.push('/article/' + id);
+    },
+    blockMessageShow: function () {
+      this.block = true;
+    },
+    blockMessageHide: function () {
+      this.block = false;
+    },
+    blockMessage: function () {
+      let block_message = document.querySelector('div.blocking');
+      
+      block_message.classList.add('blocking-activ');
+
+      console.log(block_message);
+
+      function removeActiv (){
+        block_message.classList.remove('blocking-activ')
+      }
+      setTimeout(removeActiv, 1500);
     }
   }
 }
@@ -333,6 +359,63 @@ export default {
     }
     .news__img-adaptiv{
       display: none;
+    }
+    .news__buttonBlock{
+      position: relative;
+    }
+    .news__buttonBlock>button{
+      background-color: #111949;
+    }
+    .blocking{
+      width: 210px;
+      height: 60px;
+      top: -70px;
+      left: 150px;
+      display: flex;
+      border-radius: 20px;
+      position: absolute;
+      background-color: #EE534F;
+      transition-property: all;
+      transition-duration: 1s;
+
+      .blocking__text{
+        width: 100%;
+        margin: auto;
+        text-align: center;
+      }
+      .blocking__text>span{
+        font-size: 1rem;
+        color: #fff;
+        font-weight: 600;
+        transition-property: all;
+        transition-duration: 1s;
+      }
+      .blocking__triangle{
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        top: 60px;
+        left: 200px;
+/*        background-color: #fff;*/
+      }
+      .blocking__triangle::after{
+        content: '';
+        position: absolute;
+        left: 20px;
+        bottom: -20px;
+        border: 20px solid transform;
+        border-top: 20px solid #EE534F;
+      }
+    }
+    .blocking-activ{
+      width: 660px;
+      height: 180px;
+      top: -230px;
+      left: -170px;
+
+      .blocking__text>span{
+        font-size: 3rem;
+      }
     }
 	}
   @media (max-width: 967px){

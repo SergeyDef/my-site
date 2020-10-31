@@ -140,18 +140,20 @@
             <h4>Для работодателей</h4>
           </div>
           <div class="myself__text">
-            <p>Готов расмотреть любые предложения о постоянной работе или аутсорсинге. Нажав на кнопку ниже можно скачать моё резюме</p>
+            <p>Готов рассмотреть любые предложения о постоянной работе или аутсорсинге. Нажав на кнопку ниже, можно скачать моё резюме</p>
           </div>
         </div>
       </div>
       <div class="sidebar__summary">
         <div class="summary">
+        <a href="@/assets/summary/Pasekin S. S..pdf" class="summary__link">
           <button type="button" class="btn summary__button">
           <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-upload" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
             <path fill-rule="evenodd" d="M.5 8a.5.5 0 0 1 .5.5V12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8.5a.5.5 0 0 1 1 0V12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V8.5A.5.5 0 0 1 .5 8zM5 4.854a.5.5 0 0 0 .707 0L8 2.56l2.293 2.293A.5.5 0 1 0 11 4.146L8.354 1.5a.5.5 0 0 0-.708 0L5 4.146a.5.5 0 0 0 0 .708z"/>
             <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-1 0v-8A.5.5 0 0 1 8 2z"/>
           </svg>
           Download</button>
+        </a>
         </div>
       </div>
     </div>
@@ -335,8 +337,13 @@ export default {
     height: 140px;
     display: flex;
 
+    .summary__link{
+      width: 50%;
+      height: 40%;
+      margin: auto;
+    }
     .summary__button{
-      @include buttonMain(50%, 40%, 1rem);
+      @include buttonMain(100%, 100%, 1rem);
       margin: auto;
     }
   }
@@ -409,7 +416,7 @@ export default {
     .summary{
       height: 50%;
       
-      .summary__button{
+      .summary__link{
         width: 60%;
         height: 42%;
       }
@@ -486,7 +493,8 @@ export default {
   .sidebar{
     width: 270px;
     .summary{
-      .summary__button{
+
+      .summary__link{
         width: 70%;
         height: 56%;
       }

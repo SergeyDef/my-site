@@ -12,7 +12,7 @@
         <h2>Отзывы</h2>
       </div>
       <div class="info__text">
-        <p>В данном разделе можно почитать отзывы о моей работе. Также вы можите отавить свой отзыв.</p>
+        <p>В данном разделе можно прочитать отзывы о моей работе. Также вы можите отправить свой отзыв.</p>
       </div>
     </div>
     <div class="reviews__client client">
@@ -246,6 +246,65 @@ export default {
 		}
 		.customer__buttom:focus{
 			border-radius: 0;
+		}
+	}
+	@media (max-width: 1140px){
+		.reviews{
+			height: 9%;
+			.reviews__substrate{
+			}
+			.reviews__substrate>h6{
+			}
+			.client{
+
+				.client__feedback{
+				}
+				.client__wrapper{
+				}
+				.client__ava{
+					width: 24%;
+				}
+				.client__img{
+				}
+				.client__img>img{
+				}
+				.client__block{
+					width: 70%;
+				}
+			}
+			.menu{
+
+				.menu__block{
+				}
+				.menu__item{
+					padding: 0;
+				}
+				.menu__item>svg{
+					width: 50px;
+					height: 50px;
+				}
+			}
+			.customer{
+				height: 40%;
+			}
+			.customer__wrapper{
+			}
+			.customer__item{
+				width: 30%;
+    		height: 30%;
+			}
+			.customer__img{
+			}
+			.customer__img>img{
+			}
+			.customer__name{
+			}
+			.customer__name>span{
+			}
+			.customer__buttom{
+			}
+			.customer__buttom:focus{
+			}
 		}
 	}
 	@media (max-width: 667px){

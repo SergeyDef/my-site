@@ -12,7 +12,7 @@
         <h2>Мои навыки</h2>
       </div>
       <div class="info__text">
-        <p>В данном разделе представленны мои проффесиональные навыки. Для удобства представления использованны графические прогрессбары и диаграммы.</p>
+        <p>В данном разделе представлены мои профессиональные навыки. Для удобства представления использованы графические прогрессбары и диаграммы.</p>
       </div>
     </div>
       <div class="skills__menu menu">
@@ -31,7 +31,7 @@
       <div class="tab-content skills__professional" id="myTabContent">
         <div class="tab-pane fade show active professional" id="home" role="tabpanel" aria-labelledby="home-tab">
           <div class="professional__title">
-            <h5>Проффесиональные навыки</h5>
+            <h5>Профессиональные навыки</h5>
           </div>
           <div class="professional__wrapper">
             <div class="professional__block">
@@ -78,7 +78,7 @@
         </div>
       <div class="tab-pane fade professional" id="profile" role="tabpanel" aria-labelledby="profile-tab">
         <div class="professional__title">
-          <h5>Проффесиональные навыки</h5>
+          <h5>Профессиональные навыки</h5>
         </div>
         <div class="professional__wrapper">
           <div class="professional__block graphic">
@@ -105,7 +105,7 @@
       </div>
       <div class="tab-pane fade professional" id="contact" role="tabpanel" aria-labelledby="contact-tab">
         <div class="professional__title">
-          <h5>Проффесиональные навыки</h5>
+          <h5>Профессиональные навыки</h5>
         </div>
         <div class="professional__wrapper">
           <div class="professional__block graphic">
@@ -137,7 +137,7 @@
     	</div>
     	<div class="language__wrapper">
 	    	<div class="language__text">
-	    		<p>Моим жизненным "кредом" является постоянное и не прерывное саморазвитие. Знание иностранных языков не мой основной профиль но основной, необходимый минимум присутствует.</p>
+	    		<p>Моим жизненным "кредом" является постоянное и не прерывное саморазвитие. Знание иностранных языков не мой основной профиль, но необходимый минимум присутствует.</p>
 	    	</div>
 	    	<div class="language__chart">
 	    		<div class="language__block">

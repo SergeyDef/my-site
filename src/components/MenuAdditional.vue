@@ -48,7 +48,7 @@ export default {
       {id: 5, title: 'Портфолио', href: '#portfolio'},
       {id: 6, title: 'Отзывы', href: '#reviews'},
       {id: 7, title: 'Опыт работы', href: '#workExperience'},
-      {id: 8, title: 'Новости', href: '#news'},
+      {id: 8, title: 'Статьи', href: '#news'},
       {id: 9, title: 'Обратная связь', href: '#feedback'},
       ],
       showMenu: false,

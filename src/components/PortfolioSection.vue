@@ -13,7 +13,7 @@
         <h2>Моё портфолио</h2>
       </div>
       <div class="info__text">
-        <p>Здесь можно посмотреть мои работы. Лендинги, многостроничные сайты и небольшие приложения.</p>
+        <p>Здесь можно посмотреть мои работы. Лендинги, многостраничные сайты и небольшие приложения.</p>
       </div>
     </div>
     <div class="portfolio__menu menu">
@@ -332,7 +332,7 @@ export default {
   }
   @media (max-width: 1140px){
     .portfolio{
-      height: 8%;
+      height: 11%;
       .portfolio__substrate{
       }
       .portfolio__substrate>h6{
@@ -390,6 +390,7 @@ export default {
           .gallery__block:hover .gallery__indicator{
           }
           .gallery__link{
+            height: 220px;
           }
           .gallery__link>img{
           }
@@ -412,8 +413,9 @@ export default {
       }
     }
   }
-    @media (max-width: 967px){
+  @media (max-width: 967px){
     .portfolio{
+      height: 8%;
       .portfolio__substrate{
       }
       .portfolio__substrate>h6{
