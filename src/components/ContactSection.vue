@@ -12,7 +12,7 @@
         <h2>Написать мне</h2>
       </div>
       <div class="info__text">
-        <p>Ели у вас возникли вопросы, предложения или пожелания, контакты для обратной связи ниже. Так же возможно сделать заказ интернет-ресурса - сайт под ключ или доработка уже существующего ресурса.</p>
+        <p>Если у вас возникли вопросы, предложения или пожелания - контакты для обратной связи ниже. Также возможно сделать заказ интернет-ресурса - сайт под ключ или доработка уже существующего ресурса.</p>
       </div>
     </div>
     <div class="contact__wrapper">
@@ -44,7 +44,7 @@
        </div>
        <div class="contact__item address">
          <div class="address__heading">
-           <h5>address</h5> 
+           <h5>adress</h5> 
          </div>
          <div class="address__text">
            <p>г. Москва м.Славянский бульвар</p>
@@ -88,7 +88,7 @@ export default {
 @import '@/scss/style.scss';
 @import '~bootstrap/dist/css/bootstrap.min.css';
   .contact{
-		@include blockMain(100%, 10%);
+		@include blockMain(100%, 10.5%);
 			position: relative;
 			padding: 4% 6%;
 			flex-direction: column;
@@ -252,23 +252,23 @@ export default {
     }
     .contact__button{
       width: 100%;
-      height: 12%;
+      height: 10%;
     }
     .contact__button>button{
       display: flex;
-      
-      width: 35%;
+      justify-content: center;
+      width: 44%;
       height: 100%;
       border-radius: 0;
       background-color: #ffffff;
     }
     .contact__button>button>svg{
       display: block;
-      margin: auto;
+      margin: auto 3px;
     }
     .contact__button>button>span{
       display: block;
-      margin: auto;
+      margin: auto 3px;
     }
 	}
   @media (max-width: 1140px){

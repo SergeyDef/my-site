@@ -161,7 +161,7 @@ export default {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
-	min-height: 8700px;
+	min-height: 10100px;
 }
   .menu-additional_activ{
     position: fixed;

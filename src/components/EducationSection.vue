@@ -14,7 +14,7 @@
         <h2>Образование</h2>
       </div>
       <div class="info__text">
-        <p>В этом разделе представлены мои достижения в сфере официального образования. К сожалению или к счастью, они не имеют отношения к тому, чем я сейчас занимаюсь, то есть к веб разработке.</p>
+        <p>В этом разделе представлены мои достижения в сфере официального образования. К сожалению или к счастью, они не имеют отношения к тому, чем я сейчас занимаюсь, то есть к веб-разработке.</p>
 		</div>
 	</div>
     <div class="accordion education__list" id="accordionExample">
@@ -150,7 +150,7 @@ export default {
 @import '@/scss/style.scss';
 @import '~bootstrap/dist/css/bootstrap.min.css';
   .education{
-		@include blockMain(100%, 8%);
+		@include blockMain(100%, 8.5%);
     position: relative;
     padding: 4% 6%;
     flex-direction: column;

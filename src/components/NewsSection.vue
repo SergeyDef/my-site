@@ -14,7 +14,7 @@
         <h2>Статьи</h2>
       </div>
       <div class="info__text">
-        <p>Здесь можно ознакомиться с моими статьями на тему новинок в веб-разработке.</p>
+        <p>Здесь можно ознакомиться с моими статьями на тему веб-разработке и всего, что с этим связано.</p>
       </div>
     </div>
     <div class="news__wrapper">
@@ -39,7 +39,7 @@
                 </div>
               </div>
               <div class="news__text">
-                <p>Для размещения изображений на интернет-ресурсах, возможно использовать как растровые, так и векторные изображения. Оба типа картинок имеют, так сказать, свою сферу применения...</p>
+                <p>Для размещения изображений на интернет-ресурсах можно использовать как растровые, так и векторные изображения. Оба типа картинок имеют, так сказать, свою сферу применения...</p>
               </div>
               <div class="news__button">
                 <button class="btn" @click="readArticle" id="1">
@@ -73,7 +73,7 @@
               </div>
             </div>
             <div class="news__text">
-              <p>Каждый предприниматель, не зависимо от рода предоставляемых им услуг, рано или поздно задумывается о позиционировании своей...</p>
+              <p>Каждый предприниматель, вне зависимости от рода предоставляемых им услуг, рано или поздно задумывается о позиционировании своей...</p>
             </div>
             <div class="news__button">
               <button class="btn" @click="readArticle" id="2">
@@ -197,12 +197,15 @@ export default {
 @import '@/scss/style.scss';
 @import '~bootstrap/dist/css/bootstrap.min.css';
   .news{
-		@include blockMain(100%, 17%);
-			position: relative;
-			padding: 4% 6%;
-      flex-direction: column;
-      justify-content: space-between;
+		@include blockMain(100%, 18%);
+		position: relative;
+		padding: 4% 6%;
+    flex-direction: column;
+    justify-content: space-between;
 
+    .info{
+      height: 10%;
+    }
 		.news__substrate{
 			@include substrate(90%, 90%);
 		}
@@ -211,7 +214,7 @@ export default {
 		}
     .news__wrapper{
       width: 100%;
-      height: 70%;
+      height: 85%;
       z-index: 9;
       display: flex;
       flex-direction: column;
@@ -219,7 +222,7 @@ export default {
     }
     .news__item{
       width: 100%;
-      height: 30%;
+      height: 26%;
       display: flex;
       justify-content: space-between;
     }
@@ -261,7 +264,7 @@ export default {
     }
     .news__navigation{
       width: 100%;
-      height: 10%;
+      height: 5%;
       z-index: 9;
       display: flex;
     }

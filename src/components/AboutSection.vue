@@ -114,7 +114,7 @@ export default {
 @import '@/scss/_mixins.scss';
 @import '~bootstrap/dist/css/bootstrap.min.css';
   .about{
-     @include blockMain(100%, 6%);
+     @include blockMain(100%, 5%);
      padding: 4% 6%;
 
      .about__slide{
@@ -209,7 +209,7 @@ export default {
         color: #121212;
        }
        .slideshow__btn{
-         @include buttonMain(40%, 25%, 1rem);
+         @include buttonMain(45%, 25%, 1rem);
        }
      }
      .slideshow__indicator{

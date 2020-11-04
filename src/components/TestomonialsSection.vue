@@ -12,7 +12,7 @@
         <h2>Отзывы</h2>
       </div>
       <div class="info__text">
-        <p>В данном разделе можно прочитать отзывы о моей работе. Также вы можите отправить свой отзыв.</p>
+        <p>В данном разделе можно прочитать отзывы о моей работе. Также вы можете отправить свой отзыв.</p>
       </div>
     </div>
     <div class="reviews__client client">
@@ -20,36 +20,42 @@
 				<div class="tab-pane fade show active client__wrapper" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
 					<div class="client__ava">
 						<div class="client__img">
-							<img src="@/assets/reviews/1.jpg" alt="photo">
+							<img :src="responseOne.photo" alt="photo">
 						</div>
 					</div>
 					<div class="client__block">
 						<div class="client__title">
-							<h5>Александр Котов</h5>
+							<h5>{{ responseOne.name + " " + responseOne.lestName }}</h5>
 						</div>
 						<div class="client__text">
-							<p>В первый раз сцепление на Донфенге накрылось после пробега в 32 тысячи километров! После снятия коробки выяснилось следущее: во-первых сами накладки диска гавно- сажа.</p>
+							<p>{{ responseOne.text }}</p>
 						</div>
 						<div class="client__link">
-							<a href="">http://localhost:8080/</a>
+							<a v-bind:href="responseOne.linkWork">{{responseOne.linkWork}}</a>
+						</div>
+						<div class="client__bate">
+							<span>{{ responseOne.bate }}</span>
 						</div>
 					</div>
 				</div>
 				<div class="tab-pane fade client__wrapper" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
 					<div class="client__ava">
 						<div class="client__img">
-							<img src="@/assets/reviews/2.jpg" alt="photo">
+							<img :src="responseTwo.photo" alt="photo">
 						</div>
 					</div>
 					<div class="client__block">
 						<div class="client__title">
-							<h5>Елена Кровцова</h5>
+							<h5>{{ responseTwo.name + " " + responseTwo.lestName }}</h5>
 						</div>
 						<div class="client__text">
-							<p>В первый раз сцепление на Донфенге накрылось после пробега в 32 тысячи километров! После снятия коробки выяснилось следущее: во-первых сами накладки диска гавно- сажа.</p>
+							<p>{{responseTwo.text}}</p>
 						</div>
 						<div class="client__link">
-							<a href="">http://localhost:8080/</a>
+							<a v-bind:href="responseTwo.linkWork">{{responseTwo.linkWork}}</a>
+						</div>
+						<div class="client__bate">
+							<span>{{responseTwo.bate}}</span>
 						</div>
 					</div>
 				</div>
@@ -73,31 +79,22 @@
 		</div>
 		<div class="reviews__customer customer">
 			<ul class="customer__wrapper">
-				<li class="customer__item">
-					<div class="customer__img"><img src="@/assets/reviews/ava.jpg" alt="photo"></div>
-					<div class="customer__name"><span>Ваш отзыв</span></div>
-				</li>
-				<li class="customer__item">
-					<div class="customer__img"><img src="@/assets/reviews/ava.jpg" alt="photo"></div>
-					<div class="customer__name"><span>Ваш отзыв</span></div>
-				</li>
-				<li class="customer__item">
-					<div class="customer__img"><img src="@/assets/reviews/ava.jpg" alt="photo"></div>
-					<div class="customer__name"><span>Ваш отзыв</span></div>
-				</li>
-				<li class="customer__item">
-					<div class="customer__img"><img src="@/assets/reviews/ava.jpg" alt="photo"></div>
-					<div class="customer__name"><span>Ваш отзыв</span></div>
-				</li>
-				<li class="customer__item">
-					<button type="button" class="customer__buttom" @click="showWindow">
-						<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-pencil" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-					  <path fill-rule="evenodd" d="M11.293 1.293a1 1 0 0 1 1.414 0l2 2a1 1 0 0 1 0 1.414l-9 9a1 1 0 0 1-.39.242l-3 1a1 1 0 0 1-1.266-1.265l1-3a1 1 0 0 1 .242-.391l9-9zM12 2l2 2-9 9-3 1 1-3 9-9z"/>
-					  <path fill-rule="evenodd" d="M12.146 6.354l-2.5-2.5.708-.708 2.5 2.5-.707.708zM3 10v.5a.5.5 0 0 0 .5.5H4v.5a.5.5 0 0 0 .5.5H5v.5a.5.5 0 0 0 .5.5H6v-1.5a.5.5 0 0 0-.5-.5H5v-.5a.5.5 0 0 0-.5-.5H3z"/>
-					</svg>
-					Оставить отзыв</button>
+				<li 
+				v-for="respons in responseAll"
+				class="customer__item">
+					<div class="customer__img"><img :src="respons.photo" alt="photo"></div>
+					<div class="customer__name"><span>{{ respons.name }}</span></div>
+					<div @click="toSwitch" v-bind:id="respons.id" class="customer__switch"></div>
 				</li>
 			</ul>
+			<div class="customer__send">
+				<button type="button" class="customer__buttom" @click="showWindow">
+					<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-pencil" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+					  <path fill-rule="evenodd" d="M11.293 1.293a1 1 0 0 1 1.414 0l2 2a1 1 0 0 1 0 1.414l-9 9a1 1 0 0 1-.39.242l-3 1a1 1 0 0 1-1.266-1.265l1-3a1 1 0 0 1 .242-.391l9-9zM12 2l2 2-9 9-3 1 1-3 9-9z"/>
+					  <path fill-rule="evenodd" d="M12.146 6.354l-2.5-2.5.708-.708 2.5 2.5-.707.708zM3 10v.5a.5.5 0 0 0 .5.5H4v.5a.5.5 0 0 0 .5.5H5v.5a.5.5 0 0 0 .5.5H6v-1.5a.5.5 0 0 0-.5-.5H5v-.5a.5.5 0 0 0-.5-.5H3z"/>
+				</svg>
+				Оставить отзыв</button>
+			</div>
 		</div>
   </section>
 </template>
@@ -109,12 +106,55 @@ export default {
     msg: String
   },
   data(){
-  	return{}
+  	return{
+  		response: [
+  		{id: 1, name: "Александр", lestName: "Котов", text: "Быстро. Качественно. Надёжно. Рекомендую!", photo: "/img/1.34cee12f.jpg", bate: "01/11/2020", linkWork: "http://localhost:8080/" },
+  		{id: 2, name: "Елена", lestName: "Кровцова", text: "Всё понравилось. Сайт работает.", photo: "/img/2.8dd30982.jpg", bate: "03/12/2020", linkWork: "http://localhost:8080/" },
+  		{id: 3, name: "Ваш отзыв", lestName: "", text: "Отзыв пока не написан, ноесли я делал вам сайт исправте это!", photo: "/img/ava.fc5f0d09.jpg", bate: "", linkWork: "" },
+  		{id: 4, name: "Ваш отзыв", lestName: "", text: "Отзыв пока не написан, ноесли я делал вам сайт исправте это!", photo: "/img/ava.fc5f0d09.jpg", bate: "", linkWork: "" },
+  		{id: 5, name: "Ваш отзыв", lestName: "", text: "Отзыв пока не написан, ноесли я делал вам сайт исправте это!", photo: "./img/ava.fc5f0d09.jpg", bate: "", linkWork: "" },
+  		{id: 6, name: "Ваш отзыв", lestName: "", text: "Отзыв пока не написан, ноесли я делал вам сайт исправте это!", photo: "/img/ava.fc5f0d09.jpg", bate: "", linkWork: "" },
+  		],
+  		responseOne: "",
+  		responseTwo: "",
+  		responseAll: "",
+  	}
   },
   methods: {
   	showWindow: function (){
   		this.$emit('showWindowFeedback');
+  	},
+  	toSwitch: function (){
+  		let respons = this.responseAll;
+  		let selectedId = event.target.getAttribute('id');
+  		let navHome = document.querySelector('#nav-home');
+  		let one = this.responseOne;
+  		let two = this.responseTwo;
+  		
+  		if (navHome.classList.contains('show')) {
+  			this.responseOne = respons.filter(item => item.id == selectedId)[0];
+  			respons = respons.filter(item => item.id != selectedId);
+  			respons.push(one);
+  			this.responseAll = respons;
+  		} else {
+  			this.responseTwo = respons.filter(item => item.id == selectedId)[0];
+  			respons = respons.filter(item => item.id != selectedId);
+  			respons.push(two);
+  			this.responseAll = respons;
+  		}
+
   	}
+  },
+  mounted(){
+  	let response = this.response;
+  	let one = response.filter(item => item.id === 1);
+  	let to = response.filter(item => item.id === 2); 
+  	let all = response.filter(item => item.id !=1 && item.id !=2 );
+
+  	this.responseTwo = to[0];
+  	this.responseOne = one[0];
+  	this.responseAll = all;
+  	console.log(responseOne);
   },
 }
 </script>
@@ -152,7 +192,7 @@ export default {
 				-moz-box-shadow:1px 1px 100px 1px rgba(0,0,0,0.21);
 			}
 			.client__ava{
-				width: 15%;
+				width: 18%;
 				height: auto;
 				position: relative;
 			}
@@ -160,7 +200,7 @@ export default {
 				position: absolute;
 				width: 100%;
 				height: 100%;
-				top: -10px;
+				top: -15px;
 				box-shadow:1px 1px 100px 1px rgba(0,0,0,0.21);
 				-webkit-box-shadow:1px 1px 100px 1px rgba(0,0,0,0.21);
 				-moz-box-shadow:1px 1px 100px 1px rgba(0,0,0,0.21);
@@ -170,6 +210,7 @@ export default {
 				height: auto;
 			}
 			.client__block{
+				position: relative;
 				text-align: left;
 				margin: auto;
 				height: 100%;
@@ -178,6 +219,19 @@ export default {
 				display: flex;
 				justify-content: space-evenly;
 				flex-direction: column;
+			}
+			.client__bate{
+				width: 15%;
+				height: 100%;
+				position: absolute;
+				display: flex;
+				right: 0;
+			}
+			.client__bate>span{
+				display: block;
+				margin: auto;
+				color: #26A59E;
+				font-size: 1rem;
 			}
 		}
 		.menu{
@@ -205,47 +259,66 @@ export default {
 		.customer{
 			width: 100%;
 			height: 15%;
+			display: flex;
 			z-index: 9;
-		}
-		.customer__wrapper{
-			width: 100%;
-			height: 100%;
-			display: flex;
-			justify-content: space-between;
-		}
-		.customer__item{
-			width: 17%;
-			height: 80%;
-			margin: auto 0; 
-			display: flex;
-			cursor: pointer;
-			box-shadow: 1px 1px 100px 1px rgba(0,0,0,0.21);
-			-webkit-box-shadow: 1px 1px 100px 1px rgba(0,0,0,0.21);
-			-moz-box-shadow: 1px 1px 100px 1px rgba(0,0,0,0.21);
-		}
-		.customer__img{
-			width: 30%;
-			height: 80%;
-			margin: auto;
-			border-radius: 50%;
-			overflow: hidden;
-		}
-		.customer__img>img{
-			width: 100%;
-			height: auto;
-		}
-		.customer__name{
-			margin: auto;
-		}
-		.customer__name>span{
-			font-size: 1rem;
-			font-weight: 700;
-		}
-		.customer__buttom{
-			@include buttonMain(100%, 100%, 1rem);
-		}
-		.customer__buttom:focus{
-			border-radius: 0;
+
+			.customer__wrapper{
+				width: 80%;
+				height: 100%;
+				display: flex;
+				justify-content: space-between;
+			}
+			.customer__item{
+				z-index: 9999;
+				width: 22%;
+				height: 80%;
+				margin: auto 0; 
+				display: flex;
+				cursor: pointer;
+				position: relative;
+				box-shadow: 1px 1px 100px 1px rgba(0,0,0,0.21);
+				-webkit-box-shadow: 1px 1px 100px 1px rgba(0,0,0,0.21);
+				-moz-box-shadow: 1px 1px 100px 1px rgba(0,0,0,0.21);
+			}
+			.customer__switch{
+				width: 100%;
+				height: 100%;
+				z-index: 99;
+				position: absolute;
+			}
+			.customer__img{
+				z-index: -1;
+				width: 30%;
+				height: 80%;
+				margin: auto;
+				border-radius: 50%;
+				overflow: hidden;
+			}
+			.customer__img>img{
+				z-index: -1;
+				width: 100%;
+				height: auto;
+			}
+			.customer__name{
+				z-index: -1;
+				margin: auto;
+			}
+			.customer__name>span{
+				z-index: -1;
+				font-size: 1rem;
+				font-weight: 700;
+			}
+			.customer__send{
+				margin: auto 2%;
+				width: 16%;
+				height: 60%;
+			}
+			.customer__buttom{
+				@include buttonMain(100%, 100%, 1rem);
+			}
+			.customer__buttom:focus{
+				border-radius: 0;
+			}
 		}
 	}
 	@media (max-width: 1140px){

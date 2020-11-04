@@ -62,7 +62,7 @@
     						<h6><span>Организация:</span> ООО Строймаркт</h6>
     					</div>
     					<div class="company__date">
-    						<span class="company__text-second"> с 01.12.2019 по 01.06.2020</span>
+    						<span class="company__text-second"> с 01.04.2015 по 01.12.2019</span>
     					</div>
     					<div class="company__text second">
     						<p>Разработка планограмм торгового зала. Визуализация торговых помещений в 3D и 2D форматах, отрисовка пожарных планов помещения. Разработка, заказ и размещение торгового оборудования и POS материалов на торговых точках. Работа с выкладкой непосредственно в торговом зале, размещение на витринах нового ассортимента. Контроль за проведением акций. Разработка, внедрение и контроль за соблюдением стандартов и общих принципов выкладки в торговом зале. Зонирование торгового зала по номенклатурным группам. Расчёт площади, занимаемой номенклатурными группами и товарными категориями в торговом зале.</p>
@@ -165,7 +165,7 @@
     			</div>
     			<div class="progres__title"><span>Проект под ключ</span></div>
     			<div class="progres__text">
-    				<span>Разработка сайта с нуля от идеи до полноценного интернет ресурса</span>
+    				<span>Разработка сайта с нуля от идеи до полноценного интернет-ресурса</span>
     			</div>
     		</div>
     		<div class="progres__block">
@@ -273,7 +273,7 @@ export default {
 @import '@/scss/style.scss';
 @import '~bootstrap/dist/css/bootstrap.min.css';
   .work{
-		@include blockMain(100%, 11%);
+		@include blockMain(100%, 11.5%);
 			position: relative;
 			padding: 4% 6%;
 			flex-direction: column;
@@ -403,10 +403,8 @@ export default {
 			}
 			.company__text{
 				width: 90%;
-				height: 30%;
+				height: 26%;
 				overflow: hidden;
-			}
-			.company__text-active{
 			}
 			.company__info{
 				width: 100%;
@@ -1209,6 +1207,7 @@ export default {
 					font-size: 0.768rem;
 				}
 				.company__text-activ{
+					height: 70%!important;
 				}
 				.company__info{
 						
