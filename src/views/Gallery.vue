@@ -10,7 +10,7 @@
 		  			<div class="gallery__title">
 		  				<h3>{{ myJob.jobName }}</h3>
 		  			</div>
-		  			<a v-bind:href="myJob.jobLink" class="gallery__link">
+		  			<a v-bind:href="myJob.jobLink" target="_blank" class="gallery__link">
 		  				<div class="gallery__img" :id="myJob.jobImgId"></div>
 		  				<!-- <img :src="myJob.jobImg" v-dind:alt="myJob.jobAlt"> -->
 		  				<div class="gallery__description">
@@ -45,7 +45,7 @@
 						id: 1, 
 						jobName: 'Дома и бани',
 						jobDescription: 'интернет магазин - дипломная работа для колледжа',
-						jobLink: '@/myWork/housesBaths/index.html', 
+						jobLink: 'myWork/housesBaths/index.html', 
 						jobIndicator: 'website', 
 						jobImgId: 'housesBaths', 
 						jobAlt: 'houses baths', 
@@ -54,7 +54,7 @@
 						id: 2, 
 						jobName: 'Барабанщици москвички', 
 						jobDescription: 'Многостраничный сайт для музыкального ансамбля', 
-						jobLink: '@/myWork/drummers/index.php', 
+						jobLink: 'myWork/drummers/index.php', 
 						jobIndicator: 'website', 
 						jobImgId: 'drummers', 
 						jobAlt: 'drummers', 
@@ -63,7 +63,7 @@
 						id: 3, 
 						jobName: 'BREDLI', 
 						jobDescription: 'Одностраничный лендинг', 
-						jobLink: '@/myWork/BREDLI/index.html', 
+						jobLink: 'myWork/BREDLI/index.html', 
 						jobIndicator: 'landing',
 						jobImgId: 'bredli', 
 						jobAlt: 'bredli', 
@@ -72,7 +72,7 @@
 						id: 4, 
 						jobName: 'Тату мастер Наталья', 
 						jobDescription: 'Многостраничный сайт для тату мастера', 
-						jobLink: '@/myWork/tatuNataley/index.html', 
+						jobLink: 'myWork/tatuNataley/index.html', 
 						jobIndicator: 'website', 
 						jobImgId: 'tatuNataley', 
 						jobAlt: 'tatu nataley', 
@@ -81,7 +81,7 @@
 						id: 5, 
 						jobName: 'Заказ квизов', 
 						jobDescription: 'Лендинг для заказа интернет опросников', 
-						jobLink: '@/myWork/quiz/index.html', 
+						jobLink: 'myWork/quiz/index.html', 
 						jobIndicator: 'landing', 
 						jobImgId: 'quiz', 
 						jobAlt: 'quiz', 
@@ -90,7 +90,7 @@
 						id: 6, 
 						jobName: 'Демо вебстудии', 
 						jobDescription: 'Многостраничный сайт', 
-						jobLink: '@/myWork/housesBaths/index.html', 
+						jobLink: 'myWork/housesBaths/index.html', 
 						jobIndicator: 'website', 
 						jobImgId: 'webStudio', 
 						jobAlt: 'web studio', 
@@ -99,7 +99,7 @@
 						id: 7, 
 						jobName: 'Вязание на заказ', 
 						jobDescription: 'Многостраничныйсайт (моя первая работа)', 
-						jobLink: '@/myWork/needlework/index.html', 
+						jobLink: 'myWork/needlework/index.html', 
 						jobIndicator: 'website', 
 						jobImgId: 'needlework', 
 						jobAlt: 'needlework', 

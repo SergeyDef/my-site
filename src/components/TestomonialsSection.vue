@@ -33,7 +33,7 @@
 						<div class="client__link">
 							<a v-bind:href="responseOne.linkWork">{{responseOne.linkWork}}</a>
 						</div>
-						<div class="client__bate">
+						<div class="client__date">
 							<span>{{ responseOne.bate }}</span>
 						</div>
 					</div>
@@ -54,7 +54,7 @@
 						<div class="client__link">
 							<a v-bind:href="responseTwo.linkWork">{{responseTwo.linkWork}}</a>
 						</div>
-						<div class="client__bate">
+						<div class="client__date">
 							<span>{{responseTwo.bate}}</span>
 						</div>
 					</div>
@@ -108,12 +108,12 @@ export default {
   data(){
   	return{
   		response: [
-  		{id: 1, name: "Александр", lestName: "Котов", text: "Быстро. Качественно. Надёжно. Рекомендую!", photo: "/img/1.34cee12f.jpg", bate: "01/11/2020", linkWork: "http://localhost:8080/" },
-  		{id: 2, name: "Елена", lestName: "Кровцова", text: "Всё понравилось. Сайт работает.", photo: "/img/2.8dd30982.jpg", bate: "03/12/2020", linkWork: "http://localhost:8080/" },
-  		{id: 3, name: "Ваш отзыв", lestName: "", text: "Отзыв пока не написан, ноесли я делал вам сайт исправте это!", photo: "/img/ava.fc5f0d09.jpg", bate: "", linkWork: "" },
-  		{id: 4, name: "Ваш отзыв", lestName: "", text: "Отзыв пока не написан, ноесли я делал вам сайт исправте это!", photo: "/img/ava.fc5f0d09.jpg", bate: "", linkWork: "" },
-  		{id: 5, name: "Ваш отзыв", lestName: "", text: "Отзыв пока не написан, ноесли я делал вам сайт исправте это!", photo: "./img/ava.fc5f0d09.jpg", bate: "", linkWork: "" },
-  		{id: 6, name: "Ваш отзыв", lestName: "", text: "Отзыв пока не написан, ноесли я делал вам сайт исправте это!", photo: "/img/ava.fc5f0d09.jpg", bate: "", linkWork: "" },
+  		{id: 1, name: "Александр", lestName: "Котов", text: "Быстро. Качественно. Надёжно. Рекомендую!", photo: "/img/1.jpg", bate: "01/11/2020", linkWork: "http://localhost:8080/" },
+  		{id: 2, name: "Елена", lestName: "Кровцова", text: "Всё понравилось. Сайт работает.", photo: "/img/2.jpg", bate: "03/12/2020", linkWork: "http://localhost:8080/" },
+  		{id: 3, name: "Ваш отзыв", lestName: "", text: "Отзыв пока не написан, но если я делал вам сайт исправте это!", photo: "/img/ava.jpg", bate: "", linkWork: "" },
+  		{id: 4, name: "Ваш отзыв", lestName: "", text: "Отзыв пока не написан, но если я делал вам сайт исправте это!", photo: "/img/ava.jpg", bate: "", linkWork: "" },
+  		{id: 5, name: "Ваш отзыв", lestName: "", text: "Отзыв пока не написан, но если я делал вам сайт исправте это!", photo: "/img/ava.jpg", bate: "", linkWork: "" },
+  		{id: 6, name: "Ваш отзыв", lestName: "", text: "Отзыв пока не написан, но если я делал вам сайт исправте это!", photo: "/img/ava.jpg", bate: "", linkWork: "" },
   		],
   		responseOne: "",
   		responseTwo: "",
@@ -220,14 +220,14 @@ export default {
 				justify-content: space-evenly;
 				flex-direction: column;
 			}
-			.client__bate{
+			.client__date{
 				width: 15%;
 				height: 100%;
 				position: absolute;
 				display: flex;
 				right: 0;
 			}
-			.client__bate>span{
+			.client__date>span{
 				display: block;
 				margin: auto;
 				color: #26A59E;
@@ -321,6 +321,68 @@ export default {
 			}
 		}
 	}
+	@media (max-width: 1300px){
+		 .reviews{
+
+			.reviews__substrate{
+			}
+			.reviews__substrate>h6{
+			}
+			.client{
+
+				.client__feedback{
+				}
+				.client__wrapper{
+				}
+				.client__ava{
+				}
+				.client__img{
+				}
+				.client__img>img{
+				}
+				.client__block{
+				}
+				.client__date{
+				}
+				.client__date>span{
+				}
+			}
+			.menu{
+
+				.menu__block{
+				}
+				.menu__item{
+				}
+				.menu__item>svg{
+				}
+			}
+			.customer{
+
+				.customer__wrapper{
+				}
+				.customer__item{
+				}
+				.customer__switch{
+				}
+				.customer__img{
+				}
+				.customer__img>img{
+				}
+				.customer__name{
+				}
+				.customer__name>span{
+				}
+				.customer__send{
+					margin: auto 0;
+					width: 20%;
+				}
+				.customer__buttom{
+				}
+				.customer__buttom:focus{
+				}
+			}
+		}
+	}
 	@media (max-width: 1140px){
 		.reviews{
 			height: 9%;
@@ -358,29 +420,31 @@ export default {
 				}
 			}
 			.customer{
-				height: 40%;
-			}
-			.customer__wrapper{
-			}
-			.customer__item{
-				width: 30%;
-    		height: 30%;
-			}
-			.customer__img{
-			}
-			.customer__img>img{
-			}
-			.customer__name{
-			}
-			.customer__name>span{
-			}
-			.customer__buttom{
-			}
-			.customer__buttom:focus{
+				height: 15%;
+
+				.customer__wrapper{
+					width: 76%;
+					margin: auto 2%;
+				}
+				.customer__item{
+	    		height: 50%;
+				}
+				.customer__img{
+				}
+				.customer__img>img{
+				}
+				.customer__name{
+				}
+				.customer__name>span{
+				}
+				.customer__buttom{
+				}
+				.customer__buttom:focus{
+				}
 			}
 		}
 	}
-	@media (max-width: 667px){
+	@media (max-width: 767px){
 		.reviews{
 			height: 11.5%;
 			.reviews__substrate{
@@ -412,6 +476,10 @@ export default {
 					padding: 0;
 					height: 60%;
 				}
+				.client__date>span{
+					margin: 50% 10% 0 0;
+					font-size: 0.7rem;
+				}
 			}
 			.menu{
 				order: -1;
@@ -432,28 +500,35 @@ export default {
 			}
 			.customer{
 				height: 25%;
-			}
-			.customer__wrapper{
 				flex-direction: column;
-			}
-			.customer__item{
-				width: 90%;
-				height: 20%;
-				margin: 0 auto;
-			}
-			.customer__img{
-				width: 40px;
-				height: 40px;
-			}
-			.customer__img>img{
-			}
-			.customer__name{
-			}
-			.customer__name>span{
-			}
-			.customer__buttom{
-			}
-			.customer__buttom:focus{
+
+				.customer__wrapper{
+					width: 100%;
+					flex-direction: column;
+				}
+				.customer__item{
+					width: 90%;
+					height: 23%;
+					margin: 0 auto;
+				}
+				.customer__img{
+					width: 40px;
+					height: 40px;
+				}
+				.customer__img>img{
+				}
+				.customer__name{
+				}
+				.customer__name>span{
+				}
+				.customer__buttom{
+				}
+				.customer__buttom:focus{
+				}
+				.customer__send{
+					width: 100%;
+					height: 22%;
+				}
 			}
 		}
 	}

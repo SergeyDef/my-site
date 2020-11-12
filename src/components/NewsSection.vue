@@ -31,7 +31,7 @@
                   <ul class="news__menu">
                     <li><a href="">Спросить меня</a></li>
                     <li class="news__menu-line">13.09.2020</li>
-                    <li class="news__menu-right">Комментарии</li>
+                    <li class="news__menu-right" @click="readComments">Комментарии</li>
                   </ul>
                 </div>
                 <div class="news__img-adaptiv">
@@ -68,7 +68,7 @@
                 <ul class="news__menu">
                   <li class="news__menu-right"><a href="" class="news__menu-left">Спросить меня</a></li>
                   <li class="news__menu-line">01.10.2020</li>
-                  <li class="news__menu-left">Комментарии</li>
+                  <li class="news__menu-left" @click="readComments">Комментарии</li>
                 </ul>
               </div>
             </div>
@@ -101,7 +101,7 @@
                 <ul class="news__menu">
                   <li><a href="">Спросить меня</a></li>
                   <li class="news__menu-line">17.08.2020</li>
-                  <li class="news__menu-right">Комментарии</li>
+                  <li class="news__menu-right" @click="readComments">Комментарии</li>
                 </ul>
               </div>
               <div class="news__img-adaptiv">
@@ -187,6 +187,9 @@ export default {
         block_message.classList.remove('blocking-activ')
       }
       setTimeout(removeActiv, 1500);
+    },
+    readComments: function () {
+      alert("s");
     }
   }
 }
@@ -206,10 +209,10 @@ export default {
     .info{
       height: 10%;
     }
-		.news__substrate{
+		.info__substrate{
 			@include substrate(90%, 90%);
 		}
-		.news__substrate>h6{
+		&__substrate>h6{
 			@include substrateText(4rem, 900, 0.1);
 		}
     .news__wrapper{
@@ -543,6 +546,7 @@ export default {
         height: 80%;
       }
       .news__item{
+        height: 30%;
       }
       .news__img{
       }
@@ -586,6 +590,19 @@ export default {
           height: 20px;
         }
       }
+      .blocking{
+        left: 50px;
+      }
+      .blocking-activ{
+        width: 360px;
+        height: 130px;
+        top: -200px;
+        left: -20px;
+
+        .blocking__text>span{
+          font-size: 2rem;
+        }
+      }
       .news__info{
       }
       .news__line{
@@ -600,7 +617,8 @@ export default {
       .news__heading{
         width: 100%;
       }
-      .news__text{
+      .news__text>p{
+        font-size: 0.9rem;
       }
       .news__block-left{
       }
@@ -617,7 +635,7 @@ export default {
 
       }
       .news__button>button{
-        width: 50%;
+        width: 60%;
         margin: auto;
         display: block;
       }

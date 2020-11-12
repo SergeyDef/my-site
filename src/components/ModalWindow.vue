@@ -20,13 +20,13 @@
             <div class="photo__buttons">
               <div class="photo__button photo__download">
                 <label>
-                  <span class="photo__text">Загрузить</span>
+                  <span class="photo__text">Загрузить фото</span>
                   <input type="file" name="myFile" ref="file" accept="image/*" @change="photoDownload">
                 </label>
               </div>
-              <div class="photo__button photo__take">
+              <!-- <div class="photo__button photo__take">
                 <button @click="photoTake">Фото</button>
-              </div>
+              </div> -->
             </div>
           </div>
           <div class="window__findings findings">
@@ -40,6 +40,16 @@
                 v-model="file.fileName">
               </label>
             </div>
+            <div class="findings__name">
+              <label for="theme" class="findings__input"><span>Фамилия:</span>
+                <input 
+                type="text" 
+                name="theme" 
+                class="findings__input"
+                placeholder="Иванов"
+                v-model="file.fileName">
+              </label>
+            </div>
             <div class="findings__textarea">
               <textarea 
               rows="10" 
@@ -47,6 +57,16 @@
               name="content" 
               placeholder="Напишите что-нибудь"
               v-model="file.fileText"></textarea>
+            </div>
+            <div class="findings__name">
+              <label for="theme" class="findings__input"><span>Ваш сайт:</span>
+                <input 
+                type="text" 
+                name="theme" 
+                class="findings__input"
+                placeholder="xxxxxxx@xxxx.xxx"
+                v-model="file.fileName">
+              </label>
             </div>
             <div class="findings__buttons">
               <button 
@@ -180,8 +200,8 @@ export default {
     background-color: rgba(0,0,0,0.7);
 
     .window__wrapper{
-      width: 30%;
-      height: 50%;
+      width: 50%;
+      height: 60%;
       border-radius: 10px;
       margin: auto;
       background-color: #ffffff;
@@ -234,8 +254,9 @@ export default {
       margin: auto;
     }
     .photo{
-      width: 46%;
-      height: 100%;
+      width: 30%;
+      height: 70%;
+      margin: auto 0;
       display: flex;
       flex-direction: column;
       justify-content: space-around;
@@ -258,7 +279,8 @@ export default {
         display: flex;
       }
       .photo__button{
-        width: 50%;
+        width: 100%;
+        cursor: pointer;
       }
       .photo__button>button{
         @include buttonMain(100%, 100%, 1rem);
@@ -303,7 +325,7 @@ export default {
       }
     }
     .findings{
-      width: 46%;
+      width: 60%;
       height: 99%;
       display: flex;
       flex-direction: column;
@@ -312,20 +334,27 @@ export default {
       .findings__name{
         display: flex;
         width: 100%;
-        height: 15%;
+        margin-bottom: 3%;
+        height: 10%;
+        border-bottom: 1px solid rgba(45, 55, 79, 0.15);
       }
       .findings__input{
         display: flex;
         width: 100%;
         margin: auto;
       }
+      .findings__input>span{
+        width: 25%;
+        display: block;
+        text-align: left;
+      }
       .findings__input>input{
-        width: 80%;
+        width: 75%;
         border: none;
       }
       .findings__textarea{
         width: 100%;
-        height: 60%;
+        height: 40%;
         margin: auto;
       }
       .findings__textarea>textarea{
@@ -336,12 +365,12 @@ export default {
       }
       .findings__buttons{
         width: 100%;
-        height: 13%;
+        height: 10%;
         margin: 0 auto;
         display: flex;
       }
       .findings__button{
-        @include buttonMain(50%, 100%, 1rem);
+        @include buttonMain(40%, 100%, 1rem);
         margin: 0 auto;
       }
     }
@@ -373,8 +402,8 @@ export default {
   .window{
 
     .window__wrapper{
-      width: 40%;
-      height: 40%;
+      width: 50%;
+      height: 60%;
     }
     .window__wrapper>form{
     }
@@ -416,8 +445,8 @@ export default {
   .window{
 
     .window__wrapper{
-      width: 40%;
-      height: 50%;
+      width: 60%;
+      height: 70%;
     }
     .window__wrapper>form{
     }
@@ -459,7 +488,141 @@ export default {
   .window{
 
     .window__wrapper{
-      width: 40%;
+      width: 55%;
+      height: 70%;
+    }
+    .window__wrapper>form{
+    }
+    .window__title{
+    }
+    .window__title>span{
+    }
+    .window__close{
+    }
+    .window__plus{
+    }
+    .window__plus:after{
+    }
+    .window__block{
+    }
+    .window__block>label{
+    }
+    .window__block>label>span{
+    }
+    .window__input{
+    }
+    .window__textarea{
+    }
+    .window__textarea>textarea{
+    }
+    .window__buttons{
+    }
+    .window__consent{
+    }
+    .window__consent>label{
+      font-size: 0.8rem;
+    }
+    .window__button{
+      font-size: 1rem;
+    }
+    .photo{
+      height: 60%;
+    }
+    .findings{
+
+      .findings__name{
+      }
+      .findings__input{
+      }
+      .findings__input>span{
+        width: 15%;
+      }
+      .findings__input>input{
+        width: 85%;
+      }
+      .findings__textarea{
+      }
+      .findings__textarea>textarea{
+      }
+      .findings__buttons{
+      }
+      .findings__button{
+      }
+    }
+  }
+}
+@media (max-width: 1740px){
+  .window{
+
+    .window__wrapper{
+      width: 55%;
+      height: 78%;
+    }
+    .window__wrapper>form{
+    }
+    .window__title{
+    }
+    .window__title>span{
+    }
+    .window__close{
+    }
+    .window__plus{
+    }
+    .window__plus:after{
+    }
+    .photo{
+      height: 50%;
+    }
+    .window__block{
+    }
+    .window__block>label{
+    }
+    .window__block>label>span{
+    }
+    .window__input{
+    }
+    .window__textarea{
+    }
+    .window__textarea>textarea{
+    }
+    .window__buttons{
+    }
+    .window__consent{
+    }
+    .window__consent>label{
+      font-size: 0.8rem;
+    }
+    .window__button{
+      font-size: 1rem;
+    }
+    .findings{
+
+      .findings__name{
+      }
+      .findings__input{
+      }
+      .findings__input>span{
+        width: 20%;
+      }
+      .findings__input>input{
+        width: 80%;
+      }
+      .findings__textarea{
+      }
+      .findings__textarea>textarea{
+      }
+      .findings__buttons{
+      }
+      .findings__button{
+      }
+    }
+  }
+}
+@media (max-width: 1140px){
+   .window{
+
+    .window__wrapper{
+      width: 80%;
       height: 50%;
     }
     .window__wrapper>form{
@@ -491,99 +654,111 @@ export default {
     .window__consent{
     }
     .window__consent>label{
-      font-size: 0.8rem;
     }
     .window__button{
-      font-size: 1rem;
     }
-  }
-}
-@media (max-width: 1740px){
-  .window{
+    .findings{
 
-    .window__wrapper{
-      width: 50%;
-      height: 42%;
-    }
-    .window__wrapper>form{
-    }
-    .window__title{
-    }
-    .window__title>span{
-    }
-    .window__close{
-    }
-    .window__plus{
-    }
-    .window__plus:after{
-    }
-    .window__block{
-    }
-    .window__block>label{
-    }
-    .window__block>label>span{
-    }
-    .window__input{
-    }
-    .window__textarea{
-    }
-    .window__textarea>textarea{
-    }
-    .window__buttons{
-    }
-    .window__consent{
-    }
-    .window__consent>label{
-      font-size: 0.8rem;
-    }
-    .window__button{
-      font-size: 1rem;
-    }
-  }
-}
-@media (max-width: 1140px){
-   .window{
+      .findings__name{
+      }
+      .findings__input{
+      }
+      .findings__input>span{
+        width: 20%;
+      }
+      .findings__input>input{
+        width: 80%;
+      }
+      .findings__textarea{
+      }
+      .findings__textarea>textarea{
+      }
+      .findings__buttons{
+        height: 10%;
+      }
+      .findings__button{
 
-    .window__wrapper{
-      width: 65%;
-      height: 60%;
+      }
     }
-    .window__wrapper>form{
-    }
-    .window__title{
-    }
-    .window__title>span{
-    }
-    .window__close{
-    }
-    .window__plus{
-    }
-    .window__plus:after{
-    }
-    .window__block{
-    }
-    .window__block>label{
-    }
-    .window__block>label>span{
-    }
-    .window__input{
-    }
-    .window__textarea{
-    }
-    .window__textarea>textarea{
-    }
-    .window__buttons{
-    }
-    .window__consent{
-    }
-    .window__consent>label{
-    }
-    .window__button{
+    .photo{
+      height: 45%;
     }
   }
 }
 @media (max-width: 967px){
+  .window{
 
+    .window__wrapper{
+      height: 45%;
+    }
+    .window__wrapper>form{
+    }
+    .window__title{
+    }
+    .window__title>span{
+    }
+    .window__close{
+    }
+    .window__plus{
+    }
+    .window__plus:after{
+    }
+    .window__block{
+    }
+    .photo{
+      .photo__img{
+      }
+      .photo__img-activ{
+      }
+      .photo__buttons{
+      }
+      .photo__button{
+      }
+      .photo__button>button{
+      }
+      .photo__button>label{
+      }
+      .photo__button>label>input{
+      }
+      .photo__text{
+      }
+      .photo__download{
+      }
+      .photo__take{
+      }
+      .photo__user{
+      }
+      .camera_stream{
+      }
+    }
+    .findings{
+
+      .findings__name{
+      }
+      .findings__input{
+      }
+      .findings__input>span{
+      }
+      .findings__input>input{
+      }
+      .findings__textarea{
+      }
+      .findings__textarea>textarea{
+      }
+      .findings__buttons{
+      }
+      .findings__button{
+      }
+    }
+    .window__block>label{
+    }
+    .window__block>label>span{
+    }
+    .window__consent{
+    }
+    .window__consent>label{
+    }
+  }
 }
 @media (max-width: 667px){
   .window{
@@ -639,8 +814,8 @@ export default {
   .window{
 
     .window__wrapper{
-      width: 76%;
-      height: 38%;
+      width: 90%;
+      height: 50%;
     }
     .window__wrapper>form{
     }
@@ -685,6 +860,40 @@ export default {
     }
     .window__button{
       width: 32%;
+    }
+    .findings{
+      .findings__input{
+        font-size: 0.7rem;
+      }
+      .findings__textarea>textarea{
+        font-size: 0.7rem;
+      }
+      .findings__input>input{
+        width: 70%;
+      }
+      .findings__input>span{
+        width: 30%;
+      }
+      .findings__buttons{
+        height: 16%;
+      }
+      .findings__buttons>button{
+        font-size: 0.9rem;
+      }
+    }
+    .photo{
+      height: 80%;
+      width: 40%;
+      
+      .photo__img{
+        height: 70%;
+      }
+      .photo__buttons{
+        height: 20%;
+      }
+      .photo__text{
+        font-size: 0.9rem;
+      }
     }
   }
 }

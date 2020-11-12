@@ -60,7 +60,7 @@
     </div>
     <div class="portfolio__gallery gallery">
       <div class="gallery__block website">
-        <a href="../myWork/housesBaths/index.html" class="gallery__link">
+        <a href="myWork/housesBaths/index.html" class="gallery__link">
           <img src="@/assets/portfolio/0_5.png" alt="houses baths">
         </a>
         <div class="gallery__indicator indicator">
@@ -68,7 +68,7 @@
         </div>
       </div>
       <div class="gallery__block website">
-        <a href="../myWork/drummers/index.php" class="gallery__link">
+        <a href="myWork/drummers/index.php" class="gallery__link">
           <img src="@/assets/portfolio/0_3.png" alt="drummers">
         </a>
         <div class="gallery__indicator indicator">
@@ -76,7 +76,7 @@
         </div>
       </div>
       <div class="gallery__block landing">
-        <a href="../myWork/BREDLI/index.html" class="gallery__link">
+        <a href="myWork/BREDLI/index.html" target="_blank" class="gallery__link">
           <img src="@/assets/portfolio/0_2.png" alt="bredli">
         </a>
         <div class="gallery__indicator indicator">
@@ -84,7 +84,7 @@
         </div>
       </div>
       <div class="gallery__block website">
-        <a href="../myWork/tatuNataley/index.html" class="gallery__link">
+        <a href="myWork/tatuNataley/index.html" target="_blank" class="gallery__link">
           <img src="@/assets/portfolio/0_4.png" alt="tatu nataley">
         </a>
         <div class="gallery__indicator indicator">
@@ -92,7 +92,7 @@
         </div>
       </div>
       <div class="gallery__block landing">
-        <a href="../myWork/quiz/index.html" class="gallery__link">
+        <a href="myWork/quiz/index.html" target="_blank" class="gallery__link">
           <img src="@/assets/portfolio/0_6.png" alt="quiz">
         </a>
         <div class="gallery__indicator indicator">
@@ -100,7 +100,7 @@
         </div>
       </div>
       <div class="gallery__block website">
-        <a href="../myWork/housesBaths/index.html" class="gallery__link">
+        <a href="myWork/housesBaths/index.html" target="_blank" class="gallery__link">
           <img src="@/assets/portfolio/0_1.png" alt="web studio">
           <div class="gallery__indicator indicator">
             <div class="indicator__cross"></div>
