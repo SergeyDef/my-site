@@ -31,7 +31,7 @@
                   <ul class="news__menu">
                     <li><a href="">Спросить меня</a></li>
                     <li class="news__menu-line">13.09.2020</li>
-                    <li class="news__menu-right" @click="readComments">Комментарии</li>
+                    <li class="news__menu-right news__comment" @click="readComments" id="vectorGraphics">Комментарии</li>
                   </ul>
                 </div>
                 <div class="news__img-adaptiv">
@@ -68,7 +68,7 @@
                 <ul class="news__menu">
                   <li class="news__menu-right"><a href="" class="news__menu-left">Спросить меня</a></li>
                   <li class="news__menu-line">01.10.2020</li>
-                  <li class="news__menu-left" @click="readComments">Комментарии</li>
+                  <li class="news__menu-left news__comment" @click="readComments" id="website">Комментарии</li>
                 </ul>
               </div>
             </div>
@@ -101,7 +101,7 @@
                 <ul class="news__menu">
                   <li><a href="">Спросить меня</a></li>
                   <li class="news__menu-line">17.08.2020</li>
-                  <li class="news__menu-right" @click="readComments">Комментарии</li>
+                  <li class="news__menu-right news__comment" id="routing">Комментарии</li>
                 </ul>
               </div>
               <div class="news__img-adaptiv">
@@ -168,6 +168,7 @@ export default {
     readArticle: function () {
       let button = event.target;
       let id = button.getAttribute('id');
+
       this.$router.push('/article/' + id);
     },
     blockMessageShow: function () {
@@ -181,15 +182,26 @@ export default {
       
       block_message.classList.add('blocking-activ');
 
-      console.log(block_message);
-
       function removeActiv (){
         block_message.classList.remove('blocking-activ')
       }
       setTimeout(removeActiv, 1500);
     },
     readComments: function () {
-      alert("s");
+      let comment_link = event.target;
+      let indicator = comment_link.getAttribute('id');
+      let id;
+
+      if (indicator == 'vectorGraphics') {
+        id = 1;
+      } else if (indicator == 'website') {
+        id = 2;
+      }
+
+      this.$router.push({
+        path: '/article/' + indicator + '/' + id,
+        hash: indicator,
+      });
     }
   }
 }
@@ -209,10 +221,10 @@ export default {
     .info{
       height: 10%;
     }
-		.info__substrate{
+		.news__substrate{
 			@include substrate(90%, 90%);
 		}
-		&__substrate>h6{
+		.news__substrate>h6{
 			@include substrateText(4rem, 900, 0.1);
 		}
     .news__wrapper{
@@ -264,6 +276,12 @@ export default {
     }
     .news__menu-left>a{
       text-align: left;
+    }
+    .news__comment{
+      cursor: pointer;
+    }
+    .news__comment:hover{
+      color: #FAC02E;
     }
     .news__navigation{
       width: 100%;

@@ -29,6 +29,11 @@ const router = new VueRouter({
     path: '*',
     component: Home
   },
+  {
+    path: '/article/:comment/:id',
+    name: 'Comment',
+    component: () => import('../views/Article.vue')
+  },
 ],
   mode: 'history',
   base: process.env.BASE_URL,

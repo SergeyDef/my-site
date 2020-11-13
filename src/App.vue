@@ -92,6 +92,12 @@ button:focus{
   .articles__illustration-svgFirst{
     background-image: url(assets/articles/svg/news_php.jpg);
   }
+  .articles__illustration-website{
+    background-image: url(assets/articles/website/news_sait.jpg);
+  }
+  .articles__illustration-website_2{
+    background-image: url(assets/articles/website/news_sait_2.png);
+  }
   .articles__subtitle{
     width: 100%;
   }

@@ -403,7 +403,7 @@ export default {
 			}
 			.company__text{
 				width: 90%;
-				height: 26%;
+				height: 24%;
 				overflow: hidden;
 			}
 			.company__info{
