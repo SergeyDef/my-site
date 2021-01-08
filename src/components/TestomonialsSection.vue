@@ -154,7 +154,6 @@ export default {
   	this.responseTwo = to[0];
   	this.responseOne = one[0];
   	this.responseAll = all;
-  	console.log(responseOne);
   },
 }
 </script>

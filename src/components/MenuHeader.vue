@@ -10,7 +10,7 @@
           <button v-bind:id="menuList.href" @click="followLink" type="button" class="btn menu__btn">{{ menuList.title }}</button>
         </li>
       </ul>
-    </nav>    
+    </nav>
     <div class="menu__call">
       <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-telephone-forward-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path fill-rule="evenodd" d="M2.267.98a1.636 1.636 0 0 1 2.448.152l1.681 2.162c.309.396.418.913.296 1.4l-.513 2.053a.636.636 0 0 0 .167.604L8.65 9.654a.636.636 0 0 0 .604.167l2.052-.513a1.636 1.636 0 0 1 1.401.296l2.162 1.681c.777.604.849 1.753.153 2.448l-.97.97c-.693.693-1.73.998-2.697.658a17.471 17.471 0 0 1-6.571-4.144A17.47 17.47 0 0 1 .639 4.646c-.34-.967-.035-2.004.658-2.698l.97-.969zM12.646.646a.5.5 0 0 1 .708 0l2.5 2.5a.5.5 0 0 1 0 .708l-2.5 2.5a.5.5 0 0 1-.708-.708L14.293 4H9.5a.5.5 0 0 1 0-1h4.793l-1.647-1.646a.5.5 0 0 1 0-.708z"/>
@@ -37,13 +37,14 @@
                 <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/>
               </svg>
             </button>
-            <input type="text" name="search" class="search__input" v-model="searchText">
+            <input type="text" name="search" class="search__input" v-model="searchText" @focus="hideError">
             <div class="search__clear_form clear" @click="clearText">
               <div class="clear__bloc">
                 <div class="clear__plus"></div>
               </div>
             </div>
           </form>
+          <ErrorForm v-if="searchError" :errorText="errorText" />
         </div>
         <button type="button" v-if="!searchForm" @click="showSearch" key="showSearch" class="btn search__button">
           <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-zoom-out" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -68,8 +69,13 @@
 </template>
 
 <script>
+  import ErrorForm from '@/components/ErrorForm.vue'
+
 export default {
   name: 'LateralFace',
+  components: {
+    ErrorForm
+  },
   props: {
     menuHeaderLists: {
       type: Array,
@@ -94,6 +100,8 @@ export default {
       searchForm: false,
       serchField: false,
       searchText: "",
+      searchError: false,
+      errorText: "",
     };
   },
   methods: {
@@ -114,10 +122,43 @@ export default {
       this.serchField = false;
     },
     foundText: function (){
-      let contentText = document.body.innerHTML;
-      console.log(contentText);
+      let contentText = document.documentElement.innerHTML;
+      let valueInput = this.searchText;
 
-      alert(this.searchText);
+      let verify = (str) => {
+        str = str.replace( /^\s+/g, '' );
+        return str.replace( /\s+$/g, '' );
+      }
+
+     alert(contentText);
+
+      let seek = (value) =>{
+        let lastResFind;
+        value = verify(value);
+
+        if (contentText.indexOf(value) == -1) {
+          this.searchError = true;
+          this.errorText = 'Ничего не найдено';
+        } 
+        if (value == '') {
+          this.searchError = true;
+          this.errorText = 'Ввидите текст поиска';
+        }
+        if (value.length < 3) {
+          this.searchError = true;
+          this.errorText = 'Ввидите больше символов';
+        }
+
+        window.location = `#${value}`;
+        // document.body.innerHTML = contentText.
+        // document.body.innerHTML = contentText.replace(`/${value}/gi`, `<a name=${value} style="background:#FCC02C" />`);
+
+        // console.log(contentText);
+      }
+      seek(valueInput);
+    },
+    hideError: function (){
+      this.searchError = false;
     },
     clearText: function (){
       this.searchText = '';

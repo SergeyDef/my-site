@@ -21,6 +21,8 @@
   		<FooterSection class="block-animation block-anim-no"/>
       <WriteMe v-if="sendEmail" @closeWindowMail="closeMail"/>
       <ModalWindow v-if="commentWindow" @closeWindowFeedback="closeFeedback"/>
+      <ScrollIndicatorCircle />
+      <ScrollIndicatorLine />
   	</div>
   </div>
 </template>
@@ -42,6 +44,8 @@ import WriteMe from '@/components/WriteMe.vue'
 import LateralFace from '@/components/LateralFace.vue'
 import ButtonLateralFace from '@/components/ButtonLateralFace.vue'
 import ModalWindow from '@/components/ModalWindow.vue'
+import ScrollIndicatorCircle from '@/components/ScrollIndicatorCircle.vue'
+import ScrollIndicatorLine from '@/components/ScrollIndicatorLine.vue'
 
 export default {
   name: 'Home',
@@ -62,6 +66,8 @@ export default {
     LateralFace,
     ButtonLateralFace,
     ModalWindow,
+    ScrollIndicatorCircle,
+    ScrollIndicatorLine,
   },
   data(){
     return {

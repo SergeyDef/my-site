@@ -100,8 +100,8 @@
         </div>
       </div>
       <div class="gallery__block website">
-        <a href="myWork/housesBaths/index.html" target="_blank" class="gallery__link">
-          <img src="@/assets/portfolio/0_1.png" alt="web studio">
+        <a href="myWork/test/index.html" target="_blank" class="gallery__link">
+          <img src="@/assets/portfolio/0_1.png" alt="web test">
           <div class="gallery__indicator indicator">
             <div class="indicator__cross"></div>
           </div>
