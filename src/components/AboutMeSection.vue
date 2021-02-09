@@ -83,9 +83,9 @@
             <li class="data__info">Sergey</li>
             <li class="data__info">Def</li>
             <li class="data__info">г.Москва</li>
-            <li class="data__info">8 (977) 350-67-84</li>
-            <li class="data__info">8 (977) 301-37-97</li>
-            <li class="data__info">pas.sergei2014@yandex.ru</li>
+            <li class="data__info"></li>
+            <li class="data__info"></li>
+            <li class="data__info"</li>
             <li class="data__info">http://sergeydef.fun</li>
           </ul>
         </div>

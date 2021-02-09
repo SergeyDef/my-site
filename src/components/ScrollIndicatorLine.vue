@@ -19,7 +19,7 @@ export default {
     let scrollLine = () =>{
       let progress = this.$refs.progress;
       let scrollTop = window.scrollY;
-      let windowHeight =window.innerHeight;
+      let windowHeight = window.innerHeight;
       let siteHeight = document.documentElement.scrollHeight;
 
       let percentegeScroll = Math.floor(scrollTop / (siteHeight - windowHeight) * 100);
@@ -55,7 +55,7 @@ export default {
     left: 0;
     width: 0;
     height: 100%;
-    background-color: crimson;
+    background-color: #2196F3;
   }
 }
 @media (max-width: 2600px){

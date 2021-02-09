@@ -1,7 +1,7 @@
 <template>
   <section class="window">
     <div class="window__wrapper">
-      <form>
+      <form class="window__form" method="post" @submit.prevent="sendForm">
         <div class="window__title">
           <span>Оставить коментарий</span>
           <div class="window__close" @click="closeWindow">
@@ -30,49 +30,46 @@
             </div>
           </div>
           <div class="window__findings findings">
-            <div class="findings__name">
-              <label for="theme" class="findings__input"><span>Имя:</span>
+            <div class="findings__name" :class="$v.file.name.$error? 'findings__error' : ''">
+              <label for="name" class="findings__input"><span>Имя:</span>
                 <input 
                 type="text" 
-                name="theme" 
-                class="findings__input"
+                name="name" 
+                class="findings__input findings__error"
                 placeholder="Иван"
-                v-model="file.fileName">
+                v-model="file.name">
               </label>
             </div>
-            <div class="findings__name">
-              <label for="theme" class="findings__input"><span>Фамилия:</span>
+            <div class="findings__name" :class="$v.file.surname.$error? 'findings__error' : ''" >
+              <label for="surname" class="findings__input"><span>Фамилия:</span>
                 <input 
                 type="text" 
-                name="theme" 
+                name="surname" 
                 class="findings__input"
                 placeholder="Иванов"
-                v-model="file.fileName">
+                v-model.trim="file.surname" />
               </label>
             </div>
-            <div class="findings__textarea">
+            <div class="findings__textarea" :class="$v.file.text.$error? 'findings__error' : ''">
               <textarea 
               rows="10" 
               cols="45" 
-              name="content" 
+              name="text" 
               placeholder="Напишите что-нибудь"
-              v-model="file.fileText"></textarea>
+              v-model="file.text"></textarea>
             </div>
-            <div class="findings__name">
-              <label for="theme" class="findings__input"><span>Ваш сайт:</span>
+            <div class="findings__name" :class="$v.file.address.$error? 'findings__error' : ''">
+              <label for="address" class="findings__input"><span>Ваш сайт:</span>
                 <input 
                 type="text" 
-                name="theme" 
+                name="address" 
                 class="findings__input"
-                placeholder="xxxxxxx@xxxx.xxx"
-                v-model="file.fileName">
+                placeholder="xxxxxxxxxxx.xxx"
+                v-model.trim="file.address" />
               </label>
             </div>
             <div class="findings__buttons">
-              <button 
-              type="button" 
-              class="btn findings__button"
-              @click="sendEmail">Отправить</button>
+              <button type="submit" class="btn findings__button">Отправить</button>
             </div>
           </div>
         </div>
@@ -82,7 +79,11 @@
 </template>
 
 <script>
+import { validationMixin } from 'vuelidate'
+import { required } from 'vuelidate/lib/validators'
+
 export default {
+  mixins: [validationMixin],
   name: 'ModalWindow',
   props: {
   },
@@ -101,23 +102,17 @@ export default {
       showPreview: false,
       photoPreview: "",
       file: {
-        fileName: "",
-        fileText: "",
-        fileImage: "",
+        image: "",
+        name: "",
+        surname: "",
+        text: "",
+        address: "",
       },
     }
   },
   methods: {
     closeWindow: function (){
      this.$emit('closeWindowFeedback');
-    },
-    sendEmail: function (){
-
-      let name = this.file.fileName;
-      let text = this.file.fileText;
-      let photo = this.file.fileImage;
-
-      console.log(name + " " + text + " " + photo);
     },
     photoTake: function (){
       this.showVideo = true;
@@ -180,7 +175,21 @@ export default {
       }
       // console.log(e.target.files[0]);
     },
+    sendForm: function (){
+      if (this.$v.$invalid) {
+        console.log(this.$v.file);
+        this.$v.file.$touch();
+      }
+    }
   },
+  validations: {
+    file: {
+      name: { required },
+      surname: { required },
+      text: { required },
+      address: { required }
+    }
+  }
 }
 </script>
 
@@ -190,7 +199,7 @@ export default {
 @import '~bootstrap/dist/css/bootstrap.min.css';
   .window{
     position: fixed;
-    z-index: 99999999999;
+    z-index: 99999999999999;
     left: 0;
     top: 0;
     height: 100%;
@@ -199,18 +208,18 @@ export default {
     display: flex;
     background-color: rgba(0,0,0,0.7);
 
-    .window__wrapper{
-      width: 50%;
-      height: 60%;
+    &__wrapper{
+      width: 700px;
+      height: 500px;
       border-radius: 10px;
       margin: auto;
       background-color: #ffffff;
     }
-    .window__wrapper>form{
+    &__wrapper>form{
       width: 100%;
       height: 100%;
     }
-    .window__title{
+    &__title{
       width: 90%;
       height: 13%;
       padding-top: 2%;
@@ -219,16 +228,16 @@ export default {
       margin: auto;
       border-bottom: 1px solid rgba(45,55,79,0.15);
     }
-    .window__title>span{
+    &__title>span{
       font-size: 1rem;
       color: #333;
     }
-    .window__close{
+    &__close{
       width: 16px;
       height: 16px;
       cursor: pointer;
     }
-    .window__plus{
+    &__plus{
       transform: rotate(45deg);
       position: relative;
       width: 14px;
@@ -237,7 +246,7 @@ export default {
       left: 0;
       top: 13px;
     }
-    .window__plus:after{
+    &__plus:after{
       content: "";
       position: absolute;
       background-color: #333;
@@ -246,7 +255,7 @@ export default {
       left: 6px;
       top: -6px;
     }
-    .window__block{
+    &__block{
       display: flex;
       justify-content: space-around;
       width: 90%;
@@ -259,9 +268,9 @@ export default {
       margin: auto 0;
       display: flex;
       flex-direction: column;
-      justify-content: space-around;
+      justify-content: space-between;;
 
-      .photo__img{
+      &__img{
         width: 100%;
         height: 80%;
         text-align: center;
@@ -270,32 +279,32 @@ export default {
         background-size: 100%;
         background-repeat: no-repeat;
       }
-      .photo__img-activ{
+      &__img-activ{
         background: none;
       }
-      .photo__buttons{
+      &__buttons{
         width: 100%;
-
+        height: 19.5%;
         display: flex;
       }
-      .photo__button{
+      &__button{
         width: 100%;
         cursor: pointer;
       }
-      .photo__button>button{
+      &__button>button{
         @include buttonMain(100%, 100%, 1rem);
         border-right: none;
         border-top: none;
         border-bottom: none;
       }
-      .photo__button>label{
+      &__button>label{
         @include buttonMain(100%, 100%, 1rem);
         border-right: none;
         position: relative;
         cursor: pointer;
         display: flex;
       }
-      .photo__button>label>input{
+      &__button>label>input{
         left: 0;
         top: 0;
         opacity: 0;
@@ -303,18 +312,18 @@ export default {
         height: 100%;
         position: absolute;
       }
-      .photo__text{
+      &__text{
         color: #ffffff;
         font-size: 1rem;
         margin: auto;
       }
-      .photo__download{
+      &__download{
         border-right: 1px solid #ffffff;
       }
-      .photo__take{
+      &__take{
         border-left: 1px solid #ffffff;
       }
-      .photo__user{
+      &__user{
         width: auto;
         height: 100%;
       }
@@ -331,47 +340,63 @@ export default {
       flex-direction: column;
       justify-content: space-between;
 
-      .findings__name{
+      &__name{
         display: flex;
         width: 100%;
         margin-bottom: 3%;
         height: 10%;
         border-bottom: 1px solid rgba(45, 55, 79, 0.15);
       }
-      .findings__input{
+      &__input{
         display: flex;
+        justify-content: space-between;
         width: 100%;
         margin: auto;
       }
-      .findings__input>span{
+      &__input>span{
         width: 25%;
         display: block;
         text-align: left;
       }
-      .findings__input>input{
-        width: 75%;
+      &__input>input{
+        width: 70%;
         border: none;
       }
-      .findings__textarea{
+      &__input>input::-webkit-input-placeholder{
+        font-size: 1rem;
+      }
+      &__input>input:-moz-placeholder{
+        font-size: 1rem;
+      }
+      &__textarea>textarea::-webkit-input-placeholder{
+        font-size: 1rem;
+      }
+      &__textarea>textarea:-moz-placeholder{
+        font-size: 1rem;
+      }
+      &__textarea{
         width: 100%;
         height: 40%;
         margin: auto;
       }
-      .findings__textarea>textarea{
+      &__textarea>textarea{
         width: 100%;
         height: 100%;
         border: none;
         resize: none;
       }
-      .findings__buttons{
+      &__buttons{
         width: 100%;
         height: 10%;
         margin: 0 auto;
         display: flex;
       }
-      .findings__button{
+      &__button{
         @include buttonMain(40%, 100%, 1rem);
         margin: 0 auto;
+      }
+      &__error{
+        border-bottom: solid 1px #ff0000; 
       }
     }
     .window__block>label{
@@ -386,12 +411,12 @@ export default {
       font-size: 0.9rem;
       color: rgba(45,55,79,0.60);
     }
-    .window__consent{
+    &__consent{
       width: 65%;
       height: 100%;
       display: flex;
     }
-    .window__consent>label{
+    &__consent>label{
       font-size: 0.8rem;
       margin: auto;
       width: 100%;
@@ -402,8 +427,6 @@ export default {
   .window{
 
     .window__wrapper{
-      width: 50%;
-      height: 60%;
     }
     .window__wrapper>form{
     }
@@ -445,8 +468,6 @@ export default {
   .window{
 
     .window__wrapper{
-      width: 60%;
-      height: 70%;
     }
     .window__wrapper>form{
     }
@@ -488,8 +509,6 @@ export default {
   .window{
 
     .window__wrapper{
-      width: 55%;
-      height: 70%;
     }
     .window__wrapper>form{
     }
@@ -528,35 +547,14 @@ export default {
     .photo{
       height: 60%;
     }
-    .findings{
-
-      .findings__name{
-      }
-      .findings__input{
-      }
-      .findings__input>span{
-        width: 15%;
-      }
-      .findings__input>input{
-        width: 85%;
-      }
-      .findings__textarea{
-      }
-      .findings__textarea>textarea{
-      }
-      .findings__buttons{
-      }
-      .findings__button{
-      }
-    }
   }
 }
 @media (max-width: 1740px){
   .window{
 
     .window__wrapper{
-      width: 55%;
-      height: 78%;
+      width: 700px;
+      height: 500px;
     }
     .window__wrapper>form{
     }
@@ -622,8 +620,8 @@ export default {
    .window{
 
     .window__wrapper{
-      width: 80%;
-      height: 50%;
+      width: 700px;
+      height: 500px;
     }
     .window__wrapper>form{
     }
@@ -681,7 +679,7 @@ export default {
       }
     }
     .photo{
-      height: 45%;
+      height: 55%;
     }
   }
 }
@@ -689,7 +687,8 @@ export default {
   .window{
 
     .window__wrapper{
-      height: 45%;
+      width: 600px;
+      height: 500px;
     }
     .window__wrapper>form{
     }
@@ -720,7 +719,8 @@ export default {
       }
       .photo__button>label>input{
       }
-      .photo__text{
+      &__text{
+        font-size: 0.9rem;
       }
       .photo__download{
       }
@@ -738,16 +738,28 @@ export default {
       .findings__input{
       }
       .findings__input>span{
+        font-size: 0.8rem;
       }
       .findings__input>input{
       }
+      .findings__input>input::-webkit-input-placeholder{
+        font-size: 0.8rem;
+      }
+      .findings__input>input:-moz-placeholder{
+        font-size: 0.8rem;
+      }
       .findings__textarea{
       }
-      .findings__textarea>textarea{
+      .findings__textarea>textarea::-webkit-input-placeholder{
+        font-size: 0.8rem;
+      }
+      .findings__textarea>textarea:-moz-placeholder{
+        font-size: 0.8rem;
       }
       .findings__buttons{
       }
       .findings__button{
+        font-size: 0.9rem;
       }
     }
     .window__block>label{
@@ -764,8 +776,8 @@ export default {
   .window{
 
     .window__wrapper{
-      width: 70%;
-      height: 50%;
+      width: 500px;
+      height: 400px;
     }
     .window__wrapper>form{
     }
@@ -808,14 +820,73 @@ export default {
       width: 30%;
       font-size: 0.8rem;
     }
+    .photo{
+      .photo__img{
+        height: 78%;
+      }
+      .photo__img-activ{
+      }
+      .photo__buttons{
+        height: 21%;
+      }
+      .photo__button{
+      }
+      .photo__button>button{
+      }
+      .photo__button>label{
+      }
+      .photo__button>label>input{
+      }
+      &__text{
+      }
+      .photo__download{
+      }
+      .photo__take{
+      }
+      .photo__user{
+      }
+      .camera_stream{
+      }
+    }
+    .findings{
+
+      .findings__name{
+      }
+      .findings__input{
+      }
+      .findings__input>span{
+        width: 25%;
+      }
+      .findings__input>input{
+         width: 70%;
+      }
+      .findings__input>input::-webkit-input-placeholder{
+      }
+      .findings__input>input:-moz-placeholder{
+
+      }
+      .findings__textarea{
+        height: 35%;
+      }
+      .findings__textarea>textarea::-webkit-input-placeholder{
+      }
+      .findings__textarea>textarea:-moz-placeholder{
+      }
+      .findings__buttons{
+        height: 13%;
+      }
+      .findings__button{
+        width: 50%;
+      }
+    }
   }
 }
 @media (max-width: 540px){
   .window{
 
     .window__wrapper{
-      width: 90%;
-      height: 50%;
+      width: 400px;
+      height: 350px;
     }
     .window__wrapper>form{
     }
@@ -831,6 +902,7 @@ export default {
     .window__plus:after{
     }
     .window__block{
+      justify-content: space-between;
     }
     .window__block>label{
     }
@@ -862,6 +934,7 @@ export default {
       width: 32%;
     }
     .findings{
+
       .findings__input{
         font-size: 0.7rem;
       }
@@ -875,21 +948,24 @@ export default {
         width: 30%;
       }
       .findings__buttons{
-        height: 16%;
+        height: 14%;
       }
       .findings__buttons>button{
         font-size: 0.9rem;
+         width: 60%;
+      }
+      &__button{
       }
     }
     .photo{
-      height: 80%;
-      width: 40%;
+      height: 60%;
+      width: 35%;
       
       .photo__img{
         height: 70%;
       }
       .photo__buttons{
-        height: 20%;
+        height: 23%;
       }
       .photo__text{
         font-size: 0.9rem;
@@ -901,12 +977,13 @@ export default {
   .window{
 
     .window__wrapper{
-      width: 90%;
-      height: 54%;
+      width: 300px;
+      height: 470px;
     }
     .window__wrapper>form{
     }
     .window__title{
+      height: 8%;
     }
     .window__title>span{
     }
@@ -917,6 +994,8 @@ export default {
     .window__plus:after{
     }
     .window__block{
+      height: 90%;
+      flex-direction: column;
     }
     .window__block>label{
     }
@@ -937,6 +1016,35 @@ export default {
     .window__consent>label{
     }
     .window__button{
+    }
+    .photo{
+      height: 50%;
+      width: 70%;
+      margin: 0 auto;
+
+      .photo__img{
+        height: 80%;
+      }
+      .photo__buttons{
+        height: 20%;
+      }
+    }
+    .findings{
+      width: 90%;
+      height: 50%;
+      margin: 0 auto;
+      padding-top: 5%;
+
+      &__name{
+        margin-bottom: 4%;
+      }
+      &__textarea{
+        margin: 0 auto;
+        height: 20%!important;
+      }
+      &__buttons{
+        height: 20%!important;
+      }
     }
   }
 }

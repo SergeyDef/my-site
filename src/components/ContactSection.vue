@@ -27,8 +27,8 @@
              <li class="phone__name"><span>Воцап</span><span>:</span></li>
            </ul>
             <ul class="phone__block">
-             <li class="phone__content">+7 (977) 350-67-87</li>
-             <li class="phone__content">+7 (977) 350-67-87</li>
+             <li class="phone__content"></li>
+             <li class="phone__content"></li>
            </ul>
          </div>
        </div>
@@ -38,7 +38,7 @@
          </div>
          <div class="email__list">
             <ul>
-             <li class="email__content">pas.sergei2014@yandex.ru</li>
+             <li class="email__content"></li>
            </ul>
          </div>
        </div>
