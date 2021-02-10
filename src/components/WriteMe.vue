@@ -1,7 +1,7 @@
 <template>
   <section class="window">
     <div class="window__wrapper">
-      <form>
+      <form @submit="sendEmail">
         <div class="window__title">
           <span>Написать на почту</span>
           <div class="window__close" @click="closeWindowMail">
@@ -17,6 +17,7 @@
             class="window__input"
             v-model="post.whom">
           </label>
+          <span class="error_form">это менять нельзя</span>
         </div>
         <div class="window__block">
           <label for="theme"><span>Тема</span>
@@ -26,6 +27,7 @@
             class="window__input"
             v-model="post.theme">
           </label>
+          <span class="error_form">не заполнено</span>
         </div>
         <div class="window__textarea">
           <textarea 
@@ -34,6 +36,7 @@
           name="content" 
           placeholder="Напишите что-нибудь"
           v-model="post.content"></textarea>
+          <span class="error_form">не заполнено</span>
         </div>
         <div class="window__buttons">
           <div class="window__consent">
@@ -41,11 +44,12 @@
               <input type="checkbox" name="consent" value="false" v-model="consent">
                согласие на обработку персональных данных
             </label>
+            <span class="error_form">требуется согласие</span>
           </div>
           <button 
-          type="button" 
+          type="submit" 
           class="btn window__button"
-          @click="sendEmail">Отправить</button>
+          >Отправить</button>
         </div>
       </form>
     </div>
@@ -53,6 +57,9 @@
 </template>
 
 <script>
+  import { validatiomMixin } from 'vuelidate'
+  import { required } from 'vuelidate/lib/validators'
+
 export default {
   name: 'ModalWindow',
   props: {
@@ -94,479 +101,117 @@ export default {
 @import '@/scss/_mixins.scss';
 @import '@/scss/style.scss';
 @import '~bootstrap/dist/css/bootstrap.min.css';
-  .window{
-    position: fixed;
-    z-index: 99999999999;
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 100%;
-    overflow: auto;
-    display: flex;
-    background-color: rgba(0,0,0,0.7);
+@import '@/scss/window.scss';
 
-    .window__wrapper{
-      width: 30%;
-      height: 50%;
-      border-radius: 10px;
-      margin: auto;
-      background-color: #ffffff;
-    }
-    .window__wrapper>form{
-      width: 100%;
-      height: 100%;
-    }
-    .window__title{
-      width: 90%;
+  .window{
+
+    &__title{
       height: 10%;
-      padding-top: 2%;
-      display: flex;
-      justify-content: space-between;
-      margin: auto;
       border-bottom: 1px solid rgba(45,55,79,0.15);
     }
-    .window__title>span{
-      font-size: 1rem;
-      color: #333;
-    }
-    .window__close{
-      width: 16px;
-      height: 16px;
-      cursor: pointer;
-    }
-    .window__plus{
-      transform: rotate(45deg);
-      position: relative;
-      width: 14px;
-      height: 2px;
-      background-color: #333;
-      left: 0;
-      top: 13px;
-    }
-    .window__plus:after{
-      content: "";
-      position: absolute;
-      background-color: #333;
-      width: 2px;
-      height: 15px;
-      left: 6px;
-      top: -6px;
-    }
-    .window__block{
+    &__block{
       width: 90%;
       height: 10%;
       margin: auto;
+      position: relative;
     }
-    .window__block>label{
-      display: flex;
-      width: 100%;
-      height: 100%;
-    }
-    .window__block>label>span{
-      width: 10%;
-      text-align: left;
-      margin: auto 0;
-      font-size: 0.9rem;
-      color: rgba(45,55,79,0.60);
-    }
-    .window__input{
+    &__input{
       width: 80%;
       height: 100%;
       border: none;
     }
-    .window__textarea{
+    &__textarea{
       width: 90%;
       height: 50%;
       margin: auto;
+      position: relative;
     }
-    .window__textarea>textarea{
+    &__textarea>textarea{
       width: 100%;
       height: 100%;
       border: none;
       resize: none;
     }
-    .window__buttons{
+    &__buttons{
       width: 90%;
       height: 12%;
       margin: 0 auto;
       display: flex;
       justify-content: space-between;
     }
-    .window__consent{
-      width: 65%;
-      height: 100%;
-      display: flex;
-    }
-    .window__consent>label{
-      font-size: 0.8rem;
-      margin: auto;
-      width: 100%;
-      text-align: left;
-    }
-    .window__button{
+    &__button{
       @include buttonMain(30%, 100%, 1rem);
     }
-  }
-  @media (max-width: 2600px){
-  .window{
-
-    .window__wrapper{
-      width: 40%;
-      height: 40%;
-    }
-    .window__wrapper>form{
-    }
-    .window__title{
-    }
-    .window__title>span{
-    }
-    .window__close{
-    }
-    .window__plus{
-    }
-    .window__plus:after{
-    }
-    .window__block{
-    }
-    .window__block>label{
-    }
-    .window__block>label>span{
-    }
-    .window__input{
-    }
-    .window__textarea{
-    }
-    .window__textarea>textarea{
-    }
-    .window__buttons{
-    }
-    .window__consent{
-    }
-    .window__consent>label{
-      font-size: 1rem;
-    }
-    .window__button{
-      font-size: 1.3rem;
+    &__consent{
+      position: relative;
     }
   }
-}
-@media (max-width: 2100px){
-  .window{
-
-    .window__wrapper{
-      width: 40%;
-      height: 50%;
-    }
-    .window__wrapper>form{
-    }
-    .window__title{
-    }
-    .window__title>span{
-    }
-    .window__close{
-    }
-    .window__plus{
-    }
-    .window__plus:after{
-    }
-    .window__block{
-    }
-    .window__block>label{
-    }
-    .window__block>label>span{
-    }
-    .window__input{
-    }
-    .window__textarea{
-    }
-    .window__textarea>textarea{
-    }
-    .window__buttons{
-    }
-    .window__consent{
-    }
-    .window__consent>label{
-      font-size: 1rem;
-    }
-    .window__button{
-      font-size: 1.3rem;
+  .error_form{
+    color: #ff0000;
+    position: absolute;
+    font-size: 0.8rem;
+    left: 0;
+    bottom: 0;
+    font-weight: bold;
+  }
+  @media (max-width: 967px){
+    .window{
+      &__button{
+        height: 50px;
+        margin: auto 0;
+      }
     }
   }
-}
-  @media (max-width: 1967px){
-  .window{
-
-    .window__wrapper{
-      width: 40%;
-      height: 50%;
-    }
-    .window__wrapper>form{
-    }
-    .window__title{
-    }
-    .window__title>span{
-    }
-    .window__close{
-    }
-    .window__plus{
-    }
-    .window__plus:after{
-    }
-    .window__block{
-    }
-    .window__block>label{
-    }
-    .window__block>label>span{
-    }
-    .window__input{
-    }
-    .window__textarea{
-    }
-    .window__textarea>textarea{
-    }
-    .window__buttons{
-    }
-    .window__consent{
-    }
-    .window__consent>label{
-      font-size: 0.8rem;
-    }
-    .window__button{
-      font-size: 1rem;
+  @media (max-width: 667px){
+    .window{
+      &__button{
+        height: 40px;
+        margin: auto 0;
+      }
     }
   }
-}
-@media (max-width: 1740px){
-  .window{
+  @media (max-width: 410px){
+    .window{
 
-    .window__wrapper{
-      width: 50%;
-      height: 50%;
-    }
-    .window__wrapper>form{
-    }
-    .window__title{
-    }
-    .window__title>span{
-    }
-    .window__close{
-    }
-    .window__plus{
-    }
-    .window__plus:after{
-    }
-    .window__block{
-    }
-    .window__block>label{
-    }
-    .window__block>label>span{
-    }
-    .window__input{
-    }
-    .window__textarea{
-    }
-    .window__textarea>textarea{
-    }
-    .window__buttons{
-    }
-    .window__consent{
-    }
-    .window__consent>label{
-      font-size: 0.8rem;
-    }
-    .window__button{
-      font-size: 1rem;
+      &__wrapper{
+        height: 360px;
+      }
+
+      &__title{
+        height: 11%;
+        padding-top: 4%;
+        margin-bottom: 3%;
+      }
+      &__block{
+        height: 10%;
+        margin: 3% auto;
+      }
+      &__textarea{
+        height: 25%;
+        margin: 2% auto;
+      }
+      &__buttons{
+        width: 90%;
+        height: 25%;
+        margin: 4% auto;
+        flex-direction: column;
+      }
+      &__consent{
+        order: 1;
+        width: 100%;
+        height: 40%;
+        text-align: center;
+      }
+      &__consent>label{
+        margin: 0;
+      }
+      &__button{
+        order: 0;
+        font-size: 0.9rem;
+        width: 70%;
+        height: 40px;
+        margin: 0 auto;
+      }
     }
   }
-}
-@media (max-width: 1140px){
-   .window{
-
-    .window__wrapper{
-      width: 65%;
-      height: 60%;
-    }
-    .window__wrapper>form{
-    }
-    .window__title{
-    }
-    .window__title>span{
-    }
-    .window__close{
-    }
-    .window__plus{
-    }
-    .window__plus:after{
-    }
-    .window__block{
-    }
-    .window__block>label{
-    }
-    .window__block>label>span{
-    }
-    .window__input{
-    }
-    .window__textarea{
-    }
-    .window__textarea>textarea{
-    }
-    .window__buttons{
-    }
-    .window__consent{
-    }
-    .window__consent>label{
-    }
-    .window__button{
-    }
-  }
-}
-@media (max-width: 967px){
-
-}
-@media (max-width: 667px){
-  .window{
-
-    .window__wrapper{
-      width: 70%;
-      height: 50%;
-    }
-    .window__wrapper>form{
-    }
-    .window__title{
-    }
-    .window__title>span{
-    }
-    .window__close{
-    }
-    .window__plus{
-    }
-    .window__plus:after{
-    }
-    .window__block{
-    }
-    .window__block>label{
-    }
-    .window__block>label>span{
-    }
-    .window__input{
-      font-size: 0.88rem;
-    }
-    .window__textarea{
-      height: 46%;
-    }
-    .window__textarea>textarea{
-    }
-    .window__textarea>textarea::placeholder{
-      font-size: 0.88rem;
-    }
-    .window__buttons{
-      height: 14%;
-    }
-    .window__consent{
-    }
-    .window__consent>label{
-      font-size: 0.7rem;
-    }
-    .window__button{
-      width: 30%;
-      font-size: 0.8rem;
-    }
-  }
-}
-@media (max-width: 540px){
-  .window{
-
-    .window__wrapper{
-      width: 76%;
-      height: 38%;
-    }
-    .window__wrapper>form{
-    }
-    .window__title{
-      height: 13%;
-    }
-    .window__title>span{
-    }
-    .window__close{
-    }
-    .window__plus{
-    }
-    .window__plus:after{
-    }
-    .window__block{
-    }
-    .window__block>label{
-    }
-    .window__block>label>span{
-      width: 15%;
-      font-size: 0.86rem;
-    }
-    .window__input{
-      width: 75%;
-      font-size: 0.8rem;
-    }
-    .window__textarea{
-      height: 44%;
-    }
-    .window__textarea>textarea{
-    }
-    .window__textarea>textarea::placeholder{
-      font-size: 0.8rem;
-    }
-    .window__buttons{
-      width: 94%;
-      height: 14%;
-    }
-    .window__consent{
-    }
-    .window__consent>label{
-    }
-    .window__button{
-      width: 32%;
-    }
-  }
-}
-@media (max-width: 410px){
-  .window{
-
-    .window__wrapper{
-      width: 90%;
-      height: 54%;
-    }
-    .window__wrapper>form{
-    }
-    .window__title{
-    }
-    .window__title>span{
-    }
-    .window__close{
-    }
-    .window__plus{
-    }
-    .window__plus:after{
-    }
-    .window__block{
-    }
-    .window__block>label{
-    }
-    .window__block>label>span{
-    }
-    .window__input{
-    }
-    .window__textarea{
-    }
-    .window__textarea>textarea{
-    }
-    .window__textarea>textarea::placeholder{
-    }
-    .window__buttons{
-    }
-    .window__consent{
-    }
-    .window__consent>label{
-    }
-    .window__button{
-    }
-  }
-}
 </style>
