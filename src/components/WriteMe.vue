@@ -1,7 +1,7 @@
 <template>
   <section class="window">
     <div class="window__wrapper">
-      <form @submit="sendEmail">
+      <form @submit.prevent="sendEmail">
         <div class="window__title">
           <span>Написать на почту</span>
           <div class="window__close" @click="closeWindowMail">
@@ -15,9 +15,10 @@
             name="whom" 
             value="pas.sergei2014@yandex.ru" 
             class="window__input"
-            v-model="post.whom">
+            v-model.trim="post.whom"
+            :class="$v.post.whom.$dirty && !$v.post.whom.myEmail ? 'findings__error' : ''" />
           </label>
-          <span class="error_form">это менять нельзя</span>
+          <span class="error_form" v-if="$v.post.whom.$dirty && !$v.post.whom.myEmail">это менять нельзя</span>
         </div>
         <div class="window__block">
           <label for="theme"><span>Тема</span>
@@ -25,26 +26,32 @@
             type="text" 
             name="theme" 
             class="window__input"
-            v-model="post.theme">
+            v-model.trim="post.text"
+            :class="$v.post.text.$dirty && $v.post.text.$error ? 'findings__error' : ''" />
           </label>
-          <span class="error_form">не заполнено</span>
+          <span class="error_form" v-if="$v.post.text.$dirty && $v.post.text.$error">не заполнено</span>
         </div>
         <div class="window__textarea">
           <textarea 
           rows="10" 
           cols="45" 
-          name="content" 
+          name="message" 
           placeholder="Напишите что-нибудь"
-          v-model="post.content"></textarea>
-          <span class="error_form">не заполнено</span>
+          v-model.trim="post.message"
+          :class="$v.post.message.$dirty && $v.post.message.$error ? 'findings__error' : ''" ></textarea>
+          <span class="error_form error_form_textarea" v-if="$v.post.message.$dirty && $v.post.message.$error">не заполнено</span>
         </div>
         <div class="window__buttons">
           <div class="window__consent">
             <label for="consent">
-              <input type="checkbox" name="consent" value="false" v-model="consent">
+              <input 
+                type="checkbox" 
+                name="consent" 
+                v-model="post.consent"
+                class="form-check-input" />
                согласие на обработку персональных данных
             </label>
-            <span class="error_form">требуется согласие</span>
+            <span class="error_form error_form_consent" v-if="!$v.post.consent.$model">требуется Ваше согласие</span>
           </div>
           <button 
           type="submit" 
@@ -57,10 +64,11 @@
 </template>
 
 <script>
-  import { validatiomMixin } from 'vuelidate'
+  import { validationMixin } from 'vuelidate'
   import { required } from 'vuelidate/lib/validators'
 
 export default {
+  mixins: [validationMixin],
   name: 'ModalWindow',
   props: {
   },
@@ -71,10 +79,11 @@ export default {
       ],
       post: {
         whom: "pas.sergei2014@yandex.ru",
-        theme: "",
-        content: "",
+        text: null,
+        content: null,
+        message: null,
+        consent: true
       },
-      consent: true,
     }
   },
   methods: {
@@ -82,18 +91,24 @@ export default {
      this.$emit('closeWindowMail');
     },
     sendEmail: function (){
-      console.log()
-      let myMail = this.post.whom;
-      let themeMail = this.post.theme;
-      let mesege = this.post.content;
-
-      if (this.consent) {
-        console.log(myMail + " " + themeMail + " " + mesege);
-      } else{
-        console.log("Нет согласия на обработку данных");
+      if (this.$v.$invalid) {
+        this.$v.post.$touch();
       }
     }
   },
+  validations: {
+    post: {
+      whom: { myEmail: val => {
+        const email = "pas.sergei2014@yandex.ru";
+        return email == val
+      } 
+    },
+      text: { required },
+      content: { required },
+      message: { required },
+      consent: {}
+    }
+  }
 }
 </script>
 
@@ -140,19 +155,14 @@ export default {
       justify-content: space-between;
     }
     &__button{
-      @include buttonMain(30%, 100%, 1rem);
+      @include buttonMain(30%, 45px, 1rem);
+      margin: auto 0;
     }
     &__consent{
       position: relative;
     }
   }
   .error_form{
-    color: #ff0000;
-    position: absolute;
-    font-size: 0.8rem;
-    left: 0;
-    bottom: 0;
-    font-weight: bold;
   }
   @media (max-width: 967px){
     .window{
@@ -164,9 +174,23 @@ export default {
   }
   @media (max-width: 667px){
     .window{
+      &__buttons{
+        margin-top: 2%;
+      }
       &__button{
+        width: 25%;
         height: 40px;
+        font-size: 0.9rem;
         margin: auto 0;
+      }
+      &__consent{
+        width: 75%;
+      }
+      &__consent>label{
+        padding-left: 15px;
+      }
+      .error_form_consent{
+        bottom: -6px;
       }
     }
   }
@@ -198,7 +222,8 @@ export default {
       }
       &__consent{
         order: 1;
-        width: 100%;
+        width: 90%;
+        margin: 0 auto;
         height: 40%;
         text-align: center;
       }
@@ -211,6 +236,16 @@ export default {
         width: 70%;
         height: 40px;
         margin: 0 auto;
+      }
+    }
+  }
+  @media (max-width: 360px){
+    .window{
+      .error_form{
+        bottom: -8px;
+      }
+      .error_form_textarea{
+        bottom: 5px;
       }
     }
   }

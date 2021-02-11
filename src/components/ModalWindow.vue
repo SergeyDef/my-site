@@ -39,6 +39,7 @@
                 placeholder="Иван"
                 v-model="file.name">
               </label>
+              <span class="error_form" v-if="$v.file.name.$dirty && $v.file.name.$error">не заполнено</span>
             </div>
             <div class="findings__name" :class="$v.file.surname.$error? 'findings__error' : ''" >
               <label for="surname" class="findings__input"><span>Фамилия:</span>
@@ -49,6 +50,7 @@
                 placeholder="Иванов"
                 v-model.trim="file.surname" />
               </label>
+              <span class="error_form" v-if="$v.file.surname.$dirty && $v.file.surname.$error">не заполнено</span>
             </div>
             <div class="findings__textarea" :class="$v.file.text.$error? 'findings__error' : ''">
               <textarea 
@@ -57,6 +59,7 @@
               name="text" 
               placeholder="Напишите что-нибудь"
               v-model="file.text"></textarea>
+              <span class="error_form" v-if="$v.file.text.$dirty && $v.file.text.$error">не заполнено</span>
             </div>
             <div class="findings__name" :class="$v.file.address.$error? 'findings__error' : ''">
               <label for="address" class="findings__input"><span>Ваш сайт:</span>
@@ -67,6 +70,8 @@
                 placeholder="xxxxxxxxxxx.xxx"
                 v-model.trim="file.address" />
               </label>
+              <span class="error_form" v-if="$v.file.address.$dirty && $v.file.address.$error">не заполнено</span>
+              <!-- <span class="error_form" v-else-if="$v.file.address.$dirty && $v.file.address.">адрес сайта не коректен</span> -->
             </div>
             <div class="findings__buttons">
               <button type="submit" class="btn findings__button">Отправить</button>
@@ -177,7 +182,6 @@ export default {
     },
     sendForm: function (){
       if (this.$v.$invalid) {
-        console.log(this.$v.file);
         this.$v.file.$touch();
       }
     }
