@@ -52,21 +52,64 @@
        </div>
       </div>
     	<div class="contact__block contact__blue">
-    		<form action="" class="contact__form">
+    		<form action="" class="contact__form" method="post" @submit.prevent="sendFeedback">
           <div class="contact__title">
             <h5>написать мне</h5>
           </div>
-          <div class="contact__input"><input type="text" placeholder="Ваше имя"></div>
-          <div class="contact__input"><input type="text" placeholder="Ваш Email"></div>
-          <div class="contact__input"><input type="text" placeholder="Телефон"></div>
-          <div class="contact__textarea"><textarea name="" id="" cols="10" rows="4" placeholder="Сообщение"></textarea></div>
+          <div class="contact__input">
+            <input 
+              type="text" 
+              placeholder="Ваше имя"
+              v-model.trim="feedback.name"
+              :class="$v.feedback.name.$dirty && !$v.feedback.name.required ? 'contact__error' : ''" />
+              <span class="error_form contact__error-message" v-if="$v.feedback.name.$dirty && !$v.feedback.name.required">не заполнено</span>
+          </div>
+          <div class="contact__input">
+            <input 
+              type="text" 
+              placeholder="Ваш Email"
+              v-model.trim="feedback.email"
+              :class="($v.feedback.email.$dirty && !$v.feedback.email.required) || ($v.feedback.email.$dirty && !$v.feedback.email.email) ? 'contact__error' : ''" />
+              <span class="error_form contact__error-message" v-if="$v.feedback.email.$dirty && !$v.feedback.email.required">не заполнено</span>
+              <span class="error_form contact__error-message" v-else-if="$v.feedback.email.$dirty && !$v.feedback.email.email">ошибка в email</span>
+          </div>
+          <div class="contact__input">
+            <input 
+              type="text" 
+              placeholder="Телефон"
+              v-model.trim="feedback.phone"
+              :class="$v.feedback.phone.$dirty && !$v.feedback.phone.required ? 'contact__error' : ''" />
+              <span class="error_form contact__error-message" v-if="$v.feedback.phone.$dirty && !$v.feedback.phone.required">не заполнено</span>
+              <span class="error_form contact__error-message" v-else-if="$v.feedback.phone.$dirty && !$v.feedback.phone.phone">ошибка в номере</span>
+          </div>
+          <div class="contact__textarea">
+            <textarea 
+              name="" 
+              id="" 
+              cols="10" 
+              rows="4" 
+              placeholder="Сообщение"
+              v-model.trim="feedback.text"
+              :class="$v.feedback.text.$dirty && !$v.feedback.text.required ? 'contact__error' : ''" /></textarea>
+               <span class="error_form" v-if="$v.feedback.text.$dirty && !$v.feedback.text.required">не заполнено</span>
+          </div>
           <div class="contact__button">
-            <button type="button" class="btn">
+            <button type="submit" class="btn">
               <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-envelope" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
               <path fill-rule="evenodd" d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2zm13 2.383l-4.758 2.855L15 11.114v-5.73zm-.034 6.878L9.271 8.82 8 9.583 6.728 8.82l-5.694 3.44A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.739zM1 11.114l4.758-2.876L1 5.383v5.73z"/>
             </svg>
             <span class="">Отправить</span>
           </button>
+          </div>
+          <div class="contact__input contact__checkbox">
+            <input 
+              type="checkbox" 
+              name="check_box" 
+              checked="checked" 
+              class="form-check-input"
+              v-model="feedback.consent" />
+            <label for="check_box">Согласие на обработка данных</label>
+            <span class="error_form" v-if="!$v.feedback.consent.$model">требуется ваше согласие </span>
           </div>
         </form>
     	</div>
@@ -75,10 +118,41 @@
 </template>
 
 <script>
+  import { validationMixin } from 'vuelidate'
+  import { required, email } from 'vuelidate/lib/validators'
+
 export default {
+  mixins: [validationMixin],
   name: 'ContactSection',
   props: {
     msg: String
+  },
+  data() {
+    return {
+      feedback: {
+        name: null,
+        email: null,
+        phone: null,
+        text: null,
+        consent: true
+      }
+    }
+  },
+  methods: {
+    sendFeedback: function () {
+      if (this.$v.$invalid) {
+        this.$v.feedback.$touch();
+      }
+    }
+  },
+  validations: {
+    feedback: {
+      name: { required },
+      email: { required, email },
+      phone: { required, phone: val => /^\d[\d() -]{4,14}\d$/.test(val) },
+      text: { required },
+      consent: {}
+    }
   }
 }
 </script>
@@ -86,7 +160,9 @@ export default {
 <style scoped lang="scss">
 @import '@/scss/_mixins.scss';
 @import '@/scss/style.scss';
+@import '@/scss/window.scss';
 @import '~bootstrap/dist/css/bootstrap.min.css';
+
   .contact{
 		@include blockMain(100%, 10.5%);
 			position: relative;
@@ -94,24 +170,24 @@ export default {
 			flex-direction: column;
       justify-content: space-between;
 
-		.contact__substrate{
+		&__substrate{
 			@include substrate(90%, 90%);
 		}
-		.contact__substrate>h6{
+		&__substrate>h6{
 			@include substrateText(4rem, 900, 0.1);
 		}
-		.contact__wrapper{
+		&__wrapper{
       z-index: 9;
 			width: 100%;
 			height: 80%;
 			display: flex;
       justify-content: space-between;
 		}
-		.contact__block{
+		&__block{
 			width: 49%;
       height: 100%;
 		}
-    .contact__item{
+    &__item{
       width: 100%;
       height: 33.3%;
       text-align: left;
@@ -119,24 +195,24 @@ export default {
     }
     .phone{
       
-      .phone__heading{
+      &__heading{
         width: 100%;
         text-transform: uppercase;
       }
-      .phone__block{
+      &__block{
         width: 50%;
       }
-      .phone__list{
+      &__list{
         padding-top: 1%;
         display: flex;
       }
-      .phone__name{
+      &__name{
         width: 70%;
         padding-bottom: 10px;
         display: flex;
         justify-content: space-between;
       }
-      .phone__content{
+      &__content{
         display: flex;
         width: 100%;
         padding-bottom: 10px;
@@ -147,35 +223,35 @@ export default {
       -webkit-box-shadow:1px 1px 100px 1px rgba(0,0,0,0.21);
       -moz-box-shadow:1px 1px 100px 1px rgba(0,0,0,0.21);
 
-      .email__heading{
+      &__heading{
         width: 100%;
         text-transform: uppercase;
       }
-      .email__list{
+      &__list{
         padding-top: 1%;
         display: flex;
       }
-      .email__content{
+      &__content{
         display: flex;
       }
     }
     .address{
 
-      .address__heading{
+      &__heading{
         width: 100%;
         text-transform: uppercase;
       }
-      .address__text{
+      &__text{
         padding-top: 1%;
       }
     }
 
-		.contact__blue{
+		&__blue{
 			background-color: #2196F3;
       width: 49%;
       height: 100%;
 		}
-    .contact__form{
+    &__form{
       width: 100%;
       height: 100%;
       display: flex;
@@ -184,21 +260,22 @@ export default {
       justify-content: space-between;
       padding: 10% 8%;
     }
-    .contact__title{
+    &__title{
       width: 100%;
       height: 8%;
     }
-    .contact__title>h5{
+    &__title>h5{
       color: #ffffff;
       text-transform: uppercase;
       font-size: 1.2rem;
       font-weight: 700;
     }
-    .contact__input{
+    &__input{
       width: 100%;
       height: 8%;
+      position: relative;
     }
-    .contact__input>input{
+    &__input>input{
       color: #ffffff;
       width: 100%;
       opacity: 0.6;
@@ -208,28 +285,30 @@ export default {
       border-top: none;
       border-bottom: 2px solid #ffffff; 
     }
-    .contact__input>input:focus{
+    &__input>input:focus{
       opacity: 0.9;
     }
-    .contact__input>input::-webkit-input-placeholder{
+    &__input>input::-webkit-input-placeholder{
       color: #ffffff;
     }
-    .contact__input>input:-moz-placeholder{
+    &__input>input:-moz-placeholder{
       color: #ffffff;
     }
-    .contact__input>input::-moz-placeholder{
+    &__input>input::-moz-placeholder{
       color: #ffffff;
     }
-    .contact__input>input:-ms-input-placeholder{
+    &__input>input:-ms-input-placeholder{
       color: #ffffff;
     }
-    .contact__textarea{
+    &__textarea{
       width: 100%;
       height: 18%;
+      position: relative;
     }
-    .contact__textarea>textarea{
+    &__textarea>textarea{
       color: #ffffff;
       width: 100%;
+      height: 80%;
       resize: none;
       opacity: 0.6;
       background-color: #2196F3;
@@ -238,23 +317,23 @@ export default {
       border-top: none;
       border-bottom: 2px solid #ffffff; 
     }
-    .contact__textarea>textarea::-webkit-input-placeholder{
+    &__textarea>textarea::-webkit-input-placeholder{
       color: #ffffff;
     }
-    .contact__textarea>textarea:-moz-placeholder{
+    &__textarea>textarea:-moz-placeholder{
       color: #ffffff;
     }
-    .contact__textarea>textarea::-moz-placeholder{
+    &__textarea>textarea::-moz-placeholder{
       color: #ffffff;
     }
-    .contact__textarea>textarea:-ms-input-placeholder{
+    &__textarea>textarea:-ms-input-placeholder{
       color: #ffffff;
     }
-    .contact__button{
+    &__button{
       width: 100%;
       height: 10%;
     }
-    .contact__button>button{
+    &__button>button{
       display: flex;
       justify-content: center;
       width: 44%;
@@ -262,367 +341,158 @@ export default {
       border-radius: 0;
       background-color: #ffffff;
     }
-    .contact__button>button>svg{
+    &__button>button>svg{
       display: block;
       margin: auto 3px;
     }
-    .contact__button>button>span{
+    &__button>button>span{
       display: block;
       margin: auto 3px;
+    }
+    &__checkbox{
+      text-align: center;
+      height: 40px;
+      position: relative;
+    }
+    &__checkbox>input{
+      left: 20%;
+      width: auto;
+    }
+    &__checkbox>label{
+      color: #fff;
+      font-size: 1rem;
+    }
+    &__error{
+      opacity: 1 !important;
+      border-bottom: 2px solid #ff0000 !important;
     }
 	}
   @media (max-width: 1140px){
-      .contact{
+    .contact{
 
-        .contact__substrate{
-          
-        }
-        .contact__substrate>h6{
-          
-        }
-        .contact__wrapper{
-        
-        }
-        .contact__block{
-          width: 39%;
-        }
-        .contact__item{
-          
-        }
-        .phone{
-          
-          .phone__heading{
-           
-          }
-          .phone__block{
-          }
-          .phone__list{
-           
-          }
-          .phone__name{
-           
-          }
-          .phone__content{
-            
-          }
-        }
-        .email{
+      &__block{
+        width: 39%;
+      }
 
-          .email__heading{
-            
-          }
-          .email__list{
-            
-          }
-          .email__content{
-            
-          }
-        }
-        .address{
-
-          .address__heading{
-
-          }
-          .address__text{
-
-          }
-        }
-
-      .contact__blue{
+      &__blue{
         width: 59%;
-      }
-      .contact__form{
-        
-      }
-      .contact__title{
-        
-      }
-      .contact__title>h5{
-        
-      }
-      .contact__input{
-       
-      }
-      .contact__input>input{
-        
-      }
-      .contact__input>input:focus{
-
-      }
-      .contact__input>input::-webkit-input-placeholder{
-
-      }
-      .contact__input>input:-moz-placeholder{
-      }
-      .contact__input>input::-moz-placeholder{
-      }
-      .contact__input>input:-ms-input-placeholder{
-      }
-      .contact__textarea{
-
-      }
-      .contact__textarea>textarea{
-
-      }
-      .contact__textarea>textarea::-webkit-input-placeholder{
-      }
-      .contact__textarea>textarea:-moz-placeholder{
-      }
-      .contact__textarea>textarea::-moz-placeholder{
-      }
-      .contact__textarea>textarea:-ms-input-placeholder{
-      }
-      .contact__button{
-
-      }
-      .contact__button>button{
-      }
-      .contact__button>button>svg{
-      }
-      .contact__button>button>span{
       }
     }
   }
   @media (max-width: 967px){
-      .contact{
-        height: 12%;
+    .contact{
+      height: 12%;
 
-        .contact__substrate{
-          
-        }
-        .contact__substrate>h6{
-          
-        }
-        .contact__wrapper{
-          height: 90%;
-          flex-direction: column;
-        }
-        .contact__block{
-          width: 80%;
-          height: 40%;
-          margin: 0 auto;
-        }
-        .contact__item{
-          padding: 4% 8%;
-        }
-        .phone{
-          
-          .phone__heading{
-           
-          }
-          .phone__block{
-          }
-          .phone__list{
-           
-          }
-          .phone__name{
-           
-          }
-          .phone__content{
-            
-          }
-        }
-        .email{
+      &__wrapper{
+        height: 90%;
+        flex-direction: column;
+      }
+      &__block{
+        width: 80%;
+        height: 40%;
+        margin: 0 auto;
+      }
+      &__item{
+        padding: 4% 8%;
+      }
 
-          .email__heading{
-            
-          }
-          .email__list{
-            
-          }
-          .email__content{
-            
-          }
-        }
-        .address{
-
-          .address__heading{
-
-          }
-          .address__text{
-
-          }
-        }
-
-      .contact__blue{
+      &__blue{
         height: 59%;
       }
-      .contact__form{
-        
-      }
-      .contact__title{
-        
-      }
-      .contact__title>h5{
-        
-      }
-      .contact__input{
-       
-      }
-      .contact__input>input{
-        
-      }
-      .contact__input>input:focus{
-
-      }
-      .contact__input>input::-webkit-input-placeholder{
-
-      }
-      .contact__input>input:-moz-placeholder{
-      }
-      .contact__input>input::-moz-placeholder{
-      }
-      .contact__input>input:-ms-input-placeholder{
-      }
-      .contact__textarea{
-
-      }
-      .contact__textarea>textarea{
-
-      }
-      .contact__textarea>textarea::-webkit-input-placeholder{
-      }
-      .contact__textarea>textarea:-moz-placeholder{
-      }
-      .contact__textarea>textarea::-moz-placeholder{
-      }
-      .contact__textarea>textarea:-ms-input-placeholder{
-      }
-      .contact__button{
-
-      }
-      .contact__button>button{
-      }
-      .contact__button>button>svg{
-      }
-      .contact__button>button>span{
+      &__error-message{
+        bottom: -5px;
       }
     }
   }
   @media (max-width: 667px){
     .contact{
       height: 12%;
-      .contact__substrate{
-
-      }
-      .contact__substrate>h6{
+      &__substrate>h6{
         font-size: 1.5rem;
       }
-      .contact__wrapper{
+      &__wrapper{
         height: 80%;
       }
       .info{
         height: 25%;
       }
-        .contact__block{
-          width: 100%;
+      &__block{
+        width: 100%;
+      }
+        .phone{
+          
+          &__heading>h5{
+            font-size: 1rem;
+            font-weight: 700;
+          }
+          &__name{
+            font-size: 0.9rem;
+          }
+          &__content{
+            font-size: 0.9rem;
+          }
         }
-          .contact__item{
-          }
-          .phone{
-            
-            .phone__heading{
-            }
-            .phone__heading>h5{
-              font-size: 1rem;
-              font-weight: 700;
-            }
-            .phone__block{
-            }
-            .phone__list{
-             
-            }
-            .phone__name{
-              font-size: 0.9rem;
-            }
-            .phone__content{
-              font-size: 0.9rem;
-            }
-          }
-          .email{
+        .email{
 
-            .email__heading{
-            }
-            .email__heading>h5{
-              font-size: 1rem;
-              font-weight: 700;
-            }
-            .email__list{
-              
-            }
-            .email__content{
-              font-size: 0.9rem;
-            }
+          &__heading>h5{
+            font-size: 1rem;
+            font-weight: 700;
           }
-          .address{
-
-            .address__heading{
-
-            }
-            .address__heading>h5{
-              font-size: 1rem;
-              font-weight: 700;
-            }
-            .address__text{
-              font-size: 0.9rem;
-            }
+          &__content{
+            font-size: 0.9rem;
           }
+        }
+        .address{
 
-        .contact__blue{
+          &__heading>h5{
+            font-size: 1rem;
+            font-weight: 700;
+          }
+          &__text{
+            font-size: 0.9rem;
+          }
+        }
+
+        &__blue{
           height: 60%;
         }
-        .contact__form{
+        &__form{
           padding: 4% 8%;
         }
-        .contact__title{
-          
+        &__input{
+          height: 7%;
         }
-        .contact__title>h5{
-          
+        &__button>button{
+          width: 70%;
+          margin: auto;
+          justify-content: center;
         }
-      .contact__input{
-        height: 7%;
+        &__checkbox>input{
+        left: 15%;
       }
-      .contact__input>input{
-          
+      &__error-message{
+        bottom: -15px;
       }
-      .contact__input>input:focus{
-
+    }
+  }
+  @media (max-width: 470px){
+    .contact{
+      &__checkbox>input{
+        left: 10%;
       }
-      .contact__input>input::-webkit-input-placeholder{
-
+    }
+  }
+  @media (max-width: 410px){
+    .contact{
+      &__checkbox>input{
+        left: 5%;
       }
-       .contact__input>input:-moz-placeholder{
-      }
-      .contact__input>input::-moz-placeholder{
-      }
-      .contact__input>input:-ms-input-placeholder{
-      }
-      .contact__textarea{
-
-      }
-      .contact__textarea>textarea{
-
-      }
-      .contact__textarea>textarea::-webkit-input-placeholder{
-      }
-      .contact__textarea>textarea:-moz-placeholder{
-      }
-      .contact__textarea>textarea::-moz-placeholder{
-      }
-      .contact__textarea>textarea:-ms-input-placeholder{
-       }
-      .contact__button{
-
-      }
-      .contact__button>button{
-        width: 70%;
-        margin: auto;
-        justify-content: center;
-      }
-      .contact__button>button>svg{
-      }
-      .contact__button>button>span{
+    }
+  }
+  @media (max-width: 360px){
+    .contact{
+      &__checkbox>input{
+        left: 0;
       }
     }
   }

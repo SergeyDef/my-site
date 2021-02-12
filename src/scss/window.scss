@@ -228,7 +228,8 @@
         border-bottom: solid 1px #ff0000; 
       }
     }
-    .error_form{
+  }
+  .error_form{
       color: #ff0000;
       position: absolute;
       font-size: 0.8rem;
@@ -236,7 +237,6 @@
       bottom: 0;
       font-weight: bold;
     }
-  }
   @media (max-width: 2600px){
   .window{
 
