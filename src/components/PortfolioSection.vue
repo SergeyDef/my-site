@@ -60,7 +60,15 @@
     </div>
     <div class="portfolio__gallery gallery">
       <div class="gallery__block website">
-        <a href="myWork/housesBaths/index.html" class="gallery__link">
+        <a href="http://adept-course.ru/" class="gallery__link" target="_blank">
+          <img src="@/assets/portfolio/0_8.png" alt="adept-course">
+        </a>
+        <div class="gallery__indicator indicator">
+          <div class="indicator__cross"></div>
+        </div>
+      </div>
+      <div class="gallery__block website">
+        <a href="myWork/housesBaths/index.html" class="gallery__link" target="_blank">
           <img src="@/assets/portfolio/0_5.png" alt="houses baths">
         </a>
         <div class="gallery__indicator indicator">
@@ -68,45 +76,45 @@
         </div>
       </div>
       <div class="gallery__block website">
-        <a href="myWork/drummers/index.php" class="gallery__link">
+        <a href="myWork/drummers/index.php" class="gallery__link" target="_blank">
           <img src="@/assets/portfolio/0_3.png" alt="drummers">
         </a>
         <div class="gallery__indicator indicator">
           <div class="indicator__cross"></div>
         </div>
       </div>
-      <div class="gallery__block landing">
+<!--       <div class="gallery__block landing">
         <a href="myWork/BREDLI/index.html" target="_blank" class="gallery__link">
           <img src="@/assets/portfolio/0_2.png" alt="bredli">
         </a>
         <div class="gallery__indicator indicator">
           <div class="indicator__cross"></div>
         </div>
-      </div>
-      <div class="gallery__block website">
+      </div> -->
+<!--       <div class="gallery__block website">
         <a href="myWork/tatuNataley/index.html" target="_blank" class="gallery__link">
           <img src="@/assets/portfolio/0_4.png" alt="tatu nataley">
         </a>
         <div class="gallery__indicator indicator">
           <div class="indicator__cross"></div>
         </div>
-      </div>
-      <div class="gallery__block landing">
+      </div> -->
+<!--       <div class="gallery__block landing">
         <a href="myWork/quiz/index.html" target="_blank" class="gallery__link">
           <img src="@/assets/portfolio/0_6.png" alt="quiz">
         </a>
         <div class="gallery__indicator indicator">
           <div class="indicator__cross"></div>
         </div>
-      </div>
-      <div class="gallery__block website">
+      </div> -->
+<!--       <div class="gallery__block website">
         <a href="myWork/test/index.html" target="_blank" class="gallery__link">
           <img src="@/assets/portfolio/0_1.png" alt="web test">
           <div class="gallery__indicator indicator">
             <div class="indicator__cross"></div>
           </div>
         </a>
-      </div>
+      </div> -->
     </div>
     <div class="portfolio__button">
       <router-link to="/gallery" class="portfolio__button__link">
@@ -182,13 +190,13 @@ export default {
       flex-direction: column;
       justify-content: space-between;
 
-      .portfolio__substrate{
+      &__substrate{
      	  @include substrate(90%, 90%);
       }
-      .portfolio__substrate>h6{
+      &__substrate>h6{
      	  @include substrateText(4rem, 900, 0.1);
       }
-      .portfolio__menu{
+      &__menu{
         width: 100%;
         z-index: 9;
         display: flex;
@@ -201,51 +209,51 @@ export default {
         -webkit-box-shadow:1px 1px 100px 1px rgba(0,0,0,0.21);
         -moz-box-shadow:1px 1px 100px 1px rgba(0,0,0,0.21);
 
-        .menu__wrapper{
+        &__wrapper{
           width: 69.5%;
           height: 100%;
           display: flex;
           background-color: #ffffff;
         }
-        .menu__search{
+        &__search{
           width: 30.4%;
           display: flex;
           background-color: #ffffff;
         }
-        .menu__item{
+        &__item{
           width: 20%;
           height: 100%;
           margin: auto;
           cursor: pointer;
           display: flex;
         }
-        .menu__item:hover{
+        &__item:hover{
           background-color: #F7F7F7;
           color: #121212;
           transform: scale(1.1);
         }
-        .menu__link{
+        &__link{
           margin: auto;
           font-size: 1rem;
           text-transform: uppercase;
           color: #121212;
         }
-        .menu__form{
+        &__form{
           display: flex;
           width: 90%;
           margin: auto;
           justify-content: center;
         }
-        .menu__form>button{
+        &__form>button{
           border: 0;
           width: 15%;
           height: 100%;
           background-color: #ffffff;
         }
-        .menu__input{
+        &__input{
           width: 85%;
         }
-        .menu__input>input{
+        &__input>input{
           width: 100%;
           border: 0;
         }
@@ -259,32 +267,32 @@ export default {
       flex-wrap: wrap;
       z-index: 9;
       
-      .gallery__block{
+      &__block{
         position: relative;
         width: 33.33%;
         height: auto;
         border: 1px solid #000;
       }
-      .gallery__block:hover{
+      &__block:hover{
         transform: scale(1.1);
         z-index: 99999;
       }
-      .gallery__block:hover .gallery__indicator{
+      &__block:hover &__indicator{
         display: block;
       }
-      .gallery__link{
+      &__link{
         display: block;
         width: 100%;
         height: 300px;
         overflow: hidden;
         cursor: pointer;
       }
-      .gallery__link>img{
+      &__link>img{
         width: 100%;
         height: auto;
         margin: auto;
       }
-      .gallery__indicator{
+      &__indicator{
         display: none;
         position: absolute;
         background-color: #2196F3;
@@ -296,7 +304,7 @@ export default {
       }
       .indicator{
 
-        .indicator__cross{
+        &__cross{
           background: #ffffff;
           height: 13px;
           width: 2px;
@@ -304,7 +312,7 @@ export default {
           left: 20px;
           top: 6px;
         }
-        .indicator__cross:after{
+        &__cross:after{
           content: "";
           height: 2px;
           width: 13px;
@@ -315,181 +323,47 @@ export default {
         }
       }
     }
-    .portfolio__button{
+    &__button{
       display: flex;
       width: 100%;
       height: 10%;
       z-index: 9;
     }
-    .portfolio__button__link{
+    &__button__link{
       width: 20%;
       height: 60%;
       margin: auto;
     }
-    .portfolio__button-button{
+    &__button-button{
       @include buttonMain(100%, 100%, 1rem);
     }
   }
   @media (max-width: 1140px){
     .portfolio{
       height: 11%;
-      .portfolio__substrate{
-      }
-      .portfolio__substrate>h6{
 
-      }
-      .portfolio__menu{
-      }
-      .menu{
-        .menu__wrapper{
-
-        }
-        .menu__search{
-
-            }
-            .menu__item{
-            }
-            .menu__item:hover{
-            }
-            .menu__link{
-            }
-            .menu__link>span{
-            }
-            .menu__form{
-            }
-            .menu__form>button{
-            }
-            .menu__input{
-            }
-            .menu__input>input{
-            }
-            .sandwich{
-
-            }
-            .menu__adaptiv{
-
-
-              .item{
-
-              }
-              .item>span{
-
-              }
-              .item:hover{
-
-              }
-            }
-          }
-        .gallery{
+      .gallery{
           
-          .gallery__block{
+        &__link{
+          height: 220px;
+        }
 
-          }
-          .gallery__block:hover{
-          }
-          .gallery__block:hover .gallery__indicator{
-          }
-          .gallery__link{
-            height: 220px;
-          }
-          .gallery__link>img{
-          }
-          .gallery__indicator{
-          }
-          .indicator{
-
-            .indicator__cross{
-            }
-            .indicator__cross:after{
-            }
-          }
-        }
-        .portfolio__button{
-        }
-        .portfolio__button__link{
-          width: 30%;
-        }
-        .portfolio__button-button{
+      }
+      &__button__link{
+        width: 30%;
       }
     }
   }
   @media (max-width: 967px){
     .portfolio{
       height: 8%;
-      .portfolio__substrate{
-      }
-      .portfolio__substrate>h6{
 
-      }
-      .portfolio__menu{
-      }
-      .menu{
-        .menu__wrapper{
-
-        }
-        .menu__search{
-
-            }
-            .menu__item{
-            }
-            .menu__item:hover{
-            }
-            .menu__link{
-            }
-            .menu__link>span{
-            }
-            .menu__form{
-            }
-            .menu__form>button{
-            }
-            .menu__input{
-            }
-            .menu__input>input{
-            }
-            .sandwich{
-
-            }
-            .menu__adaptiv{
-
-
-              .item{
-
-              }
-              .item>span{
-
-              }
-              .item:hover{
-
-              }
-            }
-          }
-        .gallery{
+      .gallery{
           
-          .gallery__block{
-            height: 200px;
-            overflow: hidden;
-          }
-          .gallery__block:hover{
-          }
-          .gallery__block:hover .gallery__indicator{
-          }
-          .gallery__link{
-          }
-          .gallery__link>img{
-          }
-          .gallery__indicator{
-          }
-          .indicator{
-
-            .indicator__cross{
-            }
-            .indicator__cross:after{
-            }
-          }
+        &__block{
+          height: 200px;
+          overflow: hidden;
         }
-        .portfolio__button{
-        }
-        .portfolio__button-button{
       }
     }
   }
@@ -497,104 +371,65 @@ export default {
       .portfolio{
         height: 9%;
 
-          .portfolio__substrate{
-          }
-          .portfolio__substrate>h6{
-            font-size: 1.5rem;
-          }
-          .portfolio__menu{
-          }
-          .menu{
-            position: relative;
-            z-index: 999;
-            height: 6%;
+        &__substrate>h6{
+          font-size: 1.5rem;
+        }
+        .menu{
+          position: relative;
+          z-index: 999;
+          height: 6%;
 
-            .menu__wrapper{
-              display: none;
-            }
-            .menu__search{
-              width: 79%;
-            }
-            .menu__item{
-            }
-            .menu__item:hover{
-            }
-            .menu__link{
-            }
-            .menu__link>span{
-            }
-            .menu__form{
-            }
-            .menu__form>button{
-            }
-            .menu__input{
-            }
-            .menu__input>input{
-            }
-            .sandwich{
-              background-color: #ffffff;
-              display: flex;
-              width: 19%;
-            }
-            .menu__adaptiv{
-              z-index: 9999;
-              position: absolute;
-              background-color: #ffffff;
+          &__wrapper{
+            display: none;
+          }
+          &__search{
+            width: 79%;
+          }
+          .sandwich{
+            background-color: #ffffff;
+            display: flex;
+            width: 19%;
+          }
+          &__adaptiv{
+            z-index: 9999;
+            position: absolute;
+            background-color: #ffffff;
+            width: 100%;
+            height: 200px;
+            bottom: -220px;
+
+            .item{
+              display: block;
               width: 100%;
-              height: 200px;
-              bottom: -220px;
-
-              .item{
-                display: block;
-                width: 100%;
-                height: 45px;
-                display: flex;
-                border-bottom: 1px solid #000;
-              }
-              .item>span{
-                margin: auto;
-                font-size: 1rem;
-                font-weight: 700;
-                text-transform: uppercase;
-              }
-              .item:hover{
-                background-color: #F7F7F7;
-              }
+              height: 45px;
+              display: flex;
+              border-bottom: 1px solid #000;
+            }
+            .item>span{
+              margin: auto;
+              font-size: 1rem;
+              font-weight: 700;
+              text-transform: uppercase;
+            }
+            .item:hover{
+              background-color: #F7F7F7;
             }
           }
+        }
         .gallery{
           
-          .gallery__block{
-            width: 50%;
-            height: auto;
-          }
-          .gallery__block:hover{
-          }
-          .gallery__block:hover .gallery__indicator{
-          }
-          .gallery__link{
-            height: 130px;
-          }
-          .gallery__link>img{
-          }
-          .gallery__indicator{
-          }
-          .indicator{
-
-            .indicator__cross{
-            }
-            .indicator__cross:after{
-            }
-          }
+        &__block{
+          width: 50%;
+          height: auto;
         }
-        .portfolio__button{
-        }
-        .portfolio__button__link{
-          width: 60%;
-          height: 70%;
-        }
-        .portfolio__button-button{
+        &__link{
+          height: 130px;
         }
       }
+      &__button__link{
+        width: 60%;
+        height: 70%;
+      }
+    }
   }
 </style>

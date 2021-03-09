@@ -41,8 +41,17 @@
 		data(){
 			return{
 				myJobs: [
-					{ 
+				{ 
 						id: 1, 
+						jobName: 'Adept course',
+						jobDescription: 'Курсы для репититоров',
+						jobLink: 'http://adept-course.ru/', 
+						jobIndicator: 'website', 
+						jobImgId: 'adeptСourse', 
+						jobAlt: 'adept-course', 
+					},
+					{ 
+						id: 2, 
 						jobName: 'Дома и бани',
 						jobDescription: 'интернет магазин - дипломная работа для колледжа',
 						jobLink: 'myWork/housesBaths/index.html', 
@@ -51,7 +60,7 @@
 						jobAlt: 'houses baths', 
 					},
 					{ 
-						id: 2, 
+						id: 3, 
 						jobName: 'Барабанщици москвички', 
 						jobDescription: 'Многостраничный сайт для музыкального ансамбля', 
 						jobLink: 'myWork/drummers/index.php', 
@@ -60,7 +69,7 @@
 						jobAlt: 'drummers', 
 					},
 					{ 
-						id: 3, 
+						id: 4, 
 						jobName: 'BREDLI', 
 						jobDescription: 'Одностраничный лендинг', 
 						jobLink: 'myWork/BREDLI/index.html', 
@@ -69,7 +78,7 @@
 						jobAlt: 'bredli', 
 					},
 					{ 
-						id: 4, 
+						id: 5, 
 						jobName: 'Тату мастер Наталья', 
 						jobDescription: 'Многостраничный сайт для тату мастера', 
 						jobLink: 'myWork/tatuNataley/index.html', 
@@ -78,7 +87,7 @@
 						jobAlt: 'tatu nataley', 
 					},
 					{ 
-						id: 5, 
+						id: 6, 
 						jobName: 'Заказ квизов', 
 						jobDescription: 'Лендинг для заказа интернет опросников', 
 						jobLink: 'myWork/quiz/index.html', 
@@ -87,16 +96,16 @@
 						jobAlt: 'quiz', 
 					},
 					{ 
-						id: 6, 
+						id: 7, 
 						jobName: 'Демо вебстудии', 
 						jobDescription: 'Многостраничный сайт', 
-						jobLink: 'myWork/housesBaths/index.html', 
+						jobLink: 'myWork/ds/index.php', 
 						jobIndicator: 'website', 
 						jobImgId: 'webStudio', 
 						jobAlt: 'web studio', 
 					},
 					{ 
-						id: 7, 
+						id: 8, 
 						jobName: 'Вязание на заказ', 
 						jobDescription: 'Многостраничныйсайт (моя первая работа)', 
 						jobLink: 'myWork/needlework/index.html', 
@@ -138,6 +147,8 @@
 					jobImg[i].classList.add('gallery__img-webStudio');
 				} else if (jobImg[i].getAttribute('id') == "needlework") {
 					jobImg[i].classList.add('gallery__img-needlework');
+				} else if (jobImg[i].getAttribute('id') == "adeptСourse") {
+					jobImg[i].classList.add('gallery__img-adeptСourse');
 				}
 
 			}
@@ -165,25 +176,25 @@
 			height: 90px;
 		}
 
-		.gallery__block{
+		&__block{
 			display: flex;
 			flex-wrap: wrap;
 			background-color: #ffffff;
 		}
-		.gallery__item{
+		&__item{
 			width: 38%;
 			height: 360px;
 			margin: 5.8%;
 			border: 1px solid #2196F3;
 		}
-		.gallery__item:hover{}
-		.gallery__title{
+		&__item:hover{}
+		&__title{
 			width: 100%;
 			height: 15%;
 			display: flex;
 			background-color: #2196F3;
 		}
-		.gallery__title>h3{
+		&__title>h3{
 			font-size: 1.2rem;
 			text-transform: uppercase;
 			margin: auto;
@@ -191,13 +202,13 @@
 			text-align: center;
 			font-weight: 700;
 		}
-		.gallery__link{
+		&__link{
 			display: block;
 			width: 100%;
 			height: 85%;
 			overflow: hidden;
 		}
-		.gallery__img{
+		&__img{
 			width: 100%;
 			height: 100%;
 			background-size: cover;
@@ -223,6 +234,9 @@
 		.gallery__img-needlework{
 			background-image: url(../assets/portfolio/0_7.png);
 		}
+		.gallery__img-adeptСourse{
+			background-image: url(../assets/portfolio/0_8.png);
+		}
 		.gallery__description{
 			display: none;
 		}
@@ -239,31 +253,15 @@
 		}
 	} 
 @media (max-width: 960px){
-	.wrapper{
-	}
 	.gallery{
 		width: 96%;
 
-		.menuHeader{
-		}
-
-		.gallery__block{
-		}
 		.gallery__item{
 			width: 90%;
 			height: 260px;
 		}
-		.gallery__item:hover{}
-		.gallery__title{
-		}
-		.gallery__title>h3{
-		}
 		.gallery__link{
 			height: 200px;
-		}
-		.gallery__img{
-		}
-		.gallery__description{
 		}
 	} 
 	.sidebar{

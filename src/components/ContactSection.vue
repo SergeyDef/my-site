@@ -1,7 +1,7 @@
 <template>
   <section class="contact" id="feedback">
     <a name="feedback" class="myLink"></a>
-  	<div class="contact__substrate">
+    <div class="contact__substrate">
   		<h6>Написать мне</h6>
   	</div>
   	<div class="contact__info info">
@@ -142,6 +142,23 @@ export default {
     sendFeedback: function () {
       if (this.$v.$invalid) {
         this.$v.feedback.$touch();
+      }
+
+      let result = this.$v.feedback.name.required &&
+      this.$v.feedback.email.required &&
+      this.$v.feedback.email.email && 
+      this.$v.feedback.phone.required &&
+      this.$v.feedback.phone.phone &&
+      this.$v.feedback.text.required &&
+      this.$v.feedback.consent.$model;
+
+      console.log(this.$v.feedback.text.required);
+      if (result) {
+        this.feedback.name = '';
+        this.feedback.email = '';
+        this.feedback.phone = '';
+        this.feedback.text = '';
+        this.$v.feedback.$reset();
       }
     }
   },
